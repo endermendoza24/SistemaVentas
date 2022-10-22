@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using SistemaVentasCaprichos.Server.Models;
+using SistemaVentasCaprichos.Server;
 using SistemaVentasCaprichos.Shared;
 using System;
 using System.Collections.Generic;
