@@ -6,16 +6,34 @@
 
 <AuthorizeView>
     <Authorized>
-        <a href="authentication/profile">Hello, @context.User.Identity.Name!</a>
-        <button class="nav-link btn btn-link" @onclick="BeginSignOut">Log out</button>
+        <style>
+            #usuario {
+                color: lightseagreen;
+                margin-right: 1rem;
+                border-radius: 0.2rem;
+            }
+
+                #usuario:hover {
+                    text-decoration: none;
+                    color: white;
+                }
+
+                #usuario:active {
+                    color: gold;
+                }
+        </style>
+        <a href="authentication/profile" id="usuario">
+            @context.User.Identity.Name
+        </a>
+        <button class="btn btn-sm btn-outline-danger" @onclick="BeginSignOut"><i class="oi oi-account-logout"></i>Salir</button>
     </Authorized>
     <NotAuthorized>
-        <a href="authentication/register">Register</a>
-        <a href="authentication/login">Log in</a>
+        <a class="btn btn-sm btn-outline-primary" href="authentication/register">Registrarse</a>
+        <a class="btn btn-sm btn-outline-primary" href="authentication/login">Iniciar sesión</a>
     </NotAuthorized>
 </AuthorizeView>
 
-@code{
+@code {
     private async Task BeginSignOut(MouseEventArgs args)
     {
         await SignOutManager.SetSignOutState();

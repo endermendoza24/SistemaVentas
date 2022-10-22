@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SistemaVentasCaprichos.Server.Data;
+using SistemaVentasCaprichos.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;

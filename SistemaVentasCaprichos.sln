@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32929.386
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVentasCaprichos.Server", "SistemaVentasCaprichos\Server\SistemaVentasCaprichos.Server.csproj", "{CBA6973C-8FB8-4906-9F84-6CF3740E31EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaVentasCaprichos.Server", "SistemaVentasCaprichos\Server\SistemaVentasCaprichos.Server.csproj", "{CBA6973C-8FB8-4906-9F84-6CF3740E31EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVentasCaprichos.Client", "SistemaVentasCaprichos\Client\SistemaVentasCaprichos.Client.csproj", "{22A4B260-57F6-4235-A058-114895A017AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaVentasCaprichos.Client", "SistemaVentasCaprichos\Client\SistemaVentasCaprichos.Client.csproj", "{22A4B260-57F6-4235-A058-114895A017AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVentasCaprichos.Shared", "SistemaVentasCaprichos\Shared\SistemaVentasCaprichos.Shared.csproj", "{A2309889-C1B5-4DA7-833B-6A12FC741921}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaVentasCaprichos.Shared", "SistemaVentasCaprichos\Shared\SistemaVentasCaprichos.Shared.csproj", "{A2309889-C1B5-4DA7-833B-6A12FC741921}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

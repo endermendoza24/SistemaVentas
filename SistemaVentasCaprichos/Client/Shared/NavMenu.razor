@@ -1,5 +1,9 @@
 ﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">SistemaVentasCaprichos</a>
+    <a class="navbar-brand" href="#" style="color:mistyrose">
+        <img src="flow.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <b>Sistema Caprichos</b>
+    </a>
+
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,18 +12,48 @@
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <ul class="nav flex-column">
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
+            <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Inicio
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
+            <NavLink class="nav-link" href="/estadisticas" Match="NavLinkMatch.All">
+                <span class="oi oi-bar-chart" aria-hidden="true"></span> Estadisticas
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            <NavLink class="nav-link" href="lista-ventas" Match="NavLinkMatch.All">
+                <span class="oi oi-cart" aria-hidden="true"></span> Ventas
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="lista-articulos" Match="NavLinkMatch.All">
+                <span class="oi oi-list" aria-hidden="true"></span> Artículos
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="lista-clientes" Match="NavLinkMatch.All">
+                <span class="oi oi-people" aria-hidden="true"></span> Clientes
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="lista-compras" Match="NavLinkMatch.All">
+                <span class="oi oi-cart" aria-hidden="true"></span> Compras
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="lista-pedidos" Match="NavLinkMatch.All">
+                <span class="oi oi-task" aria-hidden="true"></span> Pedidos
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="lista-pagos" Match="NavLinkMatch.All">
+                <span class="oi oi-dollar" aria-hidden="true"></span> Pagos
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="roles" Match="NavLinkMatch.All">
+                <span class="oi oi-cog" aria-hidden="true"></span> Roles
             </NavLink>
         </li>
     </ul>

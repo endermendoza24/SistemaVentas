@@ -90,6 +90,20 @@ using SistemaVentasCaprichos.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 12 "C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+using SistemaVentasCaprichos.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+using Microsoft.AspNetCore.Authorization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Authentication.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 
@@ -105,13 +119,14 @@ using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 5 "C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Authentication.razor"
-      
+#line 12 "C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Authentication.razor"
+       
     [Parameter] public string Action { get; set; }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

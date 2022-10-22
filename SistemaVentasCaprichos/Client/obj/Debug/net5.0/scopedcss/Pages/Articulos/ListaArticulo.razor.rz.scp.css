@@ -1,0 +1,11 @@
+.card[b-64rsms2ebu] {
+    background-color: lightgoldenrodyellow;
+    border-style: groove;
+    border-radius: 8px;
+    text-align: right;
+}
+
+    .card:hover[b-64rsms2ebu] {
+        box-shadow: 0 0 12px rgba(33,33,33,.2);
+        opacity: 0.95;
+    }

@@ -664,3 +664,16 @@ C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\
 C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\refint\SistemaVentasCaprichos.Client.dll
 C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\SistemaVentasCaprichos.Client.pdb
 C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Client.dll
+C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Articulos\CrearArticulo.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Articulos\EditarArticulo.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Articulos\FormArticulo.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Estadisticas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Roles.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Articulos\ListaArticulo.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Articulos\CrearArticulo.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Articulos\EditarArticulo.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Articulos\FormArticulo.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Estadisticas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Roles.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Articulos\ListaArticulo.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Articulos\ListaArticulo.razor.rz.scp.css

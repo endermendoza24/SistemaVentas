@@ -1,0 +1,44 @@
+﻿@page "/crear-articulo"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+
+@attribute [Authorize]
+
+<div class="d-flex justify-content-between mb-3">
+    <div>
+        <button @onclick="@Volver" class="btn btn-sm btn-secondary">
+            <i class="oi oi-arrow-circle-left"></i> Volver al listado
+        </button>
+    </div>
+    <div>
+        <h3><b>Nuevo artículo</b></h3>
+    </div>
+</div>
+
+<FormArticulo TextBotonSubmit="Guardar artículo" OnValidSubmit="@CrearArtic" articulo="@articulo" />
+
+@code {
+    Articulo articulo = new Articulo();
+
+    async Task CrearArtic()
+    {
+        var respuesta = await Http.PostAsJsonAsync("/api/articulos", articulo);
+
+        if (respuesta.IsSuccessStatusCode)
+        {
+            NavigationManager.NavigateTo("/lista-articulos");
+            await JS.InvokeVoidAsync("simple", "¡Éxito!", "Artículo creado", "success");
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("simple", "Error",
+                    "No se pudo crear artículo", "error");
+        }
+    }
+
+    void Volver()
+    {
+        NavigationManager.NavigateTo("/lista-articulos");
+    }
+}
