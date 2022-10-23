@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SistemaVentasCaprichos.Server.Data;
 
 namespace SistemaVentasCaprichos.Server.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221023190849_prueba")]
+    partial class prueba
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -332,7 +334,7 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoriaId")
+                    b.Property<int>("CateProductoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Descripcion")
@@ -365,12 +367,12 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriaId");
+                    b.HasIndex("CateProductoId");
 
                     b.ToTable("Articulos");
                 });
 
-            modelBuilder.Entity("SistemaVentasCaprichos.Shared.Categoria", b =>
+            modelBuilder.Entity("SistemaVentasCaprichos.Shared.CateProducto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -378,6 +380,7 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Descripcion")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -391,7 +394,7 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categoria");
+                    b.ToTable("CateProducto");
                 });
 
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Cliente", b =>
@@ -776,13 +779,13 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
 
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Articulo", b =>
                 {
-                    b.HasOne("SistemaVentasCaprichos.Shared.Categoria", "Categorias")
+                    b.HasOne("SistemaVentasCaprichos.Shared.CateProducto", "CateProducto")
                         .WithMany()
-                        .HasForeignKey("CategoriaId")
+                        .HasForeignKey("CateProductoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Categorias");
+                    b.Navigation("CateProducto");
                 });
 
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Compra", b =>

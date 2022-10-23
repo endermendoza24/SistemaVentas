@@ -148,8 +148,8 @@ using MudBlazor;
         }
         else
         {
-            await JS.InvokeVoidAsync("simple", "Error",
-                    "No se pudo crear artículo", "error");
+            //await JS.InvokeVoidAsync("simple", "Error",
+            //        "No se pudo crear artículo", "error");
         }
     }
 

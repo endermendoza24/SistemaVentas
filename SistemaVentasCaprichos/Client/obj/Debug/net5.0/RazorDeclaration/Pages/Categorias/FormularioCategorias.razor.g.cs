@@ -135,7 +135,7 @@ using System.Text.Json;
 #line 40 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Categorias\FormularioCategorias.razor"
        
 
-    [Parameter] public CateProducto CateProducto { get; set; } = new CateProducto();
+    [Parameter] public Categoria Categoria { get; set; } = new Categoria();
     
     [Parameter] public string TextBotonSubmit { get; set; }
     [Parameter] public EventCallback OnValidSubmit { get; set; }       

@@ -135,7 +135,7 @@ using System.Text.Json;
 #line 166 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
        
     [Parameter] public Articulo articulo { get; set; } = new Articulo();
-    [Parameter] public List<CateProducto> ListaCategorias { get; set; } = new List<CateProducto>();
+    [Parameter] public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
     [Parameter] public string TextBotonSubmit { get; set; }
     [Parameter] public EventCallback OnValidSubmit { get; set; }
 
@@ -153,7 +153,7 @@ using System.Text.Json;
         if (httpResponse.IsSuccessStatusCode)
         {
             var responseString = await httpResponse.Content.ReadAsStringAsync();
-            ListaCategorias = JsonSerializer.Deserialize<List<CateProducto>>(responseString,
+            ListaCategorias = JsonSerializer.Deserialize<List<Categoria>>(responseString,
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
         else

@@ -16,10 +16,10 @@
     </div>
 </div>
 
-<FormularioCategorias TextBotonSubmit="Guardar categoría" OnValidSubmit="@Crear" CateProducto="@Categoria" />
+<FormularioCategorias TextBotonSubmit="Guardar categoría" OnValidSubmit="@Crear" Categoria="@Categoria" />
 
 @code {
-    CateProducto Categoria = new CateProducto();
+    Categoria Categoria = new Categoria();
 
     async Task Crear()
     {

@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <div class="form-group row">
+                @*<div class="form-group row">
                     <label class="col-4 col-form-label">Categoría</label>
                     <div class="col">
                         <div class="input-group">
@@ -39,14 +39,14 @@
                         </div>
                         <ValidationMessage For="@(() => articulo.Categoria)" />
                     </div>
-                </div>
+                </div>*@
 
                 @*prueba*@
                 <div class="form-group row">
                     <label class="col-4 col-form-label">Categoría</label>
                     <div class="col">
                         <div class="input-group">
-                            <InputSelect @bind-Value="articulo.CateProductoId" class="form-control">
+                            <InputSelect @bind-Value="articulo.CategoriaId" class="form-control">
                                 <option selected value="0">Seleccione categoría</option>
                                 @foreach (var categoria in ListaCategorias)
                                 {
@@ -54,7 +54,7 @@
                                 }
                             </InputSelect>
                         </div>
-                        <ValidationMessage For="@(() => articulo.CateProductoId)" />
+                        <ValidationMessage For="@(() => articulo.CategoriaId)" />
                     </div>
                 </div>
 
@@ -165,7 +165,7 @@
 
 @code {
     [Parameter] public Articulo articulo { get; set; } = new Articulo();
-    [Parameter] public List<CateProducto> ListaCategorias { get; set; } = new List<CateProducto>();
+    [Parameter] public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
     [Parameter] public string TextBotonSubmit { get; set; }
     [Parameter] public EventCallback OnValidSubmit { get; set; }
 
@@ -183,7 +183,7 @@
         if (httpResponse.IsSuccessStatusCode)
         {
             var responseString = await httpResponse.Content.ReadAsStringAsync();
-            ListaCategorias = JsonSerializer.Deserialize<List<CateProducto>>(responseString,
+            ListaCategorias = JsonSerializer.Deserialize<List<Categoria>>(responseString,
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
         else

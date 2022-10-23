@@ -28,7 +28,8 @@ else if (Categoria.Count == 0)
 }
 else
 {   
-    <MudTable Items="@Categoria" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<CateProducto,bool>(FilterFunc1)" @bind-SelectedItem="selectedItem1">
+    <MudTable Items="@Categoria" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Categoria,bool>(FilterFunc1)"
+              @bind-SelectedItem="selectedItem1">
         <ToolBarContent>
             <MudText Typo="Typo.h6">Categorías</MudText>
             <MudSpacer />
@@ -63,12 +64,12 @@ else
     private bool striped = true;
     private bool bordered = true;
     private string searchString1 = "";
-    private CateProducto selectedItem1 = null;
-    private HashSet<CateProducto> selectedItems = new HashSet<CateProducto>();
+    private Categoria selectedItem1 = null;
+    private HashSet<Categoria> selectedItems = new HashSet<Categoria>();
 
 
-    public List<CateProducto> Categoria { get; set; } //muestra todos los Categoria
-    CateProducto objCategoria = new CateProducto();
+    public List<Categoria> Categoria { get; set; } //muestra todos los Categoria
+    Categoria objCategoria = new Categoria();
 
     private string NombreArtFiltro = String.Empty; //filtros
 
@@ -86,7 +87,7 @@ else
         if (httpResponse.IsSuccessStatusCode)
         {
             var responseString = await httpResponse.Content.ReadAsStringAsync();
-            Categoria = JsonSerializer.Deserialize<List<CateProducto>>(responseString,
+            Categoria = JsonSerializer.Deserialize<List<Categoria>>(responseString,
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
         else
@@ -123,9 +124,9 @@ else
         await CargarArticulos();
     }
 
-    private bool FilterFunc1(CateProducto element) => FilterFunc(element, searchString1);
+    private bool FilterFunc1(Categoria element) => FilterFunc(element, searchString1);
 
-    private bool FilterFunc(CateProducto element, string searchString)
+    private bool FilterFunc(Categoria element, string searchString)
     {
         if (string.IsNullOrWhiteSpace(searchString))
             return true;

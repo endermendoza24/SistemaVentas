@@ -2,7 +2,7 @@
 @inject NavigationManager NavigationManager
 @using System.Text.Json
 
-<EditForm Model="@CateProducto" OnValidSubmit="@OnValidSubmit">
+<EditForm Model="@Categoria" OnValidSubmit="@OnValidSubmit">
     <div class="form-field mt-2 mb-2">
         <div class="row">
             <div class="col-6">
@@ -10,10 +10,10 @@
                     <label class="col-4 col-form-label">Nombre</label>
                     <div class="col">
                         <div class="input-group">
-                            <MudTextField @bind-Value="@CateProducto.Nombre" Label="Nombre" Variant="Variant.Outlined"  oninput="this.value=this.value.toUpperCase()"
+                            <MudTextField @bind-Value="@Categoria.Nombre" Label="Nombre" Variant="Variant.Outlined"  oninput="this.value=this.value.toUpperCase()"
                                           Margin="Margin.Dense"></MudTextField>                                          
                         </div>
-                        <ValidationMessage For="@(() => CateProducto    .Nombre)" />
+                        <ValidationMessage For="@(() => Categoria.Nombre)" />
                     </div>
                 </div>
 
@@ -21,9 +21,9 @@
                     <label class="col-4 col-form-label">Descripción</label>
                     <div class="col">
                         <div class="input-group">
-                            <MudTextField @bind-Value="@CateProducto.Descripcion" Label="Descripción" Variant="Variant.Outlined" oninput="this.value=this.value.toUpperCase()"
+                            <MudTextField @bind-Value="@Categoria.Descripcion" Label="Descripción" Variant="Variant.Outlined" oninput="this.value=this.value.toUpperCase()"
                                           Margin="Margin.Dense"></MudTextField>                            
-                            <ValidationMessage For="@(() => CateProducto.Descripcion)" />
+                            <ValidationMessage For="@(() => Categoria.Descripcion)" />
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
 
 @code {
 
-    [Parameter] public CateProducto CateProducto { get; set; } = new CateProducto();
+    [Parameter] public Categoria Categoria { get; set; } = new Categoria();
     
     [Parameter] public string TextBotonSubmit { get; set; }
     [Parameter] public EventCallback OnValidSubmit { get; set; }       

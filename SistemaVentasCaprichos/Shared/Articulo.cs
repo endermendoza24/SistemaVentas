@@ -15,8 +15,7 @@ namespace SistemaVentasCaprichos.Shared
         public int Id { get; set; }
         [Required]
         public string Nombre { get; set; }
-        [Required, EnumDataType(typeof(Categorias))]
-        public Categorias Categoria { get; set; }
+       
         public string? Descripcion { get; set; }
         public string? Url_Imagen { get; set; }
         [Required]
@@ -35,20 +34,11 @@ namespace SistemaVentasCaprichos.Shared
         [Required]
         [Range(0, 99999999, ErrorMessage = "Valor inválido")]
         public int StockActual { get; set; }
-        public int CateProductoId { get; set; }
-        [ForeignKey("CateProductoId")]
-        public CateProducto CateProducto { get; set; }
+        public int CategoriaId { get; set; }
+        [ForeignKey("CategoriaId")]
+        public Categoria Categorias { get; set; }
 
-        public enum Categorias
-        {
-            Planta_Adentro = 1,
-            Planta_Afuera = 2,
-            Maceta = 3,
-            Fertilizante = 4,
-            Semilla = 5,
-            Tierra = 6,
-            Otra = 7
-        }
+      
         #endregion
 
         #region MÉTODOS

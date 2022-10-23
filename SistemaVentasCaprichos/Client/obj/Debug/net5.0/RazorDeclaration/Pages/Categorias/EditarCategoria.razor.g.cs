@@ -128,12 +128,12 @@ using MudBlazor;
 #nullable restore
 #line 24 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Categorias\EditarCategoria.razor"
        
-    CateProducto Categoria = new CateProducto();
+    Categoria Categoria = new Categoria();
     [Parameter] public int idCategoria { get; set; }
 
     protected async override Task OnParametersSetAsync()
     {
-        Categoria = await Http.GetFromJsonAsync<CateProducto>($"/api/cate/{idCategoria}");
+        Categoria = await Http.GetFromJsonAsync<Categoria>($"/api/cate/{idCategoria}");
     }
 
     void Volver()

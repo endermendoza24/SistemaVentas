@@ -20,25 +20,25 @@ namespace SistemaVentasCaprichos.Server.Controllers
             this.context = context;
         }
         [HttpGet]
-        public async Task<ActionResult<List<CateProducto>>> Get()
+        public async Task<ActionResult<List<Categoria>>> Get()
         {
-            return await context.CateProducto.ToListAsync();
+            return await context.Categoria.ToListAsync();
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<CateProducto>> Get(int id)
+        public async Task<ActionResult<Categoria>> Get(int id)
         {
-            return await context.CateProducto.FirstOrDefaultAsync(x => x.Id == id);
+            return await context.Categoria.FirstOrDefaultAsync(x => x.Id == id);
         }
         [HttpGet("buscar/{textoBusqueda}")]
-        public async Task<ActionResult<List<CateProducto>>> Get(string textoBusqueda)
+        public async Task<ActionResult<List<Categoria>>> Get(string textoBusqueda)
         {
-            if (string.IsNullOrWhiteSpace(textoBusqueda)) { return new List<CateProducto>(); }
+            if (string.IsNullOrWhiteSpace(textoBusqueda)) { return new List<Categoria>(); }
             textoBusqueda = textoBusqueda.ToLower();
-            return await context.CateProducto
+            return await context.Categoria
             .Where(x => x.Nombre.ToLower().Contains(textoBusqueda)).ToListAsync();
         }
         [HttpPost]
-        public async Task<ActionResult<int>> Post(CateProducto categorias)
+        public async Task<ActionResult<int>> Post(Categoria categorias)
         {
 
             context.Add(categorias);
@@ -46,7 +46,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             return categorias.Id;
         }
         [HttpPut]
-        public async Task<ActionResult> Put(CateProducto categoria)
+        public async Task<ActionResult> Put(Categoria categoria)
         {
             context.Attach(categoria).State = EntityState.Modified;
             await context.SaveChangesAsync();
@@ -55,9 +55,9 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            var existe = await context.CateProducto.AnyAsync(x => x.Id == id);
+            var existe = await context.Categoria.AnyAsync(x => x.Id == id);
             if (!existe) { return NotFound(); }
-            context.Remove(new CateProducto { Id = id });
+            context.Remove(new Categoria { Id = id });
             await context.SaveChangesAsync();
             return NoContent();
         }

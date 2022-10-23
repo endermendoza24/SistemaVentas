@@ -27,14 +27,14 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Articulo>>> Get()
         {
-            return await context.Articulos.OrderBy(x => x.Nombre).Include(x => x.Categoria).ToListAsync();
+            return await context.Articulos.OrderBy(x => x.Nombre).Include(x => x.Categorias).ToListAsync();
         }
 
         ///GET: api/ventas
         [HttpGet]
         public async Task<ActionResult<List<Articulo>>> GetDos()
         {
-            return await context.Articulos.Include(x => x.Categoria)
+            return await context.Articulos.Include(x => x.Categorias)
                 .ToListAsync();
         }
 

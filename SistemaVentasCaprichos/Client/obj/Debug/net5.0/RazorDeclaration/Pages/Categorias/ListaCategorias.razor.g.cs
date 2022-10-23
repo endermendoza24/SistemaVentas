@@ -133,19 +133,19 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 60 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Categorias\ListaCategorias.razor"
+#line 61 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Categorias\ListaCategorias.razor"
        
     private bool dense = false;
     private bool hover = true;
     private bool striped = true;
     private bool bordered = true;
     private string searchString1 = "";
-    private CateProducto selectedItem1 = null;
-    private HashSet<CateProducto> selectedItems = new HashSet<CateProducto>();
+    private Categoria selectedItem1 = null;
+    private HashSet<Categoria> selectedItems = new HashSet<Categoria>();
 
 
-    public List<CateProducto> Categoria { get; set; } //muestra todos los Categoria
-    CateProducto objCategoria = new CateProducto();
+    public List<Categoria> Categoria { get; set; } //muestra todos los Categoria
+    Categoria objCategoria = new Categoria();
 
     private string NombreArtFiltro = String.Empty; //filtros
 
@@ -163,7 +163,7 @@ using System.Text.Json;
         if (httpResponse.IsSuccessStatusCode)
         {
             var responseString = await httpResponse.Content.ReadAsStringAsync();
-            Categoria = JsonSerializer.Deserialize<List<CateProducto>>(responseString,
+            Categoria = JsonSerializer.Deserialize<List<Categoria>>(responseString,
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
         else
@@ -200,9 +200,9 @@ using System.Text.Json;
         await CargarArticulos();
     }
 
-    private bool FilterFunc1(CateProducto element) => FilterFunc(element, searchString1);
+    private bool FilterFunc1(Categoria element) => FilterFunc(element, searchString1);
 
-    private bool FilterFunc(CateProducto element, string searchString)
+    private bool FilterFunc(Categoria element, string searchString)
     {
         if (string.IsNullOrWhiteSpace(searchString))
             return true;

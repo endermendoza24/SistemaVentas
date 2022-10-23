@@ -128,7 +128,7 @@ using MudBlazor;
 #nullable restore
 #line 21 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Categorias\CrearCategoria.razor"
        
-    CateProducto Categoria = new CateProducto();
+    Categoria Categoria = new Categoria();
 
     async Task Crear()
     {
