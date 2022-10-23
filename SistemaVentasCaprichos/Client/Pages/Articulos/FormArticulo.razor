@@ -1,4 +1,7 @@
-﻿
+﻿@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using System.Text.Json
+
 <EditForm Model="@articulo" OnValidSubmit="@OnValidSubmit">
     <div class="form-field mt-2 mb-2">
         <div class="row">
@@ -37,6 +40,25 @@
                         <ValidationMessage For="@(() => articulo.Categoria)" />
                     </div>
                 </div>
+
+                @*prueba*@
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Categoría</label>
+                    <div class="col">
+                        <div class="input-group">
+                            <InputSelect @bind-Value="articulo.CateProductoId" class="form-control">
+                                <option selected value="0">Seleccione categoría</option>
+                                @foreach (var categoria in ListaCategorias)
+                                {
+                                    <option value="@categoria.Id">@categoria.Nombre</option>
+                                }
+                            </InputSelect>
+                        </div>
+                        <ValidationMessage For="@(() => articulo.CateProductoId)" />
+                    </div>
+                </div>
+
+                @*finPrueba*@
 
                 <div class="form-group row">
                     <label class="col-4 col-form-label">Descripción</label>
@@ -143,8 +165,31 @@
 
 @code {
     [Parameter] public Articulo articulo { get; set; } = new Articulo();
+    [Parameter] public List<CateProducto> ListaCategorias { get; set; } = new List<CateProducto>();
     [Parameter] public string TextBotonSubmit { get; set; }
     [Parameter] public EventCallback OnValidSubmit { get; set; }
 
     public int porcentaje { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarCategoria();
+    }
+
+    async Task CargarCategoria()
+    {
+        //  usando la api que está en el controlador se usa para  llenar el select que está más arriba
+        var httpResponse = await Http.GetAsync("api/cate");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ListaCategorias = JsonSerializer.Deserialize<List<CateProducto>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("Error - No se obtuvieron las categorías");
+        }
+
+    }
 }

@@ -1,20 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "gWoic3s3QYL6bvqeC4C9ypc6BTpcwcXJYP9ZZUdlGYzd6sm/88f+zmo/uC//SPY8tJ50H61tRcknzKywfUrw4Q==",
+  "dgSpecHash": "Fe5Rm/wbdMb2yG0OkDxW3cF1EiTWCOnINHgw8ButGUV1fuKHyTHNKpyFyyyFjWbm2/Xo/XSemuGpYgIAA+V2pg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
+  "projectFilePath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\osday\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.7\\microsoft.aspnetcore.cryptography.internal.5.0.7.nupkg.sha512",
-    "C:\\Users\\osday\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.7\\microsoft.aspnetcore.cryptography.keyderivation.5.0.7.nupkg.sha512",
-    "C:\\Users\\osday\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
-    "C:\\Users\\osday\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
-    "C:\\Users\\osday\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
-    "C:\\Users\\osday\\.nuget\\packages\\microsoft.extensions.identity.core\\5.0.7\\microsoft.extensions.identity.core.5.0.7.nupkg.sha512",
-    "C:\\Users\\osday\\.nuget\\packages\\microsoft.extensions.identity.stores\\5.0.7\\microsoft.extensions.identity.stores.5.0.7.nupkg.sha512",
-    "C:\\Users\\osday\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
-    "C:\\Users\\osday\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
-    "C:\\Users\\osday\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
-    "C:\\Users\\osday\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512"
+    "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.7\\microsoft.aspnetcore.cryptography.internal.5.0.7.nupkg.sha512",
+    "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.7\\microsoft.aspnetcore.cryptography.keyderivation.5.0.7.nupkg.sha512",
+    "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.extensions.identity.core\\5.0.7\\microsoft.extensions.identity.core.5.0.7.nupkg.sha512",
+    "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.extensions.identity.stores\\5.0.7\\microsoft.extensions.identity.stores.5.0.7.nupkg.sha512",
+    "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

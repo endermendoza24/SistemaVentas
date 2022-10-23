@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,9 @@ namespace SistemaVentasCaprichos.Shared
         [Required]
         [Range(0, 99999999, ErrorMessage = "Valor inválido")]
         public int StockActual { get; set; }
+        public int CateProductoId { get; set; }
+        [ForeignKey("CateProductoId")]
+        public CateProducto CateProducto { get; set; }
 
         public enum Categorias
         {

@@ -21,7 +21,7 @@ namespace SistemaVentasCaprichos.Shared
         [Required]
         public string Dirección { get; set; }
 
-        public Boolean Estado { get; set; }
+        public bool Estado { get; set; }
 
         #endregion
     }

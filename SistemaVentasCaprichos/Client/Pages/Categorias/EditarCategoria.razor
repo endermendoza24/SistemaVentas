@@ -1,0 +1,79 @@
+﻿@page "/editar-categoria/{idCategoria:int}"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@*@attribute [Authorize]*@
+
+
+<button @onclick="@Volver" class="btn btn-sm btn-secondary">
+    <i class="oi oi-arrow-circle-left"></i> Volver al listado
+</button>
+
+<hr />
+
+<div class="d-flex justify-content-between mb-3">
+    <h3><b>Editar Categoría</b></h3>
+    <div>
+        <button @onclick="@(() => BorrarArticulo(Categoria.Id))" class="btn btn-sm btn-danger">
+            <i class="oi oi-trash"></i> Eliminar Categoría
+        </button>
+    </div>
+</div>
+<FormularioCategorias TextBotonSubmit="Guardar cambios"
+              OnValidSubmit="@EditarArtic" CateProducto="@Categoria" />
+@code {
+    CateProducto Categoria = new CateProducto();
+    [Parameter] public int idCategoria { get; set; }
+
+    protected async override Task OnParametersSetAsync()
+    {
+        Categoria = await Http.GetFromJsonAsync<CateProducto>($"/api/cate/{idCategoria}");
+    }
+
+    void Volver()
+    {
+        NavigationManager.NavigateTo("/indexcategoria");
+    }
+
+    async Task EditarArtic()
+    {
+        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "Editar",
+            $"¿Desea editar {Categoria.Nombre}?", "question");
+        if (confirmacion)
+        {
+            var respuesta = await Http.PutAsJsonAsync("/api/cate", Categoria);
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/indexcategoria");
+                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Categoria editada", "success");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("simple", "Error",
+                    "No se pudo editar Categoria", "error");
+            }
+        }
+    }
+
+    async Task BorrarArticulo(int idCategoria)
+    {
+        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "Eliminar",
+            $"¿Desea eliminar {Categoria.Nombre}?", "warning");
+        if (confirmacion)
+        {
+            var respuesta = await Http.DeleteAsync($"/api/cate/{Categoria.Id}");
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/indexcategoria");
+                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Categoria eliminada", "success");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("simple", "Error",
+                    "No se pudo eliminar Categoria", "error");
+            }
+        }
+    }
+}

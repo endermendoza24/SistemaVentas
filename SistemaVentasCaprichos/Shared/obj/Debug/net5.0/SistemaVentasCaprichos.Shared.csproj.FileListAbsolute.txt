@@ -10,3 +10,15 @@ C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Shared\
 C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Shared\obj\Debug\net5.0\refint\SistemaVentasCaprichos.Shared.dll
 C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Shared\obj\Debug\net5.0\SistemaVentasCaprichos.Shared.pdb
 C:\Users\Endersson\Desktop\SistemaVentasCaprichos\SistemaVentasCaprichos\Shared\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Shared.dll
+C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Shared\bin\Debug\net5.0\SistemaVentasCaprichos.Shared.deps.json
+C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Shared\bin\Debug\net5.0\SistemaVentasCaprichos.Shared.dll
+C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Shared\bin\Debug\net5.0\ref\SistemaVentasCaprichos.Shared.dll
+C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Shared\bin\Debug\net5.0\SistemaVentasCaprichos.Shared.pdb
+C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Shared\obj\Debug\net5.0\SistemaVentasCaprichos.Shared.csproj.AssemblyReference.cache
+C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Shared\obj\Debug\net5.0\SistemaVentasCaprichos.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Shared\obj\Debug\net5.0\SistemaVentasCaprichos.Shared.AssemblyInfoInputs.cache
+C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Shared\obj\Debug\net5.0\SistemaVentasCaprichos.Shared.AssemblyInfo.cs
+C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Shared\obj\Debug\net5.0\SistemaVentasCaprichos.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Shared\obj\Debug\net5.0\SistemaVentasCaprichos.Shared.dll
+C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Shared\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Shared.dll
+C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Shared\obj\Debug\net5.0\SistemaVentasCaprichos.Shared.pdb

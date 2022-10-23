@@ -993,6 +993,25 @@
           }
         }
       },
+      "MudBlazor/5.2.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "5.0.13",
+          "Microsoft.AspNetCore.Components.Web": "5.0.13"
+        },
+        "compile": {
+          "lib/net5.0/MudBlazor.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/MudBlazor.dll": {}
+        },
+        "build": {
+          "buildTransitive/MudBlazor.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/MudBlazor.props": {}
+        }
+      },
       "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
@@ -2010,6 +2029,7 @@
           "Microsoft.AspNetCore.Components.WebAssembly": "5.0.17",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "5.0.17",
           "Microsoft.Extensions.Http": "5.0.0",
+          "MudBlazor": "5.2.5",
           "SistemaVentasCaprichos.Shared": "1.0.0",
           "System.Net.Http.Json": "5.0.0"
         },
@@ -3478,6 +3498,28 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "MudBlazor/5.2.5": {
+      "sha512": "9dfrY4pyczr2dhqhs6bmR9Xef+6Evp/JLiXh0I99uQ/oFAWVW6BLDJ8aPMq7ttV3W6YXAPzE/fJm0Aj/VnLoAw==",
+      "type": "package",
+      "path": "mudblazor/5.2.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "Nuget.png",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/MudBlazor.props",
+        "buildMultiTargeting/MudBlazor.props",
+        "buildTransitive/MudBlazor.props",
+        "lib/net5.0/MudBlazor.dll",
+        "lib/net5.0/MudBlazor.xml",
+        "mudblazor.5.2.5.nupkg.sha512",
+        "mudblazor.nuspec",
+        "staticwebassets/MudBlazor.css",
+        "staticwebassets/MudBlazor.min.css",
+        "staticwebassets/MudBlazor.min.js"
       ]
     },
     "Newtonsoft.Json/12.0.2": {
@@ -6878,25 +6920,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\osday\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Endersson\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
+      "projectUniqueName": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
       "projectName": "SistemaVentasCaprichos.Server",
-      "projectPath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
-      "packagesPath": "C:\\Users\\osday\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\obj\\",
+      "projectPath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
+      "packagesPath": "C:\\Users\\Endersson\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Server\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\osday\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Endersson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6909,11 +6946,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {
-              "projectPath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj"
+            "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {
+              "projectPath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj"
             },
-            "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
-              "projectPath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
+            "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
+              "projectPath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
             }
           }
         }
@@ -6979,7 +7016,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
       }
     }
   }
