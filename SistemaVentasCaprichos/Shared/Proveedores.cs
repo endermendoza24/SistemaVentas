@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace SistemaVentasCaprichos.Shared
 {
-    public class Categorias
+    public class Proveedores
     {
         #region ATRIBUTOS/PROPIEDADES
         [Key]
@@ -16,9 +16,13 @@ namespace SistemaVentasCaprichos.Shared
         public string Nombre { get; set; }
         [Required]
         [MaxLength(50, ErrorMessage = "Máximo 50 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
-        public string Descripcion { get; set; }
+        public int Teléfono { get; set; }
+
+        [Required]
+        public string Dirección { get; set; }
 
         public Boolean Estado { get; set; }
+
         #endregion
     }
 }
