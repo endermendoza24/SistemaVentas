@@ -1,0 +1,78 @@
+﻿@inject NavigationManager NavigationManager
+
+<EditForm Model="@pago" OnValidSubmit="OnValidSubmit">
+    <div class="form-field mt-2 mb-2">
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Cliente</label>
+            <div class="col">
+                <div class="input-group">
+                    <InputSelect @bind-Value="pago.ClienteId" class="custom-select" name="cliente">
+                        <option selected value="0">Seleccione cliente</option>
+                        @foreach (var cliente in clientes)
+                        {
+                            <option value="@cliente.Id">@cliente.NombreyApellido | DNI:@cliente.Dni</option>
+                        }
+                    </InputSelect>
+                </div>
+                <ValidationMessage For="@(() => pago.ClienteId)" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Concepto</label>
+            <div class="col">
+                <div class="input-group">
+                    <InputText @bind-Value="pago.Concepto" class="form-control"/>
+                </div>
+                <ValidationMessage For="@(() => pago.Concepto)" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Importe</label>
+            <div class="col">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">$</span>
+                    </div>
+                    <InputNumber @bind-Value="pago.Importe" step="0.01" class="form-control" />
+                </div>
+                <ValidationMessage For="@(() => pago.Importe)" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Forma de Pago</label>
+            <div class="col">
+                <div class="input-group">
+                    <InputSelect @bind-Value="pago.FormaPago" class="form-control">
+                        @foreach (string fpago in Enum.GetNames(typeof(Pago.FormasPago)))
+                        {
+                            <option value="@fpago"> @fpago</option>
+                        }
+                    </InputSelect>
+                </div>
+                <ValidationMessage For="@(() => pago.FormaPago)" />
+            </div>
+        </div>
+
+        <div class="btn-group btn-block">
+            <button type="submit" class="btn btn-success"><i class="oi oi-check"></i><text style="color:white"> @textSubmit</text></button>
+            <button @onclick="@Volver" class="btn btn-danger"><i class="oi oi-x"></i><text style="color:white"> Cancelar y volver atrás</text></button>
+        </div>
+    </div>
+    <DataAnnotationsValidator />
+</EditForm>
+
+@code {
+    [Parameter] public Pago pago { get; set; } = new Pago();
+    [Parameter] public List<Cliente> clientes { get; set; } = new List<Cliente>();
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+    [Parameter] public string textSubmit { get; set; }
+
+    void Volver()
+    {
+        NavigationManager.NavigateTo("/lista-pagos");
+    }
+}

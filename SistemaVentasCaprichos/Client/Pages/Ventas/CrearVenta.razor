@@ -1,0 +1,44 @@
+﻿@page "/crear-venta"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+
+@attribute [Authorize]
+
+<h3><b>Nueva venta</b></h3>
+
+<FormVenta textSubmit=" Finalizar venta" OnValidSubmit="CrearVent" venta="venta"
+                          clientes="clientes" articulos="articulos"></FormVenta>
+
+@code {
+    public Venta venta = new Venta();
+    public List<Cliente> clientes { get; set; } = new List<Cliente>();
+    public List<Articulo> articulos { get; set; } = new List<Articulo>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        clientes = await Http.GetFromJsonAsync<List<Cliente>>("api/clientes"); //muestro todos los clientes
+        articulos = await Http.GetFromJsonAsync<List<Articulo>>("api/articulos"); //muestro todos los articulos
+    }
+
+    async Task CrearVent()
+    {
+        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "¿Finalizar venta?",
+            $"Total: ${venta.Total}. Forma de pago: {venta.FormaPago}", "question");
+        if (confirmacion)
+        {
+            var respuesta = await Http.PostAsJsonAsync("api/ventas", venta);
+            var cuerporespuest = await respuesta.Content.ReadAsStringAsync();
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/ver-venta/" + cuerporespuest);
+                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Venta finalizada", "success");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("simple", "Error", "No se pudo realizar venta", "error");
+            }
+        }
+    }
+}

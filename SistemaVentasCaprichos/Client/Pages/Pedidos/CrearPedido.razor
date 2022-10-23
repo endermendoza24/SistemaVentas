@@ -1,0 +1,57 @@
+﻿@page "/crear-pedido"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+
+@attribute [Authorize]
+
+<div class="d-flex justify-content-between mb-3">
+    <div>
+        <button @onclick="@Volver" class="btn btn-sm btn-secondary">
+            <i class="oi oi-arrow-circle-left"></i> Volver al listado
+        </button>
+    </div>
+    <div>
+        <h3><b>Nuevo pedido</b></h3>
+    </div>
+</div>
+
+<FormPedidos textSubmit=" Guardar pedido" OnValidSubmit="NuevoPedido"
+                       pedido="pedido" clientes="clientes" articulos="articulos"></FormPedidos>
+
+@code {
+    public Pedido pedido = new Pedido();
+    public List<Cliente> clientes { get; set; } = new List<Cliente>();
+    public List<Articulo> articulos { get; set; } = new List<Articulo>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        clientes = await Http.GetFromJsonAsync<List<Cliente>>("api/clientes"); //muestro todos los clientes
+        articulos = await Http.GetFromJsonAsync<List<Articulo>>("api/articulos"); //muestro todos los articulos
+    }
+
+    async Task NuevoPedido()
+    {
+        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "¿Finalizar pedido?",
+            $"Seña: ${pedido.Seña}", "question");
+        if (confirmacion)
+        {
+            var respuesta = await Http.PostAsJsonAsync("api/pedidos", pedido);
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/lista-pedidos");
+                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Pedido finalizado", "success");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("simple", "Error", "No se pudo realizar pedido", "error");
+            }
+        }
+    }
+
+    void Volver()
+    {
+        NavigationManager.NavigateTo("/lista-pedidos");
+    }
+}

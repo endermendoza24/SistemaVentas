@@ -1,0 +1,126 @@
+﻿@page "/ver-pago/{idpago:int}"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+
+@attribute [Authorize]
+@using System.Text.Json
+
+<div class="d-flex justify-content-between mb-2">
+    <div class="btn-group">
+        <button class="btn btn-sm btn-secondary" @onclick="@Volver">
+            <i class="oi oi-arrow-circle-left"></i> Volver atrás
+        </button>
+        <button class="btn btn-sm btn-primary" onclick="window.print()">
+            Imprimir
+        </button>
+    </div>
+    <div class="btn-group">
+        <button @onclick="@(() => BorrarPago(pago.Id))" class="btn btn-sm btn-danger">
+            <i class="oi oi-trash"></i> Eliminar pago
+        </button>
+    </div>
+</div>
+
+@if (pago != null)
+{
+    <div class="card m-1" style="margin:25px; background-color:#f4f4f4; border-style:dotted">
+        <div class="card-body">
+            <h4 class="card-title d-flex justify-content-center">
+                <b>RECIBO DE PAGO</b>
+            </h4>
+
+            <div class="d-flex justify-content-between">
+                <b>VIVERO BRITH</b>
+                <small><b>N° Comprobante:</b> @pago.Id</small>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <small>Tienda de vivero y jardineria</small>
+                <small><b>Fecha:</b> @pago.Fecha</small>
+            </div>
+            <div class="d-flex justify-content-between">
+                <small>H. Irigoyen esq. Córdoba, Río Segundo</small>
+                <small><b>F.de Pago :</b> @pago.FormaPago</small>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <small>3572550166</small>
+                <small><b>Empleado:</b> @pago.ApplicationUser.NombreyApellido</small>
+            </div>
+
+            <hr />
+            <div class="text-left">
+                <small><b>Cliente:</b> @pago.Cliente.NombreyApellido</small> <br />
+                <small><b>Dirección:</b> @pago.Cliente.Dirección</small> <br />
+                <small><b>Teléfono:</b> @pago.Cliente.Teléfono</small>
+            </div>
+            <hr />
+
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th style="text-align:justify"><small>Concepto</small></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:justify"><small>@pago.Concepto</small></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="card-text text-right" style="margin:1.5rem">
+                <h6><b>IMPORTE</b></h6>
+                <h5><b>$@pago.Importe</b></h5>
+            </p>
+        </div>
+    </div>
+}
+
+@code {
+    public Pago pago { get; set; }
+
+    [Parameter] public int idpago { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var httpResponse = await Http.GetAsync($"api/pagos/{idpago}");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            pago = JsonSerializer.Deserialize<Pago>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("simple", "Error", "Pago no encontrado.", "error");
+            NavigationManager.NavigateTo("lista-pagos");
+        }
+    }
+
+    async Task BorrarPago(int idpago)
+    {
+        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "¿Eliminar pago?",
+            $"Cliente {pago.Cliente.NombreyApellido}. Fecha: {pago.Fecha}", "warning");
+        if (confirmacion)
+        {
+            var respuesta = await Http.DeleteAsync($"/api/pagos/{idpago}");
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("lista-pagos");
+                await JS.InvokeVoidAsync("simple", "¡Exito!", "Pago eliminado", "success");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("simple", "Error", "No se pudo eliminar pago", "error");
+            }
+        }
+    }
+
+    void Volver()
+    {
+        NavigationManager.NavigateTo("lista-pagos");
+    }
+}

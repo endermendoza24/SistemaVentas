@@ -204,14 +204,14 @@
       "netstandard.dll": "sha256-W3q3PN+lpRB+tRJEIhtMgYOGFv0pauEeeCS9iIRkKAM=",
       "System.Private.CoreLib.dll": "sha256-9rUJv1mXEQdGt\/kWiJ1ITPPzp3cAi3lSmqHVTisp7w0=",
       "SistemaVentasCaprichos.Shared.dll": "sha256-I7KCvIjZ1TLx6taJHlKE1DMT+qDbgZDKF49Yr98vee0=",
-      "SistemaVentasCaprichos.Client.dll": "sha256-lcRkkNHwGI4sSiHCiXfLlk0INuuvqOG6A38frHLznrg="
+      "SistemaVentasCaprichos.Client.dll": "sha256-\/5dTYfpkgn0B4x\/ij8BOogZO2busjfPDvcerp96zI\/c="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "SistemaVentasCaprichos.Shared.pdb": "sha256-b0oi+Qmg7zN1sLzkvqF9TGo1a9bKBSQBczcYJuVjkFQ=",
-      "SistemaVentasCaprichos.Client.pdb": "sha256-wn\/NI5c5uIzDr7ZfMD9tdjffyfKvO5IhyFZ6zuDsZHQ="
+      "SistemaVentasCaprichos.Client.pdb": "sha256-vDp7KpgYRSKToH7WyrCuc+OthRQ2AqgUcH4vndOPGG0="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-8oJip361m8OrfLRJOuIeswWKaoxtT27\/wINCxhn+s4c=",

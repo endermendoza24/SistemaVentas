@@ -1,0 +1,45 @@
+﻿@page "/crear-cliente"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+
+@attribute [Authorize]
+
+<div class="d-flex justify-content-between mb-3">
+    <div>
+        <button @onclick="@Volver" class="btn btn-sm btn-secondary">
+            <i class="oi oi-arrow-circle-left"></i> Volver al listado
+        </button>
+    </div>
+    <div>
+        <h3><b>Nuevo cliente</b></h3>
+    </div>
+</div>
+
+<FormCliente cliente="cliente" TextBotonSubmit="Guardar cliente"
+             OnValidSubmit="@CrearClient" />
+
+@code {
+    public Cliente cliente = new Cliente();
+
+    async Task CrearClient()
+    {
+        var respuesta = await Http.PostAsJsonAsync("api/clientes", cliente);
+
+        if (respuesta.IsSuccessStatusCode)
+        {
+            NavigationManager.NavigateTo("/lista-clientes");
+            await JS.InvokeVoidAsync("simple", "¡Éxito!", "Cliente creado", "success");
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("simple", "Error",
+                    $"DNI: {cliente.Dni} ya registrado. ", "error");
+        }
+    }
+
+    void Volver()
+    {
+        NavigationManager.NavigateTo("/lista-clientes");
+    }
+}

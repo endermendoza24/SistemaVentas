@@ -1,0 +1,72 @@
+﻿
+<EditForm Model="@cliente" OnValidSubmit="@OnValidSubmit">
+    <div class="form-field mt-2 mb-2">
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Nombre y Apellido</label>
+            <div class="col">
+                <div class="input-group">
+                    <InputText @bind-Value="@cliente.NombreyApellido" oninput="this.value=this.value.toUpperCase()" placeholder="Nombre y Apellido" class="form-control" />
+                </div>
+                <ValidationMessage For="@(() => cliente.NombreyApellido)" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label">DNI</label>
+            <div class="col">
+                <div class="input-group">
+                    <InputText @bind-Value="@cliente.Dni" placeholder="DNI" class="form-control" readonly="@ocultadni" />
+                </div>
+                <ValidationMessage For="@(() => cliente.Dni)" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Sexo</label>
+            <div class="col">
+                <div class="input-group">
+                    <InputSelect @bind-Value="cliente.Sexo" class="form-control">
+                        @foreach (string sexo in Enum.GetNames(typeof(Cliente.Sexos)))
+                        {
+                            <option value="@sexo"> @sexo</option>
+                        }
+                    </InputSelect>
+                </div>
+                <ValidationMessage For="@(() => cliente.Sexo)" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Dirección</label>
+            <div class="col">
+                <div class="input-group">
+                    <InputText @bind-Value="@cliente.Dirección" class="form-control" oninput="this.value=this.value.toUpperCase()" placeholder="Dirección" />
+                </div>
+                <ValidationMessage For="@(() => cliente.Dirección)" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Teléfono</label>
+            <div class="col">
+                <div class="input-group">
+                    <InputText @bind-Value="@cliente.Teléfono" class="form-control" oninput="this.value=this.value.toUpperCase()" placeholder="Teléfono" />
+                </div>
+                <ValidationMessage For="@(() => cliente.Teléfono)" />
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-success">
+            <i class="oi oi-check "></i>
+            <text style="color:white"> @TextBotonSubmit</text>
+        </button>
+    </div>
+    <DataAnnotationsValidator />
+</EditForm>
+
+@code {
+    [Parameter] public Cliente cliente { get; set; } = new Cliente();
+    [Parameter] public string TextBotonSubmit { get; set; }
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public bool ocultadni { get; set; } = false;
+}
