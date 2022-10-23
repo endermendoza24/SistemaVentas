@@ -29,5 +29,8 @@ namespace SistemaVentasCaprichos.Server.Data
         public DbSet<CuentaCorriente> CuentasCorrientes { get; set; }
         public DbSet<Compra> Compras { get; set; }
         public DbSet<DetalleCompra> DetalleCompras { get; set; }
+
+        public DbSet<Categorias> Categoria { get; set; }
+        public object Categorias { get; internal set; }
     }
 }
