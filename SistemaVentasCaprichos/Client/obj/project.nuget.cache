@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DofnD4jmyUnvRnfJJXyBNUs6psPNEGCxoAjjgtknz3g1HDb/CmTHFNQ9QseGCNFNzXTRwvartGX7cyyNFKPqKg==",
+  "dgSpecHash": "CWne1NY1M+Fra8HtQyUJtpHVh0GHDhvYYjBkPNIfcB2FS1sJKt1Fm7Tpbfq6YnLw2z9ML+43vdZkbDN4WJfxeg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
+  "projectFilePath": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.17\\microsoft.aspnetcore.authorization.5.0.17.nupkg.sha512",
     "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.aspnetcore.components\\5.0.17\\microsoft.aspnetcore.components.5.0.17.nupkg.sha512",

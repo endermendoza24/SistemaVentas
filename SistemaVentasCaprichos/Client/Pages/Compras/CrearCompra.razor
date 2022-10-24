@@ -8,15 +8,17 @@
 <h3><b>Nueva compra</b></h3>
 
 <FormCompra textSubmit=" Cargar compra" OnValidSubmit="CrearCompr" compra="compra"
-           ocultabtn=false articulos="articulos"></FormCompra>
+           ocultabtn=false articulos="articulos" categoria="categoria"></FormCompra>
 
 @code {
     public Compra compra = new Compra();
     public List<Articulo> articulos { get; set; } = new List<Articulo>();
+    public List<Categoria> categoria { get; set; } = new List<Categoria>();
 
     protected override async Task OnInitializedAsync()
     {
         articulos = await Http.GetFromJsonAsync<List<Articulo>>("api/articulos"); //muestro todos los articulos
+        categoria = await Http.GetFromJsonAsync<List<Categoria>>("api/cate"); //muestro todos los articulos
     }
 
     async Task CrearCompr()

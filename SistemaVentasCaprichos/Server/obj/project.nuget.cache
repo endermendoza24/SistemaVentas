@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S5M1FH3qvTKbS+HLrvByVaeFN2c2UAXFH+uiNzG7P3SrRp9TiOtamN2kvUGtHTc7zSo+31otID5Ynhi6YdwyBg==",
+  "dgSpecHash": "EBYe+lb+0Ig9ZUQqr7ZcPD9pltOSNk/l91rhRfFr+4a7rBRnfBlARRHLHpidbFmafU+cjHoNtoCx6cZLBE7Hdw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
+  "projectFilePath": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Endersson\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\Endersson\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

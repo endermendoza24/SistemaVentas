@@ -110,6 +110,7 @@
 
 @code {
     [Parameter] public Compra compra { get; set; } = new Compra();
+    [Parameter] public List<Categoria> categoria { get; set; } = new List<Categoria>();
     [Parameter] public List<Articulo> articulos { get; set; } = new List<Articulo>();
 
     [Parameter] public EventCallback OnValidSubmit { get; set; }

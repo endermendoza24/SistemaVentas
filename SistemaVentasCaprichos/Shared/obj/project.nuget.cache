@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Fe5Rm/wbdMb2yG0OkDxW3cF1EiTWCOnINHgw8ButGUV1fuKHyTHNKpyFyyyFjWbm2/Xo/XSemuGpYgIAA+V2pg==",
+  "dgSpecHash": "Prp/td1+UPnGOOdlTbre8ElapTJuyFcBuNk2KXofA7sNMF/4WQXhF9CY0wV6jBrqFR84ns337pR6l0uvlOm1sA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
+  "projectFilePath": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.7\\microsoft.aspnetcore.cryptography.internal.5.0.7.nupkg.sha512",
     "C:\\Users\\Endersson\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.7\\microsoft.aspnetcore.cryptography.keyderivation.5.0.7.nupkg.sha512",
