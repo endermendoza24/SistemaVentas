@@ -22,6 +22,9 @@ namespace SistemaVentasCaprichos.Shared
         [ForeignKey("EmpleadoId")]
         public virtual ApplicationUser ApplicationUser { get; set; }
         public decimal Total { get; set; }
+        public int? ProveedoresId { get; set; }
+        [ForeignKey("ProveedoresId")]
+        public Proveedores Proveedores { get; set; }
         #endregion
     }
 

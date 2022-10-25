@@ -130,7 +130,7 @@ using MudBlazor;
             __builder.AddMarkupContent(0, "<h3><b>Nueva venta</b></h3>\r\n\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Ventas.FormVenta>(1);
             __builder.AddAttribute(2, "textSubmit", " Finalizar venta");
-            __builder.AddAttribute(3, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+            __builder.AddAttribute(3, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 10 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\CrearVenta.razor"
                                                         CrearVent
@@ -139,7 +139,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(4, "venta", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Venta>(
+            __builder.AddAttribute(4, "venta", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Venta>(
 #nullable restore
 #line 10 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\CrearVenta.razor"
                                                                           venta
@@ -148,7 +148,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(5, "clientes", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Cliente>>(
+            __builder.AddAttribute(5, "clientes", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Cliente>>(
 #nullable restore
 #line 11 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\CrearVenta.razor"
                                     clientes
@@ -157,7 +157,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(6, "articulos", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Articulo>>(
+            __builder.AddAttribute(6, "articulos", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Articulo>>(
 #nullable restore
 #line 11 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\CrearVenta.razor"
                                                          articulos

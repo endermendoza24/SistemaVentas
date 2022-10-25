@@ -1,0 +1,79 @@
+﻿@page "/editar-proveedores/{idProveedor:int}"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@attribute [Authorize]
+
+
+<button @onclick="@Volver" class="btn btn-sm btn-secondary">
+    <i class="oi oi-arrow-circle-left"></i> Volver al listado
+</button>
+
+<hr />
+
+<div class="d-flex justify-content-between mb-3">
+    <h3><b>Editar marca</b></h3>
+    <div>
+        <button @onclick="@(() => BorrarArticulo(Proveedores.Id))" class="btn btn-sm btn-danger">
+            <i class="oi oi-trash"></i> Eliminar marca
+        </button>
+    </div>
+</div>
+<FormProveedor TextBotonSubmit="Guardar cambios"
+              OnValidSubmit="@EditarArtic" Proveedores="@Proveedores" />
+@code {
+    Proveedores Proveedores = new Proveedores();
+    [Parameter] public int idProveedor { get; set; }
+
+    protected async override Task OnParametersSetAsync()
+    {
+        Proveedores = await Http.GetFromJsonAsync<Proveedores>($"/api/proveedores/{idProveedor}");
+    }
+
+    void Volver()
+    {
+        NavigationManager.NavigateTo("/lista-proveedores");
+    }
+
+    async Task EditarArtic()
+    {
+        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "Editar",
+            $"¿Desea editar {Proveedores.Nombre}?", "question");
+        if (confirmacion)
+        {
+            var respuesta = await Http.PutAsJsonAsync("/api/proveedores", Proveedores);
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/lista-proveedores");
+                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Proveedores editada", "success");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("simple", "Error",
+                    "No se pudo editar la marca", "error");
+            }
+        }
+    }
+
+    async Task BorrarArticulo(int idCategoria)
+    {
+        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "Eliminar",
+            $"¿Desea eliminar {Proveedores.Nombre}?", "warning");
+        if (confirmacion)
+        {
+            var respuesta = await Http.DeleteAsync($"/api/proveedores/{Proveedores.Id}");
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/lista-proveedores");
+                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Proveedores eliminada", "success");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("simple", "Error",
+                    "No se pudo eliminar la marca", "error");
+            }
+        }
+    }
+}

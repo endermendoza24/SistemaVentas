@@ -143,7 +143,7 @@ using MudBlazor;
             __builder.AddMarkupContent(9, "\r\n\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Categorias.FormularioCategorias>(10);
             __builder.AddAttribute(11, "TextBotonSubmit", "Guardar categoría");
-            __builder.AddAttribute(12, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+            __builder.AddAttribute(12, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 19 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Categorias\CrearCategoria.razor"
                                                                           Crear
@@ -152,7 +152,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(13, "Categoria", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Categoria>(
+            __builder.AddAttribute(13, "Categoria", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Categoria>(
 #nullable restore
 #line 19 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Categorias\CrearCategoria.razor"
                                                                                              Categoria

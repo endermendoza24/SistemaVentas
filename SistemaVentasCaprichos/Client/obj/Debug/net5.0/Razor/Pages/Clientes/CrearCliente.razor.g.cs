@@ -149,7 +149,7 @@ using MudBlazor;
             __builder.CloseElement();
             __builder.AddMarkupContent(9, "\r\n\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Clientes.FormCliente>(10);
-            __builder.AddAttribute(11, "cliente", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Cliente>(
+            __builder.AddAttribute(11, "cliente", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Cliente>(
 #nullable restore
 #line 19 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\CrearCliente.razor"
                       cliente
@@ -159,7 +159,7 @@ using MudBlazor;
 #nullable disable
             ));
             __builder.AddAttribute(12, "TextBotonSubmit", "Guardar cliente");
-            __builder.AddAttribute(13, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+            __builder.AddAttribute(13, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 20 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\CrearCliente.razor"
                              CrearClient

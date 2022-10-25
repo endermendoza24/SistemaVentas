@@ -34,11 +34,17 @@ namespace SistemaVentasCaprichos.Shared
         [Required]
         [Range(0, 99999999, ErrorMessage = "Valor inválido")]
         public int StockActual { get; set; }
+
+        // conexión a categorías
         public int CategoriaId { get; set; }
         [ForeignKey("CategoriaId")]
         public Categoria Categorias { get; set; }
+        //  conexión a Marcas
+        public int MarcaId { get; set; }
+        [ForeignKey("MarcaId")]
+        public Marcas Marca { get; set; }
 
-      
+
         #endregion
 
         #region MÉTODOS

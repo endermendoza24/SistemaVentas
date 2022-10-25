@@ -338,6 +338,9 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("MarcaId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -367,6 +370,8 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
 
                     b.HasIndex("CategoriaId");
 
+                    b.HasIndex("MarcaId");
+
                     b.ToTable("Articulos");
                 });
 
@@ -383,6 +388,9 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
 
                     b.Property<bool>("Estado")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("FechaRegistro")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -446,12 +454,17 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ProveedoresId")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Total")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("EmpleadoId");
+
+                    b.HasIndex("ProveedoresId");
 
                     b.ToTable("Compras");
                 });
@@ -582,10 +595,9 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Descripción")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<string>("Descripcion")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<bool>("Estado")
                         .HasColumnType("bit");
@@ -671,21 +683,25 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Dirección")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Direccion")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("Estado")
                         .HasColumnType("bit");
 
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<int>("Teléfono")
                         .HasMaxLength(50)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
@@ -782,7 +798,15 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("SistemaVentasCaprichos.Shared.Marcas", "Marca")
+                        .WithMany()
+                        .HasForeignKey("MarcaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Categorias");
+
+                    b.Navigation("Marca");
                 });
 
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Compra", b =>
@@ -791,7 +815,13 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                         .WithMany("Compras")
                         .HasForeignKey("EmpleadoId");
 
+                    b.HasOne("SistemaVentasCaprichos.Shared.Proveedores", "Proveedores")
+                        .WithMany()
+                        .HasForeignKey("ProveedoresId");
+
                     b.Navigation("ApplicationUser");
+
+                    b.Navigation("Proveedores");
                 });
 
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.CuentaCorriente", b =>

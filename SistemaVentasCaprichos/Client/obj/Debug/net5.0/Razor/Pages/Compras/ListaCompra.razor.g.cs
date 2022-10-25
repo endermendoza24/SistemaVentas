@@ -292,55 +292,65 @@ else
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(54, "\r\n                    ");
                 __builder2.OpenElement(55, "td");
+                __builder2.AddContent(56, 
 #nullable restore
 #line 54 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\ListaCompra.razor"
-__builder2.AddContent(56, compra.Id);
+                         compra.Id
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(57, "\r\n                    ");
                 __builder2.OpenElement(58, "td");
+                __builder2.AddContent(59, 
 #nullable restore
 #line 55 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\ListaCompra.razor"
-__builder2.AddContent(59, compra.Fecha);
+                         compra.Fecha
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(60, "\r\n                    ");
                 __builder2.OpenElement(61, "td");
+                __builder2.AddContent(62, 
 #nullable restore
 #line 56 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\ListaCompra.razor"
-__builder2.AddContent(62, compra.Proveedor);
+                         compra.Proveedor
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(63, "\r\n                    ");
                 __builder2.OpenElement(64, "td");
+                __builder2.AddContent(65, 
 #nullable restore
 #line 57 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\ListaCompra.razor"
-__builder2.AddContent(65, compra.ApplicationUser.NombreyApellido);
+                         compra.ApplicationUser.NombreyApellido
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(66, "\r\n                    ");
                 __builder2.OpenElement(67, "td");
                 __builder2.OpenElement(68, "b");
                 __builder2.AddContent(69, "$");
+                __builder2.AddContent(70, 
 #nullable restore
 #line 58 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\ListaCompra.razor"
-__builder2.AddContent(70, compra.Total);
+                             compra.Total
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();

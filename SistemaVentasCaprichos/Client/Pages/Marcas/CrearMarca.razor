@@ -1,0 +1,43 @@
+﻿@page "/crearmarca"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@attribute [Authorize]
+
+<div class="d-flex justify-content-between mb-3">
+    <div>
+        <button @onclick="@Volver" class="btn btn-sm btn-secondary">
+            <i class="oi oi-arrow-circle-left"></i> Volver al listado
+        </button>
+    </div>
+    <div>
+        <h3><b>Nueva marca</b></h3>
+    </div>
+</div>
+
+<FormularioMarcas TextBotonSubmit="Guardar" OnValidSubmit="@Crear" Marca="@Marca" />
+
+@code {
+    Marcas Marca = new Marcas();
+
+    async Task Crear()
+    {
+        var respuesta = await Http.PostAsJsonAsync("/api/marcas", Marca);
+
+        if (respuesta.IsSuccessStatusCode)
+        {
+            NavigationManager.NavigateTo("/lista-marcas"); //  cambiar a indexArticulo
+            await JS.InvokeVoidAsync("simple", "¡Éxito!", "Marca creada", "success");
+        }
+        else
+        {
+            //await JS.InvokeVoidAsync("simple", "Error",
+            //        "No se pudo crear este producto", "error");
+        }
+    }
+
+    void Volver()
+    {
+        NavigationManager.NavigateTo("/lista-marcas"); //  cambiar a index
+    }
+}

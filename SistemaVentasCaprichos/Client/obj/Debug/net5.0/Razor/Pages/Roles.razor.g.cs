@@ -166,13 +166,15 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             );
+            __builder.AddContent(13, 
 #nullable restore
 #line 13 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Roles.razor"
-__builder.AddContent(13, usuario.NombreyApellido);
+                                         usuario.NombreyApellido
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
 #nullable restore
 #line 14 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Roles.razor"
@@ -220,13 +222,15 @@ __builder.AddContent(13, usuario.NombreyApellido);
 #line hidden
 #nullable disable
             );
+            __builder.AddContent(26, 
 #nullable restore
 #line 21 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Roles.razor"
-__builder.AddContent(26, rol.Name);
+                                       rol.Name
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
 #nullable restore
 #line 22 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Roles.razor"

@@ -1,0 +1,143 @@
+﻿@page "/lista-marcas"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@*@attribute [Authorize]*@
+
+@using System.Text.Json
+
+<MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Create" Color="Color.Success" Size="Size.Medium">
+    <a style="text-decoration:none; color:#fff;"  @onclick="CrearArticulo">Agregar categoría</a>
+</MudButton>
+
+
+
+@if (Marca == null)
+{
+    <div class="d-flex justify-content-center align-items-center" style="height:24rem">
+        <div class="spinner-grow text-success" role="status">
+            <span class="sr-only">Cargando...</span>
+        </div>
+    </div>
+}
+else if (Marca.Count == 0)
+{
+    <div class="d-flex justify-content-center align-items-center" style="height:24rem">
+        <text>No se encontraron marcas.</text>
+    </div>
+}
+else
+{   
+    <MudTable Items="@Marca" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Marcas,bool>(FilterFunc1)"
+              @bind-SelectedItem="selectedItem1">
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Marcas</MudText>
+            <MudSpacer />
+            <MudTextField @bind-Value="searchString1" Placeholder="Buscar marca..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh Style="width:50px;">Nr</MudTh>
+            <MudTh Class="thead-dark">Nombre</MudTh>
+            <MudTh>Descripción</MudTh>
+            <MudTh>Fecha registro</MudTh>
+            <MudTh>Acciones</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Id">@context.Id</MudTd>
+            <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
+            <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
+            <MudTd DataLabel="Fecha">@context.Fecha</MudTd>
+            <MudTd>
+                <MudFab Color="Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
+                        @onclick="@(() => NavigationManager.NavigateTo($"/editar-marcas/{context.Id}"))" />
+            </MudTd>
+
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager />
+        </PagerContent>
+    </MudTable>
+
+
+}
+@code {
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private string searchString1 = "";
+    private Marcas selectedItem1 = null;
+    private HashSet<Marcas> selectedItems = new HashSet<Marcas>();
+
+
+    public List<Marcas> Marca { get; set; } //muestra todos los Categoria
+    Marcas objMarca = new Marcas();
+
+    private string NombreArtFiltro = String.Empty; //filtros
+
+    protected bool lista = false;
+    protected bool card = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarMarcas();
+    }
+
+    async Task CargarMarcas()
+    {
+        var httpResponse = await Http.GetAsync($"api/marcas");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            Marca = JsonSerializer.Deserialize<List<Marcas>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+    }
+
+    void CambiarVista() //  esta parte cambia entre vista de tarjetas o vista de grilla
+    {
+        lista = !lista;
+        card = !card;
+    }
+
+
+    async Task MostrarTodos()
+    {
+        await CargarMarcas();
+    }
+
+    void CrearArticulo()
+    {
+        NavigationManager.NavigateTo("crearmarca");
+    }
+
+    private async Task Filtrar()
+    {
+        await CargarMarcas();
+    }
+
+    private async Task Limpiar()
+    {
+        NombreArtFiltro = string.Empty;
+        await CargarMarcas();
+    }
+
+    // esta es la funcion de filtrado de MudBlazor
+    private bool FilterFunc1(Marcas element) => FilterFunc(element, searchString1);
+
+    private bool FilterFunc(Marcas element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Descripcion.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        return false;
+    }
+}

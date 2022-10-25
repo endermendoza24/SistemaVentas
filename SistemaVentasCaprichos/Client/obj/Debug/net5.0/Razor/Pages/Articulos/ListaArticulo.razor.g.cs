@@ -382,26 +382,30 @@ else
             __builder.AddAttribute(91, "b-64rsms2ebu");
             __builder.OpenElement(92, "b");
             __builder.AddAttribute(93, "b-64rsms2ebu");
+            __builder.AddContent(94, 
 #nullable restore
 #line 70 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder.AddContent(94, articulo.Nombre);
+                                articulo.Nombre
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(95, "\r\n                        ");
             __builder.OpenElement(96, "p");
             __builder.AddAttribute(97, "class", "card-subtitle");
             __builder.AddAttribute(98, "b-64rsms2ebu");
+            __builder.AddContent(99, 
 #nullable restore
 #line 73 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder.AddContent(99, articulo.Categorias);
+                             articulo.Categorias
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.AddMarkupContent(100, "\r\n                        ");
             __builder.OpenElement(101, "p");
@@ -411,13 +415,15 @@ __builder.AddContent(99, articulo.Categorias);
             __builder.OpenElement(105, "b");
             __builder.AddAttribute(106, "b-64rsms2ebu");
             __builder.AddContent(107, "$");
+            __builder.AddContent(108, 
 #nullable restore
 #line 76 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder.AddContent(108, articulo.PrecioUnitario);
+                                         articulo.PrecioUnitario
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.AddMarkupContent(109, "\r\n                            <br b-64rsms2ebu>");
 #nullable restore
@@ -432,13 +438,15 @@ __builder.AddContent(108, articulo.PrecioUnitario);
             __builder.AddAttribute(111, "style", "color:darkred");
             __builder.AddAttribute(112, "b-64rsms2ebu");
             __builder.AddContent(113, "STOCK BAJO: ");
+            __builder.AddContent(114, 
 #nullable restore
 #line 80 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder.AddContent(114, articulo.StockActual);
+                                                                      articulo.StockActual
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
 #nullable restore
 #line 81 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
@@ -453,13 +461,15 @@ __builder.AddContent(114, articulo.StockActual);
             __builder.AddAttribute(116, "style", "color:darkorange");
             __builder.AddAttribute(117, "b-64rsms2ebu");
             __builder.AddContent(118, "STOCK EXCEDIDO: ");
+            __builder.AddContent(119, 
 #nullable restore
 #line 84 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder.AddContent(119, articulo.StockActual);
+                                                                             articulo.StockActual
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
 #nullable restore
 #line 85 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
@@ -474,13 +484,15 @@ __builder.AddContent(119, articulo.StockActual);
             __builder.AddAttribute(121, "style", "color:green");
             __builder.AddAttribute(122, "b-64rsms2ebu");
             __builder.AddContent(123, "STOCK: ");
+            __builder.AddContent(124, 
 #nullable restore
 #line 88 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder.AddContent(124, articulo.StockActual);
+                                                               articulo.StockActual
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
 #nullable restore
 #line 89 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
@@ -585,36 +597,42 @@ __builder.AddContent(124, articulo.StockActual);
                 __builder2.AddAttribute(155, "b-64rsms2ebu");
                 __builder2.OpenElement(156, "b");
                 __builder2.AddAttribute(157, "b-64rsms2ebu");
+                __builder2.AddContent(158, 
 #nullable restore
 #line 115 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder2.AddContent(158, articulo.Nombre);
+                            articulo.Nombre
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(159, "\r\n                    ");
                 __builder2.OpenElement(160, "td");
                 __builder2.AddAttribute(161, "b-64rsms2ebu");
+                __builder2.AddContent(162, 
 #nullable restore
 #line 116 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder2.AddContent(162, articulo.Categorias);
+                         articulo.Categorias
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(163, "\r\n                    ");
                 __builder2.OpenElement(164, "td");
                 __builder2.AddAttribute(165, "b-64rsms2ebu");
+                __builder2.AddContent(166, 
 #nullable restore
 #line 117 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder2.AddContent(166, articulo.Descripcion);
+                         articulo.Descripcion
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(167, "\r\n                    ");
                 __builder2.OpenElement(168, "td");
@@ -622,25 +640,29 @@ __builder2.AddContent(166, articulo.Descripcion);
                 __builder2.OpenElement(170, "b");
                 __builder2.AddAttribute(171, "b-64rsms2ebu");
                 __builder2.AddContent(172, "$");
+                __builder2.AddContent(173, 
 #nullable restore
 #line 118 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder2.AddContent(173, articulo.PrecioUnitario);
+                             articulo.PrecioUnitario
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(174, "\r\n                    ");
                 __builder2.OpenElement(175, "td");
                 __builder2.AddAttribute(176, "b-64rsms2ebu");
+                __builder2.AddContent(177, 
 #nullable restore
 #line 119 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder2.AddContent(177, articulo.Ultima_Modificación);
+                         articulo.Ultima_Modificación
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
 #nullable restore
 #line 121 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
@@ -655,13 +677,15 @@ __builder2.AddContent(177, articulo.Ultima_Modificación);
                 __builder2.AddAttribute(180, "b-64rsms2ebu");
                 __builder2.OpenElement(181, "b");
                 __builder2.AddAttribute(182, "b-64rsms2ebu");
+                __builder2.AddContent(183, 
 #nullable restore
 #line 124 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder2.AddContent(183, articulo.StockActual);
+                                articulo.StockActual
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.AddMarkupContent(184, " ↓");
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -679,13 +703,15 @@ __builder2.AddContent(183, articulo.StockActual);
                 __builder2.AddAttribute(187, "b-64rsms2ebu");
                 __builder2.OpenElement(188, "b");
                 __builder2.AddAttribute(189, "b-64rsms2ebu");
+                __builder2.AddContent(190, 
 #nullable restore
 #line 130 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder2.AddContent(190, articulo.StockActual);
+                                articulo.StockActual
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.AddMarkupContent(191, " ↑");
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -703,13 +729,15 @@ __builder2.AddContent(190, articulo.StockActual);
                 __builder2.AddAttribute(194, "b-64rsms2ebu");
                 __builder2.OpenElement(195, "b");
                 __builder2.AddAttribute(196, "b-64rsms2ebu");
+                __builder2.AddContent(197, 
 #nullable restore
 #line 136 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
-__builder2.AddContent(197, articulo.StockActual);
+                                articulo.StockActual
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
 #nullable restore

@@ -161,43 +161,51 @@ else
 #nullable disable
             __builder.OpenElement(7, "tr");
             __builder.OpenElement(8, "td");
+            __builder.AddContent(9, 
 #nullable restore
 #line 31 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\FetchData.razor"
-__builder.AddContent(9, forecast.Date.ToShortDateString());
+                         forecast.Date.ToShortDateString()
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.AddMarkupContent(10, "\r\n                    ");
             __builder.OpenElement(11, "td");
+            __builder.AddContent(12, 
 #nullable restore
 #line 32 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\FetchData.razor"
-__builder.AddContent(12, forecast.TemperatureC);
+                         forecast.TemperatureC
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.AddMarkupContent(13, "\r\n                    ");
             __builder.OpenElement(14, "td");
+            __builder.AddContent(15, 
 #nullable restore
 #line 33 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\FetchData.razor"
-__builder.AddContent(15, forecast.TemperatureF);
+                         forecast.TemperatureF
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.AddMarkupContent(16, "\r\n                    ");
             __builder.OpenElement(17, "td");
+            __builder.AddContent(18, 
 #nullable restore
 #line 34 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\FetchData.razor"
-__builder.AddContent(18, forecast.Summary);
+                         forecast.Summary
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
 #nullable restore

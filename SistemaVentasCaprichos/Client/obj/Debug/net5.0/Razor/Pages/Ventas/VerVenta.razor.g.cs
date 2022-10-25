@@ -200,13 +200,15 @@ using System.Text.Json;
             __builder.OpenElement(34, "small");
             __builder.AddAttribute(35, "b-np7uj7vsnh");
             __builder.AddMarkupContent(36, "<b b-np7uj7vsnh>N° Comprobante:</b> ");
+            __builder.AddContent(37, 
 #nullable restore
 #line 35 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-__builder.AddContent(37, venta.Id);
+                                               venta.Id
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(38, "\r\n\r\n            ");
@@ -217,13 +219,15 @@ __builder.AddContent(37, venta.Id);
             __builder.OpenElement(43, "small");
             __builder.AddAttribute(44, "b-np7uj7vsnh");
             __builder.AddMarkupContent(45, "<b b-np7uj7vsnh>Fecha:</b> ");
+            __builder.AddContent(46, 
 #nullable restore
 #line 40 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-__builder.AddContent(46, venta.Fecha);
+                                      venta.Fecha
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(47, "\r\n            ");
@@ -234,13 +238,15 @@ __builder.AddContent(46, venta.Fecha);
             __builder.OpenElement(52, "small");
             __builder.AddAttribute(53, "b-np7uj7vsnh");
             __builder.AddMarkupContent(54, "<b b-np7uj7vsnh>F.de Pago:</b> ");
+            __builder.AddContent(55, 
 #nullable restore
 #line 44 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-__builder.AddContent(55, venta.FormaPago);
+                                          venta.FormaPago
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(56, "\r\n\r\n            ");
@@ -251,13 +257,15 @@ __builder.AddContent(55, venta.FormaPago);
             __builder.OpenElement(61, "small");
             __builder.AddAttribute(62, "b-np7uj7vsnh");
             __builder.AddMarkupContent(63, "<b b-np7uj7vsnh>Empleado:</b> ");
+            __builder.AddContent(64, 
 #nullable restore
 #line 49 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-__builder.AddContent(64, venta.ApplicationUser.NombreyApellido);
+                                         venta.ApplicationUser.NombreyApellido
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
 #nullable restore
@@ -275,37 +283,43 @@ __builder.AddContent(64, venta.ApplicationUser.NombreyApellido);
             __builder.OpenElement(69, "small");
             __builder.AddAttribute(70, "b-np7uj7vsnh");
             __builder.AddMarkupContent(71, "<b b-np7uj7vsnh>Cliente:</b> ");
+            __builder.AddContent(72, 
 #nullable restore
 #line 56 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-__builder.AddContent(72, venta.Cliente.NombreyApellido);
+                                            venta.Cliente.NombreyApellido
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.AddMarkupContent(73, " <br b-np7uj7vsnh>\r\n                    ");
             __builder.OpenElement(74, "small");
             __builder.AddAttribute(75, "b-np7uj7vsnh");
             __builder.AddMarkupContent(76, "<b b-np7uj7vsnh>Dirección:</b> ");
+            __builder.AddContent(77, 
 #nullable restore
 #line 57 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-__builder.AddContent(77, venta.Cliente.Dirección);
+                                              venta.Cliente.Dirección
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.AddMarkupContent(78, " <br b-np7uj7vsnh>\r\n                    ");
             __builder.OpenElement(79, "small");
             __builder.AddAttribute(80, "b-np7uj7vsnh");
             __builder.AddMarkupContent(81, "<b b-np7uj7vsnh>Teléfono:</b> ");
+            __builder.AddContent(82, 
 #nullable restore
 #line 58 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-__builder.AddContent(82, venta.Cliente.Teléfono);
+                                             venta.Cliente.Teléfono
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
 #nullable restore
@@ -341,13 +355,15 @@ __builder.AddContent(82, venta.Cliente.Teléfono);
             __builder.AddAttribute(93, "b-np7uj7vsnh");
             __builder.OpenElement(94, "small");
             __builder.AddAttribute(95, "b-np7uj7vsnh");
+            __builder.AddContent(96, 
 #nullable restore
 #line 77 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-__builder.AddContent(96, item.Articulo.Nombre);
+                                        item.Articulo.Nombre
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(97, "\r\n                            ");
@@ -355,13 +371,15 @@ __builder.AddContent(96, item.Articulo.Nombre);
             __builder.AddAttribute(99, "b-np7uj7vsnh");
             __builder.OpenElement(100, "small");
             __builder.AddAttribute(101, "b-np7uj7vsnh");
+            __builder.AddContent(102, 
 #nullable restore
 #line 78 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-__builder.AddContent(102, item.Precio);
+                                        item.Precio
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(103, "\r\n                            ");
@@ -369,13 +387,15 @@ __builder.AddContent(102, item.Precio);
             __builder.AddAttribute(105, "b-np7uj7vsnh");
             __builder.OpenElement(106, "small");
             __builder.AddAttribute(107, "b-np7uj7vsnh");
+            __builder.AddContent(108, 
 #nullable restore
 #line 79 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-__builder.AddContent(108, item.Cantidad);
+                                        item.Cantidad
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(109, "\r\n                            ");
@@ -383,13 +403,15 @@ __builder.AddContent(108, item.Cantidad);
             __builder.AddAttribute(111, "b-np7uj7vsnh");
             __builder.OpenElement(112, "small");
             __builder.AddAttribute(113, "b-np7uj7vsnh");
+            __builder.AddContent(114, 
 #nullable restore
 #line 80 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-__builder.AddContent(114, item.Descuento);
+                                        item.Descuento
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.AddContent(115, "%");
             __builder.CloseElement();
             __builder.CloseElement();
@@ -398,13 +420,15 @@ __builder.AddContent(114, item.Descuento);
             __builder.AddAttribute(118, "b-np7uj7vsnh");
             __builder.OpenElement(119, "small");
             __builder.AddAttribute(120, "b-np7uj7vsnh");
+            __builder.AddContent(121, 
 #nullable restore
 #line 81 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-__builder.AddContent(121, item.SubTotal);
+                                        item.SubTotal
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();
@@ -427,13 +451,15 @@ __builder.AddContent(121, item.SubTotal);
             __builder.OpenElement(129, "b");
             __builder.AddAttribute(130, "b-np7uj7vsnh");
             __builder.AddContent(131, "$");
+            __builder.AddContent(132, 
 #nullable restore
 #line 89 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-__builder.AddContent(132, venta.Total);
+                         venta.Total
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();

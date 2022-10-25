@@ -163,7 +163,7 @@ using MudBlazor;
             __builder.AddMarkupContent(13, "\r\n\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Articulos.FormArticulo>(14);
             __builder.AddAttribute(15, "TextBotonSubmit", "Guardar cambios");
-            __builder.AddAttribute(16, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+            __builder.AddAttribute(16, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 24 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\EditarArticulo.razor"
                                         EditarArtic
@@ -172,7 +172,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(17, "articulo", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Articulo>(
+            __builder.AddAttribute(17, "articulo", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Articulo>(
 #nullable restore
 #line 24 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\EditarArticulo.razor"
                                                                 articulo

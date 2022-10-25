@@ -285,23 +285,27 @@ else
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(49, "\r\n                    ");
                 __builder2.OpenElement(50, "td");
+                __builder2.AddContent(51, 
 #nullable restore
 #line 52 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\ListaPago.razor"
-__builder2.AddContent(51, pago.Id);
+                         pago.Id
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(52, "\r\n                    ");
                 __builder2.OpenElement(53, "td");
+                __builder2.AddContent(54, 
 #nullable restore
 #line 53 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\ListaPago.razor"
-__builder2.AddContent(54, pago.Fecha);
+                         pago.Fecha
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(55, "\r\n                    ");
                 __builder2.OpenElement(56, "td");
@@ -316,37 +320,43 @@ __builder2.AddContent(54, pago.Fecha);
 #nullable disable
                 ));
                 __builder2.OpenElement(59, "b");
+                __builder2.AddContent(60, 
 #nullable restore
 #line 54 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\ListaPago.razor"
-__builder2.AddContent(60, pago.Cliente.NombreyApellido);
+                                                                     pago.Cliente.NombreyApellido
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(61, "\r\n                    ");
                 __builder2.OpenElement(62, "td");
+                __builder2.AddContent(63, 
 #nullable restore
 #line 55 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\ListaPago.razor"
-__builder2.AddContent(63, pago.ApplicationUser.NombreyApellido);
+                         pago.ApplicationUser.NombreyApellido
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(64, "\r\n                    ");
                 __builder2.OpenElement(65, "td");
                 __builder2.OpenElement(66, "b");
                 __builder2.AddContent(67, "$");
+                __builder2.AddContent(68, 
 #nullable restore
 #line 56 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\ListaPago.razor"
-__builder2.AddContent(68, pago.Importe);
+                             pago.Importe
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();

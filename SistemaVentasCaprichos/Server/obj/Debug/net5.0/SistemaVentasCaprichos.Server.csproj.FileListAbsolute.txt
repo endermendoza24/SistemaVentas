@@ -346,7 +346,7 @@ C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\SistemaVentasCaprichos.Server.Views.pdb
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\SistemaVentasCaprichos.Server.csproj.CopyComplete
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\SistemaVentasCaprichos.Server.dll
-C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\refint\SistemaVentasCaprichos.Server.dll
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\SistemaVentasCaprichos.Server.pdb
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\SistemaVentasCaprichos.Server.genruntimeconfig.cache
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Server.dll
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\bin\Debug\net5.0\ref\SistemaVentasCaprichos.Server.dll

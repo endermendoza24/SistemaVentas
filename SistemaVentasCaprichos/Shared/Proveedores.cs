@@ -12,16 +12,19 @@ namespace SistemaVentasCaprichos.Shared
         [Key]
         public int Id { get; set; }
         [Required]
-        [MaxLength(30, ErrorMessage = "Máximo 30 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
+        [MaxLength(50, ErrorMessage = "Máximo 50 caracteres"), MinLength(2, ErrorMessage = "Minimo 2 caracteres")]
         public string Nombre { get; set; }
         [Required]
-        [MaxLength(50, ErrorMessage = "Máximo 50 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
-        public int Teléfono { get; set; }
+        [MaxLength(20, ErrorMessage = "Máximo 20 caracteres"), MinLength(2, ErrorMessage = "Minimo 2 caracteres")]
+        [Phone]
+        public string Telefono { get; set; }
 
-        [Required]
-        public string Dirección { get; set; }
+        [MaxLength(50, ErrorMessage = "Máximo 50 caracteres"), MinLength(2, ErrorMessage = "Minimo 2 caracteres")]
+        public string Direccion { get; set; }
 
-        public bool Estado { get; set; }
+        public DateTime Fecha { get; set; } = DateTime.Now;
+
+        public bool Estado { get; set; } = true;
 
         #endregion
     }

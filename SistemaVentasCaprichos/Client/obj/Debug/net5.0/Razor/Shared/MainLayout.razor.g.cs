@@ -148,13 +148,15 @@ using MudBlazor;
             __builder.OpenElement(19, "div");
             __builder.AddAttribute(20, "class", "content px-3");
             __builder.AddAttribute(21, "b-x13t0nzs1e");
+            __builder.AddContent(22, 
 #nullable restore
 #line 16 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
-__builder.AddContent(22, Body);
+             Body
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();

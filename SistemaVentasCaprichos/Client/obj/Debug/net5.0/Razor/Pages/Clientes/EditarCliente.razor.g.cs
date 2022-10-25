@@ -162,7 +162,7 @@ using MudBlazor;
             __builder.CloseElement();
             __builder.AddMarkupContent(13, "\r\n\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Clientes.FormCliente>(14);
-            __builder.AddAttribute(15, "cliente", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Cliente>(
+            __builder.AddAttribute(15, "cliente", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Cliente>(
 #nullable restore
 #line 23 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\EditarCliente.razor"
                       cliente
@@ -171,7 +171,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(16, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+            __builder.AddAttribute(16, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 23 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\EditarCliente.razor"
                                                EditarClient
@@ -180,7 +180,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(17, "ocultadni", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+            __builder.AddAttribute(17, "ocultadni", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 24 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\EditarCliente.razor"
                         ocultadni
@@ -286,45 +286,53 @@ using MudBlazor;
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(40, "\r\n                        ");
                 __builder2.OpenElement(41, "td");
+                __builder2.AddContent(42, 
 #nullable restore
 #line 54 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\EditarCliente.razor"
-__builder2.AddContent(42, cuenta.Fecha);
+                             cuenta.Fecha
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(43, "\r\n                        ");
                 __builder2.OpenElement(44, "td");
+                __builder2.AddContent(45, 
 #nullable restore
 #line 55 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\EditarCliente.razor"
-__builder2.AddContent(45, cuenta.Concepto);
+                             cuenta.Concepto
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(46, "\r\n                        ");
                 __builder2.OpenElement(47, "td");
                 __builder2.OpenElement(48, "b");
+                __builder2.AddContent(49, 
 #nullable restore
 #line 56 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\EditarCliente.razor"
-__builder2.AddContent(49, cuenta.Importe);
+                                cuenta.Importe
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(50, "\r\n                        ");
                 __builder2.OpenElement(51, "td");
+                __builder2.AddContent(52, 
 #nullable restore
 #line 57 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\EditarCliente.razor"
-__builder2.AddContent(52, cuenta.Saldo_Parcial);
+                             cuenta.Saldo_Parcial
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
             }

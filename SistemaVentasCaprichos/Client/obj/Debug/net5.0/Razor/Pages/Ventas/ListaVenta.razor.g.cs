@@ -309,33 +309,39 @@ else
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(56, "\r\n                    ");
                 __builder2.OpenElement(57, "td");
+                __builder2.AddContent(58, 
 #nullable restore
 #line 54 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\ListaVenta.razor"
-__builder2.AddContent(58, venta.Id);
+                         venta.Id
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(59, "\r\n                    ");
                 __builder2.OpenElement(60, "td");
+                __builder2.AddContent(61, 
 #nullable restore
 #line 55 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\ListaVenta.razor"
-__builder2.AddContent(61, venta.Fecha);
+                         venta.Fecha
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(62, "\r\n                    ");
                 __builder2.OpenElement(63, "td");
+                __builder2.AddContent(64, 
 #nullable restore
 #line 56 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\ListaVenta.razor"
-__builder2.AddContent(64, venta.FormaPago);
+                         venta.FormaPago
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
 #nullable restore
 #line 57 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\ListaVenta.razor"
@@ -357,13 +363,15 @@ __builder2.AddContent(64, venta.FormaPago);
 #nullable disable
                 ));
                 __builder2.OpenElement(68, "b");
+                __builder2.AddContent(69, 
 #nullable restore
 #line 59 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\ListaVenta.razor"
-__builder2.AddContent(69, venta.Cliente.NombreyApellido);
+                                                                          venta.Cliente.NombreyApellido
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -385,25 +393,29 @@ __builder2.AddContent(69, venta.Cliente.NombreyApellido);
 #line hidden
 #nullable disable
                 __builder2.OpenElement(71, "td");
+                __builder2.AddContent(72, 
 #nullable restore
 #line 65 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\ListaVenta.razor"
-__builder2.AddContent(72, venta.ApplicationUser.NombreyApellido);
+                         venta.ApplicationUser.NombreyApellido
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(73, "\r\n                    ");
                 __builder2.OpenElement(74, "td");
                 __builder2.OpenElement(75, "b");
                 __builder2.AddContent(76, "$");
+                __builder2.AddContent(77, 
 #nullable restore
 #line 66 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\ListaVenta.razor"
-__builder2.AddContent(77, venta.Total);
+                             venta.Total
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();

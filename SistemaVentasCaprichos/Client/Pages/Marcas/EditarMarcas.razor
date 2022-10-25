@@ -1,0 +1,79 @@
+﻿@page "/editar-marcas/{idMarca:int}"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@attribute [Authorize]
+
+
+<button @onclick="@Volver" class="btn btn-sm btn-secondary">
+    <i class="oi oi-arrow-circle-left"></i> Volver al listado
+</button>
+
+<hr />
+
+<div class="d-flex justify-content-between mb-3">
+    <h3><b>Editar marca</b></h3>
+    <div>
+        <button @onclick="@(() => BorrarArticulo(Marca.Id))" class="btn btn-sm btn-danger">
+            <i class="oi oi-trash"></i> Eliminar marca
+        </button>
+    </div>
+</div>
+<FormularioMarcas TextBotonSubmit="Guardar cambios"
+              OnValidSubmit="@EditarArtic" Marca="@Marca" />
+@code {
+    Marcas Marca = new Marcas();
+    [Parameter] public int idMarca { get; set; }
+
+    protected async override Task OnParametersSetAsync()
+    {
+        Marca = await Http.GetFromJsonAsync<Marcas>($"/api/marcas/{idMarca}");
+    }
+
+    void Volver()
+    {
+        NavigationManager.NavigateTo("/lista-marcas");
+    }
+
+    async Task EditarArtic()
+    {
+        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "Editar",
+            $"¿Desea editar {Marca.Nombre}?", "question");
+        if (confirmacion)
+        {
+            var respuesta = await Http.PutAsJsonAsync("/api/marcas", Marca);
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/lista-marcas");
+                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Marca editada", "success");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("simple", "Error",
+                    "No se pudo editar la marca", "error");
+            }
+        }
+    }
+
+    async Task BorrarArticulo(int idCategoria)
+    {
+        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "Eliminar",
+            $"¿Desea eliminar {Marca.Nombre}?", "warning");
+        if (confirmacion)
+        {
+            var respuesta = await Http.DeleteAsync($"/api/marcas/{Marca.Id}");
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/lista-marcas");
+                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Marca eliminada", "success");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("simple", "Error",
+                    "No se pudo eliminar la marca", "error");
+            }
+        }
+    }
+}

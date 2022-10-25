@@ -379,13 +379,15 @@ else
             __builder.AddAttribute(88, "b-phqimgj4wb");
             __builder.OpenElement(89, "b");
             __builder.AddAttribute(90, "b-phqimgj4wb");
+            __builder.AddContent(91, 
 #nullable restore
 #line 73 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
-__builder.AddContent(91, cliente.NombreyApellido);
+                                cliente.NombreyApellido
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(92, "\r\n                        ");
@@ -393,29 +395,35 @@ __builder.AddContent(91, cliente.NombreyApellido);
             __builder.AddAttribute(94, "class", "card-text");
             __builder.AddAttribute(95, "b-phqimgj4wb");
             __builder.AddMarkupContent(96, "\r\n                            DNI: ");
+            __builder.AddContent(97, 
 #nullable restore
 #line 76 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
-__builder.AddContent(97, cliente.Dni);
+                                  cliente.Dni
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.AddMarkupContent(98, "\r\n                            <br b-phqimgj4wb> ");
+            __builder.AddContent(99, 
 #nullable restore
 #line 77 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
-__builder.AddContent(99, cliente.Dirección);
+                                    cliente.Dirección
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.AddContent(100, " - (");
+            __builder.AddContent(101, 
 #nullable restore
 #line 77 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
-__builder.AddContent(101, cliente.Teléfono);
+                                                          cliente.Teléfono
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.AddMarkupContent(102, ")\r\n                        ");
             __builder.CloseElement();
             __builder.AddMarkupContent(103, "\r\n                        ");
@@ -425,13 +433,15 @@ __builder.AddContent(101, cliente.Teléfono);
             __builder.OpenElement(107, "b");
             __builder.AddAttribute(108, "b-phqimgj4wb");
             __builder.AddContent(109, "DEUDA: $");
+            __builder.AddContent(110, 
 #nullable restore
 #line 80 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
-__builder.AddContent(110, cliente.Saldo);
+                                        cliente.Saldo
 
 #line default
 #line hidden
 #nullable disable
+            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();
@@ -510,25 +520,29 @@ __builder.AddContent(110, cliente.Saldo);
                 __builder2.AddAttribute(133, "b-phqimgj4wb");
                 __builder2.OpenElement(134, "b");
                 __builder2.AddAttribute(135, "b-phqimgj4wb");
+                __builder2.AddContent(136, 
 #nullable restore
 #line 104 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
-__builder2.AddContent(136, cliente.NombreyApellido);
+                            cliente.NombreyApellido
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(137, "\r\n                    ");
                 __builder2.OpenElement(138, "td");
                 __builder2.AddAttribute(139, "b-phqimgj4wb");
+                __builder2.AddContent(140, 
 #nullable restore
 #line 105 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
-__builder2.AddContent(140, cliente.Dni);
+                         cliente.Dni
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(141, "\r\n                    ");
                 __builder2.OpenElement(142, "td");
@@ -579,24 +593,28 @@ __builder2.AddContent(140, cliente.Dni);
                 __builder2.AddMarkupContent(147, "\r\n                    ");
                 __builder2.OpenElement(148, "td");
                 __builder2.AddAttribute(149, "b-phqimgj4wb");
+                __builder2.AddContent(150, 
 #nullable restore
 #line 120 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
-__builder2.AddContent(150, cliente.Dirección);
+                         cliente.Dirección
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(151, "\r\n                    ");
                 __builder2.OpenElement(152, "td");
                 __builder2.AddAttribute(153, "b-phqimgj4wb");
+                __builder2.AddContent(154, 
 #nullable restore
 #line 121 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
-__builder2.AddContent(154, cliente.Teléfono);
+                         cliente.Teléfono
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
 #nullable restore
 #line 123 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
@@ -612,13 +630,15 @@ __builder2.AddContent(154, cliente.Teléfono);
                 __builder2.OpenElement(158, "b");
                 __builder2.AddAttribute(159, "b-phqimgj4wb");
                 __builder2.AddContent(160, "$");
+                __builder2.AddContent(161, 
 #nullable restore
 #line 126 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
-__builder2.AddContent(161, cliente.Saldo);
+                                 cliente.Saldo
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
 #nullable restore
@@ -633,13 +653,15 @@ __builder2.AddContent(161, cliente.Saldo);
                 __builder2.OpenElement(162, "td");
                 __builder2.AddAttribute(163, "b-phqimgj4wb");
                 __builder2.AddMarkupContent(164, "\r\n                            $");
+                __builder2.AddContent(165, 
 #nullable restore
 #line 132 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
-__builder2.AddContent(165, cliente.Saldo);
+                              cliente.Saldo
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
 #nullable restore
 #line 134 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"

@@ -27,27 +27,27 @@
                 </div>
 
                 @*<div class="form-group row">
-                    <label class="col-4 col-form-label">Categoría</label>
-                    <div class="col">
-                        <div class="input-group">
-                            <InputSelect @bind-Value="articulo.Categoria" class="form-control">
-                                @foreach (string item in Enum.GetNames(typeof(Articulo.Categorias)))
-                                {
-                                    <option value="@item"> @item</option>
-                                }
-                            </InputSelect>
-                        </div>
-                        <ValidationMessage For="@(() => articulo.Categoria)" />
-                    </div>
-                </div>*@
+            <label class="col-4 col-form-label">Categoría</label>
+            <div class="col">
+                <div class="input-group">
+                    <InputSelect @bind-Value="articulo.Categoria" class="form-control">
+                        @foreach (string item in Enum.GetNames(typeof(Articulo.Categorias)))
+                        {
+                            <option value="@item"> @item</option>
+                        }
+                    </InputSelect>
+                </div>
+                <ValidationMessage For="@(() => articulo.Categoria)" />
+            </div>
+        </div>*@
 
                 @*prueba*@
                 <div class="form-group row">
-                    <label class="col-4 col-form-label">Categoría</label>
+                    <label class="col-4 col-form-label">Categorías</label>
                     <div class="col">
                         <div class="input-group">
                             <InputSelect @bind-Value="articulo.CategoriaId" class="form-control">
-                                <option selected value="0">Seleccione categoría</option>
+                                <option selected value="0">Seleccione una categoría</option>
                                 @foreach (var categoria in ListaCategorias)
                                 {
                                     <option value="@categoria.Id">@categoria.Nombre</option>
@@ -58,13 +58,30 @@
                     </div>
                 </div>
 
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Marcas</label>
+                    <div class="col">
+                        <div class="input-group">
+                            <InputSelect @bind-Value="articulo.MarcaId" class="form-control">
+                                <option selected value="0">Seleccione una marca</option>
+                                @foreach (var marca in ListaMarcas)
+                                {
+                                    <option value="@marca.Id">@marca.Nombre</option>
+                                }
+                            </InputSelect>
+                        </div>
+                        <ValidationMessage For="@(() => articulo.MarcaId)" />
+                    </div>
+                </div>
+
                 @*finPrueba*@
 
                 <div class="form-group row">
                     <label class="col-4 col-form-label">Descripción</label>
                     <div class="col">
                         <div class="input-group">
-                            <InputText @bind-Value="@articulo.Descripcion" oninput="this.value=this.value.toUpperCase()" placeholder="Descripción" class="form-control" />
+                            @*<InputText @bind-Value="@articulo.Descripcion" oninput="this.value=this.value.toUpperCase()" placeholder="Descripción" class="form-control" />*@
+                            <InputTextArea @bind-Value="@articulo.Descripcion" oninput="this.value=this.value.toUpperCase()" placeholder="Descripción" class="form-control"/>
                         </div>
                     </div>
                 </div>
@@ -166,6 +183,7 @@
 @code {
     [Parameter] public Articulo articulo { get; set; } = new Articulo();
     [Parameter] public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
+    [Parameter] public List<Marcas> ListaMarcas { get; set; } = new List<Marcas>();
     [Parameter] public string TextBotonSubmit { get; set; }
     [Parameter] public EventCallback OnValidSubmit { get; set; }
 
@@ -174,6 +192,7 @@
     protected override async Task OnInitializedAsync()
     {
         await CargarCategoria();
+        await CargarMarcas();
     }
 
     async Task CargarCategoria()
@@ -189,6 +208,23 @@
         else
         {
             Console.WriteLine("Error - No se obtuvieron las categorías");
+        }
+
+    }
+    // obteniendo las marcas
+    async Task CargarMarcas()
+    {
+        //  usando la api que está en el controlador se usa para  llenar el select que está más arriba
+        var httpResponse = await Http.GetAsync("api/marcas"); //  a través del get se llena la lista con los elementos d ela tabla marcas
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ListaMarcas = JsonSerializer.Deserialize<List<Marcas>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("Error - No se obtuvieron las marcas");
         }
 
     }

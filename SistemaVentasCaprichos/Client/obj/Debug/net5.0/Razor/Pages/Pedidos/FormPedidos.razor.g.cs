@@ -120,7 +120,7 @@ using MudBlazor;
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(0);
-            __builder.AddAttribute(1, "Model", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.AddAttribute(1, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 2 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
                   pedido
@@ -129,7 +129,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(2, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
+            __builder.AddAttribute(2, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
 #nullable restore
 #line 2 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
                                          OnValidSubmit
@@ -160,7 +160,7 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
-                , 21, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => pedido.ClienteId = __value, pedido.ClienteId)), 22, () => pedido.ClienteId, 23, (__builder3) => {
+                , 21, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => pedido.ClienteId = __value, pedido.ClienteId)), 22, () => pedido.ClienteId, 23, (__builder3) => {
                     __builder3.AddMarkupContent(24, "<option selected value=\"0\" b-9i5hs6tbjf>Seleccione cliente</option>");
 #nullable restore
 #line 10 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
@@ -181,21 +181,25 @@ using MudBlazor;
 #nullable disable
                     );
                     __builder3.AddAttribute(27, "b-9i5hs6tbjf");
+                    __builder3.AddContent(28, 
 #nullable restore
 #line 12 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
-__builder3.AddContent(28, cliente.NombreyApellido);
+                                                         cliente.NombreyApellido
 
 #line default
 #line hidden
 #nullable disable
+                    );
                     __builder3.AddContent(29, " | DNI:");
+                    __builder3.AddContent(30, 
 #nullable restore
 #line 12 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
-__builder3.AddContent(30, cliente.Dni);
+                                                                                        cliente.Dni
 
 #line default
 #line hidden
 #nullable disable
+                    );
                     __builder3.CloseElement();
 #nullable restore
 #line 13 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
@@ -240,13 +244,15 @@ __builder3.AddContent(30, cliente.Dni);
                 __builder2.OpenElement(41, "h5");
                 __builder2.AddAttribute(42, "b-9i5hs6tbjf");
                 __builder2.AddMarkupContent(43, "Ítem #");
+                __builder2.AddContent(44, 
 #nullable restore
 #line 27 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
-__builder2.AddContent(44, i + 1);
+                                i + 1
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(45, "\r\n                    ");
                 __builder2.OpenElement(46, "div");
@@ -270,13 +276,15 @@ __builder2.AddContent(44, i + 1);
                 __builder2.AddAttribute(56, "style", "color:white");
                 __builder2.AddAttribute(57, "b-9i5hs6tbjf");
                 __builder2.AddMarkupContent(58, "Quitar ítem ");
+                __builder2.AddContent(59, 
 #nullable restore
 #line 30 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
-__builder2.AddContent(59, indice+1);
+                                                                                               indice+1
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -300,7 +308,7 @@ __builder2.AddContent(59, indice+1);
 #line default
 #line hidden
 #nullable disable
-                , 75, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => detalle.ArticuloId = __value, detalle.ArticuloId)), 76, () => detalle.ArticuloId, 77, (__builder3) => {
+                , 75, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => detalle.ArticuloId = __value, detalle.ArticuloId)), 76, () => detalle.ArticuloId, 77, (__builder3) => {
                     __builder3.AddMarkupContent(78, "<option selected value b-9i5hs6tbjf>Seleccione un artículo</option>");
 #nullable restore
 #line 48 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
@@ -321,29 +329,35 @@ __builder2.AddContent(59, indice+1);
 #nullable disable
                     );
                     __builder3.AddAttribute(81, "b-9i5hs6tbjf");
+                    __builder3.AddContent(82, 
 #nullable restore
 #line 50 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
-__builder3.AddContent(82, articulo.Nombre);
+                                                                  articulo.Nombre
 
 #line default
 #line hidden
 #nullable disable
+                    );
                     __builder3.AddContent(83, " | $");
+                    __builder3.AddContent(84, 
 #nullable restore
 #line 50 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
-__builder3.AddContent(84, articulo.PrecioUnitario);
+                                                                                      articulo.PrecioUnitario
 
 #line default
 #line hidden
 #nullable disable
+                    );
                     __builder3.AddContent(85, " | STOCK: ");
+                    __builder3.AddContent(86, 
 #nullable restore
 #line 50 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
-__builder3.AddContent(86, articulo.StockActual);
+                                                                                                                        articulo.StockActual
 
 #line default
 #line hidden
 #nullable disable
+                    );
                     __builder3.CloseElement();
 #nullable restore
 #line 51 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
@@ -377,7 +391,7 @@ __builder3.AddContent(86, articulo.StockActual);
 #line default
 #line hidden
 #nullable disable
-                , 98, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => detalle.Cantidad = __value, detalle.Cantidad)), 99, () => detalle.Cantidad);
+                , 98, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => detalle.Cantidad = __value, detalle.Cantidad)), 99, () => detalle.Cantidad);
                 __builder2.AddMarkupContent(100, "\r\n                            ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Pedidos.FormPedidos.TypeInference.CreateValidationMessage_5(__builder2, 101, 102, 
 #nullable restore
@@ -437,7 +451,7 @@ __builder3.AddContent(86, articulo.StockActual);
 #line default
 #line hidden
 #nullable disable
-                , 127, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => pedido.Seña = __value, pedido.Seña)), 128, () => pedido.Seña);
+                , 127, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => pedido.Seña = __value, pedido.Seña)), 128, () => pedido.Seña);
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(129, "\r\n                    ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Pedidos.FormPedidos.TypeInference.CreateValidationMessage_7(__builder2, 130, 131, 
@@ -460,7 +474,7 @@ __builder3.AddContent(86, articulo.StockActual);
                 __builder2.AddAttribute(138, "class", "col");
                 __builder2.AddAttribute(139, "b-9i5hs6tbjf");
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputCheckbox>(140);
-                __builder2.AddAttribute(141, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                __builder2.AddAttribute(141, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 88 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
                                                 pedido.Finalizado
@@ -469,8 +483,8 @@ __builder3.AddContent(86, articulo.StockActual);
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(142, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Boolean>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Boolean>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => pedido.Finalizado = __value, pedido.Finalizado))));
-                __builder2.AddAttribute(143, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.Boolean>>>(() => pedido.Finalizado));
+                __builder2.AddAttribute(142, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Boolean>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Boolean>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => pedido.Finalizado = __value, pedido.Finalizado))));
+                __builder2.AddAttribute(143, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.Boolean>>>(() => pedido.Finalizado));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(144, "\r\n                ");
@@ -496,13 +510,15 @@ __builder3.AddContent(86, articulo.StockActual);
                 __builder2.OpenElement(156, "text");
                 __builder2.AddAttribute(157, "style", "color:white");
                 __builder2.AddAttribute(158, "b-9i5hs6tbjf");
+                __builder2.AddContent(159, 
 #nullable restore
 #line 94 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\FormPedidos.razor"
-__builder2.AddContent(159, textSubmit);
+                                                                                                                     textSubmit
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();

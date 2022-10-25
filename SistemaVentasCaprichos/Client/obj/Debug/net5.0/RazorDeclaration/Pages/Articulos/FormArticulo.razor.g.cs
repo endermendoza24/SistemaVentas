@@ -132,10 +132,11 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 166 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
+#line 183 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
        
     [Parameter] public Articulo articulo { get; set; } = new Articulo();
     [Parameter] public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
+    [Parameter] public List<Marcas> ListaMarcas { get; set; } = new List<Marcas>();
     [Parameter] public string TextBotonSubmit { get; set; }
     [Parameter] public EventCallback OnValidSubmit { get; set; }
 
@@ -144,6 +145,7 @@ using System.Text.Json;
     protected override async Task OnInitializedAsync()
     {
         await CargarCategoria();
+        await CargarMarcas();
     }
 
     async Task CargarCategoria()
@@ -159,6 +161,23 @@ using System.Text.Json;
         else
         {
             Console.WriteLine("Error - No se obtuvieron las categorías");
+        }
+
+    }
+    // obteniendo las marcas
+    async Task CargarMarcas()
+    {
+        //  usando la api que está en el controlador se usa para  llenar el select que está más arriba
+        var httpResponse = await Http.GetAsync("api/marcas"); //  a través del get se llena la lista con los elementos d ela tabla marcas
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ListaMarcas = JsonSerializer.Deserialize<List<Marcas>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("Error - No se obtuvieron las marcas");
         }
 
     }

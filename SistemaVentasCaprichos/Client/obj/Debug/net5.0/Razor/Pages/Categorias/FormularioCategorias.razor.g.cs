@@ -127,7 +127,7 @@ using System.Text.Json;
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(0);
-            __builder.AddAttribute(1, "Model", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.AddAttribute(1, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Categorias\FormularioCategorias.razor"
                   Categoria
@@ -136,7 +136,7 @@ using System.Text.Json;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(2, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
+            __builder.AddAttribute(2, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
 #nullable restore
 #line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Categorias\FormularioCategorias.razor"
                                              OnValidSubmit
@@ -183,7 +183,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 23, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Categoria.Nombre = __value, Categoria.Nombre)));
+                , 23, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Categoria.Nombre = __value, Categoria.Nombre)));
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(24, "\r\n                        ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Categorias.FormularioCategorias.TypeInference.CreateValidationMessage_1(__builder2, 25, 26, 
@@ -229,7 +229,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 41, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Categoria.Descripcion = __value, Categoria.Descripcion)));
+                , 41, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Categoria.Descripcion = __value, Categoria.Descripcion)));
                 __builder2.AddMarkupContent(42, "                            \r\n                            ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Categorias.FormularioCategorias.TypeInference.CreateValidationMessage_3(__builder2, 43, 44, 
 #nullable restore

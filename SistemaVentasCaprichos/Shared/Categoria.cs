@@ -18,7 +18,8 @@ namespace SistemaVentasCaprichos.Shared
         [MaxLength(50, ErrorMessage = "Máximo 50 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         public string? Descripcion { get; set; }
 
-        public bool Estado { get; set; }
+        public DateTime FechaRegistro { get; set; } = DateTime.Now;
+        public bool Estado { get; set; } = true;
         #endregion
     }
 }
