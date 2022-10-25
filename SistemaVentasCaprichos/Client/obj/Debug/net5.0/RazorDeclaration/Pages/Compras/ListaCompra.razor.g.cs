@@ -140,7 +140,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 64 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\ListaCompra.razor"
+#line 65 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\ListaCompra.razor"
        
     public List<Compra> compras { get; set; }
 

@@ -125,10 +125,11 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 111 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\FormCompra.razor"
+#line 122 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\FormCompra.razor"
        
     [Parameter] public Compra compra { get; set; } = new Compra();
     [Parameter] public List<Categoria> categoria { get; set; } = new List<Categoria>();
+    [Parameter] public List<Proveedores> ListaProveedores { get; set; } = new List<Proveedores>();
     [Parameter] public List<Articulo> articulos { get; set; } = new List<Articulo>();
 
     [Parameter] public EventCallback OnValidSubmit { get; set; }
@@ -149,7 +150,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 128 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\FormCompra.razor"
+#line 140 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\FormCompra.razor"
              for (int i = 0; i < listadetalle.Count; i++)
             {
                 compra.Total += listadetalle[i].SubTotal;
@@ -159,7 +160,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 131 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\FormCompra.razor"
+#line 143 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\FormCompra.razor"
              
         }
         return compra.Total;

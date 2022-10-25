@@ -138,11 +138,13 @@ using MudBlazor;
     public Compra compra = new Compra();
     public List<Articulo> articulos { get; set; } = new List<Articulo>();
     public List<Categoria> categoria { get; set; } = new List<Categoria>();
+    public List<Proveedores> ListaProveedores { get; set; } = new List<Proveedores>();
 
     protected override async Task OnInitializedAsync()
     {
         articulos = await Http.GetFromJsonAsync<List<Articulo>>("api/articulos"); //muestro todos los articulos
         categoria = await Http.GetFromJsonAsync<List<Categoria>>("api/cate"); //muestro todos los articulos
+        ListaProveedores = await Http.GetFromJsonAsync<List<Proveedores>>("api/proveedores"); //trae los proveedores
     }
 
     async Task CrearCompr()

@@ -133,16 +133,18 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 26 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\VerCompra.razor"
+#line 27 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\VerCompra.razor"
        
     public Compra compra = new Compra();
     public List<Articulo> articulos { get; set; } = new List<Articulo>();
+    public List<Proveedores> ListaProveedores { get; set; } = new List<Proveedores>();
     [Parameter] public int idcompra { get; set; } //parametro id compra
 
     protected override async Task OnInitializedAsync()
     {
         compra = await Http.GetFromJsonAsync<Compra>($"api/compras/{idcompra}"); //traigo id del parametro
         articulos = await Http.GetFromJsonAsync<List<Articulo>>("api/articulos"); //muestro todos los articulos
+        ListaProveedores = await Http.GetFromJsonAsync<List<Proveedores>>("api/proveedores"); //muestro todos los articulos
     }
 
     async Task BorrarCompra(int idcompra)

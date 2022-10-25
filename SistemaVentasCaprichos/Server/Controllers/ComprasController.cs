@@ -29,7 +29,8 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Compra>>> Get()
         {
-            return await context.Compras.Include(x => x.ApplicationUser)
+            return await context.Compras.Include(x => x.Proveedores)
+                .Include(x => x.ApplicationUser) //  si s ejode el programa el problema estará en esta línea
                 .Include(x => x.DetalleCompras)
                 .ThenInclude(x => x.Articulo)
                 .ToListAsync();
@@ -41,7 +42,8 @@ namespace SistemaVentasCaprichos.Server.Controllers
         {
             DateTime f = Convert.ToDateTime(fecha);
 
-            var queryable = context.Compras.Include(x => x.ApplicationUser)
+            var queryable = context.Compras.Include(x => x.Proveedores)
+                .Include(x => x.ApplicationUser)
                 .Include(x => x.DetalleCompras)
                 .ThenInclude(x => x.Articulo).AsQueryable();
 
@@ -62,7 +64,8 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Compra>> Get(int id)
         {
-            return await context.Compras.Include(x => x.ApplicationUser)
+            return await context.Compras.Include(x => x.Proveedores)
+                .Include(x => x.ApplicationUser)
                 .Include(x => x.DetalleCompras)
                 .ThenInclude(x => x.Articulo)
                 .FirstAsync(x => x.Id == id);

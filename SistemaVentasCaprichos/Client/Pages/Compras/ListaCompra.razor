@@ -53,7 +53,8 @@ else
                     <td><a href="ver-compra/@compra.Id" class="btn btn-sm btn-primary"><i class="oi oi-eye"></i> Ver</a></td>
                     <td>@compra.Id</td>
                     <td>@compra.Fecha</td>
-                    <td>@compra.Proveedor</td>
+                    @*<td>@compra.Proveedor</td>*@
+                    <td>@compra.Proveedores.Nombre</td>
                     <td>@compra.ApplicationUser.NombreyApellido</td>
                     <td><b>$@compra.Total</b></td>
                 </tr>
