@@ -1,0 +1,79 @@
+﻿@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using System.Text.Json
+
+<EditForm Model="@Configuracion" OnValidSubmit="@OnValidSubmit">
+    <div class="form-field mt-2 mb-2">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Nombre</label>
+                    <div class="col">
+                        <div class="input-group">
+                            <MudTextField @bind-Value="@Configuracion.NombreSistema" Label="Nombre del sistema" Variant="Variant.Outlined" oninput="this.value=this.value.toUpperCase()"
+                                          Margin="Margin.Dense"></MudTextField>
+                        </div>
+                        <ValidationMessage For="@(() => Configuracion.NombreSistema)" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Dirección</label>
+                    <div class="col">
+                        <div class="input-group">
+                            <MudTextField @bind-Value="@Configuracion.Direccion" Label="Dirección" Variant="Variant.Outlined" oninput="this.value=this.value.toUpperCase()"
+                                          Margin="Margin.Dense" Lines="3"></MudTextField>
+                            <ValidationMessage For="@(() => Configuracion.Direccion)" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Teléfono</label>
+                    <div class="col">
+                        <div class="input-group">
+                            <MudTextField @bind-Value="@Configuracion.Telefono" Label="Teléfono" Variant="Variant.Outlined" oninput="this.value=this.value.toUpperCase()"
+                                          Margin="Margin.Dense"></MudTextField>
+                            <ValidationMessage For="@(() => Configuracion.Telefono)" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Email</label>
+                    <div class="col">
+                        <div class="input-group">
+                            <MudTextField @bind-Value="@Configuracion.Email" Label="Email" Variant="Variant.Outlined" oninput="this.value=this.value.toUpperCase()"
+                                          Margin="Margin.Dense" ></MudTextField>
+                            <ValidationMessage For="@(() => Configuracion.Email)" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">RUC</label>
+                    <div class="col">
+                        <div class="input-group">
+                            <MudTextField @bind-Value="@Configuracion.RUC" Label="RUC" Variant="Variant.Outlined" oninput="this.value=this.value.toUpperCase()"
+                                          Margin="Margin.Dense"></MudTextField>
+                            <ValidationMessage For="@(() => Configuracion.RUC)" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-block btn-success">
+            <i class="oi oi-check "></i>
+            <text style="color:white"></text>
+        </button>
+    </div>
+    <DataAnnotationsValidator />
+</EditForm>
+
+@code {
+
+    [Parameter] public Configuracion Configuracion { get; set; } = new Configuracion();
+
+    [Parameter] public string TextBotonSubmit { get; set; }
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+}

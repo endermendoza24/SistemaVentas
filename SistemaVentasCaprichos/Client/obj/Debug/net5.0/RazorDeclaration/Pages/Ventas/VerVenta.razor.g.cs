@@ -143,6 +143,8 @@ using System.Text.Json;
 #line 95 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
        
     public Venta venta { get; set; }
+    public Configuracion ajustes { get; set; } = new Configuracion();
+    public List<Configuracion> ListaAjustes { get; set; } = new List<Configuracion>();
 
     [Parameter] public int idventa { get; set; }
 
@@ -160,6 +162,8 @@ using System.Text.Json;
             await JS.InvokeVoidAsync("simple", "Error", "Venta no encontrada.", "error");
             NavigationManager.NavigateTo("lista-ventas");
         }
+
+        await CargarAjustes();
     }
 
     async Task BorrarVenta(int idventa)
@@ -185,6 +189,24 @@ using System.Text.Json;
     void Volver()
     {
         NavigationManager.NavigateTo("lista-ventas");
+    }
+
+    async Task CargarAjustes()
+    {
+        var httpResponse = await Http.GetAsync($"api/configuracion/{idventa}");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ajustes = JsonSerializer.Deserialize<Configuracion>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("simple", "Error", "Venta no encontrada.", "error");
+            NavigationManager.NavigateTo("lista-ventas");
+        }
+
+
     }
 
 #line default

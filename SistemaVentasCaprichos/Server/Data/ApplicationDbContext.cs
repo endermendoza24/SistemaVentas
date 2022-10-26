@@ -36,6 +36,7 @@ namespace SistemaVentasCaprichos.Server.Data
         public DbSet<Marcas> Marca { get; set; }
 
         public DbSet<Proveedores> Proveedores { get; set; }
+        public DbSet<Configuracion> Configuracion { get; set; }
         //public object Categorias { get; internal set; }
     }
 }

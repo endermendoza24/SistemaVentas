@@ -26,6 +26,8 @@ namespace SistemaVentasCaprichos.Shared
         [Phone(ErrorMessage = "Sólo números")]
         public string Teléfono { get; set; }
         public decimal Saldo { get; set; }
+        public DateTime FechaAlta { get; set; } = DateTime.Now;
+        public bool Estado { get; set; } = true;
 
         public enum Sexos
         {

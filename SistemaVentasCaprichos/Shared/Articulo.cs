@@ -19,20 +19,21 @@ namespace SistemaVentasCaprichos.Shared
         public string? Descripcion { get; set; }
         public string? Url_Imagen { get; set; }
         [Required]
-        [Range(1, 99999999, ErrorMessage = "Valor inválido")]
+        [Range(1, double.MaxValue, ErrorMessage = "Valor inválido")]
         public decimal PrecioMayorista { get; set; }
         [Required]
-        [Range(1, 99999999, ErrorMessage = "Valor inválido")]
+        [Range(1, double.MaxValue, ErrorMessage = "Valor inválido")]
         public decimal PrecioUnitario { get; set; }
         public DateTime Ultima_Modificación { get; set; }
+        public string Codigo { get; set; }
         [Required]
-        [Range(1, 99999999, ErrorMessage = "Valor inválido")]
+        [Range(1, int.MaxValue, ErrorMessage = "Valor inválido")]
         public int StockMinimo { get; set; }
         [Required]
-        [Range(1, 99999999, ErrorMessage = "Valor inválido")]
+        [Range(1, int.MaxValue, ErrorMessage = "Valor inválido")]
         public int StockMaximo { get; set; }
         [Required]
-        [Range(0, 99999999, ErrorMessage = "Valor inválido")]
+        [Range(0, int.MaxValue, ErrorMessage = "Valor inválido")]
         public int StockActual { get; set; }
 
         // conexión a categorías

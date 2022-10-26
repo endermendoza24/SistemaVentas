@@ -118,7 +118,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\CrearMarca.razor"
+#line 6 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\CrearMarca.razor"
            [Authorize]
 
 #line default
@@ -133,7 +133,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 20 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\CrearMarca.razor"
+#line 21 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\CrearMarca.razor"
        
     Marcas Marca = new Marcas();
 
@@ -145,11 +145,13 @@ using MudBlazor;
         {
             NavigationManager.NavigateTo("/lista-marcas"); //  cambiar a indexArticulo
             await JS.InvokeVoidAsync("simple", "¡Éxito!", "Marca creada", "success");
+            Snackbar.Add("Agregada con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
         }
         else
         {
             //await JS.InvokeVoidAsync("simple", "Error",
             //        "No se pudo crear este producto", "error");
+            Snackbar.Add("Ha ocurrido un error", Severity.Error);
         }
     }
 
@@ -161,6 +163,7 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISnackbar Snackbar { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }

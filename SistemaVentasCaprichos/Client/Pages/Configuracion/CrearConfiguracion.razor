@@ -1,0 +1,47 @@
+﻿@page "/crearConfiguracion"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@inject ISnackbar Snackbar
+@attribute [Authorize]
+
+<div class="d-flex justify-content-between mb-3">
+    <div>
+        <button @onclick="@Volver" class="btn btn-sm btn-secondary">
+            <i class="oi oi-arrow-circle-left"></i> Volver al listado
+        </button>
+    </div>
+    <div>
+        <h3><b>Ajustes del sistema</b></h3>
+    </div>
+</div>
+
+<FormConfiguracion TextBotonSubmit="Guardar" OnValidSubmit="@Crear" Configuracion="@Configuracion" />
+
+@code {
+    Configuracion Configuracion = new Configuracion();
+
+    async Task Crear()
+    {
+        var respuesta = await Http.PostAsJsonAsync("/api/configuracion", Configuracion);
+
+        if (respuesta.IsSuccessStatusCode)
+        {
+            NavigationManager.NavigateTo("/lista-configuracion"); //  cambiar a indexArticulo
+            await JS.InvokeVoidAsync("simple", "¡Éxito!", "Configuracion creada", "success");
+            Snackbar.Add("Agregada con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
+
+        }
+        else
+        {
+            //await JS.InvokeVoidAsync("simple", "Error",
+            //        "No se pudo crear este producto", "error");
+        }
+    }
+
+    void Volver()
+    {
+        NavigationManager.NavigateTo("/lista-configuracion"); //  cambiar a index
+        NavigationManager.NavigateTo("/editar-configuracion/1"); //  cambiar a index
+    }
+}

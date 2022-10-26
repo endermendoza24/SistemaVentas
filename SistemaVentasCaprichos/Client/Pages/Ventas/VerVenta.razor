@@ -40,12 +40,12 @@
                 <small><b>Fecha:</b> @venta.Fecha</small>
             </div>
             <div class="d-flex justify-content-between">
-                <small>Jinotepe, Carazo, contiguo a donde fue la Empresa Médica</small>
+                <small>@ajustes.Direccion</small>
                 <small><b>F.de Pago:</b> @venta.FormaPago</small>
             </div>
 
             <div class="d-flex justify-content-between">
-                <small>3572550166</small>
+                <small>@ajustes.Telefono</small>
                 <small><b>Empleado:</b> @venta.ApplicationUser.NombreyApellido</small>
             </div>
 
@@ -94,6 +94,8 @@
 
 @code {
     public Venta venta { get; set; }
+    public Configuracion ajustes { get; set; } = new Configuracion();
+    public List<Configuracion> ListaAjustes { get; set; } = new List<Configuracion>();
 
     [Parameter] public int idventa { get; set; }
 
@@ -111,6 +113,8 @@
             await JS.InvokeVoidAsync("simple", "Error", "Venta no encontrada.", "error");
             NavigationManager.NavigateTo("lista-ventas");
         }
+
+        await CargarAjustes();
     }
 
     async Task BorrarVenta(int idventa)
@@ -136,5 +140,23 @@
     void Volver()
     {
         NavigationManager.NavigateTo("lista-ventas");
+    }
+
+    async Task CargarAjustes()
+    {
+        var httpResponse = await Http.GetAsync($"api/configuracion/{idventa}");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ajustes = JsonSerializer.Deserialize<Configuracion>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("simple", "Error", "Venta no encontrada.", "error");
+            NavigationManager.NavigateTo("lista-ventas");
+        }
+
+
     }
 }

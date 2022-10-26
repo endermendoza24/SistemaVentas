@@ -14,6 +14,6 @@ namespace SistemaVentasCaprichos.Shared
         [Required(ErrorMessage = "Se requiere")]
         public string Nombre { get; set; }
         public DateTime Fecha { get; set; } = DateTime.Now;
-        public bool Estado { get; set; }
+        public bool Estado { get; set; } = true;
     }
 }
