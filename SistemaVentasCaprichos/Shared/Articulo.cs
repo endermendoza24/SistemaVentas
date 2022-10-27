@@ -40,6 +40,10 @@ namespace SistemaVentasCaprichos.Shared
         public int CategoriaId { get; set; }
         [ForeignKey("CategoriaId")]
         public Categoria Categorias { get; set; }
+        // conexion a tallas
+        public int TallasId { get; set; }
+        [ForeignKey("TallasId")]
+        public Tallas Tallas { get; set; }
         //  conexión a Marcas
         public int MarcaId { get; set; }
         [ForeignKey("MarcaId")]

@@ -93,56 +93,55 @@ else
             </a>
         }
     </div>
+    <div hidden="@lista">
+        <MudTable Items="@articulo" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Articulo,bool>(FilterFunc1)"
+                  @bind-SelectedItem="selectedItem1">
+            <ToolBarContent>
+                <MudText Typo="Typo.h6">Artículos</MudText>
+                <MudSpacer />
+                <MudTextField @bind-Value="searchString1" Placeholder="Buscar artículo..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            </ToolBarContent>
+            <HeaderContent>
+                <MudTh Style="width:50px;">Nr</MudTh>
+                <MudTh>Nombre</MudTh>
+                <MudTh>Descripción</MudTh>
+                <MudTh>Precio</MudTh>
+                <MudTh>Fecha alta</MudTh>
+                <MudTh>Stock</MudTh>
+                <MudTh>Acciones</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Id">@context.Id</MudTd>
+                <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
+                <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
+                <MudTd DataLabel="Precio">@context.PrecioUnitario</MudTd>
+                <MudTd DataLabel="Fecha">@context.Ultima_Modificación</MudTd>
+                <MudTd DataLabel="Stock">@context.StockActual</MudTd>
+                <MudTd>
+                    <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
+                            @onclick="@(() => NavigationManager.NavigateTo($"/editar-articulo/{context.Id}"))" />
+                </MudTd>
 
-    <table class="table table-hover" hidden="@lista">
-        <thead class="thead-dark">
-            <tr>
-                <th></th>
-                <th>Imagen</th>
-                <th>Nombre</th>
-                <th>Categoria</th>
-                <th>Descripción</th>
-                <th>Precio</th>
-                <th>Ultima modif.</th>
-                <th>Stock</th>
-            </tr>
-        </thead>
-        <tbody>
-            <Virtualize Items="@articulo" Context="articulo">
-                <tr @key="articulo.Id">
-                    <td><a href="/editar-articulo/@articulo.Id" style="color:white" class="btn btn-sm btn-primary">Ver</a></td>
-                    <td><img src="@articulo.Url_Imagen" width="75px" height="75px" /></td>
-                    <td><b>@articulo.Nombre</b></td>
-                    <td>@articulo.Categorias</td>
-                    <td>@articulo.Descripcion</td>
-                    <td><b>$@articulo.PrecioUnitario</b></td>
-                    <td>@articulo.Ultima_Modificación</td>
+            </RowTemplate>
+            <PagerContent>
+                <MudTablePager />
+            </PagerContent>
+        </MudTable>
+    </div>
 
-                    @if (articulo.StockActual < articulo.StockMinimo)
-                    {
-                        <td style="color:red;">
-                            <b>@articulo.StockActual ↓</b>
-                        </td>
-                    }
-                    else if (articulo.StockActual > articulo.StockMaximo)
-                    {
-                        <td style="color:orange;">
-                            <b>@articulo.StockActual ↑</b>
-                        </td>
-                    }
-                    else
-                    {
-                        <td style="color:green;">
-                            <b>@articulo.StockActual</b>
-                        </td>
-                    }
-                </tr>
-            </Virtualize>
-        </tbody>
-    </table>
 }
+
 @code {
     public List<Articulo> articulo { get; set; } //muestra todos los articulos
+    public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
+
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private string searchString1 = "";
+    private Articulo selectedItem1 = null;
+    private HashSet<Articulo> selectedItems = new HashSet<Articulo>();
 
     private string NombreArtFiltro = String.Empty; //filtros
 
@@ -168,6 +167,7 @@ else
             Console.WriteLine("error");
         }
     }
+
 
     void CambiarVista()
     {
@@ -199,5 +199,20 @@ else
     {
         NombreArtFiltro = string.Empty;
         await CargarArticulos();
+    }
+
+    // esta es la funcion de filtrado de MudBlazor
+    private bool FilterFunc1(Articulo element) => FilterFunc(element, searchString1);
+
+    private bool FilterFunc(Articulo element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Descripcion.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        return false;
     }
 }

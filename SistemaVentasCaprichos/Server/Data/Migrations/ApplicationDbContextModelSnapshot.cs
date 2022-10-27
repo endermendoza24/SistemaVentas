@@ -363,6 +363,9 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                     b.Property<int>("StockMinimo")
                         .HasColumnType("int");
 
+                    b.Property<int>("TallasId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Ultima_Modificación")
                         .HasColumnType("datetime2");
 
@@ -374,6 +377,8 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                     b.HasIndex("CategoriaId");
 
                     b.HasIndex("MarcaId");
+
+                    b.HasIndex("TallasId");
 
                     b.ToTable("Articulos");
                 });
@@ -487,8 +492,8 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
 
                     b.Property<string>("Direccion")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(40)
@@ -753,6 +758,28 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                     b.ToTable("Proveedores");
                 });
 
+            modelBuilder.Entity("SistemaVentasCaprichos.Shared.Tallas", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Estado")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tallas");
+                });
+
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Venta", b =>
                 {
                     b.Property<int>("Id")
@@ -849,9 +876,17 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("SistemaVentasCaprichos.Shared.Tallas", "Tallas")
+                        .WithMany()
+                        .HasForeignKey("TallasId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Categorias");
 
                     b.Navigation("Marca");
+
+                    b.Navigation("Tallas");
                 });
 
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Compra", b =>

@@ -32,7 +32,7 @@ namespace SistemaVentasCaprichos.Server.Data
 
         public DbSet<Categoria> Categoria { get; set; }
 
-
+        public DbSet<Tallas> Tallas { get; set; }
         public DbSet<Marcas> Marca { get; set; }
 
         public DbSet<Proveedores> Proveedores { get; set; }
