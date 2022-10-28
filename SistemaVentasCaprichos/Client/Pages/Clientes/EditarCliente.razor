@@ -3,7 +3,7 @@
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
 
-@attribute [Authorize]
+
 
 <button @onclick="@Volver" class="btn btn-sm btn-secondary">
     <i class="oi oi-arrow-circle-left"></i> Volver al listado
@@ -23,56 +23,17 @@
 <FormCliente cliente="cliente" OnValidSubmit="@EditarClient"
              ocultadni="ocultadni" TextBotonSubmit="Guardar cambios" />
 
-@if (cuenta.Count != 0)
-{
-    <hr />
-    <div class="mb-3">
-        <h3 class="my-2">Movimientos</h3>
-        <table class="table table-hover m-1">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Comprobante</th>
-                    <th>Fecha</th>
-                    <th>Concepto</th>
-                    <th>Importe</th>
-                    <th>Saldo Parcial</th>
-                </tr>
-            </thead>
-            <tbody>
-                <Virtualize Items="@cuenta" Context="cuenta">
-                    <tr @key="cuenta.Id">
-                        <td>
-                            @if (cuenta.Concepto == CuentaCorriente.Conceptos.Debe)
-                            {
-                                <a href="ver-venta/@cuenta.ComprobanteId" class="btn btn-sm btn-primary">Ver</a>
-                            }
-                            @if (cuenta.Concepto == CuentaCorriente.Conceptos.Haber)
-                            {
-                                <a href="ver-pago/@cuenta.ComprobanteId" class="btn btn-sm btn-primary">Ver</a>
-                            }
-                        </td>
-                        <td>@cuenta.Fecha</td>
-                        <td>@cuenta.Concepto</td>
-                        <td><b>@cuenta.Importe</b></td>
-                        <td>@cuenta.Saldo_Parcial</td>
-                    </tr>
-                </Virtualize>
-            </tbody>
-        </table>
-    </div>
-}
 
 @code {
     public Cliente cliente = new Cliente();
-    public List<CuentaCorriente> cuenta { get; set; } = new List<CuentaCorriente>();
+    
 
     [Parameter] public int idcliente { get; set; }
     public bool ocultadni = true;
 
     protected async override Task OnParametersSetAsync()
     {
-        cliente = await Http.GetFromJsonAsync<Cliente>($"api/clientes/{idcliente}");
-        cuenta = await Http.GetFromJsonAsync<List<CuentaCorriente>>($"api/cuentascorrientes/porcliente/{idcliente}");
+        cliente = await Http.GetFromJsonAsync<Cliente>($"api/clientes/{idcliente}");       
     }
 
     async Task BorrarCliente(int idcliente)

@@ -6,14 +6,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SistemaVentasCaprichos.Server.Common;
+
 using SistemaVentasCaprichos.Server.Controllers;
 using SistemaVentasCaprichos.Server.Data;
 using SistemaVentasCaprichos.Shared;
 
 namespace SistemaVentasCaprichos.Server.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class ComprasController : ControllerBase
@@ -29,8 +29,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Compra>>> Get()
         {
-            return await context.Compras.Include(x => x.Proveedores)
-                .Include(x => x.ApplicationUser) //  si s ejode el programa el problema estará en esta línea
+            return await context.Compras.Include(x => x.Proveedores)                
                 .Include(x => x.DetalleCompras)
                 .ThenInclude(x => x.Articulo)
                 .ToListAsync();
@@ -42,21 +41,10 @@ namespace SistemaVentasCaprichos.Server.Controllers
         {
             DateTime f = Convert.ToDateTime(fecha);
 
-            var queryable = context.Compras.Include(x => x.Proveedores)
-                .Include(x => x.ApplicationUser)
+            var queryable = context.Compras.Include(x => x.Proveedores)                
                 .Include(x => x.DetalleCompras)
                 .ThenInclude(x => x.Articulo).AsQueryable();
-
-            if (!string.IsNullOrEmpty(empleado))
-            {
-                queryable = queryable.Where(x => x.ApplicationUser.NombreyApellido.Contains(empleado));
-            }
-            if (f != DateTime.Today.AddDays(+1))
-            {
-                queryable = queryable.Where(x => x.Fecha.Day == f.Day &&
-                                            x.Fecha.Month == f.Month &&
-                                            x.Fecha.Year == f.Year);
-            }
+           
             return await queryable.OrderByDescending(x => x.Fecha).ToListAsync();
         }
 
@@ -64,8 +52,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Compra>> Get(int id)
         {
-            return await context.Compras.Include(x => x.Proveedores)
-                .Include(x => x.ApplicationUser)
+            return await context.Compras.Include(x => x.Proveedores)                
                 .Include(x => x.DetalleCompras)
                 .ThenInclude(x => x.Articulo)
                 .FirstAsync(x => x.Id == id);
@@ -78,8 +65,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             context.Compras.Add(compra);
             try
             {
-                var userid = User.GetUserId();
-                compra.EmpleadoId = userid;
+                               
                 compra.Fecha = DateTime.Now;
                 await context.SaveChangesAsync();
 

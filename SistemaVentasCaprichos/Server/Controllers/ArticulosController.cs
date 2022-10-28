@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SistemaVentasCaprichos.Server.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class ArticulosController : ControllerBase
@@ -30,13 +30,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             return await context.Articulos.OrderBy(x => x.Nombre).ToListAsync(); // hurra
         }
 
-        ///GET: api/ventas
-        //[HttpGet]
-        //public async Task<ActionResult<List<Articulo>>> GetDos()
-        //{
-        //    return await context.Articulos.Include(x => x.Categorias)
-        //        .ToListAsync();
-        //}
+       
 
         //GET: api/articulos/filtro/nombre
         [HttpGet("filtro")]

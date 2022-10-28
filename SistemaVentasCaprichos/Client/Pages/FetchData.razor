@@ -1,8 +1,7 @@
 ﻿@page "/fetchdata"
-@using Microsoft.AspNetCore.Authorization
-@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
 @using SistemaVentasCaprichos.Shared
-@attribute [Authorize]
+
 @inject HttpClient Http
 
 <h1>Weather forecast</h1>
@@ -47,9 +46,9 @@ else
         {
             forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
         }
-        catch (AccessTokenNotAvailableException exception)
+        catch ( Exception)
         {
-            exception.Redirect();
+            throw;
         }
     }
 

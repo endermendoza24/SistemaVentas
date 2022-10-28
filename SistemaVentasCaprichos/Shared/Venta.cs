@@ -22,18 +22,15 @@ namespace SistemaVentasCaprichos.Shared
         public int? ClienteId { get; set; }
         [ForeignKey("ClienteId")]
         public Cliente Cliente { get; set; }
-        public string EmpleadoId { get; set; }
-        [ForeignKey("EmpleadoId")]
-        public virtual ApplicationUser ApplicationUser { get; set; }
-        public decimal Total { get; set; }
+        
+        public decimal Total { get; set; }      
         #endregion
     }
 
     public enum FormasPago
     {
-        Efectivo = 1,
-        MercadoPago = 2,
-        CuentaCorriente = 3
+        Cordoba = 1,        
+        Dolar = 2
     }
 
   

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SistemaVentasCaprichos.Server.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class ClientesController : ControllerBase

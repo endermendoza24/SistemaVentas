@@ -6,14 +6,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SistemaVentasCaprichos.Server.Common;
+
 using SistemaVentasCaprichos.Server.Controllers;
 using SistemaVentasCaprichos.Server.Data;
 using SistemaVentasCaprichos.Shared;
 
 namespace SistemaVentasCaprichos.Server.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class VentasController : ControllerBase
@@ -30,7 +30,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
         public async Task<ActionResult<List<Venta>>> Get()
         {
             return await context.Ventas.Include(x => x.Cliente)
-                .Include(x => x.ApplicationUser)
+                
                 .Include(x => x.DetalleVentas)
                 .ThenInclude(x => x.Articulo)
                 .ToListAsync();
@@ -43,20 +43,11 @@ namespace SistemaVentasCaprichos.Server.Controllers
             DateTime f = Convert.ToDateTime(fecha);
 
             var queryable = context.Ventas.Include(x => x.Cliente)
-                .Include(x => x.ApplicationUser)
+                
                 .Include(x => x.DetalleVentas)
                 .ThenInclude(x => x.Articulo).AsQueryable();
 
-            if (!string.IsNullOrEmpty(empleado))
-            {
-                queryable = queryable.Where(x => x.ApplicationUser.NombreyApellido.Contains(empleado));
-            }
-            if (f != DateTime.Today.AddDays(+1))
-            {
-                queryable = queryable.Where(x => x.Fecha.Day == f.Day &&
-                                            x.Fecha.Month == f.Month &&
-                                            x.Fecha.Year == f.Year);
-            }
+            
             return await queryable.OrderByDescending(x => x.Fecha).ToListAsync();
         }
 
@@ -64,8 +55,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Venta>> Get(int id)
         {
-            return await context.Ventas.Include(x => x.Cliente)
-                .Include(x => x.ApplicationUser)
+            return await context.Ventas.Include(x => x.Cliente)                
                 .Include(x => x.DetalleVentas)
                 .ThenInclude(x => x.Articulo)
                 .FirstAsync(x => x.Id == id);
@@ -78,8 +68,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             context.Ventas.Add(venta);
             try
             {
-                var userid = User.GetUserId();
-                venta.EmpleadoId = userid;
+                            
                 venta.Fecha = DateTime.Now;
                 await context.SaveChangesAsync();
 
@@ -87,7 +76,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
                 if (venta.ClienteId != null)
                 {
-                    await IncrementaSaldo(venta);
+                    
                 }
             }
             catch (DbUpdateException)
@@ -115,7 +104,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             {
                 if (venta.ClienteId != null)
                 {
-                    await DecrementaSaldo(venta);
+                    
                 }
                 await IncrementaStock(venta);
 
@@ -136,46 +125,9 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         }
 
-        private async Task IncrementaSaldo(Venta venta)
-        {
-            var cliente = await context.Clientes.FirstAsync(x => x.Id == venta.ClienteId);
-            cliente.Saldo = cliente.Saldo + venta.Total;
+        
 
-            ClientesController c = new ClientesController(context);
-            await c.Put(cliente);
-
-            CuentasCorrientesController cc = new CuentasCorrientesController(context);
-            CuentaCorriente cuenta = new CuentaCorriente()
-            {
-                Fecha = venta.Fecha,
-                ClienteId = Convert.ToInt32(venta.ClienteId),
-                ComprobanteId = venta.Id,
-                Concepto = CuentaCorriente.Conceptos.Debe,
-                Importe = venta.Total,
-                Saldo_Parcial = venta.Cliente.Saldo
-            };
-            await cc.Post(cuenta);
-        }
-
-        private async Task DecrementaSaldo(Venta venta)
-        {
-            var cliente = await context.Clientes.FirstAsync(x => x.Id == venta.ClienteId);
-            cliente.Saldo = cliente.Saldo - venta.Total;
-
-            ClientesController c = new ClientesController(context);
-            await c.Put(cliente);
-
-            CuentasCorrientesController cc = new CuentasCorrientesController(context);
-            CuentaCorriente cuenta = new CuentaCorriente()
-            {
-                Fecha = DateTime.Now,
-                ClienteId = Convert.ToInt32(venta.ClienteId),
-                Concepto = CuentaCorriente.Conceptos.Reajuste,
-                Importe = -venta.Total,
-                Saldo_Parcial = venta.Cliente.Saldo
-            };
-            await cc.Post(cuenta);
-        }
+       
 
         private async Task DecrementaStock(Venta venta)
         {

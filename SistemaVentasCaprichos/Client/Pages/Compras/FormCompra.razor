@@ -4,14 +4,7 @@
 <EditForm Model="@compra" OnValidSubmit="OnValidSubmit">
     <div class="form-field mt-2 mb-2">
         <div class="form-group row">
-            <label class="col-3 col-form-label">Proveedor</label>
-            <div class="col">
-                <div class="input-group">
-                    <InputText @bind-Value="compra.Proveedor" class="form-control" oninput="this.value=this.value.toUpperCase()" />
-                </div>
-                <ValidationMessage For="@(() => compra.Proveedor)" />
-            </div>
-            <div class="col">
+                      
                 <label><small>Proveedores.</small></label>
                 <InputSelect @bind-Value="compra.ProveedoresId" required class="form-control form-control-sm">
                     <option selected value="">Seleccione el proveedor</option>
@@ -20,8 +13,7 @@
                         <option value="@proveedor.Id">@proveedor.Nombre</option>
                     }
                 </InputSelect>
-                <ValidationMessage For="@(() => compra.ProveedoresId)" />
-            </div>
+                <ValidationMessage For="@(() => compra.ProveedoresId)" />            
         </div>
 
         <div class="form-group">
@@ -41,7 +33,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-2" style="background-color:lightgrey;border-radius:0.5rem">
+                <div class="card mb-2" style="background-color:#fff;border-radius:0.5rem; box-shadow: 22px 3px 39px 1px rgba(0,0,0,0.51);">
                     <div class="row">
                         <div class="col-8 form-group">
                             <label><small>Artículo</small></label>
@@ -49,7 +41,7 @@
                                 <option selected value="">Seleccione un artículo</option>
                                 @foreach (var articulo in articulos)
                                     {
-                                    <option value="@articulo.Id">@articulo.Nombre | $@articulo.PrecioUnitario | STOCK: @articulo.StockActual</option>
+                                    <option value="@articulo.Id">@articulo.Nombre | C$@articulo.PrecioUnitario | STOCK: @articulo.StockActual</option>
                                     }
                             </InputSelect>
                             <ValidationMessage For="@(() => detalle.ArticuloId)" />
@@ -105,7 +97,7 @@
                     <h4><b>TOTAL</b></h4>
                     @if (compra.Total != 0)
                     {
-                        <h3><b>$@compra.Total</b></h3>
+                        <h3><b>C$@compra.Total</b></h3>
                     }
                 </button>
             </div>

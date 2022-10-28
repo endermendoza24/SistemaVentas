@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.3.32929.385
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaVentasCaprichos.Server", "SistemaVentasCaprichos\Server\SistemaVentasCaprichos.Server.csproj", "{CBA6973C-8FB8-4906-9F84-6CF3740E31EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVentasCaprichos.Server", "SistemaVentasCaprichos\Server\SistemaVentasCaprichos.Server.csproj", "{4819101F-F2C1-418D-B043-155798A85847}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaVentasCaprichos.Client", "SistemaVentasCaprichos\Client\SistemaVentasCaprichos.Client.csproj", "{22A4B260-57F6-4235-A058-114895A017AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVentasCaprichos.Client", "SistemaVentasCaprichos\Client\SistemaVentasCaprichos.Client.csproj", "{A1E5AF7F-277E-4EE9-A9FD-FFD6CA120149}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaVentasCaprichos.Shared", "SistemaVentasCaprichos\Shared\SistemaVentasCaprichos.Shared.csproj", "{A2309889-C1B5-4DA7-833B-6A12FC741921}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVentasCaprichos.Shared", "SistemaVentasCaprichos\Shared\SistemaVentasCaprichos.Shared.csproj", "{DD0207FE-EAF9-4325-8BD8-F6F1EC8E5D1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,23 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CBA6973C-8FB8-4906-9F84-6CF3740E31EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBA6973C-8FB8-4906-9F84-6CF3740E31EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBA6973C-8FB8-4906-9F84-6CF3740E31EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBA6973C-8FB8-4906-9F84-6CF3740E31EA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{22A4B260-57F6-4235-A058-114895A017AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22A4B260-57F6-4235-A058-114895A017AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22A4B260-57F6-4235-A058-114895A017AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22A4B260-57F6-4235-A058-114895A017AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A2309889-C1B5-4DA7-833B-6A12FC741921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2309889-C1B5-4DA7-833B-6A12FC741921}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2309889-C1B5-4DA7-833B-6A12FC741921}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2309889-C1B5-4DA7-833B-6A12FC741921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4819101F-F2C1-418D-B043-155798A85847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4819101F-F2C1-418D-B043-155798A85847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4819101F-F2C1-418D-B043-155798A85847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4819101F-F2C1-418D-B043-155798A85847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1E5AF7F-277E-4EE9-A9FD-FFD6CA120149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E5AF7F-277E-4EE9-A9FD-FFD6CA120149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E5AF7F-277E-4EE9-A9FD-FFD6CA120149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E5AF7F-277E-4EE9-A9FD-FFD6CA120149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD0207FE-EAF9-4325-8BD8-F6F1EC8E5D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD0207FE-EAF9-4325-8BD8-F6F1EC8E5D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD0207FE-EAF9-4325-8BD8-F6F1EC8E5D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD0207FE-EAF9-4325-8BD8-F6F1EC8E5D1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E76D05D1-C989-49D0-B3BC-3DB583F320CB}
+		SolutionGuid = {2EDAD9F8-2B1A-4F3C-9F6B-E52A3795E942}
 	EndGlobalSection
 EndGlobal

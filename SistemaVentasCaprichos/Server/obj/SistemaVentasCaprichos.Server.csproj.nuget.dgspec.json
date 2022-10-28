@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj": {}
+    "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {
+    "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
         "projectName": "SistemaVentasCaprichos.Client",
-        "projectPath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
+        "projectPath": "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
         "packagesPath": "C:\\Users\\Endersson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Client\\obj\\",
+        "outputPath": "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Endersson\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
-                "projectPath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
+              "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
+                "projectPath": "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
               }
             }
           }
@@ -48,18 +48,10 @@
               "target": "Package",
               "version": "[5.0.17, )"
             },
-            "Microsoft.AspNetCore.Components.WebAssembly.Authentication": {
-              "target": "Package",
-              "version": "[5.0.17, )"
-            },
             "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.17, )"
-            },
-            "Microsoft.Extensions.Http": {
-              "target": "Package",
-              "version": "[5.0.0, )"
             },
             "MudBlazor": {
               "target": "Package",
@@ -100,14 +92,14 @@
         }
       }
     },
-    "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj": {
+    "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
+        "projectUniqueName": "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
         "projectName": "SistemaVentasCaprichos.Server",
-        "projectPath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
+        "projectPath": "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
         "packagesPath": "C:\\Users\\Endersson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Server\\obj\\",
+        "outputPath": "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Endersson\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -124,11 +116,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {
-                "projectPath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj"
+              "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {
+                "projectPath": "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj"
               },
-              "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
-                "projectPath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
+              "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
+                "projectPath": "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
               }
             }
           }
@@ -143,35 +135,31 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Microsoft.AspNetCore.ApiAuthorization.IdentityServer": {
-              "target": "Package",
-              "version": "[5.0.17, )"
-            },
             "Microsoft.AspNetCore.Components.WebAssembly.Server": {
-              "target": "Package",
-              "version": "[5.0.17, )"
-            },
-            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.17, )"
-            },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.17, )"
-            },
-            "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[5.0.17, )"
             },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[5.0.7, )"
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.17, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.17, )"
             }
@@ -198,14 +186,14 @@
         }
       }
     },
-    "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
+    "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
         "projectName": "SistemaVentasCaprichos.Shared",
-        "projectPath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
+        "projectPath": "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
         "packagesPath": "C:\\Users\\Endersson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Endersson\\Pictures\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\Endersson\\source\\repos\\SistemaVentasCaprichos\\SistemaVentasCaprichos\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Endersson\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -233,12 +221,6 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "dependencies": {
-            "Microsoft.Extensions.Identity.Stores": {
-              "target": "Package",
-              "version": "[5.0.7, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

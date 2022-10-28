@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SistemaVentasCaprichos.Server.Controllers
 {
-    [Authorize]
+    
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase

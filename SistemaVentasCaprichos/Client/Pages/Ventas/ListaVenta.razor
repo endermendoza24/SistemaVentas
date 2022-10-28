@@ -2,7 +2,6 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
-@attribute [Authorize]
 @using System.Text.Json
 
 <div class="d-flex position-sticky justify-content-between mb-1">
@@ -11,7 +10,7 @@
     </div>
     <div class="input-group" style="width:60%">
         <input class="form-control" type="date" placeholder="Fecha venta" @bind="FechaFiltro" />
-        <input class="form-control" type="text" placeholder="Nombre empleado" @bind="EmpleadoFiltro" />
+        
         <div class="input-group-append">
             <button @onclick="Filtrar" class="btn btn-primary" type="button"><i class="oi oi-magnifying-glass"></i></button>
             <button @onclick="Limpiar" class="btn btn-danger" type="button"><i class="oi oi-delete"></i></button>
@@ -42,8 +41,7 @@ else
                 <th>#</th>
                 <th>Fecha</th>
                 <th>Forma de pago</th>
-                <th>Cliente</th>
-                <th>Empleado</th>
+                <th>Cliente</th>                
                 <th>Total</th>
             </tr>
         </thead>
@@ -61,9 +59,8 @@ else
                     else
                     {
                         <td></td>
-                    }
-                    <td>@venta.ApplicationUser.NombreyApellido</td>
-                    <td><b>$@venta.Total</b></td>
+                    }                    
+                    <td><b>C$@venta.Total</b></td>
                 </tr>
             </Virtualize>
         </tbody>
@@ -81,9 +78,9 @@ else
         {
             await CargarVentas();
         }
-        catch (AccessTokenNotAvailableException exception)
+        catch (Exception exception)
         {
-            exception.Redirect();
+            throw;
         }
     }
 

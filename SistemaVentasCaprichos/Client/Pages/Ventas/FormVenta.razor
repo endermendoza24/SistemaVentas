@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        @if (venta.FormaPago == FormasPago.CuentaCorriente)
+        @if (venta.FormaPago == FormasPago.Cordoba || venta.FormaPago == FormasPago.Dolar)
         {
             ocultaclientes = false;
         }
@@ -28,10 +28,10 @@
             venta.ClienteId = null;
         }
 
-        @if (venta.FormaPago == FormasPago.CuentaCorriente && venta.ClienteId == null)
+        @*@if (venta.FormaPago == FormasPago.Cordoba || venta.FormaPago == FormasPago.Dolar && venta.ClienteId == null)
         {
             venta.ClienteId = 0;
-        }
+        }*@
 
         <div class="form-group row" hidden="@ocultaclientes">
             <label class="col-3 col-form-label">Cliente</label>
@@ -58,7 +58,7 @@
 
                 <h5>Ítem #@(i + 1)</h5>
 
-                <div class="card mb-2" style="background-color:lightgrey;border-radius:0.5rem">
+                <div class="card mb-2" style="background-color:lightgrey;border-radius:0.5rem; box-shadow: 22px 3px 39px 1px rgba(0,0,0,0.51);">
                     <div class="row">
                         <div class="col-12 form-group">
                             <div class="d-flex justify-content-between align-items-center m-1">
@@ -73,7 +73,7 @@
                                     {
                                         if (articulo.StockActual > 0)
                                         {
-                                        <option value="@articulo.Id">@articulo.Nombre | $@articulo.PrecioUnitario | STOCK: @articulo.StockActual</option>
+                                        <option value="@articulo.Id">@articulo.Nombre | C$@articulo.PrecioUnitario | STOCK: @articulo.StockActual</option>
                                         }
                                     }
                             </InputSelect>
@@ -127,7 +127,7 @@
                     <h4><b>TOTAL</b></h4>
                     @if (venta.Total != 0)
                     {
-                        <h3><b>$@venta.Total</b></h3>
+                        <h3><b>C$@venta.Total</b></h3>
                     }
                 </button>
             </div>
@@ -149,6 +149,8 @@
     [Parameter] public EventCallback OnValidSubmit { get; set; }
     [Parameter] public string textSubmit { get; set; }
 
+    public decimal Iva = 15M / 100M;
+
     public bool ocultaclientes = true;
 
     public List<DetalleVenta> listadetalle { get; set; } = new List<DetalleVenta>();
@@ -161,12 +163,13 @@
         if (listadetalle.Count > 0)
         {
             @for (int i = 0; i < listadetalle.Count; i++)
-            {
+            {                
                 venta.Total += listadetalle[i].SubTotal;
             }
         }
         return venta.Total;
     }
+   
 
     void Volver()
     {

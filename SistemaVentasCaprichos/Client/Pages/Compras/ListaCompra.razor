@@ -3,7 +3,7 @@
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
 
-@attribute [Authorize]
+
 @using System.Text.Json
 
 <div class="d-flex position-sticky justify-content-between mb-1">
@@ -12,7 +12,7 @@
     </div>
     <div class="input-group" style="width:60%">
         <input class="form-control" type="date" placeholder="Fecha compra" @bind="FechaFiltro" />
-        <input class="form-control" type="text" placeholder="Nombre empleado" @bind="EmpleadoFiltro" />
+        
         <div class="input-group-append">
             <button @onclick="Filtrar" class="btn btn-primary" type="button"><i class="oi oi-magnifying-glass"></i></button>
             <button @onclick="Limpiar" class="btn btn-danger" type="button"><i class="oi oi-delete"></i></button>
@@ -42,8 +42,7 @@ else
                 <th></th>
                 <th>#</th>
                 <th>Fecha</th>
-                <th>Proveedor</th>
-                <th>Empleado</th>
+                <th>Proveedor</th>                
                 <th>Total</th>
             </tr>
         </thead>
@@ -52,11 +51,9 @@ else
                 <tr @key="compra.Id">
                     <td><a href="ver-compra/@compra.Id" class="btn btn-sm btn-primary"><i class="oi oi-eye"></i> Ver</a></td>
                     <td>@compra.Id</td>
-                    <td>@compra.Fecha</td>
-                    @*<td>@compra.Proveedor</td>*@
-                    <td>@compra.Proveedores.Nombre</td>
-                    <td>@compra.ApplicationUser.NombreyApellido</td>
-                    <td><b>$@compra.Total</b></td>
+                    <td>@compra.Fecha</td>                    
+                    <td>@compra.Proveedores.Nombre</td>                    
+                    <td><b>C$@compra.Total</b></td>
                 </tr>
             </Virtualize>
         </tbody>
@@ -74,9 +71,9 @@ else
         {
             await CargarCompras();
         }
-        catch (AccessTokenNotAvailableException exception)
+        catch (Exception exception)
         {
-            exception.Redirect();
+            throw;
         }
     }
 
@@ -85,6 +82,7 @@ else
         string fecha = Convert.ToString(FechaFiltro);
 
         var httpResponse = await Http.GetAsync($"api/compras/filtro?empleado={EmpleadoFiltro}&fecha={fecha}");
+        //  implementar esta funcioin más tarde cuando se haga el modulo de seguridad
         if (httpResponse.IsSuccessStatusCode)
         {
             var responseString = await httpResponse.Content.ReadAsStringAsync();
