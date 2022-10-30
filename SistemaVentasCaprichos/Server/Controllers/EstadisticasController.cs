@@ -34,7 +34,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             {
                 meses[i - 1] = context.Ventas
                 .Where(x => x.Fecha.Date.Month == i && x.Fecha.Date.Year == año
-                       && x.FormaPago != FormasPago.CuentaCorriente)
+                       && x.FormaPago != FormasPago.Cordoba)
                 .Sum(x => x.Total) + context.Pagos
                 .Where(x => x.Fecha.Date.Month == i && x.Fecha.Date.Year == año)
                 .Sum(x => x.Importe);

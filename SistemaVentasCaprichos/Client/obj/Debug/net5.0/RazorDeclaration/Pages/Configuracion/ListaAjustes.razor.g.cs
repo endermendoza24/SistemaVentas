@@ -13,126 +13,119 @@ namespace SistemaVentasCaprichos.Client.Pages.Configuracion
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 1 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 2 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 3 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 4 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 6 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 7 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 8 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 9 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 10 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 11 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 12 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 13 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 14 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 14 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 17 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 17 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using MudBlazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\ListaConfiguracion.razor"
+#line 7 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\ListaAjustes.razor"
 using System.Text.Json;
 
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 5 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\ListaConfiguracion.razor"
-           [Authorize]
-
-#line default
-#line hidden
-#nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/lista-configuracion")]
-    public partial class ListaConfiguracion : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/lista-ajustes")]
+    public partial class ListaAjustes : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -140,7 +133,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 67 "C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\ListaConfiguracion.razor"
+#line 115 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\ListaAjustes.razor"
        
     private bool dense = false;
     private bool hover = true;
@@ -148,11 +141,11 @@ using System.Text.Json;
     private bool bordered = true;
     private string searchString1 = "";
     private Configuracion selectedItem1 = null;
-    private HashSet<Configuracion> selectedItems = new HashSet<Configuracion>();
+    private HashSet<Configuracion> selectedItems = new HashSet<Configuracion>();    
 
 
     public List<Configuracion> Configuracion { get; set; } //muestra todos los Categoria
-    Configuracion objMarca = new Configuracion();
+    Configuracion objConfiguracion = new Configuracion();
 
     private string NombreArtFiltro = String.Empty; //filtros
 
@@ -161,12 +154,12 @@ using System.Text.Json;
 
     protected override async Task OnInitializedAsync()
     {
-        await CargarMarcas();
+        await CargarConfiguracion();
     }
 
-    async Task CargarMarcas()
+    async Task CargarConfiguracion()
     {
-        var httpResponse = await Http.GetAsync($"api/configuracion");
+        var httpResponse = await Http.GetAsync($"api/Configuracion");
         if (httpResponse.IsSuccessStatusCode)
         {
             var responseString = await httpResponse.Content.ReadAsStringAsync();
@@ -188,23 +181,23 @@ using System.Text.Json;
 
     async Task MostrarTodos()
     {
-        await CargarMarcas();
+        await CargarConfiguracion();
     }
 
     void CrearArticulo()
     {
-        NavigationManager.NavigateTo("crearconfiguracion");
+        NavigationManager.NavigateTo("crearajustes");
     }
 
     private async Task Filtrar()
     {
-        await CargarMarcas();
+        await CargarConfiguracion();
     }
 
     private async Task Limpiar()
     {
         NombreArtFiltro = string.Empty;
-        await CargarMarcas();
+        await CargarConfiguracion();
     }
 
     // esta es la funcion de filtrado de MudBlazor

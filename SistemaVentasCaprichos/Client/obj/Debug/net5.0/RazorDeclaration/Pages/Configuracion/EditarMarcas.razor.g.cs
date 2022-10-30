@@ -124,7 +124,7 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/editar-configuracion/{idConfiguracion:int}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/editar-marcas/{idMarca:int}")]
     public partial class EditarMarcas : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -135,31 +135,31 @@ using MudBlazor;
 #nullable restore
 #line 24 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\EditarMarcas.razor"
        
-    Configuracion Configuracion = new Configuracion();
-    [Parameter] public int idConfiguracion { get; set; }
+    Marcas Marca = new Marcas();
+    [Parameter] public int idMarca { get; set; }
 
     protected async override Task OnParametersSetAsync()
     {
-        Configuracion = await Http.GetFromJsonAsync<Configuracion>($"/api/configuracion/{idConfiguracion}");
+        Marca = await Http.GetFromJsonAsync<Marcas>($"/api/marcas/{idMarca}");
     }
 
     void Volver()
     {
-        NavigationManager.NavigateTo("/lista-configuracion");
+        NavigationManager.NavigateTo("/lista-marcas");
     }
 
     async Task EditarArtic()
     {
         var confirmacion = await JS.InvokeAsync<bool>("confirmar", "Editar",
-            $"¿Desea editar {Configuracion.NombreSistema}?", "question");
+            $"¿Desea editar {Marca.Nombre}?", "question");
         if (confirmacion)
         {
-            var respuesta = await Http.PutAsJsonAsync("/api/configuracion", Configuracion);
+            var respuesta = await Http.PutAsJsonAsync("/api/marcas", Marca);
 
             if (respuesta.IsSuccessStatusCode)
             {
-                NavigationManager.NavigateTo("/lista-configuracion");
-                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Configuracion editada", "success");
+                NavigationManager.NavigateTo("/lista-marcas");
+                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Marca editada", "success");
             }
             else
             {
@@ -172,15 +172,15 @@ using MudBlazor;
     async Task BorrarArticulo(int idCategoria)
     {
         var confirmacion = await JS.InvokeAsync<bool>("confirmar", "Eliminar",
-            $"¿Desea eliminar {Configuracion.NombreSistema}?", "warning");
+            $"¿Desea eliminar {Marca.Nombre}?", "warning");
         if (confirmacion)
         {
-            var respuesta = await Http.DeleteAsync($"/api/configuracion/{Configuracion.Id}");
+            var respuesta = await Http.DeleteAsync($"/api/marcas/{Marca.Id}");
 
             if (respuesta.IsSuccessStatusCode)
             {
-                NavigationManager.NavigateTo("/lista-configuracion");
-                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Configuracion eliminada", "success");
+                NavigationManager.NavigateTo("/lista-marcas");
+                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Marca eliminada", "success");
             }
             else
             {

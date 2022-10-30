@@ -14,25 +14,19 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                 nullable: true);
 
             migrationBuilder.CreateTable(
-                name: "Articulos",
+                name: "Categoria",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Categoria = table.Column<int>(type: "int", nullable: false),
-                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Url_Imagen = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PrecioMayorista = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    PrecioUnitario = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Ultima_Modificación = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    StockMinimo = table.Column<int>(type: "int", nullable: false),
-                    StockMaximo = table.Column<int>(type: "int", nullable: false),
-                    StockActual = table.Column<int>(type: "int", nullable: false)
+                    Nombre = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    Descripcion = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    FechaRegistro = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Estado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Articulos", x => x.Id);
+                    table.PrimaryKey("PK_Categoria", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -42,11 +36,13 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NombreyApellido = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Dni = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false),
+                    Cedula = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     Sexo = table.Column<int>(type: "int", nullable: false),
                     Dirección = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Teléfono = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Saldo = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Saldo = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    FechaAlta = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Estado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -54,25 +50,68 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Compras",
+                name: "Configuracion",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Proveedor = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EmpleadoId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    NombreSistema = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Direccion = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Telefono = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
+                    RUC = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Compras", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Compras_AspNetUsers_EmpleadoId",
-                        column: x => x.EmpleadoId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                    table.PrimaryKey("PK_Configuracion", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Marca",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    Descripcion = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Estado = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Marca", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Proveedores",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Telefono = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Direccion = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Estado = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Proveedores", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Tallas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Estado = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tallas", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -181,6 +220,78 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Compras",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Proveedor = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EmpleadoId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    ProveedoresId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Compras", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Compras_AspNetUsers_EmpleadoId",
+                        column: x => x.EmpleadoId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Compras_Proveedores_ProveedoresId",
+                        column: x => x.ProveedoresId,
+                        principalTable: "Proveedores",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Articulos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Url_Imagen = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PrecioMayorista = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    PrecioUnitario = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Ultima_Modificación = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Codigo = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    StockMinimo = table.Column<int>(type: "int", nullable: false),
+                    StockMaximo = table.Column<int>(type: "int", nullable: false),
+                    StockActual = table.Column<int>(type: "int", nullable: false),
+                    CategoriaId = table.Column<int>(type: "int", nullable: false),
+                    TallasId = table.Column<int>(type: "int", nullable: false),
+                    MarcaId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Articulos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Articulos_Categoria_CategoriaId",
+                        column: x => x.CategoriaId,
+                        principalTable: "Categoria",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Articulos_Marca_MarcaId",
+                        column: x => x.MarcaId,
+                        principalTable: "Marca",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Articulos_Tallas_TallasId",
+                        column: x => x.TallasId,
+                        principalTable: "Tallas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "DetalleCompras",
                 columns: table => new
                 {
@@ -266,9 +377,29 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Articulos_CategoriaId",
+                table: "Articulos",
+                column: "CategoriaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Articulos_MarcaId",
+                table: "Articulos",
+                column: "MarcaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Articulos_TallasId",
+                table: "Articulos",
+                column: "TallasId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Compras_EmpleadoId",
                 table: "Compras",
                 column: "EmpleadoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Compras_ProveedoresId",
+                table: "Compras",
+                column: "ProveedoresId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CuentasCorrientes_ClienteId",
@@ -334,6 +465,9 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Configuracion");
+
+            migrationBuilder.DropTable(
                 name: "CuentasCorrientes");
 
             migrationBuilder.DropTable(
@@ -359,6 +493,18 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Ventas");
+
+            migrationBuilder.DropTable(
+                name: "Proveedores");
+
+            migrationBuilder.DropTable(
+                name: "Categoria");
+
+            migrationBuilder.DropTable(
+                name: "Marca");
+
+            migrationBuilder.DropTable(
+                name: "Tallas");
 
             migrationBuilder.DropTable(
                 name: "Clientes");

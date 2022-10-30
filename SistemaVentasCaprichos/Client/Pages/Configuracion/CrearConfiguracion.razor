@@ -1,4 +1,4 @@
-﻿@page "/crearConfiguracion"
+﻿@page "/crearajustes"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<FormConfiguracion TextBotonSubmit="Guardar" OnValidSubmit="@Crear" Configuracion="@Configuracion" />
+<FormAjustes TextBotonSubmit="Guardar" OnValidSubmit="@Crear" Configuracion="@Configuracion" />
 
 @code {
     Configuracion Configuracion = new Configuracion();
@@ -27,21 +27,20 @@
 
         if (respuesta.IsSuccessStatusCode)
         {
-            NavigationManager.NavigateTo("/lista-configuracion"); //  cambiar a indexArticulo
-            await JS.InvokeVoidAsync("simple", "¡Éxito!", "Configuracion creada", "success");
-            Snackbar.Add("Agregada con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
-
+            NavigationManager.NavigateTo("/lista-ajustes"); //  cambiar a indexArticulo
+            //await JS.InvokeVoidAsync("simple", "¡Éxito!", "Configuracion creada", "success");
+            Snackbar.Add("Ajuste exitoso", Severity.Success, a => a.VisibleStateDuration = 200);
         }
         else
         {
             //await JS.InvokeVoidAsync("simple", "Error",
             //        "No se pudo crear este producto", "error");
+            Snackbar.Add("Ha ocurrido un error", Severity.Error);
         }
     }
 
     void Volver()
     {
-        NavigationManager.NavigateTo("/lista-configuracion"); //  cambiar a index
-        NavigationManager.NavigateTo("/editar-configuracion/1"); //  cambiar a index
+        NavigationManager.NavigateTo("/lista-ajustes"); //  cambiar a index
     }
 }

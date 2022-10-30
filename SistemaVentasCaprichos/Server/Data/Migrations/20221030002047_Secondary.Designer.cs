@@ -10,8 +10,8 @@ using SistemaVentasCaprichos.Server.Data;
 namespace SistemaVentasCaprichos.Server.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221026154247_AgregandoConfiguracion")]
-    partial class AgregandoConfiguracion
+    [Migration("20221030002047_Secondary")]
+    partial class Secondary
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -338,7 +338,9 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Codigo")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("Descripcion")
                         .HasColumnType("nvarchar(max)");
@@ -365,6 +367,9 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                     b.Property<int>("StockMinimo")
                         .HasColumnType("int");
 
+                    b.Property<int>("TallasId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Ultima_Modificación")
                         .HasColumnType("datetime2");
 
@@ -376,6 +381,8 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                     b.HasIndex("CategoriaId");
 
                     b.HasIndex("MarcaId");
+
+                    b.HasIndex("TallasId");
 
                     b.ToTable("Articulos");
                 });
@@ -414,14 +421,14 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Cedula")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
                     b.Property<string>("Dirección")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Dni")
-                        .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("nvarchar(8)");
 
                     b.Property<bool>("Estado")
                         .HasColumnType("bit");
@@ -489,12 +496,17 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
 
                     b.Property<string>("Direccion")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("NombrePropietario")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("NombreSistema")
                         .IsRequired()
@@ -755,6 +767,28 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                     b.ToTable("Proveedores");
                 });
 
+            modelBuilder.Entity("SistemaVentasCaprichos.Shared.Tallas", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Estado")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tallas");
+                });
+
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Venta", b =>
                 {
                     b.Property<int>("Id")
@@ -851,9 +885,17 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("SistemaVentasCaprichos.Shared.Tallas", "Tallas")
+                        .WithMany()
+                        .HasForeignKey("TallasId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Categorias");
 
                     b.Navigation("Marca");
+
+                    b.Navigation("Tallas");
                 });
 
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Compra", b =>

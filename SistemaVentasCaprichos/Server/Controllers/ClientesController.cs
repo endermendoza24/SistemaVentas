@@ -53,7 +53,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpPost]
         public async Task<ActionResult> Post(Cliente cliente)
         {
-            if (!Exists(cliente.Dni))
+            if (!Exists(cliente.Cedula))
             {
                 context.Clientes.Add(cliente);
                 await context.SaveChangesAsync();
@@ -92,7 +92,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         private bool Exists(string dni)
         {
-            return (context.Clientes.Any(e => e.Dni == dni));
+            return (context.Clientes.Any(e => e.Cedula == dni));
         }
     }
 }

@@ -17,6 +17,9 @@ namespace SistemaVentasCaprichos.Shared
 
         public string NombreSistema { get; set; }
         [Required(ErrorMessage = "No puede dejar este campo {0} vacio")]
+        [StringLength(20, ErrorMessage = "Máximo 20 caracteres")]
+        public string NombrePropietario { get; set; }
+        [Required(ErrorMessage = "No puede dejar este campo {0} vacio")]
         [StringLength(100, ErrorMessage = "Máximo 100 caracteres")]
         public string Direccion { get; set; }
         [Required(ErrorMessage = "No puede dejar este campo {0} vacio")]

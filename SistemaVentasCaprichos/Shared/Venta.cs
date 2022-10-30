@@ -31,10 +31,9 @@ namespace SistemaVentasCaprichos.Shared
 
     public enum FormasPago
     {
-        Efectivo = 1,
-        MercadoPago = 2,
-        CuentaCorriente = 3
+        Cordoba = 1,
+        Dolar = 2
     }
 
-  
+
 }

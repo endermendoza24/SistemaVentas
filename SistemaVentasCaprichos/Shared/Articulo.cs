@@ -15,7 +15,7 @@ namespace SistemaVentasCaprichos.Shared
         public int Id { get; set; }
         [Required]
         public string Nombre { get; set; }
-       
+
         public string? Descripcion { get; set; }
         public string? Url_Imagen { get; set; }
         [Required]
@@ -25,7 +25,9 @@ namespace SistemaVentasCaprichos.Shared
         [Range(1, double.MaxValue, ErrorMessage = "Valor inválido")]
         public decimal PrecioUnitario { get; set; }
         public DateTime Ultima_Modificación { get; set; }
-        public string Codigo { get; set; }
+        [Required]
+        [MaxLength(15, ErrorMessage = "Máximo {0} caracteres")]
+        public string? Codigo { get; set; }
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "Valor inválido")]
         public int StockMinimo { get; set; }

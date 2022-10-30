@@ -9,7 +9,7 @@
                         <option selected value="0">Seleccione cliente</option>
                         @foreach (var cliente in clientes)
                         {
-                            <option value="@cliente.Id">@cliente.NombreyApellido | DNI:@cliente.Dni</option>
+                            <option value="@cliente.Id">@cliente.NombreyApellido | Cédula:@cliente.Cedula</option>
                         }
                     </InputSelect>
                 </div>
