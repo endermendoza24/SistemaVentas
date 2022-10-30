@@ -18,7 +18,7 @@ namespace SistemaVentasCaprichos.Server.Data
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
-
+        
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Articulo> Articulos { get; set; }
         public DbSet<Venta> Ventas { get; set; }

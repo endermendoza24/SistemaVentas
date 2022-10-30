@@ -15,9 +15,7 @@
         </button>
     </div>
     <div class="btn-group">
-        <button @onclick="@(() => BorrarVenta(venta.Id))" class="btn btn-sm btn-danger">
-            <i class="oi oi-trash"></i> Eliminar venta
-        </button>
+        
     </div>
 </div>
 
@@ -30,21 +28,24 @@
             </h4>
 
             <div class="d-flex justify-content-between">
-                <b>CAPRICHOS </b> @*aqui irán los datos de la tabla configuración*@
+                <b> </b> @*aqui irán los datos de la tabla configuración*@
                 <small><b>N° factura:</b> @venta.Id</small>
             </div>
 
             <div class="d-flex justify-content-between">
-                <small>Tienda de ropa Caprichos</small>
+                <small>@ListaAjustes.NombreSistema</small>
                 <small><b>Fecha:</b> @venta.Fecha</small>
             </div>
             <div class="d-flex justify-content-between">
-                <small></small>
+                <small>@ListaAjustes.NombrePropietario</small>
                 <small><b>F.de Pago:</b> @venta.FormaPago</small>
+            </div>
+            <div class="d-flex justify-content-between">                
+                <small><b>Dirección:</b> @ListaAjustes.Direccion</small>
             </div>
 
             <div class="d-flex justify-content-between">
-                <small>82072291</small>
+                <small>@ListaAjustes.Telefono</small>
             </div>
 
             @if (venta.ClienteId != null)
@@ -97,6 +98,8 @@
 
     [Parameter] public int idventa { get; set; }
 
+    public Configuracion ListaAjustes { get; set; }
+
     protected override async Task OnInitializedAsync()
     {
         var httpResponse = await Http.GetAsync($"api/ventas/{idventa}");
@@ -111,35 +114,31 @@
             await JS.InvokeVoidAsync("simple", "Error", "Venta no encontrada.", "error");
             NavigationManager.NavigateTo("lista-ventas");
         }
-
+        await CargarAjustes();
 
     }
 
-    async Task BorrarVenta(int idventa)
-    {
-        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "¿Eliminar venta?",
-            $"Venta N° {venta.Id}. Fecha: {venta.Fecha}. Total: {venta.Total}", "warning");
-        if (confirmacion)
-        {
-            var respuesta = await Http.DeleteAsync($"/api/ventas/{idventa}");
-
-            if (respuesta.IsSuccessStatusCode)
-            {
-                NavigationManager.NavigateTo("lista-ventas");
-                await JS.InvokeVoidAsync("simple", "¡Exito!", "Venta eliminada", "success");
-            }
-            else
-            {
-                await JS.InvokeVoidAsync("simple", "Error", "No se pudo eliminar venta", "error");
-            }
-        }
-    }
+   
 
     void Volver()
     {
         NavigationManager.NavigateTo("lista-ventas");
     }
 
-
+    async Task CargarAjustes()
+    {
+        var httpResponse = await Http.GetAsync($"api/configuracion/1");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ListaAjustes = JsonSerializer.Deserialize<Configuracion>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("simple", "Error", "Venta no encontrada.", "error");
+            NavigationManager.NavigateTo("lista-ventas");
+        }
+    }
 
 }

@@ -150,7 +150,7 @@ using MudBlazor;
     async Task CrearCompr()
     {
         var confirmacion = await JS.InvokeAsync<bool>("confirmar", "¿Finalizar compra?",
-            $"Total: ${compra.Total}. Proveedor: {compra.Proveedor}", "question");
+            $"Total: ${compra.Total}. Proveedor: {compra.ProveedoresId}", "question");
         if (confirmacion)
         {
             var respuesta = await Http.PostAsJsonAsync("api/compras", compra);

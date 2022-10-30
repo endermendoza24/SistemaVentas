@@ -150,7 +150,7 @@ using MudBlazor;
     async Task BorrarCompra(int idcompra)
     {
         var confirmacion = await JS.InvokeAsync<bool>("confirmar", "¿Eliminar compra?",
-            $"Pago N° {compra.Id}. Fecha: {compra.Fecha}. Proveedor: {compra.Proveedor}", "warning");
+            $"Pago N° {compra.Id}. Fecha: {compra.Fecha}. Proveedor: {compra.ProveedoresId}", "warning");
         if (confirmacion)
         {
             var respuesta = await Http.DeleteAsync($"/api/compras/{idcompra}");

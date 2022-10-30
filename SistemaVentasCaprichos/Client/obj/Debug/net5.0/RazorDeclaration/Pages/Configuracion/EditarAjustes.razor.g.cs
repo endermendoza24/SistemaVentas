@@ -133,7 +133,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\EditarAjustes.razor"
+#line 19 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\EditarAjustes.razor"
        
     Configuracion Configuracion = new Configuracion();
     [Parameter] public int idAjustes { get; set; }
@@ -145,7 +145,7 @@ using MudBlazor;
 
     void Volver()
     {
-        NavigationManager.NavigateTo("/lista-Configuracion");
+        NavigationManager.NavigateTo("/lista-ajustes");
     }
 
     async Task EditarArtic()
@@ -158,7 +158,7 @@ using MudBlazor;
 
             if (respuesta.IsSuccessStatusCode)
             {
-                NavigationManager.NavigateTo("/lista-Configuracion");
+                NavigationManager.NavigateTo("/lista-ajustes");
                 await JS.InvokeVoidAsync("simple", "¡Éxito!", "Configuracion editada", "success");
             }
             else
@@ -169,26 +169,7 @@ using MudBlazor;
         }
     }
 
-    async Task BorrarArticulo(int idCategoria)
-    {
-        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "Eliminar",
-            $"¿Desea eliminar {Configuracion.NombreSistema}?", "warning");
-        if (confirmacion)
-        {
-            var respuesta = await Http.DeleteAsync($"/api/Configuracion/{Configuracion.Id}");
-
-            if (respuesta.IsSuccessStatusCode)
-            {
-                NavigationManager.NavigateTo("/lista-Configuracion");
-                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Configuracion eliminada", "success");
-            }
-            else
-            {
-                await JS.InvokeVoidAsync("simple", "Error",
-                    "No se pudo eliminar la Configuracion", "error");
-            }
-        }
-    }
+   
 
 #line default
 #line hidden

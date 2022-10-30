@@ -124,6 +124,13 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\ListaAjustes.razor"
+           [Authorize]
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/lista-ajustes")]
     public partial class ListaAjustes : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -159,7 +166,7 @@ using System.Text.Json;
 
     async Task CargarConfiguracion()
     {
-        var httpResponse = await Http.GetAsync($"api/Configuracion");
+        var httpResponse = await Http.GetAsync($"api/configuracion");
         if (httpResponse.IsSuccessStatusCode)
         {
             var responseString = await httpResponse.Content.ReadAsStringAsync();

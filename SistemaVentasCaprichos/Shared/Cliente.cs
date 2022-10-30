@@ -13,9 +13,10 @@ namespace SistemaVentasCaprichos.Shared
         [Key]
         public int Id { get; set; }
         [Required]
+        [MaxLength(300, ErrorMessage = "Máximo 300 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         public string NombreyApellido { get; set; }
         [Required]
-        [MaxLength(15, ErrorMessage = "Máximo 15 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
+        [MaxLength(16, ErrorMessage = "Máximo 16 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         // buscar algún regex de cédula
         public string Cedula { get; set; }
         [Required, EnumDataType(typeof(Sexos))]

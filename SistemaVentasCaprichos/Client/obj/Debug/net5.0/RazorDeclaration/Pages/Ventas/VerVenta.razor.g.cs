@@ -133,11 +133,13 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 95 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
+#line 96 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
        
     public Venta venta { get; set; }
 
     [Parameter] public int idventa { get; set; }
+
+    public Configuracion ListaAjustes { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -153,36 +155,32 @@ using System.Text.Json;
             await JS.InvokeVoidAsync("simple", "Error", "Venta no encontrada.", "error");
             NavigationManager.NavigateTo("lista-ventas");
         }
-
+        await CargarAjustes();
 
     }
 
-    async Task BorrarVenta(int idventa)
-    {
-        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "¿Eliminar venta?",
-            $"Venta N° {venta.Id}. Fecha: {venta.Fecha}. Total: {venta.Total}", "warning");
-        if (confirmacion)
-        {
-            var respuesta = await Http.DeleteAsync($"/api/ventas/{idventa}");
-
-            if (respuesta.IsSuccessStatusCode)
-            {
-                NavigationManager.NavigateTo("lista-ventas");
-                await JS.InvokeVoidAsync("simple", "¡Exito!", "Venta eliminada", "success");
-            }
-            else
-            {
-                await JS.InvokeVoidAsync("simple", "Error", "No se pudo eliminar venta", "error");
-            }
-        }
-    }
+   
 
     void Volver()
     {
         NavigationManager.NavigateTo("lista-ventas");
     }
 
-
+    async Task CargarAjustes()
+    {
+        var httpResponse = await Http.GetAsync($"api/configuracion/1");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ListaAjustes = JsonSerializer.Deserialize<Configuracion>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("simple", "Error", "Venta no encontrada.", "error");
+            NavigationManager.NavigateTo("lista-ventas");
+        }
+    }
 
 
 #line default

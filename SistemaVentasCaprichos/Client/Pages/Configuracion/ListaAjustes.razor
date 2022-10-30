@@ -2,7 +2,7 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
-@*@attribute [Authorize]*@
+@attribute [Authorize]
 
 @using System.Text.Json
 
@@ -68,7 +68,7 @@ else
                             <div class="col">
                                 <div class="input-group">
                                     <MudTextField @bind-Value="@context.Direccion" Label="Dirección" Variant="Variant.Outlined" oninput="this.value=this.value.toUpperCase()"
-                                                  Margin="Margin.Dense" ReadOnly="true"></MudTextField>
+                                                  Margin="Margin.Dense" ReadOnly="true" Lines="3"></MudTextField>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +137,7 @@ else
 
     async Task CargarConfiguracion()
     {
-        var httpResponse = await Http.GetAsync($"api/Configuracion");
+        var httpResponse = await Http.GetAsync($"api/configuracion");
         if (httpResponse.IsSuccessStatusCode)
         {
             var responseString = await httpResponse.Content.ReadAsStringAsync();

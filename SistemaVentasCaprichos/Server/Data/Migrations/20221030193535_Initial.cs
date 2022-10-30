@@ -35,8 +35,8 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NombreyApellido = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Cedula = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    NombreyApellido = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
+                    Cedula = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: false),
                     Sexo = table.Column<int>(type: "int", nullable: false),
                     Dirección = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Teléfono = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -55,11 +55,12 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NombreSistema = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    NombreSistema = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    NombrePropietario = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Direccion = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Telefono = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Telefono = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
-                    RUC = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
+                    RUC = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -226,7 +227,6 @@ namespace SistemaVentasCaprichos.Server.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Proveedor = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EmpleadoId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ProveedoresId = table.Column<int>(type: "int", nullable: true)

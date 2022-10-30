@@ -5,12 +5,12 @@
     <div class="form-field mt-2 mb-2">
         <div class="form-group row">
             <label class="col-3 col-form-label">Proveedor</label>
-            <div class="col">
+            @*<div class="col">
                 <div class="input-group">
                     <InputText @bind-Value="compra.Proveedor" class="form-control" oninput="this.value=this.value.toUpperCase()" />
                 </div>
                 <ValidationMessage For="@(() => compra.Proveedor)" />
-            </div>
+            </div>*@
             <div class="col">
                 <label><small>Proveedores.</small></label>
                 <InputSelect @bind-Value="compra.ProveedoresId" required class="form-control form-control-sm">
