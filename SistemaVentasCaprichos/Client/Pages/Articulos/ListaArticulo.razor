@@ -116,7 +116,26 @@ else
                 <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
                 <MudTd DataLabel="Precio">@context.PrecioUnitario</MudTd>
                 <MudTd DataLabel="Fecha">@context.Ultima_Modificación</MudTd>
-                <MudTd DataLabel="Stock">@context.StockActual</MudTd>
+                <MudTd>
+                    @if (context.StockActual < context.StockMinimo)
+                        {
+                        <MudChip Color="Color.Error" Variant="Variant.Filled">
+                            <MudTd DataLabel="Stock bajo">@context.StockActual</MudTd>
+                        </MudChip>
+                        }
+                        else if (context.StockActual > context.StockMaximo)
+                        {
+                        <MudChip Color="Color.Warning" Variant="Variant.Filled">
+                            <MudTd DataLabel="Stock excedido"> @context.StockActual</MudTd>
+                        </MudChip>
+                        }
+                        else
+                        {
+                        <MudChip Color="Color.Success" Variant="Variant.Filled">
+                            <b><MudTd DataLabel="Stock"> @context.StockActual</MudTd></b>
+                        </MudChip>
+                        }
+                </MudTd>
                 <MudTd>
                     <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
                             @onclick="@(() => NavigationManager.NavigateTo($"/editar-articulo/{context.Id}"))" />

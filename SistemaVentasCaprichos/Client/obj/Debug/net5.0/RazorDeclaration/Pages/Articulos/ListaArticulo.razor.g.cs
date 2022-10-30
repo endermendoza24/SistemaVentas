@@ -140,7 +140,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 134 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
+#line 153 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
        
     public List<Articulo> articulo { get; set; } //muestra todos los articulos
     public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
