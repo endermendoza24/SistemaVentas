@@ -209,7 +209,6 @@
     },
     "lazyAssembly": null,
     "pdb": {
-      "SistemaVentasCaprichos.Shared.pdb": "sha256-Fma00o6pVzNbpiHfzOLPwl1oz48NRVF8PBSd+\/tLRWE=",
       "SistemaVentasCaprichos.Client.pdb": "sha256-2cz8oyePLbsivj3UMxoWhLErlqf6nsacb598wtF9CFc="
     },
     "runtime": {

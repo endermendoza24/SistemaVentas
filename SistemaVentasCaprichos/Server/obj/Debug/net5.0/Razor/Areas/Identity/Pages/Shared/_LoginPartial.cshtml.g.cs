@@ -13,6 +13,20 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
+#line 2 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\Areas\Identity\Pages\_ViewImports.cshtml"
+using SistemaVentasCaprichos.Server.Areas.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\Areas\Identity\Pages\_ViewImports.cshtml"
+using SistemaVentasCaprichos.Server.Areas.Identity.Pages;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\Areas\Identity\Pages\Shared\_LoginPartial.cshtml"
 using Microsoft.AspNetCore.Identity;
 
@@ -27,6 +41,7 @@ using SistemaVentasCaprichos.Shared;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"38921e45e5b693ad081d224e691c883c52ff8d9f", @"/Areas/Identity/Pages/Shared/_LoginPartial.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8d2bda7131a93fbf8462920ecaef03a113387ae2", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     public class Areas_Identity_Pages_Shared__LoginPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("nav-link text-dark"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -87,7 +102,7 @@ using SistemaVentasCaprichos.Shared;
 #line hidden
 #nullable disable
             WriteLiteral("    <li class=\"nav-item\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "38921e45e5b693ad081d224e691c883c52ff8d9f7354", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "38921e45e5b693ad081d224e691c883c52ff8d9f8029", async() => {
                 WriteLiteral("Hola, bienvenida/o ");
 #nullable restore
 #line 18 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\Areas\Identity\Pages\Shared\_LoginPartial.cshtml"
@@ -115,7 +130,7 @@ using SistemaVentasCaprichos.Shared;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li class=\"nav-item\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "38921e45e5b693ad081d224e691c883c52ff8d9f9324", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "38921e45e5b693ad081d224e691c883c52ff8d9f9999", async() => {
                 WriteLiteral("\r\n            <button  type=\"submit\" class=\"nav-link btn btn-link text-dark\">Logout</button>\r\n        ");
             }
             );
@@ -154,7 +169,7 @@ else
 #line hidden
 #nullable disable
             WriteLiteral("    <li class=\"nav-item\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "38921e45e5b693ad081d224e691c883c52ff8d9f12154", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "38921e45e5b693ad081d224e691c883c52ff8d9f12829", async() => {
                 WriteLiteral("Registrar usuario");
             }
             );
@@ -188,7 +203,7 @@ else
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li class=\"nav-item\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "38921e45e5b693ad081d224e691c883c52ff8d9f14775", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "38921e45e5b693ad081d224e691c883c52ff8d9f15450", async() => {
                 WriteLiteral("Iniciar sesión");
             }
             );
