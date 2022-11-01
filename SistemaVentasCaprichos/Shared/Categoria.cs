@@ -12,11 +12,14 @@ namespace SistemaVentasCaprichos.Shared
         [Key]
         public int Id { get; set; }
         [Required]
-        [MaxLength(30, ErrorMessage = "Máximo 30 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
+        [StringLength(50)]
+        [MaxLength(50, ErrorMessage = "Máximo 30 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         public string Nombre { get; set; }
         
+        [StringLength(50)]
         [MaxLength(50, ErrorMessage = "Máximo 50 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         public string? Descripcion { get; set; }
+
 
         public DateTime FechaRegistro { get; set; } = DateTime.Now;
         public bool Estado { get; set; } = true;
