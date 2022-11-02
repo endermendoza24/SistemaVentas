@@ -20,8 +20,13 @@ namespace SistemaVentasCaprichos.Shared
         [ForeignKey("ClienteId")]
         public Cliente Cliente { get; set; }
         public DateTime Fecha { get; set; }
+
+
         [Required]
+        [Column(TypeName = "decimal(10,2)")]
+        [Range(1, double.MaxValue, ErrorMessage = "Valor inválido")]
         public decimal Seña { get; set; }
+
         public List<DetallePedido> DetallePedidos { get; set; } = new List<DetallePedido>();
         [Required]
         public bool Finalizado { get; set; }
