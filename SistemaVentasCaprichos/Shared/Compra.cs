@@ -20,6 +20,10 @@ namespace SistemaVentasCaprichos.Shared
         public string EmpleadoId { get; set; }
         [ForeignKey("EmpleadoId")]
         public virtual ApplicationUser ApplicationUser { get; set; }
+
+        [Required]
+        [Column(TypeName = "decimal(10,2)")]
+        [Range(1, double.MaxValue, ErrorMessage = "Valor inválido")]
         public decimal Total { get; set; }
         public int? ProveedoresId { get; set; }
         [ForeignKey("ProveedoresId")]
