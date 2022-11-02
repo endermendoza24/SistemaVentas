@@ -17,11 +17,18 @@ namespace SistemaVentasCaprichos.Shared
         public int ArticuloId { get; set; }
         [ForeignKey("ArticuloId")]
         public Articulo Articulo { get; set; }
+
+        [Required]
+        [Column(TypeName = "decimal(10,2)")]
+        [Range(1, double.MaxValue, ErrorMessage = "Valor inválido")]
         public decimal Precio { get; set; }
         [Required]
         public int Cantidad { get; set; }
+
         [Required]
+        
         public int Descuento { get; set; }
+
         public decimal Iva => (Precio * Cantidad) + (Precio * Cantidad * (15M / 100M));
         public decimal SubTotal => Iva - ((Precio * Cantidad) * (Descuento / 100M));
         [Required]
