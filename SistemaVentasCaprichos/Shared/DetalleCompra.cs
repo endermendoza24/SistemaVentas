@@ -20,13 +20,22 @@ namespace SistemaVentasCaprichos.Shared
         [Required]
         [Range(1, 99999999, ErrorMessage = "Valor inválido")]
         public int Cantidad { get; set; }
-        [Required]
-        [Range(1, 99999999, ErrorMessage = "Valor inválido")]
+
+
+       
+       [Required]
+        [Column(TypeName = "decimal(10,2)")]
+        [Range(1, double.MaxValue, ErrorMessage = "Valor inválido")]
         public decimal PrecioMayorista { get; set; }
+
+
         [Required]
-        [Range(1, 99999999, ErrorMessage = "Valor inválido")]
+        [Column(TypeName = "decimal(10,2)")]
+        [Range(1, double.MaxValue, ErrorMessage = "Valor inválido")]
         public decimal PrecioUnitario { get; set; }
         public decimal SubTotal => PrecioMayorista * Cantidad;
+
+
         [Required]
         public int CompraId { get; set; }
         [ForeignKey("CompraId")]
