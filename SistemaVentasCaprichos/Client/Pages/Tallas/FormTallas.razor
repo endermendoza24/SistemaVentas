@@ -17,6 +17,16 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Dar de baja</label>
+                <div class="col">
+                    <div class="input-group">
+                        <MudTooltip Text="Si selecciona esta opción dará de baja a la talla correspondiente." Color="Color.Secondary" Placement="Placement.Top">
+                            <MudSwitch @bind-Checked="@Tallas.Estado" Label="Está activo?" Color="Color.Success" />
+                        </MudTooltip>
+                    </div>
+                </div>
+            </div>
         </div>
         <button type="submit" class="btn btn-block btn-success">
             <i class="oi oi-check "></i>

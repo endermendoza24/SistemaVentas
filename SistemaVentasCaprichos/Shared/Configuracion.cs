@@ -36,8 +36,7 @@ namespace SistemaVentasCaprichos.Shared
         
         [StringLength(40, ErrorMessage = "Máximo 40 caracteres"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         [EmailAddress(ErrorMessage = "La proporcionada no es una dirección de correo válida")]
-        public string? Email { get; set; }
-        [Required(ErrorMessage = "No puede dejar este campo {0} vacio")]
+        public string? Email { get; set; }        
         [StringLength(40, ErrorMessage = "Máximo 40 caracteres")]
         public string RUC { get; set; }
 

@@ -133,7 +133,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 25 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Tallas\EditarTallas.razor"
+#line 34 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Tallas\EditarTallas.razor"
        
     Tallas Tallas = new Tallas();
     [Parameter] public int idTallas { get; set; }

@@ -118,7 +118,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
+#line 4 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
 using System.Text.Json;
 
 #line default
@@ -132,7 +132,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 198 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
+#line 201 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
        
     [Parameter] public Articulo articulo { get; set; } = new Articulo();
     [Parameter] public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();

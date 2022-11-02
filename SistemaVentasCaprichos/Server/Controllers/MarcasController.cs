@@ -14,6 +14,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
     [Route("api/[controller]")]
     public class MarcasController : ControllerBase
     {
+        Marcas objMarcas = new Marcas();
         private readonly ApplicationDbContext context;
         public MarcasController(ApplicationDbContext context)
         {
@@ -22,7 +23,10 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Marcas>>> Get()
         {
-            return await context.Marca.ToListAsync();
+            //return await context.Marca.ToListAsync();
+            return await context.Marca
+                .Where(x => x.Estado == true) // a través de este where solo se muestran en pantalla los que tengan un estado true
+                .ToListAsync();
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Marcas>> Get(int id)
@@ -61,5 +65,14 @@ namespace SistemaVentasCaprichos.Server.Controllers
             await context.SaveChangesAsync();
             return NoContent();
         }
+
+        //[HttpGet]
+        //public async Task<ActionResult<List<Marcas>>> GetDos()
+        //{
+        //    var desactivado = await context.Marca.AnyAsync(x => x.Estado == true);
+        //    if (!desactivado) { return NotFound(); }
+            
+        //    return await context.Marca.ToListAsync();
+        //}
     }
 }

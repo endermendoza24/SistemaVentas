@@ -2,12 +2,12 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
-@*@attribute [Authorize]*@
+@attribute [Authorize]
 
 @using System.Text.Json
 
 <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Create" Color="Color.Success" Size="Size.Medium">
-    <a style="text-decoration:none; color:#fff;"  @onclick="CrearArticulo">Agregar categoría</a>
+    <a style="text-decoration:none; color:#fff;" @onclick="CrearArticulo">Agregar categoría</a>
 </MudButton>
 
 
@@ -27,7 +27,7 @@ else if (Marca.Count == 0)
     </div>
 }
 else
-{   
+{
     <MudTable Items="@Marca" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Marcas,bool>(FilterFunc1)"
               @bind-SelectedItem="selectedItem1">
         <ToolBarContent>
@@ -37,7 +37,7 @@ else
         </ToolBarContent>
         <HeaderContent>
             <MudTh Style="width:50px;">Nr</MudTh>
-            <MudTh Class="thead-dark">Nombre</MudTh>
+            <MudTh>Nombre</MudTh>
             <MudTh>Descripción</MudTh>
             <MudTh>Fecha registro</MudTh>
             <MudTh>Acciones</MudTh>
@@ -57,8 +57,6 @@ else
             <MudTablePager />
         </PagerContent>
     </MudTable>
-
-
 }
 @code {
     private bool dense = false;

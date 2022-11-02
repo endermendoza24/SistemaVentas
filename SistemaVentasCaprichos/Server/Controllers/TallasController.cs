@@ -22,7 +22,9 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Tallas>>> Get()
         {
-            return await context.Tallas.ToListAsync();
+            return await context.Tallas
+                 .Where(x => x.Estado == true) // a través de este where solo se muestran en pantalla los que tengan un estado true
+                .ToListAsync();
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Tallas>> Get(int id)

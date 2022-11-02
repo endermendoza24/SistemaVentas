@@ -14,13 +14,11 @@ namespace SistemaVentasCaprichos.Shared
 
         
         [Required]
-         [StringLength(50)]
+        [StringLength(50)]
         [MaxLength(50, ErrorMessage = "Máximo 50 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         public string Nombre { get; set; } 
-
-       
-       [Required]
-         [StringLength(200)]
+             
+        [StringLength(200)]
         [MaxLength(200, ErrorMessage = "Máximo 200 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         public string Descripcion { get; set; }
 

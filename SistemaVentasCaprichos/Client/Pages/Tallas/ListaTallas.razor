@@ -17,6 +17,7 @@
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
         <div class="spinner-grow text-success" role="status">
             <span class="sr-only">Cargando...</span>
+            <MudProgressCircular Color="Color.Primary" Style="height:70px;width:70px;" Indeterminate="true" />
         </div>
     </div>
 }
@@ -37,14 +38,14 @@ else
         </ToolBarContent>
         <HeaderContent>
             <MudTh Style="width:50px;">Nr</MudTh>
-            <MudTh Class="thead-dark">Nombre</MudTh>            
+            <MudTh>Nombre</MudTh>            
             <MudTh>Fecha registro</MudTh>
-            <MudTh>Acciones</MudTh>
+            <MudTh Style="width:50px;">Acciones</MudTh>
         </HeaderContent>
         <RowTemplate>
             <MudTd DataLabel="Id">@context.Id</MudTd>
             <MudTd DataLabel="Nombre">@context.Nombre</MudTd>            
-            <MudTd DataLabel="Fecha">@context.Fecha</MudTd>
+            <MudTd DataLabel="Fecha">@context.Fecha.ToLongDateString()</MudTd>
             <MudTd>
                 <MudFab Color="Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
                         @onclick="@(() => NavigationManager.NavigateTo($"/editar-tallas/{context.Id}"))" />

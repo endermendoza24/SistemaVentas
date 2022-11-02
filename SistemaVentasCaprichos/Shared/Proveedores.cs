@@ -22,9 +22,8 @@ namespace SistemaVentasCaprichos.Shared
         [MaxLength(20, ErrorMessage = "Máximo 20 caracteres"), MinLength(2, ErrorMessage = "Minimo 2 caracteres")]
         [Phone]
         public string Telefono { get; set; }
-
-       [Required]
-         [StringLength(200)]
+       
+        [StringLength(200)]
         [MaxLength(200, ErrorMessage = "Máximo 200 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         public string Direccion { get; set; }
 

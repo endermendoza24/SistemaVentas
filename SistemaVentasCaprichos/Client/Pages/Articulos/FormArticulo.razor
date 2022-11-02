@@ -1,5 +1,6 @@
 ﻿@inject HttpClient Http
 @inject NavigationManager NavigationManager
+
 @using System.Text.Json
 
 <EditForm Model="@articulo" OnValidSubmit="@OnValidSubmit">
@@ -89,18 +90,20 @@
                     </div>
                 </div>
 
-                <div class="form-group row">
-                    <label class="col-4 col-form-label">Url Imagen</label>
-                    <div class="col">
-                        <div class="input-group">
-                            <InputText @bind-Value="@articulo.Url_Imagen" placeholder="URL Imagen" class="form-control" />
-                            <div class="input-group-prepend">
-                                <button @onclick="@(() => articulo.Url_Imagen = null)" class="btn btn-secondary" type="button">
-                                    <i class="oi oi-delete"></i>
-                                </button>
+                <div class="form-group row">                    
+                        <label class="col-4 col-form-label">Url Imagen</label>
+                        <div class="col">
+                            <div class="input-group">
+                                <MudTooltip Text="Debe subir únicamente el link de la imagen" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
+                                    <InputText @bind-Value="@articulo.Url_Imagen" placeholder="URL Imagen" class="form-control" />
+                                    </MudTooltip>
+                                    <div class="input-group-prepend">
+                                        <button @onclick="@(() => articulo.Url_Imagen = null)" class="btn btn-secondary" type="button">
+                                            <i class="oi oi-delete"></i>
+                                        </button>
+                                    </div>
                             </div>
-                        </div>
-                    </div>
+                        </div>                    
                 </div>
             </div>
 
@@ -110,7 +113,7 @@
                     <div class="col">
                         <div class="input-group">
                             <div class="input-group-prepend">
-
+                                <span class="input-group-text" id="inputGroup-sizing-default">#A-Z</span>
                             </div>
                             <InputText @bind-Value="@articulo.Codigo" class="form-control" />
                         </div>

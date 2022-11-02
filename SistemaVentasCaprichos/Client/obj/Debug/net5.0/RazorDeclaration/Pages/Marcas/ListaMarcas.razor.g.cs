@@ -124,6 +124,13 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\ListaMarcas.razor"
+           [Authorize]
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/lista-marcas")]
     public partial class ListaMarcas : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -133,7 +140,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 63 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\ListaMarcas.razor"
+#line 61 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\ListaMarcas.razor"
        
     private bool dense = false;
     private bool hover = true;

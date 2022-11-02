@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -28,9 +27,8 @@ namespace SistemaVentasCaprichos.Shared
         public virtual ApplicationUser ApplicationUser { get; set; }
 
 
-        [Required]
-          [Required]
-         [StringLength(50)]
+        [Required]          
+        [StringLength(50)]
         [MaxLength(50, ErrorMessage = "Máximo 50 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         public string Concepto { get; set; }
 
