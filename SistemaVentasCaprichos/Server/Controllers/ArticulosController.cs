@@ -27,7 +27,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Articulo>>> Get()
         {
-            return await context.Articulos.OrderBy(x => x.Nombre).ToListAsync(); // hurra
+            return await context.Articulos.Where(x => x.Estado == true).OrderBy(x => x.Nombre).ToListAsync(); // hurra
         }
 
         ///GET: api/ventas

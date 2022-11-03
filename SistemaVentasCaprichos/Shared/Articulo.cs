@@ -49,6 +49,8 @@ namespace SistemaVentasCaprichos.Shared
         [Range(0, int.MaxValue, ErrorMessage = "Valor inválido")]
         public int StockActual { get; set; }
 
+        public bool Estado { get; set; } = true;
+
         // conexión a categorías
         public int CategoriaId { get; set; }
         [ForeignKey("CategoriaId")]
@@ -61,6 +63,8 @@ namespace SistemaVentasCaprichos.Shared
         public int MarcaId { get; set; }
         [ForeignKey("MarcaId")]
         public Marcas Marca { get; set; }
+
+      
 
 
         #endregion
