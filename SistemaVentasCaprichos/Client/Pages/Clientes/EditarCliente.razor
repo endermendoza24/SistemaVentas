@@ -2,7 +2,7 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
-
+@inject ISnackbar Snackbar
 @attribute [Authorize]
 
 <button @onclick="@Volver" class="btn btn-sm btn-secondary">
@@ -103,13 +103,16 @@
             if (respuesta.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/lista-clientes");
-                await JS.InvokeVoidAsync("simple", "¡Éxito!",
-                "Cliente eliminado", "success");
+                Snackbar.Add("Borrado con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
+                //await JS.InvokeVoidAsync("simple", "¡Éxito!",
+                //"Cliente eliminado", "success");
             }
             else
             {
-                await JS.InvokeVoidAsync("simple", "Error",
-                    "No se pudo eliminar cliente", "error");
+                //await JS.InvokeVoidAsync("simple", "Error",
+                //"No se pudo eliminar cliente", "error");
+                Snackbar.Add("Ha ocurrido un error", Severity.Error, a =>
+       a.VisibleStateDuration = 200);
             }
         }
     }
@@ -125,13 +128,17 @@
             if (respuesta.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/lista-clientes");
-                await JS.InvokeVoidAsync("simple", "¡Éxito!",
-                "Cliente editado", "success");
+                Snackbar.Add("Editado con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
+                //await JS.InvokeVoidAsync("simple", "¡Éxito!",
+                //"Cliente editado", "success");
             }
             else
             {
-                await JS.InvokeVoidAsync("simple", "Error",
-                    $"No se pudo editar cliente", "error");
+
+                Snackbar.Add("Ha ocurrido un error", Severity.Error, a =>
+        a.VisibleStateDuration = 200);
+                //await JS.InvokeVoidAsync("simple", "Error",
+                //  $"No se pudo editar cliente", "error");
             }
         }
     }
