@@ -9,6 +9,17 @@
                 </div>
                 <ValidationMessage For="@(() => cliente.NombreyApellido)" />
             </div>
+            <div class="form-group row">
+                <label class="col-3 col-form-label">Estado</label>
+                <div class="col">
+                    <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
+                                Color="Color.Secondary" Placement="Placement.Top">
+                        <MudSwitch @bind-Checked="@cliente.Estado" Label="Está activo?"
+                                   Color="Color.Success" />
+                    </MudTooltip>
+                    <ValidationMessage For="@(() => cliente.Estado)" />
+                </div>
+            </div>
         </div>
 
         <div class="form-group row">
@@ -18,6 +29,17 @@
                     <InputText @bind-Value="@cliente.Cedula" placeholder="Cédula" class="form-control" readonly="@ocultarcedula" />
                 </div>
                 <ValidationMessage For="@(() => cliente.Cedula)" />
+            </div>
+            <div class="form-group row">
+                <label class="col-3 col-form-label">Estado</label>
+                <div class="col">
+                    <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
+                                Color="Color.Secondary" Placement="Placement.Top">
+                        <MudSwitch @bind-Checked="@cliente.Estado" Label="Está activo?"
+                                   Color="Color.Success" />
+                    </MudTooltip>
+                    <ValidationMessage For="@(() => cliente.Estado)" />
+                </div>
             </div>
         </div>
 
@@ -34,7 +56,21 @@
                 </div>
                 <ValidationMessage For="@(() => cliente.Sexo)" />
             </div>
+
+            <div class="form-group row">
+                <label class="col-3 col-form-label">Estado</label>
+                <div class="col">
+                    <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
+                                Color="Color.Secondary" Placement="Placement.Top">
+                        <MudSwitch @bind-Checked="@cliente.Estado" Label="Está activo?"
+                                   Color="Color.Success" />
+                    </MudTooltip>
+                    <ValidationMessage For="@(() => cliente.Estado)" />
+                </div>
+            </div>
         </div>
+
+
 
         <div class="form-group row">
             <label class="col-3 col-form-label">Dirección</label>
@@ -43,6 +79,18 @@
                     <InputText @bind-Value="@cliente.Dirección" class="form-control" oninput="this.value=this.value.toUpperCase()" placeholder="Dirección" />
                 </div>
                 <ValidationMessage For="@(() => cliente.Dirección)" />
+            </div>
+
+            <div class="form-group row">
+                <label class="col-3 col-form-label">Estado</label>
+                <div class="col">
+                    <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
+                                Color="Color.Secondary" Placement="Placement.Top">
+                        <MudSwitch @bind-Checked="@cliente.Estado" Label="Está activo?"
+                                   Color="Color.Success" />
+                    </MudTooltip>
+                    <ValidationMessage For="@(() => cliente.Estado)" />
+                </div>
             </div>
         </div>
 
@@ -54,6 +102,25 @@
                 </div>
                 <ValidationMessage For="@(() => cliente.Teléfono)" />
             </div>
+
+            <div class="form-group row">
+                <label class="col-3 col-form-label">Estado</label>
+                <div class="col">
+                    <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
+                                Color="Color.Secondary" Placement="Placement.Top">
+                        <MudSwitch @bind-Checked="@cliente.Estado" Label="Está activo?"
+                                   Color="Color.Success" />
+                    </MudTooltip>
+                    <ValidationMessage For="@(() => cliente.Estado)" />
+                </div>
+            </div>
+
+
+
+
+
+
+
         </div>
 
         <button type="submit" class="btn btn-block btn-success">
