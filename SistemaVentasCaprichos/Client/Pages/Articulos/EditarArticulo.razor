@@ -11,17 +11,36 @@
 
 <hr />
 
+
+
 <div class="d-flex justify-content-between mb-3">
     <h3><b>Editar artículo</b></h3>
     <div>
-        <button @onclick="@(() => BorrarArticulo(articulo.Id))" class="btn btn-sm btn-danger">
-            <i class="oi oi-trash"></i> Eliminar artículo
-        </button>
+
+        <MudTooltip>
+            <ChildContent>
+
+                <button @onclick="@(() => BorrarArticulo(articulo.Id))" class="btn btn-sm btn-danger">
+                    <i class="oi oi-trash"></i> Eliminar artículo
+                </button>
+
+            </ChildContent>
+            <TooltipContent>
+                <MudText Typo="Typo.h6">ALERTA</MudText>
+                <MudText Typo="Typo.body2">
+                    Esta opción eliminará este elemento de forma
+                    permanente
+                </MudText>
+                <MudIcon Icon="@Icons.Material.Filled.DeleteForever" />
+            </TooltipContent>
+        </MudTooltip>
+
+
     </div>
 </div>
 
 <FormArticulo TextBotonSubmit="Guardar cambios"
-                        OnValidSubmit="@EditarArtic" articulo="@articulo" />
+              OnValidSubmit="@EditarArtic" articulo="@articulo" />
 
 @code {
     Articulo articulo = new Articulo();

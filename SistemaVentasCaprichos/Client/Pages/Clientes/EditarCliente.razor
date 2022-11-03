@@ -11,12 +11,29 @@
 
 <hr />
 
+
+
 <div class="d-flex justify-content-between mb-3">
     <h3><b>Editar cliente</b></h3>
     <div>
-        <button @onclick="@(() => BorrarCliente(cliente.Id))" class="btn btn-sm btn-danger">
-            <i class="oi oi-trash"></i> Eliminar cliente
-        </button>
+        <MudTooltip>
+            <ChildContent>
+                <button @onclick="@(() => BorrarCliente(cliente.Id))" class="btn btn-sm btn-danger">
+                    <i class="oi oi-trash"></i> Eliminar cliente
+                </button>
+
+            </ChildContent>
+            <TooltipContent>
+                <MudText Typo="Typo.h6">ALERTA</MudText>
+                <MudText Typo="Typo.body2">
+                    Esta opción eliminará este elemento de forma
+                    permanente
+                </MudText>
+                <MudIcon Icon="@Icons.Material.Filled.DeleteForever" />
+            </TooltipContent>
+        </MudTooltip>
+
+
     </div>
 </div>
 
