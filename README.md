@@ -1,6 +1,6 @@
 
 # Sistema web transaccional
-*Sistema hecho para optar al título de ingenieros en sistemas de información, por la UNAN - Managua, FAREM - Carazo.
+*Sistema hecho para optar al título de ingeniería en sistemas de información, por la UNAN - Managua, FAREM - Carazo.
 Este sistema está hecho utilizando: Blazor WebAssembly, .NetCore 5, EntityFramework, MudBlazor, LINQ, SQLServer.*
 
 Elaborado por:
@@ -21,7 +21,7 @@ Elaborado por:
 > 26 de octubre de 2022, se agregó tabla de configuración, además de
 > algunos ajustes de diseño.
 
-> 30 de eoctubre, agregados cambios con la lógica de proveedor
+> 30 de octubre, agregados cambios con la lógica de proveedor
 > también algunos cambios en la fórmula de total, subtotal e IVA. Además de que se trabajó en el login y registro de usuario dándole un mejor aspecto.
 
 > 02 de noviembre, agregadas todas las validaciones a través de modelo, también a través del modelo se agregaron las restricciones de base de datos.
@@ -42,11 +42,13 @@ En donde con simplemente añadirle la sentencia WHERE  el sistema determina no m
 
  - [ ] Lógica de cambios/devolución
  - [x] Lógica de dada de baja de producto
+ - [ ] Páginas donde solo se muestren los elementos que hayan sido dados de baja
  - [x] Lógica de número de factura en ventas (Se usará el ID de la factura)
  - [ ] Reportes a través de Power BI
  - [x] Mejoras en el área de logueo/deslogueo/registro.
+ - [ ] Sistema de roles
  - [ ] Mejoras generales en el diseño y el aspecto visual.
- - [ ] Añadir tooltips y detalles de accesibilidad del usuario
+ - [x] Añadir tooltips y detalles de accesibilidad del usuario
 
 ~~Fecha aproximada de entrega: 25 de noviembre de 2022.~~
 ~~Fecha aproximada de la defensa: 02 de diciembre de 2022.~~

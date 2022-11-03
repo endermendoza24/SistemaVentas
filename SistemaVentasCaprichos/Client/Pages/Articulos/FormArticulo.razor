@@ -15,17 +15,6 @@
                                  style="border-radius:0.5rem; width:110px; height:105px">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-3 col-form-label">Estado</label>
-                        <div class="col">
-                            <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                        Color="Color.Secondary" Placement="Placement.Top">
-                                <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                           Color="Color.Success" />
-                            </MudTooltip>
-                            <ValidationMessage For="@(() => articulo.Estado)" />
-                        </div>
-                    </div>
                 </div>
 
                 <div class="form-group row">
@@ -36,151 +25,85 @@
                         </div>
                         <ValidationMessage For="@(() => articulo.Nombre)" />
                     </div>
-                    <div class="form-group row">
-                        <label class="col-3 col-form-label">Estado</label>
-                        <div class="col">
-                            <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                        Color="Color.Secondary" Placement="Placement.Top">
-                                <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                           Color="Color.Success" />
-                            </MudTooltip>
-                            <ValidationMessage For="@(() => articulo.Estado)" />
-                        </div>
-                    </div>
                 </div>
 
 
 
                 @*prueba*@
-            <div class="form-group row">
-                <label class="col-4 col-form-label">Categorías</label>
-                <div class="col">
-                    <div class="input-group">
-                        <InputSelect @bind-Value="articulo.CategoriaId" class="form-control">
-                            <option selected value="0">Seleccione una categoría</option>
-                            @foreach (var categoria in ListaCategorias)
-                            {
-                                <option value="@categoria.Id">@categoria.Nombre</option>
-                            }
-                        </InputSelect>
-                    </div>
-                    <ValidationMessage For="@(() => articulo.CategoriaId)" />
-                </div>
                 <div class="form-group row">
-                    <label class="col-3 col-form-label">Estado</label>
+                    <label class="col-4 col-form-label">Categorías</label>
                     <div class="col">
-                        <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                    Color="Color.Secondary" Placement="Placement.Top">
-                            <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                       Color="Color.Success" />
-                        </MudTooltip>
-                        <ValidationMessage For="@(() => articulo.Estado)" />
+                        <div class="input-group">
+                            <InputSelect @bind-Value="articulo.CategoriaId" class="form-control">
+                                <option selected value="0">Seleccione una categoría</option>
+                                @foreach (var categoria in ListaCategorias)
+                                {
+                                    <option value="@categoria.Id">@categoria.Nombre</option>
+                                }
+                            </InputSelect>
+                        </div>
+                        <ValidationMessage For="@(() => articulo.CategoriaId)" />
                     </div>
                 </div>
-            </div>
 
-            <div class="form-group row">
-                <label class="col-4 col-form-label">Marcas</label>
-                <div class="col">
-                    <div class="input-group">
-                        <InputSelect @bind-Value="articulo.MarcaId" class="form-control">
-                            <option selected value="0">Seleccione una marca</option>
-                            @foreach (var marca in ListaMarcas)
-                            {
-                                <option value="@marca.Id">@marca.Nombre</option>
-                            }
-                        </InputSelect>
-                    </div>
-                    <ValidationMessage For="@(() => articulo.MarcaId)" />
-                </div>
                 <div class="form-group row">
-                    <label class="col-3 col-form-label">Estado</label>
+                    <label class="col-4 col-form-label">Marcas</label>
                     <div class="col">
-                        <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                    Color="Color.Secondary" Placement="Placement.Top">
-                            <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                       Color="Color.Success" />
-                        </MudTooltip>
-                        <ValidationMessage For="@(() => articulo.Estado)" />
+                        <div class="input-group">
+                            <InputSelect @bind-Value="articulo.MarcaId" class="form-control">
+                                <option selected value="0">Seleccione una marca</option>
+                                @foreach (var marca in ListaMarcas)
+                                {
+                                    <option value="@marca.Id">@marca.Nombre</option>
+                                }
+                            </InputSelect>
+                        </div>
+                        <ValidationMessage For="@(() => articulo.MarcaId)" />
                     </div>
                 </div>
-            </div>
 
-            <div class="form-group row">
-                <label class="col-4 col-form-label">Tallas</label>
-                <div class="col">
-                    <div class="input-group">
-                        <InputSelect @bind-Value="articulo.TallasId" class="form-control">
-                            <option disabled selected value="0">Seleccione una talla</option>
-                            @foreach (var talla in ListaTallas)
-                            {
-                                <option value="@talla.Id">@talla.Nombre</option>
-                            }
-                        </InputSelect>
-                    </div>
-                    <ValidationMessage For="@(() => articulo.TallasId)" />
-                </div>
                 <div class="form-group row">
-                    <label class="col-3 col-form-label">Estado</label>
+                    <label class="col-4 col-form-label">Tallas</label>
                     <div class="col">
-                        <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                    Color="Color.Secondary" Placement="Placement.Top">
-                            <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                       Color="Color.Success" />
-                        </MudTooltip>
-                        <ValidationMessage For="@(() => articulo.Estado)" />
+                        <div class="input-group">
+                            <InputSelect @bind-Value="articulo.TallasId" class="form-control">
+                                <option disabled selected value="0">Seleccione una talla</option>
+                                @foreach (var talla in ListaTallas)
+                                {
+                                    <option value="@talla.Id">@talla.Nombre</option>
+                                }
+                            </InputSelect>
+                        </div>
+                        <ValidationMessage For="@(() => articulo.TallasId)" />
                     </div>
                 </div>
-            </div>
 
                 @*finPrueba*@
 
-            <div class="form-group row">
-                <label class="col-4 col-form-label">Descripción</label>
-                <div class="col">
-                    <div class="input-group">
-                        @*<InputText @bind-Value="@articulo.Descripcion" oninput="this.value=this.value.toUpperCase()" placeholder="Descripción" class="form-control" />*@
-                        <InputTextArea @bind-Value="@articulo.Descripcion" oninput="this.value=this.value.toUpperCase()" placeholder="Descripción" class="form-control" />
-                    </div>
-                </div>
                 <div class="form-group row">
-                    <label class="col-3 col-form-label">Estado</label>
+                    <label class="col-4 col-form-label">Descripción</label>
                     <div class="col">
-                        <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                    Color="Color.Secondary" Placement="Placement.Top">
-                            <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                       Color="Color.Success" />
-                        </MudTooltip>
-                        <ValidationMessage For="@(() => articulo.Estado)" />
+                        <div class="input-group">
+                            @*<InputText @bind-Value="@articulo.Descripcion" oninput="this.value=this.value.toUpperCase()" placeholder="Descripción" class="form-control" />*@
+                            <InputTextArea @bind-Value="@articulo.Descripcion" oninput="this.value=this.value.toUpperCase()" placeholder="Descripción" class="form-control" />
+                        </div>
                     </div>
                 </div>
-            </div>
 
-                <div class="form-group row">                    
-                        <label class="col-4 col-form-label">Url Imagen</label>
-                        <div class="col">
-                            <div class="input-group">
-                                <MudTooltip Text="Debe subir únicamente el link de la imagen" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
-                                    <InputText @bind-Value="@articulo.Url_Imagen" placeholder="URL Imagen" class="form-control" />
-                                    </MudTooltip>
-                                    <div class="input-group-prepend">
-                                        <button @onclick="@(() => articulo.Url_Imagen = null)" class="btn btn-secondary" type="button">
-                                            <i class="oi oi-delete"></i>
-                                        </button>
-                                    </div>
-                            </div>
-                        </div>   
-                        <div class="form-group row">
-                            <label class="col-3 col-form-label">Estado</label>
-                            <div class="col">
-                                <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                            Color="Color.Secondary" Placement="Placement.Top">
-                                    <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                               Color="Color.Success" />
-                                </MudTooltip>
-                                <ValidationMessage For="@(() => articulo.Estado)" />
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Url Imagen</label>
+                    <div class="col">
+                        <div class="input-group">
+                            <MudTooltip Text="Debe subir únicamente el link de la imagen" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
+                                <InputText @bind-Value="@articulo.Url_Imagen" placeholder="URL Imagen" class="form-control" />
+                            </MudTooltip>
+                            <div class="input-group-prepend">
+                                <button @onclick="@(() => articulo.Url_Imagen = null)" class="btn btn-secondary" type="button">
+                                    <i class="oi oi-delete"></i>
+                                </button>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
 
@@ -196,17 +119,6 @@
                         </div>
                         <ValidationMessage For="@(() => articulo.Codigo)" />
                     </div>
-                    <div class="form-group row">
-                        <label class="col-3 col-form-label">Estado</label>
-                        <div class="col">
-                            <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                        Color="Color.Secondary" Placement="Placement.Top">
-                                <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                           Color="Color.Success" />
-                            </MudTooltip>
-                            <ValidationMessage For="@(() => articulo.Estado)" />
-                        </div>
-                    </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-4 col-form-label">Precio mayorista</label>
@@ -219,17 +131,6 @@
                         </div>
                         <ValidationMessage For="@(() => articulo.PrecioMayorista)" />
                     </div>
-                    <div class="form-group row">
-                        <label class="col-3 col-form-label">Estado</label>
-                        <div class="col">
-                            <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                        Color="Color.Secondary" Placement="Placement.Top">
-                                <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                           Color="Color.Success" />
-                            </MudTooltip>
-                            <ValidationMessage For="@(() => articulo.Estado)" />
-                        </div>
-                    </div>
                 </div>
 
                 <div class="form-group row">
@@ -240,17 +141,6 @@
                             <div class="input-group-append">
                                 <span class="input-group-text">%</span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-3 col-form-label">Estado</label>
-                        <div class="col">
-                            <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                        Color="Color.Secondary" Placement="Placement.Top">
-                                <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                           Color="Color.Success" />
-                            </MudTooltip>
-                            <ValidationMessage For="@(() => articulo.Estado)" />
                         </div>
                     </div>
                 </div>
@@ -266,17 +156,6 @@
                         </div>
                         <ValidationMessage For="@(() => articulo.PrecioUnitario)" />
                     </div>
-                    <div class="form-group row">
-                        <label class="col-3 col-form-label">Estado</label>
-                        <div class="col">
-                            <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                        Color="Color.Secondary" Placement="Placement.Top">
-                                <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                           Color="Color.Success" />
-                            </MudTooltip>
-                            <ValidationMessage For="@(() => articulo.Estado)" />
-                        </div>
-                    </div>
                 </div>
 
                 <div class="form-group row">
@@ -286,17 +165,6 @@
                             <InputNumber @bind-Value="@articulo.StockActual" min="0" class="form-control" type="number" />
                         </div>
                         <ValidationMessage For="@(() => articulo.StockActual)" />
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-3 col-form-label">Estado</label>
-                        <div class="col">
-                            <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                        Color="Color.Secondary" Placement="Placement.Top">
-                                <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                           Color="Color.Success" />
-                            </MudTooltip>
-                            <ValidationMessage For="@(() => articulo.Estado)" />
-                        </div>
                     </div>
                 </div>
 
@@ -308,18 +176,6 @@
                         </div>
                         <ValidationMessage For="@(() => articulo.StockMinimo)" />
                     </div>
-
-                    <div class="form-group row">
-                        <label class="col-3 col-form-label">Estado</label>
-                        <div class="col">
-                            <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                        Color="Color.Secondary" Placement="Placement.Top">
-                                <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                           Color="Color.Success" />
-                            </MudTooltip>
-                            <ValidationMessage For="@(() => articulo.Estado)" />
-                        </div>
-                    </div>
                 </div>
 
                 <div class="form-group row">
@@ -330,17 +186,17 @@
                         </div>
                         <ValidationMessage For="@(() => articulo.StockMaximo)" />
                     </div>
+                </div>
 
-                    <div class="form-group row">
-                        <label class="col-3 col-form-label">Estado</label>
-                        <div class="col">
-                            <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                        Color="Color.Secondary" Placement="Placement.Top">
-                                <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
-                                           Color="Color.Success" />
-                            </MudTooltip>
-                            <ValidationMessage For="@(() => articulo.Estado)" />
-                        </div>
+                <div class="form-group row">
+                    <label class="col-3 col-form-label">Estado</label>
+                    <div class="col">
+                        <MudTooltip Text="Si selecciona esta opción dará de baja al artículo correspondiente."
+                                    Color="Color.Secondary" Placement="Placement.Top">
+                            <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
+                                       Color="Color.Success" />
+                        </MudTooltip>
+                        <ValidationMessage For="@(() => articulo.Estado)" />
                     </div>
                 </div>
             </div>

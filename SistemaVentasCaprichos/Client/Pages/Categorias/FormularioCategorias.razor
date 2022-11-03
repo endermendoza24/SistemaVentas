@@ -14,18 +14,7 @@
                                           Margin="Margin.Dense"></MudTextField>
                         </div>
                         <ValidationMessage For="@(() => Categoria.Nombre)" />
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-3 col-form-label">Estado</label>
-                        <div class="col">
-                            <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
-                                        Color="Color.Secondary" Placement="Placement.Top">
-                                <MudSwitch @bind-Checked="@Categoria.Estado" Label="Está activo?"
-                                           Color="Color.Success" />
-                            </MudTooltip>
-                            <ValidationMessage For="@(() => Categoria.Estado)" />
-                        </div>
-                    </div>
+                    </div>                   
                 </div>
 
                 <div class="form-group row">
@@ -40,7 +29,7 @@
                     <div class="form-group row">
                         <label class="col-3 col-form-label">Estado</label>
                         <div class="col">
-                            <MudTooltip Text="Si selecciona esta opción dará de baja a la marca correspondiente."
+                            <MudTooltip Text="Si selecciona esta opción dará de baja a la categoría correspondiente."
                                         Color="Color.Secondary" Placement="Placement.Top">
                                 <MudSwitch @bind-Checked="@Categoria.Estado" Label="Está activo?"
                                            Color="Color.Success" />

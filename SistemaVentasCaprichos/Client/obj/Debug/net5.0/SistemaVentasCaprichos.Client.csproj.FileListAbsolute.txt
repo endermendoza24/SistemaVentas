@@ -3031,3 +3031,5 @@ C:\Users\osday\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net
 C:\Users\osday\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\SistemaVentasCaprichos.Client.dll
 C:\Users\osday\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Client.dll
 C:\Users\osday\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\SistemaVentasCaprichos.Client.pdb
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Articulos\ListaBajas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Articulos\ListaBajas.razor.g.cs
