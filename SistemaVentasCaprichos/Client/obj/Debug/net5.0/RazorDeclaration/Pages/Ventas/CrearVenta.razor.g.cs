@@ -161,8 +161,7 @@ using SistemaVentasCaprichos.Client.Shared;
 
     async Task CrearVent()
     {
-        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "¿Finalizar venta?",
-            $"Total: ${venta.Total}. Forma de pago: {venta.FormaPago}", "question");
+        var confirmacion = true;
         if (confirmacion)
         {
             var respuesta = await Http.PostAsJsonAsync("api/ventas", venta);

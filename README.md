@@ -26,6 +26,9 @@ Elaborado por:
 
 > 02 de noviembre, agregadas todas las validaciones a través de modelo, también a través del modelo se agregaron las restricciones de base de datos.
 > Se ha resuelto la lógica de dada de baja de producto.
+> 03 de noviembre, se mejoró el diseño, además de terminar la lógica de dada de baja. Para el diseño nos basamos en este tutorial: 
+> https://code-maze.com/creating-blazor-material-navigation-menu/
+
 ## Lógica de dada de bajas
 La lógica de dada de baja está en loc controladores de cada catálogo, se le debe añadir una sentencia WHERE en el método GET, en esa sentencia se debe de especificar que solo muestre los registros cuyo estado sea igual a true, esto se hizo de la siguiente manera:
 
@@ -48,6 +51,7 @@ En donde con simplemente añadirle la sentencia WHERE  el sistema determina no m
  - [x] Mejoras en el área de logueo/deslogueo/registro.
  - [ ] Sistema de roles
  - [ ] Mejoras generales en el diseño y el aspecto visual.
+ - [ ] Eliminar código innecesario.
  - [x] Añadir tooltips y detalles de accesibilidad del usuario
 
 ~~Fecha aproximada de entrega: 25 de noviembre de 2022.~~
