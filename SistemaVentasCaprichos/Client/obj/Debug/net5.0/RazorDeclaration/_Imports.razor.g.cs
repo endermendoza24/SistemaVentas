@@ -131,6 +131,13 @@ using MudBlazor.Services;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 20 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using SistemaVentasCaprichos.Client.Shared;
+
+#line default
+#line hidden
+#nullable disable
     public partial class _Imports : System.Object
     {
         #pragma warning disable 1998

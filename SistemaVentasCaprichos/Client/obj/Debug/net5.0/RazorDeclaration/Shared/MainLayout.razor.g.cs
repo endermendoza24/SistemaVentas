@@ -83,13 +83,6 @@ using SistemaVentasCaprichos.Client;
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
-using SistemaVentasCaprichos.Client.Shared;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 12 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Shared;
 
@@ -131,6 +124,13 @@ using MudBlazor.Services;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 20 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using SistemaVentasCaprichos.Client.Shared;
+
+#line default
+#line hidden
+#nullable disable
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998
@@ -139,44 +139,12 @@ using MudBlazor.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 56 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
+#line 50 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
        
-    private bool _isLightMode = true;
-    private bool _sidebarOpen = true;
     private MudTheme _currentTheme = new MudTheme();
-
-    private void ToggleTheme()
-    {
-        _isLightMode = !_isLightMode;
-
-        if (!_isLightMode)
-        {
-            _currentTheme = GenerateDarkTheme();
-        }
-        else
-        {
-            _currentTheme = new MudTheme();
-        }
-    }
-
-    private MudTheme GenerateDarkTheme() =>
-     new MudTheme
-     {
-         Palette = new Palette()
-         {
-             Black = "#27272f",
-             Background = "#32333d",
-             BackgroundGrey = "#27272f",
-             Surface = "#373740",
-             TextPrimary = "#ffffffb3",
-             TextSecondary = "rgba(255,255,255, 0.50)",
-             AppbarBackground = "#27272f",
-             AppbarText = "#ffffffb3",
-             DrawerBackground = "#27272f",
-             DrawerText = "#ffffffb3",
-             DrawerIcon = "#ffffffb3"
-         }
-     };
+    private bool _sidebarOpen = true;
+    private void ToggleTheme(MudTheme changedTheme) => _currentTheme = changedTheme;
+    private void ToggleSidebar() => _sidebarOpen = !_sidebarOpen;
 
 #line default
 #line hidden

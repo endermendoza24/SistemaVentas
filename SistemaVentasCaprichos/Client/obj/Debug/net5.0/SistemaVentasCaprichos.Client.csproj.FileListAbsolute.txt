@@ -3046,3 +3046,5 @@ C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\bin\Debug\net5.0\wwwroot\_framework\MudBlazor.ThemeManager.dll.gz
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\bin\Debug\net5.0\wwwroot\_framework\MudBlazor.ThemeManager.dll
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\TTkqiWMG.gz
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Shared\AppBar.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Shared\AppBar.razor.g.cs

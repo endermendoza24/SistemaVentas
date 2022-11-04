@@ -83,13 +83,6 @@ using SistemaVentasCaprichos.Client;
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
-using SistemaVentasCaprichos.Client.Shared;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 17 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using MudBlazor;
 
@@ -106,6 +99,13 @@ using MudBlazor.ThemeManager;
 #nullable restore
 #line 19 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using MudBlazor.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 20 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using SistemaVentasCaprichos.Client.Shared;
 
 #line default
 #line hidden
