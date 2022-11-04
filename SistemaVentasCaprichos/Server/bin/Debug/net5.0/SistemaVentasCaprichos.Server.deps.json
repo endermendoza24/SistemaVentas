@@ -1601,6 +1601,21 @@
           "lib/net5.0/MudBlazor.dll": {}
         }
       },
+      "MudBlazor.ThemeManager/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "5.0.17",
+          "MudBlazor": "5.2.5"
+        },
+        "runtime": {
+          "lib/net5.0/MudBlazor.ThemeManager.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/MudBlazor.ThemeManager.dll": {}
+        }
+      },
       "Newtonsoft.Json/12.0.2": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
@@ -2369,6 +2384,7 @@
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "5.0.17",
           "Microsoft.Extensions.Http": "5.0.0",
           "MudBlazor": "5.2.5",
+          "MudBlazor.ThemeManager": "1.0.0",
           "SistemaVentasCaprichos.Shared": "1.0.0",
           "System.Net.Http.Json": "5.0.0"
         },
@@ -4635,6 +4651,13 @@
       "sha512": "sha512-9dfrY4pyczr2dhqhs6bmR9Xef+6Evp/JLiXh0I99uQ/oFAWVW6BLDJ8aPMq7ttV3W6YXAPzE/fJm0Aj/VnLoAw==",
       "path": "mudblazor/5.2.5",
       "hashPath": "mudblazor.5.2.5.nupkg.sha512"
+    },
+    "MudBlazor.ThemeManager/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vfbHfNcSRCU2c7Sn/loQOborkTK2xdpM2Le+jyYyxzh6hQRZuF4kPIs2PkZyh06lcs1iVM3fW9Na7vPNNesvBw==",
+      "path": "mudblazor.thememanager/1.0.0",
+      "hashPath": "mudblazor.thememanager.1.0.0.nupkg.sha512"
     },
     "Newtonsoft.Json/12.0.2": {
       "type": "package",

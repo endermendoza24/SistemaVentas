@@ -1426,6 +1426,25 @@
           "buildMultiTargeting/MudBlazor.props": {}
         }
       },
+      "MudBlazor.ThemeManager/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "5.0.3",
+          "MudBlazor": "5.0.3"
+        },
+        "compile": {
+          "lib/net5.0/MudBlazor.ThemeManager.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/MudBlazor.ThemeManager.dll": {}
+        },
+        "build": {
+          "buildTransitive/MudBlazor.ThemeManager.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/MudBlazor.ThemeManager.props": {}
+        }
+      },
       "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
@@ -2624,6 +2643,7 @@
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "5.0.17",
           "Microsoft.Extensions.Http": "5.0.0",
           "MudBlazor": "5.2.5",
+          "MudBlazor.ThemeManager": "1.0.0",
           "SistemaVentasCaprichos.Shared": "1.0.0",
           "System.Net.Http.Json": "5.0.0"
         },
@@ -4895,6 +4915,23 @@
         "staticwebassets/MudBlazor.css",
         "staticwebassets/MudBlazor.min.css",
         "staticwebassets/MudBlazor.min.js"
+      ]
+    },
+    "MudBlazor.ThemeManager/1.0.0": {
+      "sha512": "vfbHfNcSRCU2c7Sn/loQOborkTK2xdpM2Le+jyYyxzh6hQRZuF4kPIs2PkZyh06lcs1iVM3fW9Na7vPNNesvBw==",
+      "type": "package",
+      "path": "mudblazor.thememanager/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/MudBlazor.ThemeManager.props",
+        "buildMultiTargeting/MudBlazor.ThemeManager.props",
+        "buildTransitive/MudBlazor.ThemeManager.props",
+        "lib/net5.0/MudBlazor.ThemeManager.dll",
+        "mudblazor.thememanager.1.0.0.nupkg.sha512",
+        "mudblazor.thememanager.nuspec",
+        "staticwebassets/MudBlazorThemeManager.css"
       ]
     },
     "Newtonsoft.Json/12.0.2": {

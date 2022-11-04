@@ -10,7 +10,13 @@
     <a style="text-decoration:none; color:#fff;"  @onclick="CrearArticulo">Agregar categoría</a>
 </MudButton>
 
-
+<div class="d-flex justify-content-between mt-2 mb-2">
+    <div class="btn-group">
+        <a href="/lista-categorias-bajas" style="background:none; border:none">
+            &nbsp;&nbsp;<b>Dados de baja</b>
+        </a>
+    </div>
+</div>
 
 @if (Categoria == null)
 {

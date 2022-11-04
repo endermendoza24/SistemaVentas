@@ -638,3 +638,4 @@ C:\Users\osday\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net
 C:\Users\osday\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Server.dll
 C:\Users\osday\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\SistemaVentasCaprichos.Server.pdb
 C:\Users\osday\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\SistemaVentasCaprichos.Server.genruntimeconfig.cache
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\bin\Debug\net5.0\MudBlazor.ThemeManager.dll

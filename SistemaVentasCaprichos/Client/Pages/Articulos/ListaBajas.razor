@@ -30,7 +30,7 @@
 @if (articulo == null)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
-        <div class="spinner-grow text-success" role="status">
+        <div class="spinner-border text-success" role="status">
             <span class="sr-only">Cargando...</span>
         </div>
     </div>
@@ -63,25 +63,25 @@ else
                 <MudTd DataLabel="Id">@context.Id</MudTd>
                 <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
                 <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
-                <MudTd DataLabel="Precio">@context.PrecioUnitario</MudTd>
-                <MudTd DataLabel="Fecha">@context.Ultima_Modificación.ToLongTimeString()</MudTd>
+                <MudTd DataLabel="Precio">C$ @context.PrecioUnitario</MudTd>
+                <MudTd DataLabel="Fecha">@context.Ultima_Modificación.ToLongDateString()</MudTd>
                 <MudTd>
                     @if (context.StockActual < context.StockMinimo)
                         {
                         <MudChip Color="Color.Error" Variant="Variant.Filled">
-                            <MudTd DataLabel="Stock bajo">@context.StockActual</MudTd>
+                            <MudTd Style="color:#fff" DataLabel="Stock bajo">@context.StockActual</MudTd>
                         </MudChip>
                         }
                         else if (context.StockActual > context.StockMaximo)
                         {
                         <MudChip Color="Color.Warning" Variant="Variant.Filled">
-                            <MudTd DataLabel="Stock excedido"> @context.StockActual</MudTd>
+                            <MudTd Style="color:#fff" DataLabel="Stock excedido"> @context.StockActual</MudTd>
                         </MudChip>
                         }
                         else
                         {
                         <MudChip Color="Color.Success" Variant="Variant.Filled">
-                            <b><MudTd DataLabel="Stock"> @context.StockActual</MudTd></b>
+                            <MudTd Style="color:#fff" DataLabel="Stock"> @context.StockActual</MudTd>
                         </MudChip>
                         }
                 </MudTd>

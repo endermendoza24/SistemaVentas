@@ -28,6 +28,14 @@ namespace SistemaVentasCaprichos.Server.Controllers
                 .Where(x => x.Estado == true) // a través de este where solo se muestran en pantalla los que tengan un estado true
                 .ToListAsync();
         }
+        [HttpGet("bajas")]
+        public async Task<ActionResult<List<Marcas>>> GetBajas()
+        {
+            //return await context.Marca.ToListAsync();
+            return await context.Marca
+                .Where(x => x.Estado != true) // a través de este where solo se muestran en pantalla los que tengan un estado true
+                .ToListAsync();
+        }
         [HttpGet("{id}")]
         public async Task<ActionResult<Marcas>> Get(int id)
         {

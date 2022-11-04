@@ -117,6 +117,20 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 18 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using MudBlazor.ThemeManager;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 19 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using MudBlazor.Services;
+
+#line default
+#line hidden
+#nullable disable
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998
@@ -124,6 +138,49 @@ using MudBlazor;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 56 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
+       
+    private bool _isLightMode = true;
+    private bool _sidebarOpen = true;
+    private MudTheme _currentTheme = new MudTheme();
+
+    private void ToggleTheme()
+    {
+        _isLightMode = !_isLightMode;
+
+        if (!_isLightMode)
+        {
+            _currentTheme = GenerateDarkTheme();
+        }
+        else
+        {
+            _currentTheme = new MudTheme();
+        }
+    }
+
+    private MudTheme GenerateDarkTheme() =>
+     new MudTheme
+     {
+         Palette = new Palette()
+         {
+             Black = "#27272f",
+             Background = "#32333d",
+             BackgroundGrey = "#27272f",
+             Surface = "#373740",
+             TextPrimary = "#ffffffb3",
+             TextSecondary = "rgba(255,255,255, 0.50)",
+             AppbarBackground = "#27272f",
+             AppbarText = "#ffffffb3",
+             DrawerBackground = "#27272f",
+             DrawerText = "#ffffffb3",
+             DrawerIcon = "#ffffffb3"
+         }
+     };
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

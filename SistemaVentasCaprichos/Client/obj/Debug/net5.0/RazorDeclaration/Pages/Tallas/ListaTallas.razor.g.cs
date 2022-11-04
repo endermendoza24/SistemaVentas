@@ -118,6 +118,20 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
+#line 18 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using MudBlazor.ThemeManager;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 19 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using MudBlazor.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 7 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Tallas\ListaTallas.razor"
 using System.Text.Json;
 
@@ -140,7 +154,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 61 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Tallas\ListaTallas.razor"
+#line 68 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Tallas\ListaTallas.razor"
        
     private bool dense = false;
     private bool hover = true;
@@ -215,7 +229,7 @@ using System.Text.Json;
         if (string.IsNullOrWhiteSpace(searchString))
             return true;
         if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;      
+            return true;
         return false;
     }
 

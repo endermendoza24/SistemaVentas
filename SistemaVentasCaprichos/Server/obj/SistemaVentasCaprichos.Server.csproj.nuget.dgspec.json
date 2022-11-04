@@ -65,6 +65,10 @@
               "target": "Package",
               "version": "[5.2.5, )"
             },
+            "MudBlazor.ThemeManager": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "System.Net.Http.Json": {
               "target": "Package",
               "version": "[5.0.0, )"

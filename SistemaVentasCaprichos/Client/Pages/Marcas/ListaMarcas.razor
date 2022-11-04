@@ -7,10 +7,16 @@
 @using System.Text.Json
 
 <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Create" Color="Color.Success" Size="Size.Medium">
-    <a style="text-decoration:none; color:#fff;" @onclick="CrearArticulo">Agregar categoría</a>
+    <a style="text-decoration:none; color:#fff;" @onclick="CrearArticulo">Agregar marca</a>
 </MudButton>
 
-
+<div class="d-flex justify-content-between mt-2 mb-2">
+    <div class="btn-group">
+        <a href="/lista-marcas-bajas" style="background:none; border:none">
+            &nbsp;&nbsp;<b>Dados de baja</b>
+        </a>
+    </div>
+</div>
 
 @if (Marca == null)
 {

@@ -2214,7 +2214,6 @@ C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Marcas\ListaMarcas.razor.g.cs
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Configuracion\CrearConfiguracion.razor.g.cs
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Configuracion\CrearConfiguracion.razor.g.cs
-C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\bin\Debug\net5.0\ref\SistemaVentasCaprichos.Client.dll
 C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Configuracion\CrearConfiguracion.razor.g.cs
 C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Configuracion\EditarConfiguracion.razor.g.cs
 C:\Users\Endersson\Pictures\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Configuracion\FormConfiguracion.razor.g.cs
@@ -3033,3 +3032,17 @@ C:\Users\osday\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net
 C:\Users\osday\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\SistemaVentasCaprichos.Client.pdb
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Articulos\ListaBajas.razor.g.cs
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Articulos\ListaBajas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Categorias\CategoriasBajas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Categorias\CategoriasBajas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\bin\Debug\net5.0\ref\SistemaVentasCaprichos.Client.dll
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Marcas\ListaBajasMarcas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Marcas\ListaBajasMarcas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Proveedores\ListaProveedoresBajas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Proveedores\ListaProveedoresBajas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Tallas\ListaTallasBajas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Tallas\ListaTallasBajas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Shared\NavBar.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Shared\NavBar.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\bin\Debug\net5.0\wwwroot\_framework\MudBlazor.ThemeManager.dll.gz
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\bin\Debug\net5.0\wwwroot\_framework\MudBlazor.ThemeManager.dll
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\TTkqiWMG.gz

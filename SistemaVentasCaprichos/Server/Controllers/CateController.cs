@@ -19,11 +19,19 @@ namespace SistemaVentasCaprichos.Server.Controllers
         {
             this.context = context;
         }
+
         [HttpGet]
         public async Task<ActionResult<List<Categoria>>> Get()
         {
             return await context.Categoria.
                 Where(x => x.Estado == true).
+                ToListAsync();
+        }
+        [HttpGet("bajas")]
+        public async Task<ActionResult<List<Categoria>>> GetBajas()
+        {
+            return await context.Categoria.
+                Where(x => x.Estado != true).
                 ToListAsync();
         }
         [HttpGet("{id}")]

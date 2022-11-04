@@ -22,7 +22,14 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Proveedores>>> Get()
         {
-            return await context.Proveedores.ToListAsync();
+            return await context.Proveedores.Where(x => x.Estado == true).ToListAsync();
+        
+        }
+
+        [HttpGet("bajas")]
+        public async Task<ActionResult<List<Proveedores>>> GetBajas()
+        {
+            return await context.Proveedores.Where(x => x.Estado != true).ToListAsync();
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Proveedores>> Get(int id)

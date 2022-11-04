@@ -1,22 +1,93 @@
 ﻿@inherits LayoutComponentBase
-
-<div class="page">
-    <AuthorizeView>
-        <Authorized>
-            <div class="sidebar">
-                <NavMenu />
+@*<div class="page">
+        <AuthorizeView>
+            <Authorized>
+                <div class="sidebar">
+                    <NavMenu />
+                </div>
+            </Authorized>
+        </AuthorizeView>
+        <div id="main" class="main">
+            <div class="top-row px-3 auth">
+                <LoginDisplay />
             </div>
-        </Authorized>
-    </AuthorizeView>
-    <div id="main" class="main">
-        <div class="top-row px-3 auth">
-            <LoginDisplay />
+            <div class="content px-3">
+                @Body
+            </div>
         </div>
-        <div class="content px-3">
+    </div>*@
+
+
+
+<MudLayout>
+    <MudAppBar Elevation="3">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" />
+        @*<MudAppBarSpacer />*@
+        @if (_isLightMode)
+        {
+            <MudIconButton Icon="@Icons.Material.Filled.Brightness4" Color="Color.Inherit" OnClick="ToggleTheme" />
+        }
+        else
+        {
+            <MudIconButton Icon="@Icons.Material.Filled.Brightness5" Color="Color.Inherit" OnClick="ToggleTheme" />
+        }
+    </MudAppBar>
+    <MudDrawer @bind-Open="_sidebarOpen" Elevation="1">
+        <MudDrawerHeader>
+            <MudAvatar Color="Color.Transparent" Size="Size.Large" Image="assets/Logo-CodeMaze.png" />
+            <MudText Typo="Typo.h5" Color="Color.Primary" Style="margin-top:10px; margin-left:15px;">Caprichos</MudText>
+        </MudDrawerHeader>
+        <NavBar />
+        @*<NavMenu></NavMenu>*@
+    </MudDrawer>
+    <MudMainContent>
+        <MudContainer Class="mt-6">
             @Body
-        </div>
-    </div>
-</div>
-<MudThemeProvider />
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+
+
+<MudThemeProvider Theme="_currentTheme" />
 <MudDialogProvider />
 <MudSnackbarProvider />
+
+@code {
+    private bool _isLightMode = true;
+    private bool _sidebarOpen = true;
+    private MudTheme _currentTheme = new MudTheme();
+
+    private void ToggleTheme()
+    {
+        _isLightMode = !_isLightMode;
+
+        if (!_isLightMode)
+        {
+            _currentTheme = GenerateDarkTheme();
+        }
+        else
+        {
+            _currentTheme = new MudTheme();
+        }
+    }
+
+    private MudTheme GenerateDarkTheme() =>
+     new MudTheme
+     {
+         Palette = new Palette()
+         {
+             Black = "#27272f",
+             Background = "#32333d",
+             BackgroundGrey = "#27272f",
+             Surface = "#373740",
+             TextPrimary = "#ffffffb3",
+             TextSecondary = "rgba(255,255,255, 0.50)",
+             AppbarBackground = "#27272f",
+             AppbarText = "#ffffffb3",
+             DrawerBackground = "#27272f",
+             DrawerText = "#ffffffb3",
+             DrawerIcon = "#ffffffb3"
+         }
+     };
+}

@@ -1,0 +1,146 @@
+﻿@page "/lista-categorias-bajas"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@attribute [Authorize]
+
+@using System.Text.Json
+
+<MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Create" Color="Color.Success" Size="Size.Medium">
+    <a style="text-decoration:none; color:#fff;" @onclick="CrearArticulo">Agregar categoría</a>
+</MudButton>
+
+<div class="d-flex justify-content-between mt-2 mb-2">
+    <div class="btn-group">
+        <a href="/indexcategoria" style="background:none; border:none">
+            &nbsp;&nbsp;<b>Artículos</b>
+        </a>
+    </div>
+</div>
+
+@if (Categoria == null)
+{
+    <div class="d-flex justify-content-center align-items-center" style="height:24rem">
+        <div class="spinner-grow text-success" role="status">
+            <span class="sr-only">Cargando...</span>
+        </div>
+    </div>
+}
+else if (Categoria.Count == 0)
+{
+    <div class="d-flex justify-content-center align-items-center" style="height:24rem">
+        <text>No se encontraron artículos.</text>
+    </div>
+}
+else
+{
+    <MudTable Items="@Categoria" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Categoria,bool>(FilterFunc1)"
+              @bind-SelectedItem="selectedItem1">
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Categorías</MudText>
+            <MudSpacer />
+            <MudTextField @bind-Value="searchString1" Placeholder="Buscar categoría..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh Style="width:50px;">Nr</MudTh>
+            <MudTh Class="thead-dark">Nombre</MudTh>
+            <MudTh>Descripción</MudTh>
+            <MudTh>Acciones</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Id">@context.Id</MudTd>
+            <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
+            <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
+            <MudTd>
+                <MudFab Color="Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
+                        @onclick="@(() => NavigationManager.NavigateTo($"/editar-categoria/{context.Id}"))" />
+            </MudTd>
+
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager />
+        </PagerContent>
+    </MudTable>
+
+
+}
+@code {
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private string searchString1 = "";
+    private Categoria selectedItem1 = null;
+    private HashSet<Categoria> selectedItems = new HashSet<Categoria>();
+
+
+    public List<Categoria> Categoria { get; set; } //muestra todos los Categoria
+    Categoria objCategoria = new Categoria();
+
+    private string NombreArtFiltro = String.Empty; //filtros
+
+    protected bool lista = false;
+    protected bool card = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarArticulos();
+    }
+
+    async Task CargarArticulos()
+    {
+        var httpResponse = await Http.GetAsync($"api/cate/bajas");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            Categoria = JsonSerializer.Deserialize<List<Categoria>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+    }
+
+    void CambiarVista()
+    {
+        lista = !lista;
+        card = !card;
+    }
+
+
+    async Task MostrarTodos()
+    {
+        await CargarArticulos();
+    }
+
+    void CrearArticulo()
+    {
+        NavigationManager.NavigateTo("crearcategoria");
+    }
+
+    private async Task Filtrar()
+    {
+        await CargarArticulos();
+    }
+
+    private async Task Limpiar()
+    {
+        NombreArtFiltro = string.Empty;
+        await CargarArticulos();
+    }
+
+    private bool FilterFunc1(Categoria element) => FilterFunc(element, searchString1);
+
+    private bool FilterFunc(Categoria element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Descripcion.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        return false;
+    }
+}

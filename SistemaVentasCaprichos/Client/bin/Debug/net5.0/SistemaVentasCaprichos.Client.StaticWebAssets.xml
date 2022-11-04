@@ -3,4 +3,5 @@
   <ContentRoot BasePath="/" Path="C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\bundle\" />
   <ContentRoot BasePath="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication" Path="C:\Users\Endersson\.nuget\packages\microsoft.aspnetcore.components.webassembly.authentication\5.0.17\build\..\staticwebassets\" />
   <ContentRoot BasePath="_content/MudBlazor" Path="C:\Users\Endersson\.nuget\packages\mudblazor\5.2.5\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/MudBlazor.ThemeManager" Path="C:\Users\Endersson\.nuget\packages\mudblazor.thememanager\1.0.0\build\..\staticwebassets\" />
 </StaticWebAssets>

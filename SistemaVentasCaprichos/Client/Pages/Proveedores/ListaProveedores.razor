@@ -2,20 +2,26 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
-@*@attribute [Authorize]*@
+@attribute [Authorize]
 
 @using System.Text.Json
 
 <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Create" Color="Color.Success" Size="Size.Medium">
-    <a style="text-decoration:none; color:#fff;"  @onclick="CrearArticulo">Agregar categoría</a>
+    <a style="text-decoration:none; color:#fff;"  @onclick="CrearArticulo">Agregar proveedor</a>
 </MudButton>
 
-
+<div class="d-flex justify-content-between mt-2 mb-2">
+    <div class="btn-group">
+        <a href="/lista-proveedores-bajas" style="background:none; border:none">
+            &nbsp;&nbsp;<b>Dados de baja</b>
+        </a>
+    </div>
+</div>
 
 @if (Proveedores == null)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
-        <div class="spinner-grow text-success" role="status">
+        <div class="spinner-border text-success" role="status">
             <span class="sr-only">Cargando...</span>
         </div>
     </div>
@@ -23,7 +29,7 @@
 else if (Proveedores.Count == 0)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
-        <text>No se encontraron marcas.</text>
+        <text>No se encontraron proveedores.</text>
     </div>
 }
 else
@@ -48,7 +54,7 @@ else
             <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
             <MudTd DataLabel="Teléfono">@context.Telefono</MudTd>
             <MudTd DataLabel="Dirección">@context.Direccion</MudTd>
-            <MudTd DataLabel="Fecha">@context.Fecha</MudTd>
+            <MudTd DataLabel="Fecha">@context.Fecha.ToLongDateString()</MudTd>
             <MudTd>
                 <MudFab Color="Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
                         @onclick="@(() => NavigationManager.NavigateTo($"/editar-proveedores/{context.Id}"))" />

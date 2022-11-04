@@ -1,0 +1,28 @@
+﻿<link href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" rel="stylesheet">
+
+
+<MudPaper Width="250px" Class="d-inline-flex py-3" Elevation="0">
+    <MudNavMenu Class="mud-width-full">
+        <MudText Typo="Typo.h6" Class="px-4">Sistema Caprichos</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">Secondary Text</MudText>
+        <MudDivider Class="my-2" />
+        <MudNavLink Href="/" Icon="@Icons.Filled.Dashboard">Dashboard</MudNavLink>
+        <MudNavGroup Title="Artículos" Icon="fas fa-tshirt" Expanded="true">
+            <MudNavLink Href="/lista-articulos" Icon="fas fa-plus-circle">Crear artículo</MudNavLink>
+            <MudNavLink Href="/lista-marcas" Icon="fas fa-plus-circle">Marcas</MudNavLink>
+            <MudNavLink Href="/indexcategoria" Icon="fas fa-plus-circle">Categorías</MudNavLink>
+            <MudNavLink Href="/lista-tallas" Icon="fas fa-plus-circle">Tallas</MudNavLink>
+        </MudNavGroup>
+
+        <MudNavGroup Title="Ventas" Icon="fas fa-shopping-bag" Expanded="true">
+            <MudNavLink Href="/lista-ventas" Icon="fas fa-plus-circle">Ventas</MudNavLink>
+            <MudNavLink Href="/lista-clientes" Icon="fas fa-user-plus">Clientes</MudNavLink>
+        </MudNavGroup>
+
+        <MudNavGroup Title="Compras" Icon="fas fa-shopping-bag" Expanded="true">
+            <MudNavLink Href="/lista-compras" Icon="fas fa-plus-circle">Compras</MudNavLink>
+            <MudNavLink Href="/lista-proveedores" Icon="fas fa-user-plus">Proveedores</MudNavLink>
+        </MudNavGroup>
+        <MudNavLink Href="/lista-ajustes" Icon="fas fa-cogs">Ajustes</MudNavLink>
+    </MudNavMenu>
+</MudPaper>
