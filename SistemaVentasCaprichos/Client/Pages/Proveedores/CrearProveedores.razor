@@ -2,6 +2,7 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
+@inject ISnackbar Snackbar
 @attribute [Authorize]
 
 <div class="d-flex justify-content-between mb-3">
@@ -27,12 +28,14 @@
         if (respuesta.IsSuccessStatusCode)
         {
             NavigationManager.NavigateTo("/lista-proveedores"); //  cambiar a indexArticulo
-            await JS.InvokeVoidAsync("simple", "¡Éxito!", "Proveedores agregado", "success");
+            // await JS.InvokeVoidAsync("simple", "¡Éxito!", "Proveedores agregado", "success"); 
+             Snackbar.Add("Agregada con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
         }
         else
         {
             //await JS.InvokeVoidAsync("simple", "Error",
             //        "No se pudo crear este producto", "error");
+             Snackbar.Add("Ocurrió un error", Severity.Error, a => a.VisibleStateDuration = 200);
         }
     }
 

@@ -77,9 +77,9 @@ else
                             DNI: @cliente.Cedula
                             <br /> @cliente.Dirección - (@cliente.Teléfono)
                         </p>
-                        <h5 class="card-text text-right">
+                        @* <h5 class="card-text text-right">
                             <b>DEUDA: $@cliente.Saldo</b>
-                        </h5>
+                        </h5> *@
                     </div>
                 </div>
             </a>
@@ -95,7 +95,7 @@ else
                 <th>Sexo</th>
                 <th>Dirección</th>
                 <th>Teléfono</th>
-                <th>Saldo</th>
+                @* <th>Saldo</th> *@
             </tr>
         </thead>
         <tbody>
@@ -121,7 +121,7 @@ else
                     <td>@cliente.Dirección</td>
                     <td>@cliente.Teléfono</td>
 
-                    @if (cliente.Saldo > limitedeuda)
+                    @* @if (cliente.Saldo > limitedeuda)
                     {
                         <td style="color:darkred;">
                             <b>$@cliente.Saldo</b>
@@ -132,7 +132,7 @@ else
                         <td>
                             $@cliente.Saldo
                         </td>
-                    }
+                    } *@
                 </tr>
             </Virtualize>
         </tbody>

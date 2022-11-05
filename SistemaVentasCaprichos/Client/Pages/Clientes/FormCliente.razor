@@ -42,9 +42,11 @@
             <label class="col-3 col-form-label">Dirección</label>
             <div class="col">
                 <div class="input-group">
-                    <InputText @bind-Value="@cliente.Dirección" class="form-control" oninput="this.value=this.value.toUpperCase()" placeholder="Dirección" />
-                </div>
-                <ValidationMessage For="@(() => cliente.Dirección)" />
+                   <MudTextField @bind-Value="@cliente.Dirección" Label="Dirección"
+                    Variant="Variant.Outlined" Lines="3"
+                                          Margin="Margin.Dense"></MudTextField>
+                            <ValidationMessage For="@(() => cliente.Dirección)" />
+                </div>                
             </div>           
         </div>
 

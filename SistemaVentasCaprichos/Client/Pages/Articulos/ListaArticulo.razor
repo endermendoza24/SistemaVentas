@@ -22,19 +22,19 @@
 <div class="d-flex justify-content-between mt-2 mb-2">
     <div class="btn-group">
         <button @onclick="MostrarTodos" style="background:none; border: none">
-            &nbsp;&nbsp;<b>Ver todos</b>
+            &nbsp;&nbsp;<b>Ver todos</b>&nbsp;&nbsp;
         </button>
         <button @onclick="MostrarStockBajo" style="background:none; border: none">
             &nbsp;&nbsp;<b>Sólo con bajo stock</b>
         </button>
         <a href="/lista-articulos-bajas" style="background:none; border:none">
-            &nbsp;&nbsp;<b>Dados de baja</b>
+            &nbsp;&nbsp;<b>Dados de baja</b> &nbsp;&nbsp;
         </a>
     </div>
 
     <div class="btn-group">
         <button @onclick="CambiarVista" style="background:none; border: none">
-            <b>Cambiar vista</b>
+            <b>Ver como tabla</b>
         </button>
     </div>
 </div>
@@ -80,7 +80,7 @@ else
                             @articulo.Categorias
                         </p>
                         <p class="card-text">
-                            PRECIO: <b>$@articulo.PrecioUnitario</b>
+                            PRECIO: <b>C$@articulo.PrecioUnitario</b>
                             <br />
                             @if (articulo.StockActual < articulo.StockMinimo)
                             {

@@ -32,6 +32,7 @@ Elaborado por:
 > 3 noviembre de 2022, Agregado modo oscuro en la aplicación, así como también se agrego una nueva barra de navegación, usando MudBlazor.
 
 > 04 de noviembre se agrego funcion que permite exportar a excel las tablas de catálogos del sistema, únicamente se ha implementado en los módulos de catálogos.
+> Se mejoraron algunos detalles de experiencia de usuario, en la barra de navegación.
 
 ## Lógica de dada de bajas
 La lógica de dada de baja está en loc controladores de cada catálogo, se le debe añadir una sentencia WHERE en el método GET, en esa sentencia se debe de especificar que solo muestre los registros cuyo estado sea igual a true, esto se hizo de la siguiente manera:

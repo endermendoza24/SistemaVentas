@@ -2,32 +2,32 @@
 
 
 <MudPaper Width="250px" Class="d-inline-flex py-3" Elevation="0">
-    <MudNavMenu Class="mud-width-full">
+    <MudNavMenu Rounded="true" Margin="Margin.Dense" Color="Color.Primary" Class="mud-width-full">
         <MudText Typo="Typo.h6" Class="px-4">Sistema Caprichos</MudText>
         <MudDivider Class="my-2" />
         <MudNavLink Href="/" Icon="@Icons.Filled.Dashboard">Inicio</MudNavLink>
-        <MudNavLink Href="/estadisticas" Icon="fas fa-chart-bar">Estadísticas</MudNavLink>
-        <MudNavGroup Title="Artículos" Icon="fas fa-tshirt" Expanded="true">
+        <MudNavLink Href="/estadisticas" Icon="@Icons.Filled.QueryStats">Estadísticas</MudNavLink>
+        <MudNavGroup Title="Artículos" Icon="@Icons.Filled.ProductionQuantityLimits" Expanded="false">
             <MudNavLink Href="/lista-articulos">Crear artículo</MudNavLink>
             <MudNavLink Href="/lista-marcas">Marcas</MudNavLink>
             <MudNavLink Href="/indexcategoria">Categorías</MudNavLink>
             <MudNavLink Href="/lista-tallas">Tallas</MudNavLink>
         </MudNavGroup>
 
-        <MudNavGroup Title="Ventas" Icon="fas fa-shopping-bag" Expanded="true">
+        <MudNavGroup Title="Ventas" Icon="@Icons.Filled.ShoppingBag" Expanded="false">
             <MudNavLink Href="/lista-ventas">Ventas</MudNavLink>
         </MudNavGroup>
-        <MudNavLink Href="/lista-clientes" Icon="fas fa-user-plus">Clientes</MudNavLink>
+        <MudNavLink Href="/lista-clientes" Icon="@Icons.Filled.People">Clientes</MudNavLink>
 
-        <MudNavGroup Title="Compras" Icon="fas fa-shopping-bag" Expanded="true">
+        <MudNavGroup Title="Compras" Icon="@Icons.Filled.ShoppingBag" Expanded="false">
             <MudNavLink Href="/lista-compras">Compras</MudNavLink>
         </MudNavGroup>
-        <MudNavLink Href="/lista-proveedores" Icon="fas fa-user-plus">Proveedores</MudNavLink>
-        <MudNavLink Href="/lista-pedidos" Icon="fas fa-bags-shopping">Pedidos</MudNavLink>
-        <MudNavLink Href="/lista-pagos" Icon="fas fa-money-bill-wave">Pagos</MudNavLink>
-        <MudNavLink Href="/roles" Icon="fas fa-user-tag">Roles</MudNavLink>
+        <MudNavLink Href="/lista-proveedores" Icon="@Icons.Filled.People">Proveedores</MudNavLink>
+        <MudNavLink Href="/lista-pedidos" Icon="@Icons.Filled.ShoppingBag">Pedidos</MudNavLink>
+        <MudNavLink Href="/lista-pagos" Icon="@Icons.Filled.AttachMoney">Pagos</MudNavLink>
+        <MudNavLink Href="/roles" Icon="@Icons.Filled.SupervisedUserCircle">Roles</MudNavLink>
 
-        <MudNavLink Href="/lista-ajustes" Icon="fas fa-cogs">Ajustes</MudNavLink>
+        <MudNavLink Href="/lista-ajustes" Icon="@Icons.Filled.Settings">Ajustes</MudNavLink>
     </MudNavMenu>
 </MudPaper>
 

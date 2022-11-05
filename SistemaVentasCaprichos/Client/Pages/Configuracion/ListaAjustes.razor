@@ -15,7 +15,7 @@
 @if (Configuracion == null)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
-        <div class="spinner-grow text-success" role="status">
+        <div class="spinner-border text-success" role="status">
             <span class="sr-only">Cargando...</span>
         </div>
     </div>
@@ -23,7 +23,7 @@
 else if (Configuracion.Count == 0)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
-        <text>No se encontraron Configuracion.</text>
+        <text>No se encontró ningún ajuste.</text>
     </div>
 }
 else

@@ -7878,34 +7878,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Endersson\\.nuget\\packages\\": {}
+    "C:\\Users\\ENDERSSONMENDOZA\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
+      "projectUniqueName": "C:\\Users\\ENDERSSONMENDOZA\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
       "projectName": "SistemaVentasCaprichos.Client",
-      "projectPath": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
-      "packagesPath": "C:\\Users\\Endersson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\obj\\",
+      "projectPath": "C:\\Users\\ENDERSSONMENDOZA\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
+      "packagesPath": "C:\\Users\\ENDERSSONMENDOZA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ENDERSSONMENDOZA\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Endersson\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\ENDERSSONMENDOZA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
-              "projectPath": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
+            "C:\\Users\\ENDERSSONMENDOZA\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
+              "projectPath": "C:\\Users\\ENDERSSONMENDOZA\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
             }
           }
         }
@@ -7980,7 +7984,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
