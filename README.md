@@ -29,6 +29,10 @@ Elaborado por:
 > 03 de noviembre, se mejoró el diseño, además de terminar la lógica de dada de baja. Para el diseño nos basamos en este tutorial: 
 > https://code-maze.com/creating-blazor-material-navigation-menu/
 
+> 3 noviembre de 2022, Agregado modo oscuro en la aplicación, así como también se agrego una nueva barra de navegación, usando MudBlazor.
+
+> 04 de noviembre se agrego funcion que permite exportar a excel las tablas de catálogos del sistema, únicamente se ha implementado en los módulos de catálogos.
+
 ## Lógica de dada de bajas
 La lógica de dada de baja está en loc controladores de cada catálogo, se le debe añadir una sentencia WHERE en el método GET, en esa sentencia se debe de especificar que solo muestre los registros cuyo estado sea igual a true, esto se hizo de la siguiente manera:
 
@@ -53,6 +57,11 @@ En donde con simplemente añadirle la sentencia WHERE  el sistema determina no m
  - [ ] Mejoras generales en el diseño y el aspecto visual.
  - [ ] Eliminar código innecesario.
  - [x] Añadir tooltips y detalles de accesibilidad del usuario
+ - [ ] Optimizar código de exportación a excel.
+ - [ ] Mejorar modo oscuro, también reparar parte dañada del área de diseño del login.
+ - [ ] Corregir ortografía.
+ - [ ] Logo e imágenes.
+ 
 
 ~~Fecha aproximada de entrega: 25 de noviembre de 2022.~~
 ~~Fecha aproximada de la defensa: 02 de diciembre de 2022.~~

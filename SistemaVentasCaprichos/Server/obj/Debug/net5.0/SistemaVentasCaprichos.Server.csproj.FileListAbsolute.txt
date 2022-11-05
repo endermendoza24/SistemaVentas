@@ -641,4 +641,4 @@ C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\bin\Debug
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\bin\Debug\net5.0\CsvHelper.dll
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\bin\Debug\net5.0\EPPlus.dll
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\bin\Debug\net5.0\System.Xml.XPath.XmlDocument.dll
-C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\bin\Debug\net5.0\ref\SistemaVentasCaprichos.Server.dll
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\refint\SistemaVentasCaprichos.Server.dll

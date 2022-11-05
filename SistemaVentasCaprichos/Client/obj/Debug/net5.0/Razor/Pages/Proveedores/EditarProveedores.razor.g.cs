@@ -212,7 +212,7 @@ using OfficeOpenXml.Style;
             __builder.AddMarkupContent(13, "\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Proveedores.FormProveedor>(14);
             __builder.AddAttribute(15, "TextBotonSubmit", "Guardar cambios");
-            __builder.AddAttribute(16, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+            __builder.AddAttribute(16, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 23 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\EditarProveedores.razor"
                               EditarArtic
@@ -221,7 +221,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(17, "Proveedores", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Proveedores>(
+            __builder.AddAttribute(17, "Proveedores", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Proveedores>(
 #nullable restore
 #line 23 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\EditarProveedores.razor"
                                                          Proveedores

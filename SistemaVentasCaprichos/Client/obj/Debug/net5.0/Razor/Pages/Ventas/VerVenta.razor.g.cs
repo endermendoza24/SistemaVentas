@@ -224,15 +224,13 @@ using System.Text.Json;
             __builder.OpenElement(26, "small");
             __builder.AddAttribute(27, "b-np7uj7vsnh");
             __builder.AddMarkupContent(28, "<b b-np7uj7vsnh>N° factura:</b> ");
-            __builder.AddContent(29, 
 #nullable restore
 #line 32 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                                           venta.Id
+__builder.AddContent(29, venta.Id);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(30, "\r\n\r\n            ");
@@ -241,29 +239,25 @@ using System.Text.Json;
             __builder.AddAttribute(33, "b-np7uj7vsnh");
             __builder.OpenElement(34, "small");
             __builder.AddAttribute(35, "b-np7uj7vsnh");
-            __builder.AddContent(36, 
 #nullable restore
 #line 36 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                        ListaAjustes.NombreSistema
+__builder.AddContent(36, ListaAjustes.NombreSistema);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(37, "\r\n                ");
             __builder.OpenElement(38, "small");
             __builder.AddAttribute(39, "b-np7uj7vsnh");
             __builder.AddMarkupContent(40, "<b b-np7uj7vsnh>Fecha:</b> ");
-            __builder.AddContent(41, 
 #nullable restore
 #line 37 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                                      venta.Fecha
+__builder.AddContent(41, venta.Fecha);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(42, "\r\n            ");
@@ -272,29 +266,25 @@ using System.Text.Json;
             __builder.AddAttribute(45, "b-np7uj7vsnh");
             __builder.OpenElement(46, "small");
             __builder.AddAttribute(47, "b-np7uj7vsnh");
-            __builder.AddContent(48, 
 #nullable restore
 #line 40 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                        ListaAjustes.NombrePropietario
+__builder.AddContent(48, ListaAjustes.NombrePropietario);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(49, "\r\n                ");
             __builder.OpenElement(50, "small");
             __builder.AddAttribute(51, "b-np7uj7vsnh");
             __builder.AddMarkupContent(52, "<b b-np7uj7vsnh>F.de Pago:</b> ");
-            __builder.AddContent(53, 
 #nullable restore
 #line 41 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                                          venta.FormaPago
+__builder.AddContent(53, venta.FormaPago);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(54, "\r\n            ");
@@ -304,15 +294,13 @@ using System.Text.Json;
             __builder.OpenElement(58, "small");
             __builder.AddAttribute(59, "b-np7uj7vsnh");
             __builder.AddMarkupContent(60, "<b b-np7uj7vsnh>Dirección:</b> ");
-            __builder.AddContent(61, 
 #nullable restore
 #line 44 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                                          ListaAjustes.Direccion
+__builder.AddContent(61, ListaAjustes.Direccion);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(62, "\r\n\r\n            ");
@@ -321,15 +309,13 @@ using System.Text.Json;
             __builder.AddAttribute(65, "b-np7uj7vsnh");
             __builder.OpenElement(66, "small");
             __builder.AddAttribute(67, "b-np7uj7vsnh");
-            __builder.AddContent(68, 
 #nullable restore
 #line 48 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                        ListaAjustes.Telefono
+__builder.AddContent(68, ListaAjustes.Telefono);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
 #nullable restore
@@ -347,43 +333,37 @@ using System.Text.Json;
             __builder.OpenElement(73, "small");
             __builder.AddAttribute(74, "b-np7uj7vsnh");
             __builder.AddMarkupContent(75, "<b b-np7uj7vsnh>Cliente:</b> ");
-            __builder.AddContent(76, 
 #nullable restore
 #line 55 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                                            venta.Cliente.NombreyApellido
+__builder.AddContent(76, venta.Cliente.NombreyApellido);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(77, " <br b-np7uj7vsnh>\r\n                    ");
             __builder.OpenElement(78, "small");
             __builder.AddAttribute(79, "b-np7uj7vsnh");
             __builder.AddMarkupContent(80, "<b b-np7uj7vsnh>Dirección:</b> ");
-            __builder.AddContent(81, 
 #nullable restore
 #line 56 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                                              venta.Cliente.Dirección
+__builder.AddContent(81, venta.Cliente.Dirección);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(82, " <br b-np7uj7vsnh>\r\n                    ");
             __builder.OpenElement(83, "small");
             __builder.AddAttribute(84, "b-np7uj7vsnh");
             __builder.AddMarkupContent(85, "<b b-np7uj7vsnh>Teléfono:</b> ");
-            __builder.AddContent(86, 
 #nullable restore
 #line 57 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                                             venta.Cliente.Teléfono
+__builder.AddContent(86, venta.Cliente.Teléfono);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
 #nullable restore
@@ -420,15 +400,13 @@ using System.Text.Json;
             __builder.AddAttribute(97, "b-np7uj7vsnh");
             __builder.OpenElement(98, "small");
             __builder.AddAttribute(99, "b-np7uj7vsnh");
-            __builder.AddContent(100, 
 #nullable restore
 #line 77 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                                        item.Articulo.Nombre
+__builder.AddContent(100, item.Articulo.Nombre);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(101, "\r\n                            ");
@@ -436,15 +414,13 @@ using System.Text.Json;
             __builder.AddAttribute(103, "b-np7uj7vsnh");
             __builder.OpenElement(104, "small");
             __builder.AddAttribute(105, "b-np7uj7vsnh");
-            __builder.AddContent(106, 
 #nullable restore
 #line 78 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                                        item.Precio
+__builder.AddContent(106, item.Precio);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(107, "\r\n                            ");
@@ -452,15 +428,13 @@ using System.Text.Json;
             __builder.AddAttribute(109, "b-np7uj7vsnh");
             __builder.OpenElement(110, "small");
             __builder.AddAttribute(111, "b-np7uj7vsnh");
-            __builder.AddContent(112, 
 #nullable restore
 #line 79 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                                        item.Cantidad
+__builder.AddContent(112, item.Cantidad);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(113, "\r\n                            ");
@@ -468,15 +442,13 @@ using System.Text.Json;
             __builder.AddAttribute(115, "b-np7uj7vsnh");
             __builder.OpenElement(116, "small");
             __builder.AddAttribute(117, "b-np7uj7vsnh");
-            __builder.AddContent(118, 
 #nullable restore
 #line 80 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                                        item.Descuento
+__builder.AddContent(118, item.Descuento);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.AddContent(119, "%");
             __builder.CloseElement();
             __builder.CloseElement();
@@ -485,15 +457,13 @@ using System.Text.Json;
             __builder.AddAttribute(122, "b-np7uj7vsnh");
             __builder.OpenElement(123, "small");
             __builder.AddAttribute(124, "b-np7uj7vsnh");
-            __builder.AddContent(125, 
 #nullable restore
 #line 81 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                                        item.Iva
+__builder.AddContent(125, item.Iva);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(126, "\r\n                            ");
@@ -501,15 +471,13 @@ using System.Text.Json;
             __builder.AddAttribute(128, "b-np7uj7vsnh");
             __builder.OpenElement(129, "small");
             __builder.AddAttribute(130, "b-np7uj7vsnh");
-            __builder.AddContent(131, 
 #nullable restore
 #line 82 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                                        item.SubTotal
+__builder.AddContent(131, item.SubTotal);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();
@@ -532,15 +500,13 @@ using System.Text.Json;
             __builder.OpenElement(139, "b");
             __builder.AddAttribute(140, "b-np7uj7vsnh");
             __builder.AddContent(141, "C$");
-            __builder.AddContent(142, 
 #nullable restore
 #line 90 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\VerVenta.razor"
-                          venta.Total
+__builder.AddContent(142, venta.Total);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();

@@ -176,7 +176,7 @@ using System.Text.Json;
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(0);
-            __builder.AddAttribute(1, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.AddAttribute(1, "Model", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 6 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
                   articulo
@@ -185,7 +185,7 @@ using System.Text.Json;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(2, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
+            __builder.AddAttribute(2, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
 #nullable restore
 #line 6 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
                                             OnValidSubmit
@@ -236,7 +236,7 @@ using System.Text.Json;
                 __builder2.AddAttribute(30, "oninput", "this.value=this.value.toUpperCase()");
                 __builder2.AddAttribute(31, "placeholder", "Nombre artículo");
                 __builder2.AddAttribute(32, "class", "form-control");
-                __builder2.AddAttribute(33, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(33, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 24 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
                                                      articulo.Nombre
@@ -245,8 +245,8 @@ using System.Text.Json;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(34, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.Nombre = __value, articulo.Nombre))));
-                __builder2.AddAttribute(35, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => articulo.Nombre));
+                __builder2.AddAttribute(34, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.Nombre = __value, articulo.Nombre))));
+                __builder2.AddAttribute(35, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => articulo.Nombre));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(36, "\r\n                        ");
@@ -277,7 +277,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 50, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.CategoriaId = __value, articulo.CategoriaId)), 51, () => articulo.CategoriaId, 52, (__builder3) => {
+                , 50, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.CategoriaId = __value, articulo.CategoriaId)), 51, () => articulo.CategoriaId, 52, (__builder3) => {
                     __builder3.AddMarkupContent(53, "<option selected value=\"0\">Seleccione una categoría</option>");
 #nullable restore
 #line 39 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
@@ -297,15 +297,13 @@ using System.Text.Json;
 #line hidden
 #nullable disable
                     );
-                    __builder3.AddContent(56, 
 #nullable restore
 #line 41 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
-                                                                   categoria.Nombre
+__builder3.AddContent(56, categoria.Nombre);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.CloseElement();
 #nullable restore
 #line 42 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
@@ -345,7 +343,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 71, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.MarcaId = __value, articulo.MarcaId)), 72, () => articulo.MarcaId, 73, (__builder3) => {
+                , 71, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.MarcaId = __value, articulo.MarcaId)), 72, () => articulo.MarcaId, 73, (__builder3) => {
                     __builder3.AddMarkupContent(74, "<option selected value=\"0\">Seleccione una marca</option>");
 #nullable restore
 #line 55 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
@@ -365,15 +363,13 @@ using System.Text.Json;
 #line hidden
 #nullable disable
                     );
-                    __builder3.AddContent(77, 
 #nullable restore
 #line 57 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
-                                                               marca.Nombre
+__builder3.AddContent(77, marca.Nombre);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.CloseElement();
 #nullable restore
 #line 58 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
@@ -413,7 +409,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 92, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.TallasId = __value, articulo.TallasId)), 93, () => articulo.TallasId, 94, (__builder3) => {
+                , 92, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.TallasId = __value, articulo.TallasId)), 93, () => articulo.TallasId, 94, (__builder3) => {
                     __builder3.AddMarkupContent(95, "<option disabled selected value=\"0\">Seleccione una talla</option>");
 #nullable restore
 #line 71 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
@@ -433,15 +429,13 @@ using System.Text.Json;
 #line hidden
 #nullable disable
                     );
-                    __builder3.AddContent(98, 
 #nullable restore
 #line 73 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
-                                                               talla.Nombre
+__builder3.AddContent(98, talla.Nombre);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.CloseElement();
 #nullable restore
 #line 74 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
@@ -477,7 +471,7 @@ using System.Text.Json;
                 __builder2.AddAttribute(111, "oninput", "this.value=this.value.toUpperCase()");
                 __builder2.AddAttribute(112, "placeholder", "Descripción");
                 __builder2.AddAttribute(113, "class", "form-control");
-                __builder2.AddAttribute(114, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(114, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 88 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
                                                          articulo.Descripcion
@@ -486,8 +480,8 @@ using System.Text.Json;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(115, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.Descripcion = __value, articulo.Descripcion))));
-                __builder2.AddAttribute(116, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => articulo.Descripcion));
+                __builder2.AddAttribute(115, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.Descripcion = __value, articulo.Descripcion))));
+                __builder2.AddAttribute(116, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => articulo.Descripcion));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -502,7 +496,7 @@ using System.Text.Json;
                 __builder2.AddAttribute(124, "class", "input-group");
                 __builder2.OpenComponent<MudBlazor.MudTooltip>(125);
                 __builder2.AddAttribute(126, "Text", "Debe subir únicamente el link de la imagen");
-                __builder2.AddAttribute(127, "Color", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Color>(
+                __builder2.AddAttribute(127, "Color", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Color>(
 #nullable restore
 #line 97 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
                                                                                                  Color.Tertiary
@@ -511,7 +505,7 @@ using System.Text.Json;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(128, "Placement", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Placement>(
+                __builder2.AddAttribute(128, "Placement", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Placement>(
 #nullable restore
 #line 97 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
                                                                                                                             Placement.Bottom
@@ -520,7 +514,7 @@ using System.Text.Json;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(129, "Arrow", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                __builder2.AddAttribute(129, "Arrow", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 97 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
                                                                                                                                                      true
@@ -533,7 +527,7 @@ using System.Text.Json;
                     __builder3.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(131);
                     __builder3.AddAttribute(132, "placeholder", "URL Imagen");
                     __builder3.AddAttribute(133, "class", "form-control");
-                    __builder3.AddAttribute(134, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                    __builder3.AddAttribute(134, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 98 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
                                                          articulo.Url_Imagen
@@ -542,8 +536,8 @@ using System.Text.Json;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(135, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.Url_Imagen = __value, articulo.Url_Imagen))));
-                    __builder3.AddAttribute(136, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => articulo.Url_Imagen));
+                    __builder3.AddAttribute(135, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.Url_Imagen = __value, articulo.Url_Imagen))));
+                    __builder3.AddAttribute(136, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => articulo.Url_Imagen));
                     __builder3.CloseComponent();
                 }
                 ));
@@ -583,7 +577,7 @@ using System.Text.Json;
                 __builder2.AddMarkupContent(155, "<div class=\"input-group-prepend\"><span class=\"input-group-text\" id=\"inputGroup-sizing-default\">#A-Z</span></div>\r\n                            ");
                 __builder2.OpenComponent<Microsoft.AspNetCore.Components.Forms.InputText>(156);
                 __builder2.AddAttribute(157, "class", "form-control");
-                __builder2.AddAttribute(158, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(158, "Value", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 118 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
                                                      articulo.Codigo
@@ -592,8 +586,8 @@ using System.Text.Json;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(159, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.Codigo = __value, articulo.Codigo))));
-                __builder2.AddAttribute(160, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => articulo.Codigo));
+                __builder2.AddAttribute(159, "ValueChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.String>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.String>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.Codigo = __value, articulo.Codigo))));
+                __builder2.AddAttribute(160, "ValueExpression", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.String>>>(() => articulo.Codigo));
                 __builder2.CloseComponent();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(161, "\r\n                        ");
@@ -625,7 +619,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 177, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.PrecioMayorista = __value, articulo.PrecioMayorista)), 178, () => articulo.PrecioMayorista);
+                , 177, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.PrecioMayorista = __value, articulo.PrecioMayorista)), 178, () => articulo.PrecioMayorista);
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(179, "\r\n                        ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Articulos.FormArticulo.TypeInference.CreateValidationMessage_9(__builder2, 180, 181, 
@@ -663,7 +657,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 194, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => porcentaje = __value, porcentaje)), 195, () => porcentaje);
+                , 194, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => porcentaje = __value, porcentaje)), 195, () => porcentaje);
                 __builder2.AddMarkupContent(196, "\r\n                            ");
                 __builder2.AddMarkupContent(197, "<div class=\"input-group-append\"><span class=\"input-group-text\">%</span></div>");
                 __builder2.CloseElement();
@@ -686,7 +680,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 211, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.PrecioUnitario = __value, articulo.PrecioUnitario)), 212, () => articulo.PrecioUnitario);
+                , 211, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.PrecioUnitario = __value, articulo.PrecioUnitario)), 212, () => articulo.PrecioUnitario);
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(213, "\r\n                        ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Articulos.FormArticulo.TypeInference.CreateValidationMessage_12(__builder2, 214, 215, 
@@ -716,7 +710,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 229, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.StockActual = __value, articulo.StockActual)), 230, () => articulo.StockActual);
+                , 229, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.StockActual = __value, articulo.StockActual)), 230, () => articulo.StockActual);
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(231, "\r\n                        ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Articulos.FormArticulo.TypeInference.CreateValidationMessage_14(__builder2, 232, 233, 
@@ -746,7 +740,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 247, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.StockMinimo = __value, articulo.StockMinimo)), 248, () => articulo.StockMinimo);
+                , 247, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.StockMinimo = __value, articulo.StockMinimo)), 248, () => articulo.StockMinimo);
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(249, "\r\n                        ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Articulos.FormArticulo.TypeInference.CreateValidationMessage_16(__builder2, 250, 251, 
@@ -776,7 +770,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 265, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.StockMaximo = __value, articulo.StockMaximo)), 266, () => articulo.StockMaximo);
+                , 265, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.StockMaximo = __value, articulo.StockMaximo)), 266, () => articulo.StockMaximo);
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(267, "\r\n                        ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Articulos.FormArticulo.TypeInference.CreateValidationMessage_18(__builder2, 268, 269, 
@@ -798,7 +792,7 @@ using System.Text.Json;
                 __builder2.AddAttribute(275, "class", "col");
                 __builder2.OpenComponent<MudBlazor.MudTooltip>(276);
                 __builder2.AddAttribute(277, "Text", "Si selecciona esta opción dará de baja al artículo correspondiente.");
-                __builder2.AddAttribute(278, "Color", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Color>(
+                __builder2.AddAttribute(278, "Color", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Color>(
 #nullable restore
 #line 195 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
                                            Color.Secondary
@@ -807,7 +801,7 @@ using System.Text.Json;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(279, "Placement", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Placement>(
+                __builder2.AddAttribute(279, "Placement", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Placement>(
 #nullable restore
 #line 195 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
                                                                        Placement.Top
@@ -833,7 +827,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                    , 285, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.Estado = __value, articulo.Estado)));
+                    , 285, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => articulo.Estado = __value, articulo.Estado)));
                 }
                 ));
                 __builder2.CloseComponent();
@@ -858,15 +852,13 @@ using System.Text.Json;
                 __builder2.AddMarkupContent(293, "<i class=\"oi oi-check \"></i>\r\n            ");
                 __builder2.OpenElement(294, "text");
                 __builder2.AddAttribute(295, "style", "color:white");
-                __builder2.AddContent(296, 
 #nullable restore
 #line 207 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
-                                        TextBotonSubmit
+__builder2.AddContent(296, TextBotonSubmit);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();

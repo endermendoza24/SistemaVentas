@@ -199,7 +199,7 @@ using OfficeOpenXml.Style;
             __builder.AddMarkupContent(9, "\r\n\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Pedidos.FormPedidos>(10);
             __builder.AddAttribute(11, "textSubmit", " Guardar cambios");
-            __builder.AddAttribute(12, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+            __builder.AddAttribute(12, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 19 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\EditarPedido.razor"
                                                           EditPedido
@@ -208,7 +208,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(13, "pedido", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Pedido>(
+            __builder.AddAttribute(13, "pedido", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Pedido>(
 #nullable restore
 #line 20 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\EditarPedido.razor"
                                pedido
@@ -217,7 +217,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(14, "clientes", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Cliente>>(
+            __builder.AddAttribute(14, "clientes", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Cliente>>(
 #nullable restore
 #line 20 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\EditarPedido.razor"
                                                  clientes
@@ -226,7 +226,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(15, "articulos", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Articulo>>(
+            __builder.AddAttribute(15, "articulos", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Articulo>>(
 #nullable restore
 #line 20 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pedidos\EditarPedido.razor"
                                                                       articulos

@@ -189,7 +189,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 67 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\ListaMarcas.razor"
+#line 73 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\ListaMarcas.razor"
        
     private bool dense = false;
     private bool hover = true;
@@ -269,6 +269,58 @@ using System.Text.Json;
             return true;
 
         return false;
+    }
+    
+    // funcion de exportación de datos de la table a través de Excel
+      private void ExportarExcel()
+    {
+        using (var package = new ExcelPackage())
+        {
+            var worksheet = package.Workbook.Worksheets.Add("Marcas");
+            worksheet.Cells["A1"].Value = "Caprichos.";
+            var tableBody = worksheet.Cells["A3:D3"].LoadFromCollection(
+                from f in Marca
+                select new { f.Id, f.Nombre, f.Descripcion, f.Estado }, true);
+            using (ExcelRange r = worksheet.Cells["A1:D1"])
+            {
+                r.Merge = true; r.Style.Font.Bold = true;
+                r.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
+                worksheet.DefaultColWidth = 60;
+                r.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                r.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGreen);
+            }
+            worksheet.Cells["A2"].Value = $"Informe de marcas en existencia {DateTime.Now.ToLongTimeString()}";
+            using (ExcelRange r = worksheet.Cells["A2:D2"])
+            {
+                r.Merge = true;
+                r.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
+                worksheet.DefaultColWidth = 60;
+                r.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                r.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightYellow);
+            }
+    
+
+            var header = worksheet.Cells["A3:D3"];
+            worksheet.DefaultColWidth = 32;
+            tableBody.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+
+            //  esto afecta al cuerpo
+
+            tableBody.Style.Fill.PatternType = ExcelFillStyle.None;
+            // bordes
+            tableBody.Style.Border.BorderAround(ExcelBorderStyle.Hair);
+            worksheet.Cells.Style.Border.BorderAround(ExcelBorderStyle.Hair);
+
+            // fuentes
+            header.Style.Font.Bold = true;
+            header.Style.Font.Color.SetColor(System.Drawing.Color.Black);
+
+            // Este es el encabezado.
+            header.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+            header.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
+
+            JS.GuardarComo($"Informe_Marcas_{DateTime.Now.ToShortDateString()}.xlsx", package.GetAsByteArray());
+        }
     }
 
 #line default

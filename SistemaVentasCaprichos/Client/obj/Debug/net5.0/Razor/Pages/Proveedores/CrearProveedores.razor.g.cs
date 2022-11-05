@@ -199,7 +199,7 @@ using OfficeOpenXml.Style;
             __builder.AddMarkupContent(9, "\r\n\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Proveedores.FormProveedor>(10);
             __builder.AddAttribute(11, "TextBotonSubmit", "Guardar");
-            __builder.AddAttribute(12, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+            __builder.AddAttribute(12, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 18 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\CrearProveedores.razor"
                                                          Crear
@@ -208,7 +208,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(13, "Proveedores", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Proveedores>(
+            __builder.AddAttribute(13, "Proveedores", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Proveedores>(
 #nullable restore
 #line 18 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\CrearProveedores.razor"
                                                                               Proveedores

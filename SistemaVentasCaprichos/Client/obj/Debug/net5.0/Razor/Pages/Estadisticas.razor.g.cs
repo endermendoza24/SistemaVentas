@@ -222,15 +222,13 @@ else
             __builder.AddAttribute(18, "class", "mt-1 mb-1");
             __builder.OpenElement(19, "h5");
             __builder.AddAttribute(20, "style", "color:white");
-            __builder.AddContent(21, 
 #nullable restore
 #line 33 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Estadisticas.razor"
-                                                             pedidospendientes
+__builder.AddContent(21, pedidospendientes);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();

@@ -176,7 +176,7 @@ using System.Text.Json;
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(0);
-            __builder.AddAttribute(1, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.AddAttribute(1, "Model", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\FormularioMarcas.razor"
                   Marca
@@ -185,7 +185,7 @@ using System.Text.Json;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(2, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
+            __builder.AddAttribute(2, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
 #nullable restore
 #line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\FormularioMarcas.razor"
                                          OnValidSubmit
@@ -232,7 +232,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 23, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Marca.Nombre = __value, Marca.Nombre)));
+                , 23, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Marca.Nombre = __value, Marca.Nombre)));
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(24, "\r\n                        ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Marcas.FormularioMarcas.TypeInference.CreateValidationMessage_1(__builder2, 25, 26, 
@@ -278,7 +278,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 41, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Marca.Descripcion = __value, Marca.Descripcion)));
+                , 41, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Marca.Descripcion = __value, Marca.Descripcion)));
                 __builder2.AddMarkupContent(42, "                            \r\n                            ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Marcas.FormularioMarcas.TypeInference.CreateValidationMessage_3(__builder2, 43, 44, 
 #nullable restore
@@ -302,7 +302,7 @@ using System.Text.Json;
                 __builder2.AddAttribute(52, "class", "input-group");
                 __builder2.OpenComponent<MudBlazor.MudTooltip>(53);
                 __builder2.AddAttribute(54, "Text", "Si selecciona esta opción dará de baja a la marca correspondiente.");
-                __builder2.AddAttribute(55, "Color", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Color>(
+                __builder2.AddAttribute(55, "Color", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Color>(
 #nullable restore
 #line 34 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\FormularioMarcas.razor"
                                                                                                                          Color.Secondary
@@ -311,7 +311,7 @@ using System.Text.Json;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(56, "Placement", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Placement>(
+                __builder2.AddAttribute(56, "Placement", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Placement>(
 #nullable restore
 #line 34 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\FormularioMarcas.razor"
                                                                                                                                                      Placement.Top
@@ -337,7 +337,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                    , 62, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Marca.Estado = __value, Marca.Estado)));
+                    , 62, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Marca.Estado = __value, Marca.Estado)));
                 }
                 ));
                 __builder2.CloseComponent();

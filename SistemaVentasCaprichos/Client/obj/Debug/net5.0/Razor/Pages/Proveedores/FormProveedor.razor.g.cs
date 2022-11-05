@@ -176,7 +176,7 @@ using System.Text.Json;
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(0);
-            __builder.AddAttribute(1, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.AddAttribute(1, "Model", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\FormProveedor.razor"
                   Proveedores
@@ -185,7 +185,7 @@ using System.Text.Json;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(2, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
+            __builder.AddAttribute(2, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
 #nullable restore
 #line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\FormProveedor.razor"
                                                OnValidSubmit
@@ -232,7 +232,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 23, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Proveedores.Nombre = __value, Proveedores.Nombre)));
+                , 23, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Proveedores.Nombre = __value, Proveedores.Nombre)));
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(24, "\r\n                        ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Proveedores.FormProveedor.TypeInference.CreateValidationMessage_1(__builder2, 25, 26, 
@@ -278,7 +278,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 41, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Proveedores.Telefono = __value, Proveedores.Telefono)));
+                , 41, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Proveedores.Telefono = __value, Proveedores.Telefono)));
                 __builder2.AddMarkupContent(42, "\r\n                            ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Proveedores.FormProveedor.TypeInference.CreateValidationMessage_3(__builder2, 43, 44, 
 #nullable restore
@@ -332,7 +332,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 60, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Proveedores.Direccion = __value, Proveedores.Direccion)));
+                , 60, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Proveedores.Direccion = __value, Proveedores.Direccion)));
                 __builder2.AddMarkupContent(61, "\r\n                            ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Proveedores.FormProveedor.TypeInference.CreateValidationMessage_5(__builder2, 62, 63, 
 #nullable restore
@@ -356,7 +356,7 @@ using System.Text.Json;
                 __builder2.AddAttribute(71, "class", "input-group");
                 __builder2.OpenComponent<MudBlazor.MudTooltip>(72);
                 __builder2.AddAttribute(73, "Text", "Si selecciona esta opción dará de baja al proveedor correspondiente.");
-                __builder2.AddAttribute(74, "Color", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Color>(
+                __builder2.AddAttribute(74, "Color", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Color>(
 #nullable restore
 #line 45 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\FormProveedor.razor"
                                                                                                                            Color.Secondary
@@ -365,7 +365,7 @@ using System.Text.Json;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(75, "Placement", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Placement>(
+                __builder2.AddAttribute(75, "Placement", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Placement>(
 #nullable restore
 #line 45 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\FormProveedor.razor"
                                                                                                                                                        Placement.Top
@@ -391,7 +391,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                    , 81, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Proveedores.Estado = __value, Proveedores.Estado)));
+                    , 81, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Proveedores.Estado = __value, Proveedores.Estado)));
                 }
                 ));
                 __builder2.CloseComponent();

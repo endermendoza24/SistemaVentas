@@ -173,15 +173,13 @@ using OfficeOpenXml.Style;
             __builder.AddAttribute(2, "role", "alert");
             __builder.AddMarkupContent(3, "<span class=\"oi oi-pencil mr-2\" aria-hidden=\"true\"></span>\r\n    ");
             __builder.OpenElement(4, "strong");
-            __builder.AddContent(5, 
 #nullable restore
 #line 3 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\SurveyPrompt.razor"
-             Title
+__builder.AddContent(5, Title);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(6, "\r\n\r\n    ");
             __builder.AddMarkupContent(7, "<span class=\"text-nowrap\">\r\n        Please take our\r\n        <a target=\"_blank\" class=\"font-weight-bold\" href=\"https://go.microsoft.com/fwlink/?linkid=2137916\">brief survey</a></span>\r\n    and tell us what you think.\r\n");

@@ -216,7 +216,7 @@ using OfficeOpenXml.Style;
             __builder.AddMarkupContent(16, "\r\n\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Compras.FormCompra>(17);
             __builder.AddAttribute(18, "textSubmit", " Guardar cambios");
-            __builder.AddAttribute(19, "compra", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Compra>(
+            __builder.AddAttribute(19, "compra", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Compra>(
 #nullable restore
 #line 24 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\VerCompra.razor"
                                                   compra
@@ -225,7 +225,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(20, "ocultabtn", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+            __builder.AddAttribute(20, "ocultabtn", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 24 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\VerCompra.razor"
                                                                      true
@@ -234,7 +234,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(21, "articulos", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Articulo>>(
+            __builder.AddAttribute(21, "articulos", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Articulo>>(
 #nullable restore
 #line 24 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\VerCompra.razor"
                                                                                       articulos
@@ -243,7 +243,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(22, "ListaProveedores", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Proveedores>>(
+            __builder.AddAttribute(22, "ListaProveedores", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Proveedores>>(
 #nullable restore
 #line 25 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\VerCompra.razor"
                               ListaProveedores

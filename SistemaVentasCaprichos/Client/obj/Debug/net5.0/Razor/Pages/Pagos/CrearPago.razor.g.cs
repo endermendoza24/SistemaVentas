@@ -179,7 +179,7 @@ using OfficeOpenXml.Style;
             __builder.AddMarkupContent(0, "<h3><b>Nuevo pago</b></h3>\r\n\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Pagos.FormPago>(1);
             __builder.AddAttribute(2, "textSubmit", " Finalizar pago");
-            __builder.AddAttribute(3, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+            __builder.AddAttribute(3, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 9 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\CrearPago.razor"
                                                       CreaPago
@@ -188,7 +188,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(4, "pago", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Pago>(
+            __builder.AddAttribute(4, "pago", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Pago>(
 #nullable restore
 #line 9 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\CrearPago.razor"
                                                                       pago
@@ -197,7 +197,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(5, "clientes", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Cliente>>(
+            __builder.AddAttribute(5, "clientes", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.List<SistemaVentasCaprichos.Shared.Cliente>>(
 #nullable restore
 #line 10 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\CrearPago.razor"
                                clientes

@@ -169,7 +169,7 @@ using OfficeOpenXml.Style;
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(0);
-            __builder.AddAttribute(1, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.AddAttribute(1, "Model", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 4 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
                   venta
@@ -178,7 +178,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(2, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
+            __builder.AddAttribute(2, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
 #nullable restore
 #line 4 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
                                         OnValidSubmit
@@ -209,7 +209,7 @@ using OfficeOpenXml.Style;
 #line default
 #line hidden
 #nullable disable
-                , 20, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => venta.FormaPago = __value, venta.FormaPago)), 21, () => venta.FormaPago, 22, (__builder3) => {
+                , 20, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => venta.FormaPago = __value, venta.FormaPago)), 21, () => venta.FormaPago, 22, (__builder3) => {
 #nullable restore
 #line 11 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
                          foreach (string fpago in Enum.GetNames(typeof(FormasPago)))
@@ -229,15 +229,13 @@ using OfficeOpenXml.Style;
 #nullable disable
                     );
                     __builder3.AddAttribute(25, "b-t2xx0n22ky");
-                    __builder3.AddContent(26, 
 #nullable restore
 #line 13 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
-                                                     fpago
+__builder3.AddContent(26, fpago);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.CloseElement();
 #nullable restore
 #line 14 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
@@ -303,7 +301,7 @@ using OfficeOpenXml.Style;
 #line default
 #line hidden
 #nullable disable
-                , 44, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => venta.ClienteId = __value, venta.ClienteId)), 45, () => venta.ClienteId, 46, (__builder3) => {
+                , 44, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => venta.ClienteId = __value, venta.ClienteId)), 45, () => venta.ClienteId, 46, (__builder3) => {
                     __builder3.AddMarkupContent(47, "<option selected value=\"0\" b-t2xx0n22ky>Seleccione cliente</option>");
 #nullable restore
 #line 42 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
@@ -324,25 +322,21 @@ using OfficeOpenXml.Style;
 #nullable disable
                     );
                     __builder3.AddAttribute(50, "b-t2xx0n22ky");
-                    __builder3.AddContent(51, 
 #nullable restore
 #line 44 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
-                                                         cliente.NombreyApellido
+__builder3.AddContent(51, cliente.NombreyApellido);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.AddMarkupContent(52, " | Cédula:");
-                    __builder3.AddContent(53, 
 #nullable restore
 #line 44 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
-                                                                                           cliente.Cedula
+__builder3.AddContent(53, cliente.Cedula);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.CloseElement();
 #nullable restore
 #line 45 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
@@ -385,15 +379,13 @@ using OfficeOpenXml.Style;
                 __builder2.OpenElement(61, "h5");
                 __builder2.AddAttribute(62, "b-t2xx0n22ky");
                 __builder2.AddMarkupContent(63, "Ítem #");
-                __builder2.AddContent(64, 
 #nullable restore
 #line 59 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
-                            i + 1
+__builder2.AddContent(64, i + 1);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.OpenElement(65, "div");
                 __builder2.AddAttribute(66, "class", "card mb-2");
@@ -428,15 +420,13 @@ using OfficeOpenXml.Style;
                 __builder2.AddAttribute(87, "style", "color:white");
                 __builder2.AddAttribute(88, "b-t2xx0n22ky");
                 __builder2.AddMarkupContent(89, "Quitar ítem ");
-                __builder2.AddContent(90, 
 #nullable restore
 #line 67 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
-                                                                                                       indice+1
+__builder2.AddContent(90, indice+1);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -449,7 +439,7 @@ using OfficeOpenXml.Style;
 #line default
 #line hidden
 #nullable disable
-                , 96, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => detalle.ArticuloId = __value, detalle.ArticuloId)), 97, () => detalle.ArticuloId, 98, (__builder3) => {
+                , 96, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => detalle.ArticuloId = __value, detalle.ArticuloId)), 97, () => detalle.ArticuloId, 98, (__builder3) => {
                     __builder3.AddMarkupContent(99, "<option selected value b-t2xx0n22ky>Seleccione un artículo</option>");
 #nullable restore
 #line 72 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
@@ -472,35 +462,29 @@ using OfficeOpenXml.Style;
 #nullable disable
                     );
                     __builder3.AddAttribute(102, "b-t2xx0n22ky");
-                    __builder3.AddContent(103, 
 #nullable restore
 #line 76 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
-                                                                      articulo.Nombre
+__builder3.AddContent(103, articulo.Nombre);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.AddContent(104, " | C$");
-                    __builder3.AddContent(105, 
 #nullable restore
 #line 76 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
-                                                                                           articulo.PrecioUnitario
+__builder3.AddContent(105, articulo.PrecioUnitario);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.AddContent(106, " | STOCK: ");
-                    __builder3.AddContent(107, 
 #nullable restore
 #line 76 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
-                                                                                                                             articulo.StockActual
+__builder3.AddContent(107, articulo.StockActual);
 
 #line default
 #line hidden
 #nullable disable
-                    );
                     __builder3.CloseElement();
 #nullable restore
 #line 77 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
@@ -561,7 +545,7 @@ using OfficeOpenXml.Style;
 #line default
 #line hidden
 #nullable disable
-                , 123, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => detalle.Cantidad = __value, detalle.Cantidad)), 124, () => detalle.Cantidad);
+                , 123, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => detalle.Cantidad = __value, detalle.Cantidad)), 124, () => detalle.Cantidad);
                 __builder2.AddMarkupContent(125, "\r\n                            ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Ventas.FormVenta.TypeInference.CreateValidationMessage_7(__builder2, 126, 127, 
 #nullable restore
@@ -586,7 +570,7 @@ using OfficeOpenXml.Style;
 #line default
 #line hidden
 #nullable disable
-                , 138, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => detalle.Descuento = __value, detalle.Descuento)), 139, () => detalle.Descuento);
+                , 138, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => detalle.Descuento = __value, detalle.Descuento)), 139, () => detalle.Descuento);
                 __builder2.AddMarkupContent(140, "\r\n                            ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Ventas.FormVenta.TypeInference.CreateValidationMessage_9(__builder2, 141, 142, 
 #nullable restore
@@ -610,15 +594,13 @@ using OfficeOpenXml.Style;
                 __builder2.AddAttribute(152, "b-t2xx0n22ky");
                 __builder2.OpenElement(153, "b");
                 __builder2.AddAttribute(154, "b-t2xx0n22ky");
-                __builder2.AddContent(155, 
 #nullable restore
 #line 111 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
-                                        detalle.SubTotal
+__builder2.AddContent(155, detalle.SubTotal);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.CloseElement();
@@ -683,15 +665,13 @@ using OfficeOpenXml.Style;
                 __builder2.OpenElement(178, "b");
                 __builder2.AddAttribute(179, "b-t2xx0n22ky");
                 __builder2.AddContent(180, "C$");
-                __builder2.AddContent(181, 
 #nullable restore
 #line 130 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
-                                  venta.Total
+__builder2.AddContent(181, venta.Total);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
 #nullable restore
@@ -724,15 +704,13 @@ using OfficeOpenXml.Style;
                 __builder2.OpenElement(192, "text");
                 __builder2.AddAttribute(193, "style", "color:white");
                 __builder2.AddAttribute(194, "b-t2xx0n22ky");
-                __builder2.AddContent(195, 
 #nullable restore
 #line 136 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
-                                                                                                                                                         textSubmit
+__builder2.AddContent(195, textSubmit);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(196, "\r\n                ");

@@ -212,7 +212,7 @@ using OfficeOpenXml.Style;
             __builder.AddMarkupContent(13, "\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Marcas.FormularioMarcas>(14);
             __builder.AddAttribute(15, "TextBotonSubmit", "Guardar cambios");
-            __builder.AddAttribute(16, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+            __builder.AddAttribute(16, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 23 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\EditarMarcas.razor"
                               EditarArtic
@@ -221,7 +221,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(17, "Marca", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Marcas>(
+            __builder.AddAttribute(17, "Marca", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Marcas>(
 #nullable restore
 #line 23 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\EditarMarcas.razor"
                                                    Marca

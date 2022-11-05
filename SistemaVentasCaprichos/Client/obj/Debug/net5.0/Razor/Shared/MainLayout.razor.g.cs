@@ -171,7 +171,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<MudBlazor.MudLayout>(0);
             __builder.AddAttribute(1, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
                 __builder2.OpenComponent<MudBlazor.MudDrawer>(2);
-                __builder2.AddAttribute(3, "Elevation", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
+                __builder2.AddAttribute(3, "Elevation", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
 #nullable restore
 #line 23 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
                                                     1
@@ -180,7 +180,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(4, "Open", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                __builder2.AddAttribute(4, "Open", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 23 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
                            _sidebarOpen
@@ -189,12 +189,12 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(5, "OpenChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Boolean>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Boolean>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => _sidebarOpen = __value, _sidebarOpen))));
+                __builder2.AddAttribute(5, "OpenChanged", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Boolean>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Boolean>(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => _sidebarOpen = __value, _sidebarOpen))));
                 __builder2.AddAttribute(6, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder3) => {
                     __builder3.OpenComponent<MudBlazor.MudDrawerHeader>(7);
                     __builder3.AddAttribute(8, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder4) => {
                         __builder4.OpenComponent<MudBlazor.MudAvatar>(9);
-                        __builder4.AddAttribute(10, "Color", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Color>(
+                        __builder4.AddAttribute(10, "Color", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Color>(
 #nullable restore
 #line 25 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
                               Color.Transparent
@@ -203,7 +203,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
                         ));
-                        __builder4.AddAttribute(11, "Size", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Size>(
+                        __builder4.AddAttribute(11, "Size", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Size>(
 #nullable restore
 #line 25 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
                                                        Size.Large
@@ -216,7 +216,7 @@ using OfficeOpenXml.Style;
                         __builder4.CloseComponent();
                         __builder4.AddMarkupContent(13, "\r\n            ");
                         __builder4.OpenComponent<MudBlazor.MudText>(14);
-                        __builder4.AddAttribute(15, "Typo", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Typo>(
+                        __builder4.AddAttribute(15, "Typo", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Typo>(
 #nullable restore
 #line 26 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
                            Typo.h5
@@ -225,7 +225,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
                         ));
-                        __builder4.AddAttribute(16, "Color", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Color>(
+                        __builder4.AddAttribute(16, "Color", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Color>(
 #nullable restore
 #line 26 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
                                            Color.Primary
@@ -241,7 +241,7 @@ using OfficeOpenXml.Style;
                     __builder3.CloseComponent();
                     __builder3.AddMarkupContent(18, "\r\n        ");
                     __builder3.OpenComponent<SistemaVentasCaprichos.Client.Shared.AppBar>(19);
-                    __builder3.AddAttribute(20, "OnSidebarToggled", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+                    __builder3.AddAttribute(20, "OnSidebarToggled", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 28 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
                                   ToggleSidebar
@@ -250,7 +250,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
                     )));
-                    __builder3.AddAttribute(21, "OnThemeToggled", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<MudBlazor.MudTheme>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<MudBlazor.MudTheme>(this, 
+                    __builder3.AddAttribute(21, "OnThemeToggled", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<MudBlazor.MudTheme>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<MudBlazor.MudTheme>(this, 
 #nullable restore
 #line 28 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
                                                                  ToggleTheme
@@ -264,7 +264,7 @@ using OfficeOpenXml.Style;
                     __builder3.OpenComponent<Microsoft.AspNetCore.Components.Authorization.AuthorizeView>(23);
                     __builder3.AddAttribute(24, "Authorized", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.Authorization.AuthenticationState>)((context) => (__builder4) => {
                         __builder4.OpenComponent<SistemaVentasCaprichos.Client.Shared.NavBar>(25);
-                        __builder4.AddAttribute(26, "SideBarOpen", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
+                        __builder4.AddAttribute(26, "SideBarOpen", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Boolean>(
 #nullable restore
 #line 31 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
                                      _sidebarOpen
@@ -286,15 +286,13 @@ using OfficeOpenXml.Style;
                     __builder3.OpenComponent<MudBlazor.MudContainer>(30);
                     __builder3.AddAttribute(31, "Class", "mt-6");
                     __builder3.AddAttribute(32, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder4) => {
-                        __builder4.AddContent(33, 
 #nullable restore
 #line 39 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
-             Body
+__builder4.AddContent(33, Body);
 
 #line default
 #line hidden
 #nullable disable
-                        );
                     }
                     ));
                     __builder3.CloseComponent();
@@ -306,7 +304,7 @@ using OfficeOpenXml.Style;
             __builder.CloseComponent();
             __builder.AddMarkupContent(34, "\r\n\r\n\r\n\r\n");
             __builder.OpenComponent<MudBlazor.MudThemeProvider>(35);
-            __builder.AddAttribute(36, "Theme", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.MudTheme>(
+            __builder.AddAttribute(36, "Theme", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.MudTheme>(
 #nullable restore
 #line 46 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
                          _currentTheme

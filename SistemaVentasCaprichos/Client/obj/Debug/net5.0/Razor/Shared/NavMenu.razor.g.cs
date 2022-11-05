@@ -217,7 +217,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(20);
             __builder.AddAttribute(21, "class", "nav-link");
             __builder.AddAttribute(22, "href", "/");
-            __builder.AddAttribute(23, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(23, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 15 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                       NavLinkMatch.All
@@ -239,7 +239,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(30);
             __builder.AddAttribute(31, "class", "nav-link");
             __builder.AddAttribute(32, "href", "/estadisticas");
-            __builder.AddAttribute(33, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(33, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 20 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                                   NavLinkMatch.All
@@ -261,7 +261,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(40);
             __builder.AddAttribute(41, "class", "nav-link");
             __builder.AddAttribute(42, "href", "lista-ventas");
-            __builder.AddAttribute(43, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(43, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 25 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                                  NavLinkMatch.All
@@ -283,7 +283,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(50);
             __builder.AddAttribute(51, "class", "nav-link");
             __builder.AddAttribute(52, "href", "lista-articulos");
-            __builder.AddAttribute(53, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(53, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 30 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                                     NavLinkMatch.All
@@ -305,7 +305,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(60);
             __builder.AddAttribute(61, "class", "nav-link");
             __builder.AddAttribute(62, "href", "indexcategoria");
-            __builder.AddAttribute(63, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(63, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 35 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                                    NavLinkMatch.All
@@ -327,7 +327,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(70);
             __builder.AddAttribute(71, "class", "nav-link");
             __builder.AddAttribute(72, "href", "lista-tallas");
-            __builder.AddAttribute(73, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(73, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 40 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                                  NavLinkMatch.All
@@ -349,7 +349,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(80);
             __builder.AddAttribute(81, "class", "nav-link");
             __builder.AddAttribute(82, "href", "lista-proveedores");
-            __builder.AddAttribute(83, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(83, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 45 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                                       NavLinkMatch.All
@@ -371,7 +371,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(90);
             __builder.AddAttribute(91, "class", "nav-link");
             __builder.AddAttribute(92, "href", "lista-marcas");
-            __builder.AddAttribute(93, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(93, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 50 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                                  NavLinkMatch.All
@@ -393,7 +393,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(100);
             __builder.AddAttribute(101, "class", "nav-link");
             __builder.AddAttribute(102, "href", "lista-clientes");
-            __builder.AddAttribute(103, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(103, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 55 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                                    NavLinkMatch.All
@@ -415,7 +415,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(110);
             __builder.AddAttribute(111, "class", "nav-link");
             __builder.AddAttribute(112, "href", "lista-compras");
-            __builder.AddAttribute(113, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(113, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 60 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                                   NavLinkMatch.All
@@ -437,7 +437,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(120);
             __builder.AddAttribute(121, "class", "nav-link");
             __builder.AddAttribute(122, "href", "lista-pedidos");
-            __builder.AddAttribute(123, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(123, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 65 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                                   NavLinkMatch.All
@@ -459,7 +459,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(130);
             __builder.AddAttribute(131, "class", "nav-link");
             __builder.AddAttribute(132, "href", "lista-pagos");
-            __builder.AddAttribute(133, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(133, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 70 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                                 NavLinkMatch.All
@@ -481,7 +481,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(140);
             __builder.AddAttribute(141, "class", "nav-link");
             __builder.AddAttribute(142, "href", "roles");
-            __builder.AddAttribute(143, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(143, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 75 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                           NavLinkMatch.All
@@ -503,7 +503,7 @@ using OfficeOpenXml.Style;
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Routing.NavLink>(150);
             __builder.AddAttribute(151, "class", "nav-link");
             __builder.AddAttribute(152, "href", "lista-ajustes");
-            __builder.AddAttribute(153, "Match", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
+            __builder.AddAttribute(153, "Match", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.Routing.NavLinkMatch>(
 #nullable restore
 #line 80 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
                                                                   NavLinkMatch.All

@@ -193,7 +193,7 @@ using OfficeOpenXml.Style;
             __builder.AddMarkupContent(5, "<div class=\"d-flex justify-content-between mb-3\"><h3><b>Editar Configuracion</b></h3></div>\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Configuracion.FormAjustes>(6);
             __builder.AddAttribute(7, "TextBotonSubmit", "Guardar cambios");
-            __builder.AddAttribute(8, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+            __builder.AddAttribute(8, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 18 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\EditarAjustes.razor"
                               EditarArtic
@@ -202,7 +202,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(9, "Configuracion", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Configuracion>(
+            __builder.AddAttribute(9, "Configuracion", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Configuracion>(
 #nullable restore
 #line 18 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\EditarAjustes.razor"
                                                            Configuracion

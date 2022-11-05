@@ -176,7 +176,7 @@ using System.Text.Json;
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
             __builder.OpenComponent<Microsoft.AspNetCore.Components.Forms.EditForm>(0);
-            __builder.AddAttribute(1, "Model", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
+            __builder.AddAttribute(1, "Model", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Object>(
 #nullable restore
 #line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\FormAjustes.razor"
                   Configuracion
@@ -185,7 +185,7 @@ using System.Text.Json;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(2, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
+            __builder.AddAttribute(2, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<Microsoft.AspNetCore.Components.Forms.EditContext>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Forms.EditContext>(this, 
 #nullable restore
 #line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\FormAjustes.razor"
                                                  OnValidSubmit
@@ -232,7 +232,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 23, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Configuracion.NombrePropietario = __value, Configuracion.NombrePropietario)));
+                , 23, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Configuracion.NombrePropietario = __value, Configuracion.NombrePropietario)));
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(24, "\r\n                        ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Configuracion.FormAjustes.TypeInference.CreateValidationMessage_1(__builder2, 25, 26, 
@@ -278,7 +278,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 41, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Configuracion.NombreSistema = __value, Configuracion.NombreSistema)));
+                , 41, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Configuracion.NombreSistema = __value, Configuracion.NombreSistema)));
                 __builder2.AddMarkupContent(42, "\r\n                            ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Configuracion.FormAjustes.TypeInference.CreateValidationMessage_3(__builder2, 43, 44, 
 #nullable restore
@@ -324,7 +324,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 59, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Configuracion.Direccion = __value, Configuracion.Direccion)));
+                , 59, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Configuracion.Direccion = __value, Configuracion.Direccion)));
                 __builder2.AddMarkupContent(60, "\r\n                            ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Configuracion.FormAjustes.TypeInference.CreateValidationMessage_5(__builder2, 61, 62, 
 #nullable restore
@@ -370,7 +370,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 77, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Configuracion.Telefono = __value, Configuracion.Telefono)));
+                , 77, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Configuracion.Telefono = __value, Configuracion.Telefono)));
                 __builder2.AddMarkupContent(78, "\r\n                            ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Configuracion.FormAjustes.TypeInference.CreateValidationMessage_7(__builder2, 79, 80, 
 #nullable restore
@@ -416,7 +416,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 95, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Configuracion.Email = __value, Configuracion.Email)));
+                , 95, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Configuracion.Email = __value, Configuracion.Email)));
                 __builder2.AddMarkupContent(96, "\r\n                            ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Configuracion.FormAjustes.TypeInference.CreateValidationMessage_9(__builder2, 97, 98, 
 #nullable restore
@@ -462,7 +462,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
-                , 113, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Configuracion.RUC = __value, Configuracion.RUC)));
+                , 113, Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => Configuracion.RUC = __value, Configuracion.RUC)));
                 __builder2.AddMarkupContent(114, "\r\n                            ");
                 __Blazor.SistemaVentasCaprichos.Client.Pages.Configuracion.FormAjustes.TypeInference.CreateValidationMessage_11(__builder2, 115, 116, 
 #nullable restore

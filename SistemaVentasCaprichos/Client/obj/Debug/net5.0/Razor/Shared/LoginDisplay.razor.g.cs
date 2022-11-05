@@ -190,15 +190,13 @@ using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
                 __builder2.OpenElement(3, "a");
                 __builder2.AddAttribute(4, "href", "authentication/profile");
                 __builder2.AddAttribute(5, "id", "usuario");
-                __builder2.AddContent(6, 
 #nullable restore
 #line 26 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Shared\LoginDisplay.razor"
-             context.User.Identity.Name
+__builder2.AddContent(6, context.User.Identity.Name);
 
 #line default
 #line hidden
 #nullable disable
-                );
                 __builder2.CloseElement();
                 __builder2.AddMarkupContent(7, "\r\n        ");
                 __builder2.OpenElement(8, "button");

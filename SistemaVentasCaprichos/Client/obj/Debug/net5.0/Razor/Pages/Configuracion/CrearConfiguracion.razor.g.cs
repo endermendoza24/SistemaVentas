@@ -199,7 +199,7 @@ using OfficeOpenXml.Style;
             __builder.AddMarkupContent(9, "\r\n\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Configuracion.FormAjustes>(10);
             __builder.AddAttribute(11, "TextBotonSubmit", "Guardar");
-            __builder.AddAttribute(12, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+            __builder.AddAttribute(12, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 19 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\CrearConfiguracion.razor"
                                                        Crear
@@ -208,7 +208,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(13, "Configuracion", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Configuracion>(
+            __builder.AddAttribute(13, "Configuracion", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Configuracion>(
 #nullable restore
 #line 19 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Configuracion\CrearConfiguracion.razor"
                                                                               Configuracion

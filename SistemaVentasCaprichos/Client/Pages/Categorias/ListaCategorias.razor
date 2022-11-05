@@ -156,25 +156,50 @@ else
     {
         using (var package = new ExcelPackage())
         {
-            var worksheet = package.Workbook.Worksheets.Add("Categorias");
+            var worksheet = package.Workbook.Worksheets.Add("Categorías");
+            worksheet.Cells["A1"].Value = "Caprichos.";
+            using (ExcelRange r = worksheet.Cells["A1:D1"])
+            {
+                r.Merge = true; r.Style.Font.Bold = true;
+                r.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
+                worksheet.DefaultColWidth = 60;
+                r.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                r.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGreen);
+            }
+            worksheet.Cells["A2"].Value = $"Informe de categorías {DateTime.Now.ToLongTimeString()}";
+            using (ExcelRange r = worksheet.Cells["A2:D2"])
+            {
+                r.Merge = true;
+                r.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
+                worksheet.DefaultColWidth = 60;
+                r.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                r.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightYellow);
+            }
 
-            var tableBody = worksheet.Cells["A1:A1"].LoadFromCollection(
-                from f in Categoria
-                select new { f.Id, f.Nombre, f.Descripcion, f.Estado }, true);
+            var tableBody = worksheet.Cells["A3:D3"].LoadFromCollection(
+    from f in Categoria
+    select new { f.Id, f.Nombre, f.Descripcion, f.Estado }, true);
 
-            var header = worksheet.Cells["A1:D1"];
-            worksheet.DefaultColWidth = 25;
+            var header = worksheet.Cells["A3:D3"];
+            worksheet.DefaultColWidth = 32;
             tableBody.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-            tableBody.Style.Fill.PatternType = ExcelFillStyle.Solid;
-            tableBody.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Transparent);
-            tableBody.Style.Border.BorderAround(ExcelBorderStyle.Medium);
-            worksheet.Cells.Style.Border.BorderAround(ExcelBorderStyle.Double);
+
+            //  esto afectal cuerpo
+
+            tableBody.Style.Fill.PatternType = ExcelFillStyle.None;
+            // bordes
+            tableBody.Style.Border.BorderAround(ExcelBorderStyle.Hair);
+            worksheet.Cells.Style.Border.BorderAround(ExcelBorderStyle.Hair);
+
+            // fuentes
             header.Style.Font.Bold = true;
             header.Style.Font.Color.SetColor(System.Drawing.Color.Black);
-            header.Style.Fill.PatternType = ExcelFillStyle.Solid;
-            header.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Transparent);
 
-            JS.GuardarComo($"Categorias {DateTime.Now.ToShortDateString()}.xlsx", package.GetAsByteArray());
+            // Este es el encabezado.
+            header.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+            header.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
+
+            JS.GuardarComo($"Informe_Categorías_{DateTime.Now.ToShortDateString()}.xlsx", package.GetAsByteArray());
         }
     }
 }

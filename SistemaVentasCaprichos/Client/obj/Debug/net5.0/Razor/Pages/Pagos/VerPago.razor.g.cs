@@ -249,15 +249,13 @@ using System.Text.Json;
             __builder.OpenElement(34, "small");
             __builder.AddAttribute(35, "b-ul2til6j4m");
             __builder.AddMarkupContent(36, "<b b-ul2til6j4m>N° Comprobante:</b> ");
-            __builder.AddContent(37, 
 #nullable restore
 #line 35 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\VerPago.razor"
-                                               pago.Id
+__builder.AddContent(37, pago.Id);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(38, "\r\n\r\n            ");
@@ -268,15 +266,13 @@ using System.Text.Json;
             __builder.OpenElement(43, "small");
             __builder.AddAttribute(44, "b-ul2til6j4m");
             __builder.AddMarkupContent(45, "<b b-ul2til6j4m>Fecha:</b> ");
-            __builder.AddContent(46, 
 #nullable restore
 #line 40 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\VerPago.razor"
-                                      pago.Fecha
+__builder.AddContent(46, pago.Fecha);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(47, "\r\n            ");
@@ -287,15 +283,13 @@ using System.Text.Json;
             __builder.OpenElement(52, "small");
             __builder.AddAttribute(53, "b-ul2til6j4m");
             __builder.AddMarkupContent(54, "<b b-ul2til6j4m>F.de Pago :</b> ");
-            __builder.AddContent(55, 
 #nullable restore
 #line 44 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\VerPago.razor"
-                                           pago.FormaPago
+__builder.AddContent(55, pago.FormaPago);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(56, "\r\n\r\n            ");
@@ -306,15 +300,13 @@ using System.Text.Json;
             __builder.OpenElement(61, "small");
             __builder.AddAttribute(62, "b-ul2til6j4m");
             __builder.AddMarkupContent(63, "<b b-ul2til6j4m>Empleado:</b> ");
-            __builder.AddContent(64, 
 #nullable restore
 #line 49 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\VerPago.razor"
-                                         pago.ApplicationUser.NombreyApellido
+__builder.AddContent(64, pago.ApplicationUser.NombreyApellido);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(65, "\r\n\r\n            <hr b-ul2til6j4m>\r\n            ");
@@ -324,43 +316,37 @@ using System.Text.Json;
             __builder.OpenElement(69, "small");
             __builder.AddAttribute(70, "b-ul2til6j4m");
             __builder.AddMarkupContent(71, "<b b-ul2til6j4m>Cliente:</b> ");
-            __builder.AddContent(72, 
 #nullable restore
 #line 54 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\VerPago.razor"
-                                        pago.Cliente.NombreyApellido
+__builder.AddContent(72, pago.Cliente.NombreyApellido);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(73, " <br b-ul2til6j4m>\r\n                ");
             __builder.OpenElement(74, "small");
             __builder.AddAttribute(75, "b-ul2til6j4m");
             __builder.AddMarkupContent(76, "<b b-ul2til6j4m>Dirección:</b> ");
-            __builder.AddContent(77, 
 #nullable restore
 #line 55 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\VerPago.razor"
-                                          pago.Cliente.Dirección
+__builder.AddContent(77, pago.Cliente.Dirección);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(78, " <br b-ul2til6j4m>\r\n                ");
             __builder.OpenElement(79, "small");
             __builder.AddAttribute(80, "b-ul2til6j4m");
             __builder.AddMarkupContent(81, "<b b-ul2til6j4m>Teléfono:</b> ");
-            __builder.AddContent(82, 
 #nullable restore
 #line 56 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\VerPago.razor"
-                                         pago.Cliente.Teléfono
+__builder.AddContent(82, pago.Cliente.Teléfono);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.AddMarkupContent(83, "\r\n            <hr b-ul2til6j4m>\r\n\r\n            ");
@@ -377,15 +363,13 @@ using System.Text.Json;
             __builder.AddAttribute(94, "b-ul2til6j4m");
             __builder.OpenElement(95, "small");
             __builder.AddAttribute(96, "b-ul2til6j4m");
-            __builder.AddContent(97, 
 #nullable restore
 #line 68 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\VerPago.razor"
-                                                               pago.Concepto
+__builder.AddContent(97, pago.Concepto);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();
@@ -402,15 +386,13 @@ using System.Text.Json;
             __builder.OpenElement(106, "b");
             __builder.AddAttribute(107, "b-ul2til6j4m");
             __builder.AddContent(108, "$");
-            __builder.AddContent(109, 
 #nullable restore
 #line 75 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Pagos\VerPago.razor"
-                         pago.Importe
+__builder.AddContent(109, pago.Importe);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();

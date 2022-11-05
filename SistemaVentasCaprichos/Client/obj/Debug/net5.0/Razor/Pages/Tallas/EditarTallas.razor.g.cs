@@ -213,7 +213,7 @@ using OfficeOpenXml.Style;
             ));
             __builder.AddAttribute(15, "TooltipContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
                 __builder2.OpenComponent<MudBlazor.MudText>(16);
-                __builder2.AddAttribute(17, "Typo", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Typo>(
+                __builder2.AddAttribute(17, "Typo", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Typo>(
 #nullable restore
 #line 25 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Tallas\EditarTallas.razor"
                                Typo.h6
@@ -229,7 +229,7 @@ using OfficeOpenXml.Style;
                 __builder2.CloseComponent();
                 __builder2.AddMarkupContent(20, "\r\n                ");
                 __builder2.OpenComponent<MudBlazor.MudText>(21);
-                __builder2.AddAttribute(22, "Typo", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Typo>(
+                __builder2.AddAttribute(22, "Typo", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<MudBlazor.Typo>(
 #nullable restore
 #line 26 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Tallas\EditarTallas.razor"
                                Typo.body2
@@ -245,7 +245,7 @@ using OfficeOpenXml.Style;
                 __builder2.CloseComponent();
                 __builder2.AddMarkupContent(25, "\r\n                ");
                 __builder2.OpenComponent<MudBlazor.MudIcon>(26);
-                __builder2.AddAttribute(27, "Icon", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+                __builder2.AddAttribute(27, "Icon", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 27 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Tallas\EditarTallas.razor"
                                 Icons.Material.Filled.DeleteForever
@@ -263,7 +263,7 @@ using OfficeOpenXml.Style;
             __builder.AddMarkupContent(28, "\r\n");
             __builder.OpenComponent<SistemaVentasCaprichos.Client.Pages.Tallas.FormTallas>(29);
             __builder.AddAttribute(30, "TextBotonSubmit", "Guardar cambios");
-            __builder.AddAttribute(31, "OnValidSubmit", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
+            __builder.AddAttribute(31, "OnValidSubmit", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create(this, 
 #nullable restore
 #line 33 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Tallas\EditarTallas.razor"
                             EditarArtic
@@ -272,7 +272,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(32, "Tallas", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Tallas>(
+            __builder.AddAttribute(32, "Tallas", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<SistemaVentasCaprichos.Shared.Tallas>(
 #nullable restore
 #line 33 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Tallas\EditarTallas.razor"
                                                   Tallas
