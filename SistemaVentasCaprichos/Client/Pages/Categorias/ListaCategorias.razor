@@ -18,6 +18,11 @@
     </div>
 </div>
 
+<MudTooltip Text="Exportar esta tabla a excel" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
+    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FileExcel"
+               @onclick="ExportarExcel"
+               Color="Color.Warning">Excel</MudButton>
+</MudTooltip><br />
 @if (Categoria == null)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
@@ -39,7 +44,7 @@ else
         <ToolBarContent>
             <MudText Typo="Typo.h6">Categorías</MudText>
             <MudSpacer />
-            <MudTextField @bind-Value="searchString1" Placeholder="Buscar categoría..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            <MudTextField @bind-Value="searchString1" Placeholder="Buscar categoría..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="MudBlazor.Size.Medium" Class="mt-0"></MudTextField>
         </ToolBarContent>
         <HeaderContent>
             <MudTh Style="width:50px;">Nr</MudTh>
@@ -52,7 +57,7 @@ else
             <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
             <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
             <MudTd>
-                <MudFab Color="Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
+                <MudFab Color="MudBlazor.Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="MudBlazor.Size.Small"
                         @onclick="@(() => NavigationManager.NavigateTo($"/editar-categoria/{context.Id}"))" />
             </MudTd>
 
@@ -142,5 +147,34 @@ else
             return true;
 
         return false;
+    }
+
+    // exportando
+
+
+    private void ExportarExcel()
+    {
+        using (var package = new ExcelPackage())
+        {
+            var worksheet = package.Workbook.Worksheets.Add("Categorias");
+
+            var tableBody = worksheet.Cells["A1:A1"].LoadFromCollection(
+                from f in Categoria
+                select new { f.Id, f.Nombre, f.Descripcion, f.Estado }, true);
+
+            var header = worksheet.Cells["A1:D1"];
+            worksheet.DefaultColWidth = 25;
+            tableBody.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+            tableBody.Style.Fill.PatternType = ExcelFillStyle.Solid;
+            tableBody.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Transparent);
+            tableBody.Style.Border.BorderAround(ExcelBorderStyle.Medium);
+            worksheet.Cells.Style.Border.BorderAround(ExcelBorderStyle.Double);
+            header.Style.Font.Bold = true;
+            header.Style.Font.Color.SetColor(System.Drawing.Color.Black);
+            header.Style.Fill.PatternType = ExcelFillStyle.Solid;
+            header.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Transparent);
+
+            JS.GuardarComo($"Categorias {DateTime.Now.ToShortDateString()}.xlsx", package.GetAsByteArray());
+        }
     }
 }

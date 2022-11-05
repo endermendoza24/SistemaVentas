@@ -7,6 +7,8 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
+      "CsvHelper.dll": "sha256-L3ixRrJA\/QKfPRO9WlKBFNp0\/wRdsbqsAc5ifsXFOrY=",
+      "EPPlus.dll": "sha256-zXFo4s+UVwxyCGk9TbuSpg0cfXD5M7tr28qaIdtK+y8=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-5QpvlVP++Gkc1dR8QwljPr2My0TdN\/zMkNik9vPVNxk=",
       "Microsoft.AspNetCore.Components.dll": "sha256-lIaWNwfsw4JmImsjOS8Y60om1ZDgL2CTkBB+RmJPCgk=",
       "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-5apeA7T7v8KLvrMs41SJz4kPdAsLU+eJ+oJ1RbvvR70=",
@@ -37,9 +39,13 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-f2PgoftqEkKRuuiAk6S1MHygOuqZBHzB0HOB3vR93TU=",
       "Microsoft.JSInterop.dll": "sha256-pr6L2mjcqc8D0q4a8E717JbHBm5iEM4PFAo1DBJmaUg=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-wm\/PyT01CAndytn\/B\/egrjENN3gkDMsMDaFon1TwCHA=",
+      "Microsoft.Win32.SystemEvents.dll": "sha256-56MWX7GCuiW+O0EPzkUo0jj6T\/mhpVB6x+UFQtaS2qE=",
       "MudBlazor.dll": "sha256-kAmyWizka\/0a5GOD22Fr6MOAGcby8ZgoX9lwDnfwewc=",
       "MudBlazor.ThemeManager.dll": "sha256-hBJKXvSm8pKyanTwBwWo\/BJlNIY0gjqmzb31qJzUWtU=",
+      "System.Drawing.Common.dll": "sha256-E+\/s4U4Xt\/iFr\/+Dd7ZSqXXAOJZKgnOAW4C5r7OPcHc=",
       "System.IO.Pipelines.dll": "sha256-\/C5xhI+m3Aqrcjxy\/TauLyqv\/\/5l8WEW3rXFtVlNhy8=",
+      "System.Security.Cryptography.Pkcs.dll": "sha256-lJix2AglTa7c7oE7voJlMQFwdW36KAHtL80Phcp5vvM=",
+      "System.Xml.XPath.XmlDocument.dll": "sha256-2B8IKJqqdntEszNahxluxzZZbOOP6q4hjsq7npfgLV0=",
       "Microsoft.CSharp.dll": "sha256-PpkoBrb5GDDzBCVjEGJ15VkONpHLxk8ZZ3uc0eDYPaY=",
       "Microsoft.VisualBasic.Core.dll": "sha256-SyyaBBG5sBtJEfy89ATtHrxESu8\/SyNLYJXV1OaHYG0=",
       "Microsoft.VisualBasic.dll": "sha256-r72HitH7Jt\/VQ3irxjaX1qUbLsK06DZxmFGScnqWFcE=",
@@ -206,12 +212,12 @@
       "netstandard.dll": "sha256-W3q3PN+lpRB+tRJEIhtMgYOGFv0pauEeeCS9iIRkKAM=",
       "System.Private.CoreLib.dll": "sha256-9rUJv1mXEQdGt\/kWiJ1ITPPzp3cAi3lSmqHVTisp7w0=",
       "SistemaVentasCaprichos.Shared.dll": "sha256-Iv0cWmlvKxNqf0VpVB5kg62B7rOra4OlyRJolJAoWDw=",
-      "SistemaVentasCaprichos.Client.dll": "sha256-HJMVL030OogCLjoJWyc3oi0ctXTCgIln7rnqAS6A8gU="
+      "SistemaVentasCaprichos.Client.dll": "sha256-VXxmm\/eO\/bEDwW4dphKsjnjPosCY4B0IaFgI684RG\/M="
     },
     "lazyAssembly": null,
     "pdb": {
       "SistemaVentasCaprichos.Shared.pdb": "sha256-Arcc+R2F1I9JwqwO\/eBv5fK8sz+3NKTzenL2GJ8IG54=",
-      "SistemaVentasCaprichos.Client.pdb": "sha256-wC1SxomLVOwyl9puNNk1JJNRPhy2tA8\/oDXqqGU6w9g="
+      "SistemaVentasCaprichos.Client.pdb": "sha256-1xCXnrJ5Ghc9xVtQOt6p283ha62Q8q4i+bBPaAwsrxY="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-8oJip361m8OrfLRJOuIeswWKaoxtT27\/wINCxhn+s4c=",

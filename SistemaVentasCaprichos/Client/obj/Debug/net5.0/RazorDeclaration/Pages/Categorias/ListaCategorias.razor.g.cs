@@ -104,29 +104,64 @@ using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 #line hidden
 #nullable disable
 #nullable restore
-#line 17 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
-using MudBlazor;
+#line 15 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using System.IO;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 18 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
-using MudBlazor.ThemeManager;
+#line 16 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using SistemaVentasCaprichos.Client.Helpers;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 19 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
-using MudBlazor.Services;
+using MudBlazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 20 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using MudBlazor.ThemeManager;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 21 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using MudBlazor.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 22 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 23 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using CsvHelper;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 24 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using OfficeOpenXml;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 25 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+using OfficeOpenXml.Style;
 
 #line default
 #line hidden
@@ -154,7 +189,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 67 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Categorias\ListaCategorias.razor"
+#line 72 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Categorias\ListaCategorias.razor"
        
     private bool dense = false;
     private bool hover = true;
@@ -233,6 +268,35 @@ using System.Text.Json;
             return true;
 
         return false;
+    }
+
+    // exportando
+
+
+    private void ExportarExcel()
+    {
+        using (var package = new ExcelPackage())
+        {
+            var worksheet = package.Workbook.Worksheets.Add("Categorias");
+
+            var tableBody = worksheet.Cells["A1:A1"].LoadFromCollection(
+                from f in Categoria
+                select new { f.Id, f.Nombre, f.Descripcion, f.Estado }, true);
+
+            var header = worksheet.Cells["A1:D1"];
+            worksheet.DefaultColWidth = 25;
+            tableBody.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+            tableBody.Style.Fill.PatternType = ExcelFillStyle.Solid;
+            tableBody.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Transparent);
+            tableBody.Style.Border.BorderAround(ExcelBorderStyle.Medium);
+            worksheet.Cells.Style.Border.BorderAround(ExcelBorderStyle.Double);
+            header.Style.Font.Bold = true;
+            header.Style.Font.Color.SetColor(System.Drawing.Color.Black);
+            header.Style.Fill.PatternType = ExcelFillStyle.Solid;
+            header.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Transparent);
+
+            JS.GuardarComo($"Categorias {DateTime.Now.ToLongDateString()}.xlsx", package.GetAsByteArray());
+        }
     }
 
 #line default
