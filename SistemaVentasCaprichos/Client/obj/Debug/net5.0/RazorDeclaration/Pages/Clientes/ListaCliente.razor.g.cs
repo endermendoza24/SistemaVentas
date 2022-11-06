@@ -13,168 +13,168 @@ namespace SistemaVentasCaprichos.Client.Pages.Clientes
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 1 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 2 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 3 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 4 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 6 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 7 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 8 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 9 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 10 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 12 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 13 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 14 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 14 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 15 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 15 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using System.IO;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 16 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 16 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client.Helpers;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 19 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 19 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using MudBlazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 20 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 20 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using MudBlazor.ThemeManager;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 21 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 21 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using MudBlazor.Services;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 22 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 22 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 23 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 23 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using CsvHelper;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 24 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 24 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using OfficeOpenXml;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 25 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 25 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using OfficeOpenXml.Style;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
+#line 6 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
 using System.Text.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
+#line 5 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
            [Authorize]
 
 #line default
@@ -189,9 +189,17 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 141 "C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
+#line 131 "C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
        
     public List<Cliente> clientes { get; set; } //muestra todos los clientes
+    
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private string searchString1 = "";
+    private Cliente selectedItem1 = null;
+    private HashSet<Cliente> selectedItems = new HashSet<Cliente>();
 
     private string NombreFiltro = String.Empty; //filtros
 
@@ -252,6 +260,25 @@ using System.Text.Json;
         await CargarClientes();
     }
     
+    // función de búsqueda de mud blazor
+    private bool FilterFunc1(Cliente element) => FilterFunc(element, searchString1);
+
+    private bool FilterFunc(Cliente element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.NombreyApellido.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Dirección.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Cedula.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Teléfono.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        return false;
+    }
+
     private void ExportarExcel()
     {
         using (var package = new ExcelPackage())

@@ -57,7 +57,7 @@ else
     private int pedidospendientes { get; set; }
     private decimal[] ejercicio { get; set; }
     private decimal[] ventasAño { get; set; }
-    private decimal[] compras { get; set; }
+    private decimal[] compras { get; set; }    
 
     public List<Venta> ventas { get; set; }
 
@@ -65,7 +65,7 @@ else
     {
         ventas = await Http.GetFromJsonAsync<List<Venta>>($"api/ventas");
 
-        ejercicio = await Http.GetFromJsonAsync<decimal[]>($"api/estadisticas/ejercicio");
+        ejercicio = await Http.GetFromJsonAsync<decimal[]>($"api/estadisticas/ejercicio");        
         compras = await Http.GetFromJsonAsync<decimal[]>($"api/estadisticas/compras");
         ventasAño = await Http.GetFromJsonAsync<decimal[]>($"api/estadisticas/ventas");
         pedidospendientes = await Http.GetFromJsonAsync<int>("api/estadisticas/pendientes");
@@ -77,5 +77,6 @@ else
     {
         JS.InvokeVoidAsync("chart_line", ejercicio, compras);
         JS.InvokeVoidAsync("chart_column", ventasAño);
+        JS.InvokeVoidAsync("chart_column2", ventasAño);
     }
 }

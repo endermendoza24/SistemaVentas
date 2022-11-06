@@ -14,7 +14,7 @@ namespace SistemaVentasCaprichos.Shared
 
          [Required]
          [StringLength(30)]
-        [MaxLength(30, ErrorMessage = "Máximo 30 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
+        [MaxLength(30, ErrorMessage = "Máximo 30 dígitos"), MinLength(1, ErrorMessage = "Minimo 1 dígitos")]
         public string Nombre { get; set; }
 
 

@@ -36,7 +36,18 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet("filtro")]
         public async Task<ActionResult<List<Cliente>>> Get([FromQuery] string nombre)
         {
-            var queryable = context.Clientes.OrderBy(x => x.NombreyApellido).AsQueryable();
+            var queryable = context.Clientes.Where(x => x.Estado == true).OrderBy(x => x.NombreyApellido).AsQueryable();
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                queryable = queryable.Where(x => x.NombreyApellido.Contains(nombre));
+            }
+            return await queryable.ToListAsync();
+        }
+        //GET: api/clientes/filtro/nombre
+        [HttpGet("bajas")]
+        public async Task<ActionResult<List<Cliente>>> GetBajas([FromQuery] string nombre)
+        {
+            var queryable = context.Clientes.Where(x => x.Estado != true).OrderBy(x => x.NombreyApellido).AsQueryable();
             if (!string.IsNullOrEmpty(nombre))
             {
                 queryable = queryable.Where(x => x.NombreyApellido.Contains(nombre));

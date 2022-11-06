@@ -76,6 +76,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             return meses;
         }
 
+
         // GET: api/estadisticas/pendientes
         [HttpGet("pendientes")]
         public async Task<ActionResult<int>> GetPedidosPendientes()

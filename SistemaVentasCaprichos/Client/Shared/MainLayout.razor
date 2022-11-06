@@ -34,8 +34,7 @@
     </MudDrawer>
     
     <MudMainContent>
-        <MudContainer Class="mt-6">            
-                            
+        <MudContainer Class="mt-6">                                        
             @Body
         </MudContainer>
     </MudMainContent>
@@ -49,7 +48,7 @@
 
 @code {
     private MudTheme _currentTheme = new MudTheme();
-    private bool _sidebarOpen = true;
+    private bool _sidebarOpen = false;
     private void ToggleTheme(MudTheme changedTheme) => _currentTheme = changedTheme;
     private void ToggleSidebar() => _sidebarOpen = !_sidebarOpen;
 }

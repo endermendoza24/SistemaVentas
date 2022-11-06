@@ -24,6 +24,13 @@
             <b>Ver todos</b>
         </button>       
     </div>
+    <div class="d-flex justify-content-between mt-2 mb-2">
+            <div class="btn-group">
+                <a href="/lista-clientes-bajas" style="background:none; border:none">
+                    &nbsp;&nbsp;<b>Dados de baja</b>
+                </a>
+            </div>
+        </div>
 
     <div class="btn-group">
         <button @onclick="CambiarVista" style="background:none; border: none">
@@ -74,7 +81,7 @@ else
                             <b>@cliente.NombreyApellido</b>
                         </h5>
                         <p class="card-text">
-                            DNI: @cliente.Cedula
+                            Cédula: @cliente.Cedula
                             <br /> @cliente.Dirección - (@cliente.Teléfono)
                         </p>
                         @* <h5 class="card-text text-right">
@@ -86,60 +93,51 @@ else
         }
     </div>
 
-    <table class="table table-hover" hidden="@lista">
-        <thead class="thead-dark">
-            <tr>
-                <th></th>
-                <th>Nombre y Apellido</th>
-                <th>Dni</th>
-                <th>Sexo</th>
-                <th>Dirección</th>
-                <th>Teléfono</th>
-                @* <th>Saldo</th> *@
-            </tr>
-        </thead>
-        <tbody>
-            <Virtualize Items="@clientes" Context="cliente">
-                <tr @key="cliente.Id">
-                    <td><a href="/editar-cliente/@cliente.Id" style="color:white" class="btn btn-sm btn-primary"><i class="oi oi-eye"></i> Ver</a></td>
-                    <td><b>@cliente.NombreyApellido</b></td>
-                    <td>@cliente.Cedula</td>
-                    <td>
-                        @if (cliente.Sexo == Cliente.Sexos.Masculino)
-                        {
-                            <text>M</text>
-                        }
-                        else if (cliente.Sexo == Cliente.Sexos.Femenino)
-                        {
-                            <text>F</text>
-                        }
-                        else
-                        {
-                            <text>N/E</text>
-                        }
-                    </td>
-                    <td>@cliente.Dirección</td>
-                    <td>@cliente.Teléfono</td>
-
-                    @* @if (cliente.Saldo > limitedeuda)
-                    {
-                        <td style="color:darkred;">
-                            <b>$@cliente.Saldo</b>
-                        </td>
-                    }
-                    else
-                    {
-                        <td>
-                            $@cliente.Saldo
-                        </td>
-                    } *@
-                </tr>
-            </Virtualize>
-        </tbody>
-    </table>
+    
+    
+    <MudTable Items="@clientes" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Cliente,bool>(FilterFunc1)"
+              @bind-SelectedItem="selectedItem1">
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Categorías</MudText>
+            <MudSpacer />
+            <MudTextField @bind-Value="searchString1" Placeholder="Buscar cliente..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="MudBlazor.Size.Medium" Class="mt-0"></MudTextField>
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh Style="width:50px;">Nr</MudTh>
+            <MudTh Class="thead-dark">Nombre</MudTh>
+            <MudTh>Cédula</MudTh>
+            <MudTh Style="width:50px">Sexo</MudTh>
+            <MudTh>Dirección</MudTh>
+            <MudTh>Teléfono</MudTh>
+            <MudTh>Acciones</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Id">@context.Id</MudTd>
+            <MudTd DataLabel="Nombre">@context.NombreyApellido</MudTd>
+            <MudTd DataLabel="Cédula">@context.Cedula</MudTd>
+            <MudTd DataLabel="sexo">@context.Sexo</MudTd>
+            <MudTd DataLabel="Dirección">@context.Dirección</MudTd>
+            <MudTd DataLabel="Teléfono">@context.Teléfono</MudTd>
+            <MudTd>
+                <MudFab Color="MudBlazor.Color.Error" StartIcon="@Icons.Filled.Edit" Size="MudBlazor.Size.Small"
+                        @onclick="@(() => NavigationManager.NavigateTo($"/editar-cliente/{context.Id}"))" />
+            </MudTd>
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager />
+        </PagerContent>
+    </MudTable>
 }
 @code {
     public List<Cliente> clientes { get; set; } //muestra todos los clientes
+    
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private string searchString1 = "";
+    private Cliente selectedItem1 = null;
+    private HashSet<Cliente> selectedItems = new HashSet<Cliente>();
 
     private string NombreFiltro = String.Empty; //filtros
 
@@ -200,6 +198,25 @@ else
         await CargarClientes();
     }
     
+    // función de búsqueda de mud blazor
+    private bool FilterFunc1(Cliente element) => FilterFunc(element, searchString1);
+
+    private bool FilterFunc(Cliente element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.NombreyApellido.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Dirección.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Cedula.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Teléfono.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        return false;
+    }
+
     private void ExportarExcel()
     {
         using (var package = new ExcelPackage())

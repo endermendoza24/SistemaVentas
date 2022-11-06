@@ -35,35 +35,49 @@ else if (compras.Count == 0)
     </div>
 }
 else
-{
-    <table class="table table-hover">
-        <thead class="thead-dark">
-            <tr>
-                <th></th>
-                <th>#</th>
-                <th>Fecha</th>
-                <th>Proveedor</th>
-                <th>Empleado</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <Virtualize Items="@compras" Context="compra">
-                <tr @key="compra.Id">
-                    <td><a href="ver-compra/@compra.Id" class="btn btn-sm btn-primary"><i class="oi oi-eye"></i> Ver</a></td>
-                    <td>@compra.Id</td>
-                    <td>@compra.Fecha</td>
-                    @*<td>@compra.Proveedor</td>*@
-                    <td>@compra.Proveedores.Nombre</td>
-                    <td>@compra.ApplicationUser.NombreyApellido</td>
-                    <td><b>$@compra.Total</b></td>
-                </tr>
-            </Virtualize>
-        </tbody>
-    </table>
+{    
+    <MudTable Items="@compras" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Compra,bool>(FilterFunc1)"
+              @bind-SelectedItem="selectedItem1">
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Compras</MudText>
+            <MudSpacer />
+            <MudTextField @bind-Value="searchString1" Placeholder="Buscar compra..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh Style="width:50px;">Nr</MudTh>
+            <MudTh>Fecha</MudTh>
+            <MudTh>Proveedor</MudTh>            
+            <MudTh>Empleado</MudTh>
+            <MudTh>Total</MudTh>
+            <MudTh>Acciones</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Id">@context.Id</MudTd>
+            <MudTd DataLabel="Fecha">@context.Fecha.ToLongDateString()</MudTd>
+            <MudTd DataLabel="Proveedor">@context.Proveedores.Nombre</MudTd>
+            <MudTd DataLabel="Empleado">@context.ApplicationUser.NombreyApellido</MudTd>
+            <MudTd DataLabel="Total">@context.Total</MudTd>                       
+            <MudTd>
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Filled.Payment" Size="Size.Small"
+                        @onclick="@(() => NavigationManager.NavigateTo($"/ver-compra/{context.Id}"))" />
+            </MudTd>
+
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager />
+        </PagerContent>
+    </MudTable>
 }
 @code {
     public List<Compra> compras { get; set; }
+
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private string searchString1 = "";
+    private Compra selectedItem1 = null;
+    private HashSet<Compra> selectedItems = new HashSet<Compra>();
 
     private DateTime FechaFiltro = DateTime.Today.AddDays(+1);
     private string EmpleadoFiltro = String.Empty;
@@ -112,5 +126,16 @@ else
         EmpleadoFiltro = string.Empty;
         FechaFiltro = DateTime.Today.AddDays(+1);
         await CargarCompras();
+    }
+    // esta es la funcion de filtrado de MudBlazor
+    private bool FilterFunc1(Compra element) => FilterFunc(element, searchString1);
+
+    private bool FilterFunc(Compra element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.Fecha.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        return false;
     }
 }

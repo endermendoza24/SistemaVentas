@@ -28,7 +28,7 @@ function chart_line(ejercicio, compras) {
             title: 'Mes',
         },
         vAxis: {
-            title: '$ (pesos)',
+            title: 'C$ (Córdobas)',
         },
         colors: ['#097138', '#a52714']
     };
@@ -61,7 +61,7 @@ function chart_column(ventas) {
     ]);
 
     var options = {
-        title: 'Ventas del año corriente',
+        title: 'Ventas del año actual',
         hAxis: {
             title: 'Mes',
         },
@@ -76,3 +76,5 @@ function chart_column(ventas) {
 
     chart.draw(data, options);
 }
+
+

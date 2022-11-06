@@ -3065,7 +3065,6 @@ C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\IZ+8vYHj.gz
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\8Ec8wG0G.gz
 C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\wTbqzRBR.gz
-C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\refint\SistemaVentasCaprichos.Client.dll
 C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\bin\Debug\net5.0\wwwroot\_framework\blazor.boot.json
 C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\bin\Debug\net5.0\SistemaVentasCaprichos.Client.StaticWebAssets.xml
 C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\bin\Debug\net5.0\SistemaVentasCaprichos.Client.dll
@@ -3870,3 +3869,6 @@ C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\ob
 C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\refint\SistemaVentasCaprichos.Client.dll
 C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\SistemaVentasCaprichos.Client.pdb
 C:\Users\ENDERSSONMENDOZA\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Client.dll
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Clientes\ListaClientesBajas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Clientes\ListaClientesBajas.razor.g.cs
+C:\Users\Endersson\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\bin\Debug\net5.0\ref\SistemaVentasCaprichos.Client.dll
