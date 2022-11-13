@@ -22,7 +22,12 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Tallas>>> Get()
         {
-            return await context.Tallas.ToListAsync();
+            return await context.Tallas.Where(x => x.Estado == true).ToListAsync();
+        }
+        [HttpGet("bajas")]
+        public async Task<ActionResult<List<Tallas>>> GetBajas()
+        {
+            return await context.Tallas.Where(x => x.Estado == false).ToListAsync();
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Tallas>> Get(int id)

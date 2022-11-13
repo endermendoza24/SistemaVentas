@@ -9,15 +9,7 @@
 <div class="d-flex position-sticky justify-content-between mb-1">
     <div class="btn-group mr-2">
         <button @onclick="CrearCompra" class="btn btn-success"><i class="oi oi-plus"></i> Nueva compra</button>
-    </div>
-    <div class="input-group" style="width:60%">
-        <input class="form-control" type="date" placeholder="Fecha compra" @bind="FechaFiltro" />
-        
-        <div class="input-group-append">
-            <button @onclick="Filtrar" class="btn btn-primary" type="button"><i class="oi oi-magnifying-glass"></i></button>
-            <button @onclick="Limpiar" class="btn btn-danger" type="button"><i class="oi oi-delete"></i></button>
-        </div>
-    </div>
+    </div>   
 </div>
 
 @if (compras == null)
@@ -51,7 +43,7 @@ else
                 <tr @key="compra.Id">
                     <td><a href="ver-compra/@compra.Id" class="btn btn-sm btn-primary"><i class="oi oi-eye"></i> Ver</a></td>
                     <td>@compra.Id</td>
-                    <td>@compra.Fecha</td>                    
+                    <td>@compra.Fecha.ToLongDateString()</td>                    
                     <td>@compra.Proveedores.Nombre</td>                    
                     <td><b>C$@compra.Total</b></td>
                 </tr>

@@ -13,98 +13,98 @@ namespace SistemaVentasCaprichos.Client.Pages.Ventas
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 1 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 2 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 4 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 5 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 6 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 7 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 8 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 9 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 10 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 11 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 12 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 16 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 16 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\_Imports.razor"
 using MudBlazor;
 
 #line default
 #line hidden
 #nullable disable
-    public partial class FormVenta : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class FormVenta : global::Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
-        protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
+        protected override void BuildRenderTree(global::Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
 #nullable restore
-#line 144 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
+#line 144 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
        
     [Parameter] public Venta venta { get; set; } = new Venta();
     [Parameter] public List<Cliente> clientes { get; set; } = new List<Cliente>();
@@ -132,7 +132,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 165 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
+#line 165 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
              for (int i = 0; i < listadetalle.Count; i++)
             {                
                 venta.Total += listadetalle[i].SubTotal;
@@ -142,7 +142,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 168 "C:\Users\Endersson\source\repos\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
+#line 168 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
              
         }
         return venta.Total;

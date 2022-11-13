@@ -15,9 +15,9 @@ namespace SistemaVentasCaprichos.Shared
         [Required]
         public string NombreyApellido { get; set; }
         [Required]
-        [MaxLength(8, ErrorMessage = "Máximo 8 dígitos"), MinLength(7, ErrorMessage = "Minimo 7 dígitos")]
+        [MaxLength(14, ErrorMessage = "Máximo 14 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         [Phone(ErrorMessage = "Sólo números")]
-        public string Dni { get; set; }
+        public string Cedula { get; set; }
         [Required, EnumDataType(typeof(Sexos))]
         public Sexos Sexo { get; set; }
         [Required]

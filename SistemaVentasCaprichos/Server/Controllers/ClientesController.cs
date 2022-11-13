@@ -34,7 +34,18 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet("filtro")]
         public async Task<ActionResult<List<Cliente>>> Get([FromQuery] string nombre)
         {
-            var queryable = context.Clientes.OrderBy(x => x.NombreyApellido).AsQueryable();
+            var queryable = context.Clientes.Where(x => x.Estado == true).OrderBy(x => x.NombreyApellido).AsQueryable();
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                queryable = queryable.Where(x => x.NombreyApellido.Contains(nombre));
+            }
+            return await queryable.ToListAsync();
+        }
+        //GET: api/clientes/filtro/nombre/bajas
+        [HttpGet("bajas")]
+        public async Task<ActionResult<List<Cliente>>> GetBajas([FromQuery] string nombre)
+        {
+            var queryable = context.Clientes.Where(x => x.Estado == false).OrderBy(x => x.NombreyApellido).AsQueryable();
             if (!string.IsNullOrEmpty(nombre))
             {
                 queryable = queryable.Where(x => x.NombreyApellido.Contains(nombre));
@@ -53,7 +64,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpPost]
         public async Task<ActionResult> Post(Cliente cliente)
         {
-            if (!Exists(cliente.Dni))
+            if (!Exists(cliente.Cedula))
             {
                 context.Clientes.Add(cliente);
                 await context.SaveChangesAsync();
@@ -92,7 +103,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         private bool Exists(string dni)
         {
-            return (context.Clientes.Any(e => e.Dni == dni));
+            return (context.Clientes.Any(e => e.Cedula == dni));
         }
     }
 }

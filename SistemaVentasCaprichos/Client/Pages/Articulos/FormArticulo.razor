@@ -1,5 +1,6 @@
 ﻿@inject HttpClient Http
 @inject NavigationManager NavigationManager
+
 @using System.Text.Json
 
 <EditForm Model="@articulo" OnValidSubmit="@OnValidSubmit">
@@ -26,7 +27,7 @@
                     </div>
                 </div>
 
-            
+
 
                 @*prueba*@
                 <div class="form-group row">
@@ -37,7 +38,7 @@
                                 <option selected value="0">Seleccione una categoría</option>
                                 @foreach (var categoria in ListaCategorias)
                                 {
-                                    <option value="@categoria.Id">@categoria.Nombre</option>
+                                        <option value="@categoria.Id">@categoria.Nombre</option>
                                 }
                             </InputSelect>
                         </div>
@@ -53,7 +54,7 @@
                                 <option selected value="0">Seleccione una marca</option>
                                 @foreach (var marca in ListaMarcas)
                                 {
-                                    <option value="@marca.Id">@marca.Nombre</option>
+                                        <option value="@marca.Id">@marca.Nombre</option>
                                 }
                             </InputSelect>
                         </div>
@@ -69,7 +70,7 @@
                                 <option disabled selected value="0">Seleccione una talla</option>
                                 @foreach (var talla in ListaTallas)
                                 {
-                                    <option value="@talla.Id">@talla.Nombre</option>
+                                        <option value="@talla.Id">@talla.Nombre</option>
                                 }
                             </InputSelect>
                         </div>
@@ -93,7 +94,9 @@
                     <label class="col-4 col-form-label">Url Imagen</label>
                     <div class="col">
                         <div class="input-group">
-                            <InputText @bind-Value="@articulo.Url_Imagen" placeholder="URL Imagen" class="form-control" />
+                            <MudTooltip Text="Ingrese el enlace de la imagen que quiere que se muestre" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
+                                <InputText @bind-Value="@articulo.Url_Imagen" placeholder="URL Imagen" class="form-control" />
+                            </MudTooltip>
                             <div class="input-group-prepend">
                                 <button @onclick="@(() => articulo.Url_Imagen = null)" class="btn btn-secondary" type="button">
                                     <i class="oi oi-delete"></i>
@@ -110,15 +113,15 @@
                     <div class="col">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                
+                                <span class="input-group-text" id="inputGroup-sizing-default">#A-Z</span>
                             </div>
-                            <InputText @bind-Value="@articulo.Codigo" class="form-control" step="0.01" />
+                            <InputText @bind-Value="@articulo.Codigo" class="form-control" />
                         </div>
                         <ValidationMessage For="@(() => articulo.Codigo)" />
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-4 col-form-label">Precio mayorista</label>
+                    <label class="col-4 col-form-label">Precio de compra</label>
                     <div class="col">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -130,7 +133,7 @@
                     </div>
                 </div>
 
-                <div class="form-group row">
+                @* <div class="form-group row">
                     <label class="col-4 col-form-label">Porcentaje</label>
                     <div class="col">
                         <div class="input-group">
@@ -140,10 +143,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> *@
 
                 <div class="form-group row">
-                    <label class="col-4 col-form-label">Precio unitario</label>
+                    <label class="col-4 col-form-label">Precio de venta</label>
                     <div class="col">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -182,6 +185,18 @@
                             <InputNumber @bind-Value="@articulo.StockMaximo" min="0" class="form-control" type="number" />
                         </div>
                         <ValidationMessage For="@(() => articulo.StockMaximo)" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-3 col-form-label">Estado</label>
+                    <div class="col">
+                        <MudTooltip Text="Si selecciona esta opción dará de baja al artículo correspondiente."
+                                    Color="Color.Secondary" Placement="Placement.Top">
+                            <MudSwitch @bind-Checked="@articulo.Estado" Label="Está activo?"
+                                       Color="Color.Success" />
+                        </MudTooltip>
+                        <ValidationMessage For="@(() => articulo.Estado)" />
                     </div>
                 </div>
             </div>

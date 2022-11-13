@@ -7,15 +7,7 @@
 <div class="d-flex position-sticky justify-content-between mb-1">
     <div class="btn-group mr-2">
         <button @onclick="CrearVenta" class="btn btn-success"><i class="oi oi-plus"></i> Nueva venta</button>
-    </div>
-    <div class="input-group" style="width:60%">
-        <input class="form-control" type="date" placeholder="Fecha venta" @bind="FechaFiltro" />
-        
-        <div class="input-group-append">
-            <button @onclick="Filtrar" class="btn btn-primary" type="button"><i class="oi oi-magnifying-glass"></i></button>
-            <button @onclick="Limpiar" class="btn btn-danger" type="button"><i class="oi oi-delete"></i></button>
-        </div>
-    </div>
+    </div>    
 </div>
 
 @if (ventas == null)
@@ -34,40 +26,63 @@ else if (ventas.Count == 0)
 }
 else
 {
-    <table class="table table-hover">
-        <thead class="thead-dark">
-            <tr>
-                <th></th>
-                <th>#</th>
-                <th>Fecha</th>
-                <th>Forma de pago</th>
-                <th>Cliente</th>                
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <Virtualize Items="@ventas" Context="venta">
-                <tr @key="venta.Id">
-                    <td><a href="ver-venta/@venta.Id" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Ver venta Id: @venta.Id"><i class="oi oi-eye"></i> Ver</a></td>
-                    <td>@venta.Id</td>
-                    <td>@venta.Fecha</td>
-                    <td>@venta.FormaPago</td>
-                    @if (venta.ClienteId != null)
-                    {
-                        <td><a href="editar-cliente/@venta.ClienteId"><b>@venta.Cliente.NombreyApellido</b></a></td>
-                    }
-                    else
-                    {
-                        <td></td>
-                    }                    
-                    <td><b>C$@venta.Total</b></td>
-                </tr>
-            </Virtualize>
-        </tbody>
-    </table>
+    <MudTable Items="@ventas" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Venta,bool>(FilterFunc1)"
+              @bind-SelectedItem="selectedItem1">
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Ventas</MudText>
+            <MudSpacer />
+            <MudTextField @bind-Value="searchString1" Placeholder="Buscar..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh Style="width:50px;">Nr</MudTh>
+            <MudTh>Fecha</MudTh>
+            <MudTh>Forma de pago</MudTh>
+            <MudTh>Cliente</MudTh>
+            <MudTh>Total</MudTh>
+            <MudTh>Acciones</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Id">@context.Id</MudTd>
+            <MudTd DataLabel="Fecha">@context.Fecha.ToLongDateString()</MudTd>
+            <MudTd DataLabel="Moneda">@context.FormaPago</MudTd>
+            @if (context.ClienteId != null)
+                {
+                <MudTd DataLabel="Cliente">@context.Cliente.NombreyApellido</MudTd>
+                }
+                else
+                {
+                <MudTd>Cliente genérico</MudTd>
+                }
+            @if (context.FormaPago == FormasPago.Cordoba)
+                {
+                <MudTd DataLabel="Total">C$ @context.Total</MudTd>
+                }
+                else
+                {
+                <MudTd DataLabel="Total">$ @context.Total</MudTd>
+                }
+            <MudTd>
+                <MudFab Color="Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
+                        @onclick="@(() => NavigationManager.NavigateTo($"/ver-venta/{context.Id}"))" />
+            </MudTd>
+
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager />
+        </PagerContent>
+    </MudTable>
 }
 @code {
     public List<Venta> ventas { get; set; }
+
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private string searchString1 = "";
+    private Venta selectedItem1 = null;
+    private HashSet<Venta> selectedItems = new HashSet<Venta>();
+
 
     private DateTime FechaFiltro = DateTime.Today.AddDays(+1);
     private string EmpleadoFiltro = String.Empty;
@@ -116,5 +131,22 @@ else
         EmpleadoFiltro = string.Empty;
         FechaFiltro = DateTime.Today.AddDays(+1);
         await CargarVentas();
+    }
+
+
+    // esta es la funcion de filtrado de MudBlazor
+    private bool FilterFunc1(Venta element) => FilterFunc(element, searchString1);
+
+    private bool FilterFunc(Venta element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.Fecha.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Total.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        
+
+        return false;
     }
 }

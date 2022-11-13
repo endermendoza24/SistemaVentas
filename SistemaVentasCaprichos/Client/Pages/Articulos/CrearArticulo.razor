@@ -17,11 +17,11 @@
     </div>
 </div>
 
-<FormArticulo TextBotonSubmit="Guardar artículo" OnValidSubmit="@CrearArtic" articulo="@articulo"/>
+<FormArticulo TextBotonSubmit="Guardar artículo" OnValidSubmit="@CrearArtic" articulo="@articulo" />
 
 @code {
     Articulo articulo = new Articulo();
-    
+
 
     async Task CrearArtic()
     {
@@ -37,6 +37,8 @@
         {
             //await JS.InvokeVoidAsync("simple", "Error",
             //        "No se pudo crear artículo", "error");
+            Snackbar.Add("Ha ocurrido un error", Severity.Error, a =>
+            a.VisibleStateDuration = 200);
         }
     }
 

@@ -1,7 +1,7 @@
 ﻿@page "/lista-articulos"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
-
+@inject IJSRuntime JS
 
 
 @using System.Text.Json
@@ -22,16 +22,19 @@
 <div class="d-flex justify-content-between mt-2 mb-2">
     <div class="btn-group">
         <button @onclick="MostrarTodos" style="background:none; border: none">
-            <b>Ver todos</b>
+            &nbsp;&nbsp;<b>Ver todos</b>&nbsp;&nbsp;
         </button>
         <button @onclick="MostrarStockBajo" style="background:none; border: none">
-            <b>Sólo con bajo stock</b>
+            &nbsp;&nbsp;<b>Sólo con bajo stock</b>
         </button>
+        <a href="/lista-articulos-bajas" style="background:none; border:none">
+            &nbsp;&nbsp;<b>Dados de baja</b> &nbsp;&nbsp;
+        </a>
     </div>
 
     <div class="btn-group">
         <button @onclick="CambiarVista" style="background:none; border: none">
-            <b>Cambiar vista</b>
+            <b>Ver como tabla</b>
         </button>
     </div>
 </div>
@@ -39,7 +42,7 @@
 @if (articulo == null)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
-        <div class="spinner-grow text-success" role="status">
+        <div class="spinner-border text-success" role="status">
             <span class="sr-only">Cargando...</span>
         </div>
     </div>
@@ -73,7 +76,7 @@ else
                             @articulo.Categorias
                         </p>
                         <p class="card-text">
-                            PRECIO: <b>$@articulo.PrecioUnitario</b>
+                            PRECIO: <b>C$@articulo.PrecioUnitario</b>
                             <br />
                             @if (articulo.StockActual < articulo.StockMinimo)
                             {
@@ -95,7 +98,7 @@ else
     </div>
     <div hidden="@lista">
         <MudTable Items="@articulo" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Articulo,bool>(FilterFunc1)"
-                  @bind-SelectedItem="selectedItem1">
+              @bind-SelectedItem="selectedItem1">
             <ToolBarContent>
                 <MudText Typo="Typo.h6">Artículos</MudText>
                 <MudSpacer />
@@ -115,11 +118,30 @@ else
                 <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
                 <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
                 <MudTd DataLabel="Precio">@context.PrecioUnitario</MudTd>
-                <MudTd DataLabel="Fecha">@context.Ultima_Modificación</MudTd>
-                <MudTd DataLabel="Stock">@context.StockActual</MudTd>
+                <MudTd DataLabel="Fecha">@context.Ultima_Modificación.ToShortDateString()</MudTd>
+                <MudTd>
+                    @if (context.StockActual < context.StockMinimo)
+                    {
+                        <MudChip Color="Color.Error" Variant="Variant.Filled">
+                            <MudTd Style="color:#fff" DataLabel="Stock bajo">@context.StockActual</MudTd>
+                        </MudChip>
+                    }
+                    else if (context.StockActual > context.StockMaximo)
+                    {
+                        <MudChip Color="Color.Warning" Variant="Variant.Filled">
+                            <MudTd Style="color:#fff" DataLabel="Stock excedido"> @context.StockActual</MudTd>
+                        </MudChip>
+                    }
+                    else
+                    {
+                        <MudChip Color="Color.Success" Variant="Variant.Filled">
+                            <b><MudTd Style="color:#fff" DataLabel="Stock"> @context.StockActual</MudTd></b>
+                        </MudChip>
+                    }
+                </MudTd>
                 <MudTd>
                     <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
-                            @onclick="@(() => NavigationManager.NavigateTo($"/editar-articulo/{context.Id}"))" />
+                        @onclick="@(() => NavigationManager.NavigateTo($"/editar-articulo/{context.Id}"))" />
                 </MudTd>
 
             </RowTemplate>
@@ -215,4 +237,6 @@ else
 
         return false;
     }
+
+    
 }

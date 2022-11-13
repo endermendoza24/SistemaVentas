@@ -22,12 +22,9 @@
     <div class="btn-group">
         <button @onclick="MostrarTodos" style="background:none; border: none">
             <b>Ver todos</b>
-        </button>
-        <button @onclick="MostrarDeudores" style="background:none; border: none">
-            <b>Sólo deudores</b>
-        </button>
+        </button>        
     </div>
-
+    <br />
     <div class="btn-group">
         <button @onclick="CambiarVista" style="background:none; border: none">
             <b>Cambiar vista</b>
@@ -73,12 +70,10 @@ else
                             <b>@cliente.NombreyApellido</b>
                         </h5>
                         <p class="card-text">
-                            DNI: @cliente.Dni
+                            DNI: @cliente.Cedula
                             <br /> @cliente.Dirección - (@cliente.Teléfono)
                         </p>
-                        <h5 class="card-text text-right">
-                            <b>DEUDA: $@cliente.Saldo</b>
-                        </h5>
+                        
                     </div>
                 </div>
             </a>
@@ -90,11 +85,11 @@ else
             <tr>
                 <th></th>
                 <th>Nombre y Apellido</th>
-                <th>Dni</th>
+                <th>Cédula</th>
                 <th>Sexo</th>
                 <th>Dirección</th>
                 <th>Teléfono</th>
-                <th>Saldo</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -102,7 +97,7 @@ else
                 <tr @key="cliente.Id">
                     <td><a href="/editar-cliente/@cliente.Id" style="color:white" class="btn btn-sm btn-primary"><i class="oi oi-eye"></i> Ver</a></td>
                     <td><b>@cliente.NombreyApellido</b></td>
-                    <td>@cliente.Dni</td>
+                    <td>@cliente.Cedula</td>
                     <td>
                         @if (cliente.Sexo == Cliente.Sexos.Masculino)
                         {
@@ -120,18 +115,7 @@ else
                     <td>@cliente.Dirección</td>
                     <td>@cliente.Teléfono</td>
 
-                    @if (cliente.Saldo > limitedeuda)
-                    {
-                        <td style="color:darkred;">
-                            <b>$@cliente.Saldo</b>
-                        </td>
-                    }
-                    else
-                    {
-                        <td>
-                            $@cliente.Saldo
-                        </td>
-                    }
+                  
                 </tr>
             </Virtualize>
         </tbody>
@@ -188,11 +172,7 @@ else
         NombreFiltro = string.Empty;
         await CargarClientes();
     }
-
-    void MostrarDeudores()
-    {
-        clientes = clientes.Where(x => x.Saldo > limitedeuda).OrderByDescending(x => x.Saldo).ToList();
-    }
+   
 
     async Task MostrarTodos()
     {
