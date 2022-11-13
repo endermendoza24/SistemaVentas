@@ -104,12 +104,12 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 67 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Clientes\FormCliente.razor"
+#line 83 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Clientes\FormCliente.razor"
        
     [Parameter] public Cliente cliente { get; set; } = new Cliente();
     [Parameter] public string TextBotonSubmit { get; set; }
     [Parameter] public EventCallback OnValidSubmit { get; set; }
-    [Parameter] public bool ocultadni { get; set; } = false;
+    [Parameter] public bool ocultarcedula { get; set; } = false;
 
 #line default
 #line hidden

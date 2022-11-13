@@ -15,9 +15,7 @@
         </button>
     </div>
     <div class="btn-group">
-        <button @onclick="@(() => BorrarVenta(venta.Id))" class="btn btn-sm btn-danger">
-            <i class="oi oi-trash"></i> Eliminar venta
-        </button>
+        
     </div>
 </div>
 
@@ -30,21 +28,24 @@
             </h4>
 
             <div class="d-flex justify-content-between">
-                <b>CAPRICHOS </b> @*aqui irán los datos de la tabla configuración*@
+                <b> </b> @*aqui irán los datos de la tabla configuración*@
                 <small><b>N° factura:</b> @venta.Id</small>
             </div>
 
             <div class="d-flex justify-content-between">
-                <small>Tienda de ropa Caprichos</small>
+                <small>Caprichos</small>
                 <small><b>Fecha:</b> @venta.Fecha</small>
             </div>
             <div class="d-flex justify-content-between">
-                <small>Contiguo a la empresa médica de Carazo</small>
+                <small>Enrique Ruiz Diaz</small>
                 <small><b>F.de Pago:</b> @venta.FormaPago</small>
+            </div>
+            <div class="d-flex justify-content-between">                
+                <small><b>Dirección:</b> Contiguo empresa médica</small>
             </div>
 
             <div class="d-flex justify-content-between">
-                <small>82072291</small>                
+                <small>85471542</small>
             </div>
 
             @if (venta.ClienteId != null)
@@ -72,14 +73,14 @@
                 <tbody>
                     @foreach (var item in venta.DetalleVentas)
                     {
-                    <tr>
-                        <td><small>@item.Articulo.Nombre</small></td>
-                        <td><small>@item.Precio</small></td>
-                        <td><small>@item.Cantidad</small></td>
-                        <td><small>@item.Descuento%</small></td>
-                        <td><small>@item.Iva</small></td>
-                        <td><small>@item.SubTotal</small></td>
-                    </tr>
+                        <tr>
+                            <td><small>@item.Articulo.Nombre</small></td>
+                            <td><small>@item.Precio</small></td>
+                            <td><small>@item.Cantidad</small></td>
+                            <td><small>@item.Descuento%</small></td>
+                            <td><small>@item.Iva</small></td>
+                            <td><small>@item.SubTotal</small></td>
+                        </tr>
                     }
                 </tbody>
             </table>
@@ -93,10 +94,11 @@
 }
 
 @code {
-    public Venta venta { get; set; }    
+    public Venta venta { get; set; }
 
     [Parameter] public int idventa { get; set; }
 
+   
     protected override async Task OnInitializedAsync()
     {
         var httpResponse = await Http.GetAsync($"api/ventas/{idventa}");
@@ -110,36 +112,17 @@
         {
             await JS.InvokeVoidAsync("simple", "Error", "Venta no encontrada.", "error");
             NavigationManager.NavigateTo("lista-ventas");
-        }
+        }        
 
-        
     }
 
-    async Task BorrarVenta(int idventa)
-    {
-        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "¿Eliminar venta?",
-            $"Venta N° {venta.Id}. Fecha: {venta.Fecha}. Total: {venta.Total}", "warning");
-        if (confirmacion)
-        {
-            var respuesta = await Http.DeleteAsync($"/api/ventas/{idventa}");
-
-            if (respuesta.IsSuccessStatusCode)
-            {
-                NavigationManager.NavigateTo("lista-ventas");
-                await JS.InvokeVoidAsync("simple", "¡Exito!", "Venta eliminada", "success");
-            }
-            else
-            {
-                await JS.InvokeVoidAsync("simple", "Error", "No se pudo eliminar venta", "error");
-            }
-        }
-    }
+   
 
     void Volver()
     {
         NavigationManager.NavigateTo("lista-ventas");
     }
 
-  
     
+
 }

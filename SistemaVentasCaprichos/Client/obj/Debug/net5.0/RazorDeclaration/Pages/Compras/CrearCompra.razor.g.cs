@@ -131,11 +131,15 @@ using MudBlazor;
             if (respuesta.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("lista-compras/");
-                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Compra cargada", "success");
+                //await JS.InvokeVoidAsync("simple", "¡Éxito!", "Compra cargada", "success");
+                Snackbar.Add("¡¡¡Compra finalizada con éxito!!!", Severity.Success, a =>
+            a.VisibleStateDuration = 200);
             }
             else
             {
-                await JS.InvokeVoidAsync("simple", "Error", "No se pudo cargar compra", "error");
+                //await JS.InvokeVoidAsync("simple", "Error", "No se pudo cargar compra", "error");
+                Snackbar.Add("No se pudo hacer la compra", Severity.Success, a =>
+            a.VisibleStateDuration = 200);
             }
         }
     }
@@ -143,6 +147,7 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISnackbar Snackbar { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }

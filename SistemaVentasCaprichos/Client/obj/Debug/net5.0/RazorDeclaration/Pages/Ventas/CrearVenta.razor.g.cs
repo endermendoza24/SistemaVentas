@@ -105,7 +105,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 12 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\CrearVenta.razor"
+#line 13 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\CrearVenta.razor"
        
     public Venta venta = new Venta();
     public List<Cliente> clientes { get; set; } = new List<Cliente>();
@@ -129,7 +129,9 @@ using MudBlazor;
             if (respuesta.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/ver-venta/" + cuerporespuest);
-                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Venta finalizada", "success");
+                // await JS.InvokeVoidAsync("simple", "¡Éxito!", "Venta finalizada", "success");
+                Snackbar.Add("¡¡¡Venta finalizada!!!", Severity.Success, 
+                    a => a.VisibleStateDuration = 200);
             }
             else
             {
@@ -141,6 +143,7 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISnackbar Snackbar { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }

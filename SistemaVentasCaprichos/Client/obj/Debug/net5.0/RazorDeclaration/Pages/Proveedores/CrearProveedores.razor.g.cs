@@ -105,7 +105,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 20 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Proveedores\CrearProveedores.razor"
+#line 21 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Proveedores\CrearProveedores.razor"
        
     Proveedores Proveedores = new Proveedores();
 
@@ -116,12 +116,14 @@ using MudBlazor;
         if (respuesta.IsSuccessStatusCode)
         {
             NavigationManager.NavigateTo("/lista-proveedores"); //  cambiar a indexArticulo
-            await JS.InvokeVoidAsync("simple", "¡Éxito!", "Proveedores agregado", "success");
+            // await JS.InvokeVoidAsync("simple", "¡Éxito!", "Proveedores agregado", "success"); 
+             Snackbar.Add("Agregada con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
         }
         else
         {
             //await JS.InvokeVoidAsync("simple", "Error",
             //        "No se pudo crear este producto", "error");
+             Snackbar.Add("Ocurrió un error", Severity.Error, a => a.VisibleStateDuration = 200);
         }
     }
 
@@ -133,6 +135,7 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISnackbar Snackbar { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }

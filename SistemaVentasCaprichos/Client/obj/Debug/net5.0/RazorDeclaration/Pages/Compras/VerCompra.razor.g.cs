@@ -105,7 +105,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 26 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Compras\VerCompra.razor"
+#line 27 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Compras\VerCompra.razor"
        
     public Compra compra = new Compra();
     public List<Articulo> articulos { get; set; } = new List<Articulo>();

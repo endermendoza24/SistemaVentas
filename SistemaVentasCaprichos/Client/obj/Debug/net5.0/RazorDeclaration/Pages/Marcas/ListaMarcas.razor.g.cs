@@ -97,7 +97,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Marcas\ListaMarcas.razor"
+#line 6 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Marcas\ListaMarcas.razor"
 using System.Text.Json;
 
 #line default
@@ -112,7 +112,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 63 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Marcas\ListaMarcas.razor"
+#line 68 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Marcas\ListaMarcas.razor"
        
     private bool dense = false;
     private bool hover = true;
@@ -193,6 +193,8 @@ using System.Text.Json;
 
         return false;
     }
+    
+   
 
 #line default
 #line hidden

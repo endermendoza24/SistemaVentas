@@ -116,7 +116,7 @@ using MudBlazor;
         if (respuesta.IsSuccessStatusCode)
         {
             NavigationManager.NavigateTo("/lista-tallas"); //  cambiar a indexArticulo
-            await JS.InvokeVoidAsync("simple", "¡Éxito!", "Tallas creada", "success");
+            //await JS.InvokeVoidAsync("simple", "¡Éxito!", "Tallas creada", "success");
             Snackbar.Add("Agregada con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
         }
         else

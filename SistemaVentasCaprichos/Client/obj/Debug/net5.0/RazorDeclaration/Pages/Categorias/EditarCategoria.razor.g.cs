@@ -105,7 +105,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Categorias\EditarCategoria.razor"
+#line 40 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Categorias\EditarCategoria.razor"
        
     Categoria Categoria = new Categoria();
     [Parameter] public int idCategoria { get; set; }
@@ -131,12 +131,15 @@ using MudBlazor;
             if (respuesta.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/indexcategoria");
-                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Categoria editada", "success");
+                //await JS.InvokeVoidAsync("simple", "¡Éxito!", "Categoria editada", "success");
+                Snackbar.Add("Editado con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
             }
             else
             {
-                await JS.InvokeVoidAsync("simple", "Error",
-                    "No se pudo editar Categoria", "error");
+                Snackbar.Add("Ha ocurrido un error", Severity.Error, a =>
+        a.VisibleStateDuration = 200);
+                //await JS.InvokeVoidAsync("simple", "Error",
+                //"No se pudo editar Categoria", "error");
             }
         }
     }
@@ -152,12 +155,16 @@ using MudBlazor;
             if (respuesta.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/indexcategoria");
-                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Categoria eliminada", "success");
+                //await JS.InvokeVoidAsync("simple", "¡Éxito!", "Categoria eliminada", "success");
+                Snackbar.Add("Borrado con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
             }
             else
             {
-                await JS.InvokeVoidAsync("simple", "Error",
-                    "No se pudo eliminar Categoria", "error");
+
+                Snackbar.Add("Ha ocurrido un error", Severity.Error, a =>
+        a.VisibleStateDuration = 200);
+                //await JS.InvokeVoidAsync("simple", "Error",
+                //"No se pudo eliminar Categoria", "error");
             }
         }
     }
@@ -165,6 +172,7 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISnackbar Snackbar { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }

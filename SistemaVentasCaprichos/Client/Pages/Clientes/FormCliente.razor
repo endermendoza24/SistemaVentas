@@ -8,17 +8,17 @@
                     <InputText @bind-Value="@cliente.NombreyApellido" oninput="this.value=this.value.toUpperCase()" placeholder="Nombre y Apellido" class="form-control" />
                 </div>
                 <ValidationMessage For="@(() => cliente.NombreyApellido)" />
-            </div>
+            </div>           
         </div>
 
         <div class="form-group row">
             <label class="col-3 col-form-label">Cédula</label>
             <div class="col">
                 <div class="input-group">
-                    <InputText @bind-Value="@cliente.Cedula" placeholder="Cédula" class="form-control" readonly="@ocultadni" />
+                    <InputText @bind-Value="@cliente.Cedula" placeholder="Cédula" class="form-control" readonly="@ocultarcedula" />
                 </div>
                 <ValidationMessage For="@(() => cliente.Cedula)" />
-            </div>
+            </div>            
         </div>
 
         <div class="form-group row">
@@ -33,17 +33,21 @@
                     </InputSelect>
                 </div>
                 <ValidationMessage For="@(() => cliente.Sexo)" />
-            </div>
+            </div>            
         </div>
+
+
 
         <div class="form-group row">
             <label class="col-3 col-form-label">Dirección</label>
             <div class="col">
                 <div class="input-group">
-                    <InputText @bind-Value="@cliente.Dirección" class="form-control" oninput="this.value=this.value.toUpperCase()" placeholder="Dirección" />
-                </div>
-                <ValidationMessage For="@(() => cliente.Dirección)" />
-            </div>
+                   <MudTextField @bind-Value="@cliente.Dirección" Label="Dirección"
+                    Variant="Variant.Outlined" Lines="3"
+                                          Margin="Margin.Dense"></MudTextField>
+                            <ValidationMessage For="@(() => cliente.Dirección)" />
+                </div>                
+            </div>           
         </div>
 
         <div class="form-group row">
@@ -53,6 +57,18 @@
                     <InputText @bind-Value="@cliente.Teléfono" class="form-control" oninput="this.value=this.value.toUpperCase()" placeholder="Teléfono" />
                 </div>
                 <ValidationMessage For="@(() => cliente.Teléfono)" />
+            </div>
+
+            <div class="form-group row">
+                <label class="col-3 col-form-label">Estado</label>
+                <div class="col">
+                    <MudTooltip Text="Si selecciona esta opción dará de baja al cliente correspondiente."
+                                Color="Color.Secondary" Placement="Placement.Top">
+                        <MudSwitch @bind-Checked="@cliente.Estado" Label="Está activo?"
+                                   Color="Color.Success" />
+                    </MudTooltip>
+                    <ValidationMessage For="@(() => cliente.Estado)" />
+                </div>
             </div>
         </div>
 
@@ -68,5 +84,5 @@
     [Parameter] public Cliente cliente { get; set; } = new Cliente();
     [Parameter] public string TextBotonSubmit { get; set; }
     [Parameter] public EventCallback OnValidSubmit { get; set; }
-    [Parameter] public bool ocultadni { get; set; } = false;
+    [Parameter] public bool ocultarcedula { get; set; } = false;
 }

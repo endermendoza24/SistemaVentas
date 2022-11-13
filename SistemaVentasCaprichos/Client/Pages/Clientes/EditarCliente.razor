@@ -2,8 +2,7 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
-
-
+@inject ISnackbar Snackbar
 
 <button @onclick="@Volver" class="btn btn-sm btn-secondary">
     <i class="oi oi-arrow-circle-left"></i> Volver al listado
@@ -11,29 +10,48 @@
 
 <hr />
 
+
+
 <div class="d-flex justify-content-between mb-3">
     <h3><b>Editar cliente</b></h3>
     <div>
-        <button @onclick="@(() => BorrarCliente(cliente.Id))" class="btn btn-sm btn-danger">
-            <i class="oi oi-trash"></i> Eliminar cliente
-        </button>
+        <MudTooltip>
+            <ChildContent>
+                <button @onclick="@(() => BorrarCliente(cliente.Id))" class="btn btn-sm btn-danger">
+                    <i class="oi oi-trash"></i> Eliminar cliente
+                </button>
+
+            </ChildContent>
+            <TooltipContent>
+                <MudText Typo="Typo.h6">ALERTA</MudText>
+                <MudText Typo="Typo.body2">
+                    Esta opción eliminará este elemento de forma
+                    permanente
+                </MudText>
+                <MudIcon Icon="@Icons.Material.Filled.DeleteForever" />
+            </TooltipContent>
+        </MudTooltip>
+
+
     </div>
 </div>
 
 <FormCliente cliente="cliente" OnValidSubmit="@EditarClient"
-             ocultadni="ocultadni" TextBotonSubmit="Guardar cambios" />
+             ocultarcedula="ocultadni" TextBotonSubmit="Guardar cambios" />
+
 
 
 @code {
     public Cliente cliente = new Cliente();
-    
+   
 
     [Parameter] public int idcliente { get; set; }
     public bool ocultadni = true;
 
     protected async override Task OnParametersSetAsync()
     {
-        cliente = await Http.GetFromJsonAsync<Cliente>($"api/clientes/{idcliente}");       
+        cliente = await Http.GetFromJsonAsync<Cliente>($"api/clientes/{idcliente}");
+        
     }
 
     async Task BorrarCliente(int idcliente)
@@ -47,13 +65,16 @@
             if (respuesta.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/lista-clientes");
-                await JS.InvokeVoidAsync("simple", "¡Éxito!",
-                "Cliente eliminado", "success");
+                Snackbar.Add("Borrado con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
+                //await JS.InvokeVoidAsync("simple", "¡Éxito!",
+                //"Cliente eliminado", "success");
             }
             else
             {
-                await JS.InvokeVoidAsync("simple", "Error",
-                    "No se pudo eliminar cliente", "error");
+                //await JS.InvokeVoidAsync("simple", "Error",
+                //"No se pudo eliminar cliente", "error");
+                Snackbar.Add("Ha ocurrido un error", Severity.Error, a =>
+       a.VisibleStateDuration = 200);
             }
         }
     }
@@ -69,13 +90,17 @@
             if (respuesta.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/lista-clientes");
-                await JS.InvokeVoidAsync("simple", "¡Éxito!",
-                "Cliente editado", "success");
+                Snackbar.Add("Editado con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
+                //await JS.InvokeVoidAsync("simple", "¡Éxito!",
+                //"Cliente editado", "success");
             }
             else
             {
-                await JS.InvokeVoidAsync("simple", "Error",
-                    $"No se pudo editar cliente", "error");
+
+                Snackbar.Add("Ha ocurrido un error", Severity.Error, a =>
+        a.VisibleStateDuration = 200);
+                //await JS.InvokeVoidAsync("simple", "Error",
+                //  $"No se pudo editar cliente", "error");
             }
         }
     }

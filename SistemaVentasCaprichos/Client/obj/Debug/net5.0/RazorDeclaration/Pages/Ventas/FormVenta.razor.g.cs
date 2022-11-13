@@ -104,7 +104,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 144 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
+#line 145 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
        
     [Parameter] public Venta venta { get; set; } = new Venta();
     [Parameter] public List<Cliente> clientes { get; set; } = new List<Cliente>();
@@ -132,9 +132,9 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 165 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
+#line 166 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
              for (int i = 0; i < listadetalle.Count; i++)
-            {                
+            {
                 venta.Total += listadetalle[i].SubTotal;
             }
 
@@ -142,12 +142,12 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 168 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
+#line 169 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
              
         }
         return venta.Total;
     }
-   
+
 
     void Volver()
     {

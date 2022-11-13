@@ -2834,3 +2834,15 @@ C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client
 C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\refint\SistemaVentasCaprichos.Client.dll
 C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\SistemaVentasCaprichos.Client.pdb
 C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Client.dll
+C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Articulos\ListaBajas.razor.g.cs
+C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Categorias\CategoriasBajas.razor.g.cs
+C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Clientes\ListaClientesBajas.razor.g.cs
+C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Marcas\ListaBajasMarcas.razor.g.cs
+C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Proveedores\ListaProveedoresBajas.razor.g.cs
+C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Tallas\ListaTallasBajas.razor.g.cs
+C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Articulos\ListaBajas.razor.g.cs
+C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Categorias\CategoriasBajas.razor.g.cs
+C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Clientes\ListaClientesBajas.razor.g.cs
+C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Marcas\ListaBajasMarcas.razor.g.cs
+C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Proveedores\ListaProveedoresBajas.razor.g.cs
+C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Tallas\ListaTallasBajas.razor.g.cs

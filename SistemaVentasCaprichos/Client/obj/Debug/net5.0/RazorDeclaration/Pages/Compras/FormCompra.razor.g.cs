@@ -104,7 +104,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 114 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Compras\FormCompra.razor"
+#line 122 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Compras\FormCompra.razor"
        
     [Parameter] public Compra compra { get; set; } = new Compra();
     [Parameter] public List<Categoria> categoria { get; set; } = new List<Categoria>();
@@ -129,7 +129,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 132 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Compras\FormCompra.razor"
+#line 140 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Compras\FormCompra.razor"
              for (int i = 0; i < listadetalle.Count; i++)
             {
                 compra.Total += listadetalle[i].SubTotal;
@@ -139,7 +139,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 135 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Compras\FormCompra.razor"
+#line 143 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Compras\FormCompra.razor"
              
         }
         return compra.Total;

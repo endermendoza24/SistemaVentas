@@ -10,8 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace SistemaVentasCaprichos.Server.Controllers
-{
-    
+{    
     [Route("api/[controller]")]
     [ApiController]
     public class ArticulosController : ControllerBase

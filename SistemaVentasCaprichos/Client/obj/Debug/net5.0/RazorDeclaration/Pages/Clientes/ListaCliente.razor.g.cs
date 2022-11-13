@@ -97,7 +97,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
+#line 5 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
 using System.Text.Json;
 
 #line default
@@ -112,9 +112,17 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 124 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
+#line 89 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
        
     public List<Cliente> clientes { get; set; } //muestra todos los clientes
+    
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private string searchString1 = "";
+    private Cliente selectedItem1 = null;
+    private HashSet<Cliente> selectedItems = new HashSet<Cliente>();
 
     private string NombreFiltro = String.Empty; //filtros
 
@@ -164,16 +172,42 @@ using System.Text.Json;
         NombreFiltro = string.Empty;
         await CargarClientes();
     }
-   
+
+    void MostrarDeudores()
+    {
+        clientes = clientes.Where(x => x.Saldo > limitedeuda).OrderByDescending(x => x.Saldo).ToList();
+    }
 
     async Task MostrarTodos()
     {
         await CargarClientes();
     }
+    
+    // función de búsqueda de mud blazor
+    private bool FilterFunc1(Cliente element) => FilterFunc(element, searchString1);
+
+    private bool FilterFunc(Cliente element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.NombreyApellido.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Dirección.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Cedula.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Teléfono.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        return false;
+    }
+
+    
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }

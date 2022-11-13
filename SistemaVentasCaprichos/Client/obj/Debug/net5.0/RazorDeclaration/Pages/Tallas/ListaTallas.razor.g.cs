@@ -112,7 +112,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 60 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Tallas\ListaTallas.razor"
+#line 68 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Tallas\ListaTallas.razor"
        
     private bool dense = false;
     private bool hover = true;
@@ -187,9 +187,11 @@ using System.Text.Json;
         if (string.IsNullOrWhiteSpace(searchString))
             return true;
         if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;      
+            return true;
         return false;
     }
+    
+
 
 #line default
 #line hidden

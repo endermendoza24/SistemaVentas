@@ -104,7 +104,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 65 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
+#line 64 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

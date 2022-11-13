@@ -1,8 +1,7 @@
 ﻿@page "/lista-clientes"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
-
-
+@inject IJSRuntime JS
 @using System.Text.Json
 
 <div class="d-flex position-sticky justify-content-between">
@@ -22,14 +21,15 @@
     <div class="btn-group">
         <button @onclick="MostrarTodos" style="background:none; border: none">
             <b>Ver todos</b>
-        </button>        
+        </button>       
     </div>
-    <br />
-    <div class="btn-group">
-        <button @onclick="CambiarVista" style="background:none; border: none">
-            <b>Cambiar vista</b>
-        </button>
-    </div>
+    <div class="d-flex justify-content-between mt-2 mb-2">
+            <div class="btn-group">
+                <a href="/lista-clientes-bajas" style="background:none; border:none">
+                    &nbsp;&nbsp;<b>Dados de baja</b>
+                </a>
+            </div>
+        </div>    
 </div>
 
 @if (clientes == null)
@@ -70,59 +70,32 @@ else
                             <b>@cliente.NombreyApellido</b>
                         </h5>
                         <p class="card-text">
-                            DNI: @cliente.Cedula
+                            Cédula: @cliente.Cedula
                             <br /> @cliente.Dirección - (@cliente.Teléfono)
                         </p>
-                        
+                        @* <h5 class="card-text text-right">
+                            <b>DEUDA: $@cliente.Saldo</b>
+                        </h5> *@
                     </div>
                 </div>
             </a>
         }
     </div>
 
-    <table class="table table-hover" hidden="@lista">
-        <thead class="thead-dark">
-            <tr>
-                <th></th>
-                <th>Nombre y Apellido</th>
-                <th>Cédula</th>
-                <th>Sexo</th>
-                <th>Dirección</th>
-                <th>Teléfono</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            <Virtualize Items="@clientes" Context="cliente">
-                <tr @key="cliente.Id">
-                    <td><a href="/editar-cliente/@cliente.Id" style="color:white" class="btn btn-sm btn-primary"><i class="oi oi-eye"></i> Ver</a></td>
-                    <td><b>@cliente.NombreyApellido</b></td>
-                    <td>@cliente.Cedula</td>
-                    <td>
-                        @if (cliente.Sexo == Cliente.Sexos.Masculino)
-                        {
-                            <text>M</text>
-                        }
-                        else if (cliente.Sexo == Cliente.Sexos.Femenino)
-                        {
-                            <text>F</text>
-                        }
-                        else
-                        {
-                            <text>N/E</text>
-                        }
-                    </td>
-                    <td>@cliente.Dirección</td>
-                    <td>@cliente.Teléfono</td>
-
-                  
-                </tr>
-            </Virtualize>
-        </tbody>
-    </table>
+    
+    
+    
 }
 @code {
     public List<Cliente> clientes { get; set; } //muestra todos los clientes
+    
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private string searchString1 = "";
+    private Cliente selectedItem1 = null;
+    private HashSet<Cliente> selectedItems = new HashSet<Cliente>();
 
     private string NombreFiltro = String.Empty; //filtros
 
@@ -172,10 +145,35 @@ else
         NombreFiltro = string.Empty;
         await CargarClientes();
     }
-   
+
+    void MostrarDeudores()
+    {
+        clientes = clientes.Where(x => x.Saldo > limitedeuda).OrderByDescending(x => x.Saldo).ToList();
+    }
 
     async Task MostrarTodos()
     {
         await CargarClientes();
     }
+    
+    // función de búsqueda de mud blazor
+    private bool FilterFunc1(Cliente element) => FilterFunc(element, searchString1);
+
+    private bool FilterFunc(Cliente element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.NombreyApellido.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Dirección.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Cedula.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Teléfono.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        return false;
+    }
+
+    
 }

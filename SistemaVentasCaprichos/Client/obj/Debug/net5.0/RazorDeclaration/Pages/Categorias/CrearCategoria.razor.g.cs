@@ -105,7 +105,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 21 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Categorias\CrearCategoria.razor"
+#line 22 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Categorias\CrearCategoria.razor"
        
     Categoria Categoria = new Categoria();
 
@@ -116,12 +116,16 @@ using MudBlazor;
         if (respuesta.IsSuccessStatusCode)
         {
             NavigationManager.NavigateTo("/indexcategoria"); //  cambiar a indexArticulo
-            await JS.InvokeVoidAsync("simple", "¡Éxito!", "Categoría creado", "success");
+                                                             // await JS.InvokeVoidAsync("simple", "¡Éxito!", "Categoría creado", "success");
+            Snackbar.Add("Agregada con éxito", Severity.Success, a =>
+             a.VisibleStateDuration = 200);
         }
         else
         {
             //await JS.InvokeVoidAsync("simple", "Error",
             //        "No se pudo crear este producto", "error");
+            Snackbar.Add("Ha ocurrido un error", Severity.Error, a =>
+            a.VisibleStateDuration = 200);
         }
     }
 
@@ -133,6 +137,7 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISnackbar Snackbar { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }

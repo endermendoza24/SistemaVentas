@@ -30,7 +30,8 @@
 }
 /* /Pages/Ventas/FormVenta.razor.rz.scp.css */
 .card[b-t2xx0n22ky] {
-    box-shadow: 0 0 12px rgba(33,33,33,.2);
+    /*box-shadow: 0 0 12px rgba(33,33,33,.2);*/
+    box-shadow: 22px 3px 39px 1px rgba(0,0,0,0.51);
 }
 /* /Pages/Ventas/VerVenta.razor.rz.scp.css */
 .card[b-np7uj7vsnh] {

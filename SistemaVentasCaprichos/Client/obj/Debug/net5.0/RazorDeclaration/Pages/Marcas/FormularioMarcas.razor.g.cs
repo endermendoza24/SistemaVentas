@@ -111,7 +111,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 40 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Marcas\FormularioMarcas.razor"
+#line 50 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Marcas\FormularioMarcas.razor"
        
 
     [Parameter] public Marcas Marca { get; set; } = new Marcas();

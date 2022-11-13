@@ -111,7 +111,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 40 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Categorias\FormularioCategorias.razor"
+#line 52 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Categorias\FormularioCategorias.razor"
        
 
     [Parameter] public Categoria Categoria { get; set; } = new Categoria();

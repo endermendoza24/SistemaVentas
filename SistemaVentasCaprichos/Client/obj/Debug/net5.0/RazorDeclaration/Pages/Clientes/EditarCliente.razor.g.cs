@@ -105,17 +105,18 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 27 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Clientes\EditarCliente.razor"
+#line 44 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Clientes\EditarCliente.razor"
        
     public Cliente cliente = new Cliente();
-    
+   
 
     [Parameter] public int idcliente { get; set; }
     public bool ocultadni = true;
 
     protected async override Task OnParametersSetAsync()
     {
-        cliente = await Http.GetFromJsonAsync<Cliente>($"api/clientes/{idcliente}");       
+        cliente = await Http.GetFromJsonAsync<Cliente>($"api/clientes/{idcliente}");
+        
     }
 
     async Task BorrarCliente(int idcliente)
@@ -129,13 +130,16 @@ using MudBlazor;
             if (respuesta.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/lista-clientes");
-                await JS.InvokeVoidAsync("simple", "¡Éxito!",
-                "Cliente eliminado", "success");
+                Snackbar.Add("Borrado con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
+                //await JS.InvokeVoidAsync("simple", "¡Éxito!",
+                //"Cliente eliminado", "success");
             }
             else
             {
-                await JS.InvokeVoidAsync("simple", "Error",
-                    "No se pudo eliminar cliente", "error");
+                //await JS.InvokeVoidAsync("simple", "Error",
+                //"No se pudo eliminar cliente", "error");
+                Snackbar.Add("Ha ocurrido un error", Severity.Error, a =>
+       a.VisibleStateDuration = 200);
             }
         }
     }
@@ -151,13 +155,17 @@ using MudBlazor;
             if (respuesta.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/lista-clientes");
-                await JS.InvokeVoidAsync("simple", "¡Éxito!",
-                "Cliente editado", "success");
+                Snackbar.Add("Editado con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
+                //await JS.InvokeVoidAsync("simple", "¡Éxito!",
+                //"Cliente editado", "success");
             }
             else
             {
-                await JS.InvokeVoidAsync("simple", "Error",
-                    $"No se pudo editar cliente", "error");
+
+                Snackbar.Add("Ha ocurrido un error", Severity.Error, a =>
+        a.VisibleStateDuration = 200);
+                //await JS.InvokeVoidAsync("simple", "Error",
+                //  $"No se pudo editar cliente", "error");
             }
         }
     }
@@ -170,6 +178,7 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISnackbar Snackbar { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }

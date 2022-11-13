@@ -112,7 +112,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 65 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Proveedores\ListaProveedores.razor"
+#line 71 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Proveedores\ListaProveedores.razor"
        
     private bool dense = false;
     private bool hover = true;
@@ -195,6 +195,8 @@ using System.Text.Json;
 
         return false;
     }
+    
+   
 
 #line default
 #line hidden

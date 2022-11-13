@@ -97,7 +97,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\ListaVenta.razor"
+#line 6 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\ListaVenta.razor"
 using System.Text.Json;
 
 #line default
@@ -112,7 +112,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 75 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\ListaVenta.razor"
+#line 79 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Ventas\ListaVenta.razor"
        
     public List<Venta> ventas { get; set; }
 
@@ -124,20 +124,13 @@ using System.Text.Json;
     private Venta selectedItem1 = null;
     private HashSet<Venta> selectedItems = new HashSet<Venta>();
 
-
     private DateTime FechaFiltro = DateTime.Today.AddDays(+1);
     private string EmpleadoFiltro = String.Empty;
 
     protected override async Task OnInitializedAsync()
     {
-        try
-        {
             await CargarVentas();
-        }
-        catch (Exception exception)
-        {
-            throw;
-        }
+        
     }
 
     async Task CargarVentas()
@@ -174,7 +167,6 @@ using System.Text.Json;
         await CargarVentas();
     }
 
-
     // esta es la funcion de filtrado de MudBlazor
     private bool FilterFunc1(Venta element) => FilterFunc(element, searchString1);
 
@@ -184,10 +176,6 @@ using System.Text.Json;
             return true;
         if (element.Fecha.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
-        if (element.Total.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;
-        
-
         return false;
     }
 

@@ -105,7 +105,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 22 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Clientes\CrearCliente.razor"
+#line 23 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Clientes\CrearCliente.razor"
        
     public Cliente cliente = new Cliente();
 
@@ -116,12 +116,16 @@ using MudBlazor;
         if (respuesta.IsSuccessStatusCode)
         {
             NavigationManager.NavigateTo("/lista-clientes");
-            await JS.InvokeVoidAsync("simple", "¡Éxito!", "Cliente creado", "success");
+            // await JS.InvokeVoidAsync("simple", "¡Éxito!", "Cliente creado", "success");
+            Snackbar.Add("Agregada con éxito", Severity.Success, a =>
+            a.VisibleStateDuration = 200);
         }
         else
         {
-            await JS.InvokeVoidAsync("simple", "Error",
-                    $"DNI: {cliente.Cedula} ya registrado. ", "error");
+            // await JS.InvokeVoidAsync("simple", "Error",
+            //$"DNI: {cliente.Cedula} ya registrado. ", "error");
+            Snackbar.Add("Ha ocurrido un error", Severity.Error, a =>
+            a.VisibleStateDuration = 200);
         }
     }
 
@@ -133,6 +137,7 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISnackbar Snackbar { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }

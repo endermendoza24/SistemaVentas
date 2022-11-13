@@ -3,14 +3,19 @@
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
 
-
 @using System.Text.Json
 
 <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Create" Color="Color.Success" Size="Size.Medium">
     <a style="text-decoration:none; color:#fff;"  @onclick="CrearArticulo">Agregar categoría</a>
 </MudButton>
 
-
+<div class="d-flex justify-content-between mt-2 mb-2">
+    <div class="btn-group">
+        <a href="/lista-categorias-bajas" style="background:none; border:none">
+            &nbsp;&nbsp;<b>Dados de baja</b>
+        </a>
+    </div>
+</div>
 
 @if (Categoria == null)
 {
@@ -33,7 +38,7 @@ else
         <ToolBarContent>
             <MudText Typo="Typo.h6">Categorías</MudText>
             <MudSpacer />
-            <MudTextField @bind-Value="searchString1" Placeholder="Buscar categoría..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            <MudTextField @bind-Value="searchString1" Placeholder="Buscar categoría..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="MudBlazor.Size.Medium" Class="mt-0"></MudTextField>
         </ToolBarContent>
         <HeaderContent>
             <MudTh Style="width:50px;">Nr</MudTh>
@@ -46,7 +51,7 @@ else
             <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
             <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
             <MudTd>
-                <MudFab Color="Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
+                <MudFab Color="MudBlazor.Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="MudBlazor.Size.Small"
                         @onclick="@(() => NavigationManager.NavigateTo($"/editar-categoria/{context.Id}"))" />
             </MudTd>
 
@@ -137,4 +142,6 @@ else
 
         return false;
     }
+
+ 
 }

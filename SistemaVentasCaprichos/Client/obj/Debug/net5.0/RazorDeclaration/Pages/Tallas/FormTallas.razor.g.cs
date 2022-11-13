@@ -111,7 +111,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 29 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Tallas\FormTallas.razor"
+#line 39 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Tallas\FormTallas.razor"
        
 
     [Parameter] public Tallas Tallas { get; set; } = new Tallas();

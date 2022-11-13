@@ -117,7 +117,8 @@ using MudBlazor;
         {
             NavigationManager.NavigateTo("/lista-marcas"); //  cambiar a indexArticulo
             //await JS.InvokeVoidAsync("simple", "¡Éxito!", "Marca creada", "success");
-            Snackbar.Add("Agregada con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
+            Snackbar.Add("Agregada con éxito", Severity.Success, 
+                a => a.VisibleStateDuration = 200);
         }
         else
         {

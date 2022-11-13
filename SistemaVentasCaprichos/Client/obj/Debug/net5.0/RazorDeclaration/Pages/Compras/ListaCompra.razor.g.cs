@@ -97,7 +97,7 @@ using MudBlazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Compras\ListaCompra.razor"
+#line 6 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Compras\ListaCompra.razor"
 using System.Text.Json;
 
 #line default
@@ -112,23 +112,26 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 54 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Compras\ListaCompra.razor"
+#line 68 "C:\Users\Anderson\Downloads\SistemaVentasCaprichos\SistemaVentasCaprichos\Client\Pages\Compras\ListaCompra.razor"
        
     public List<Compra> compras { get; set; }
+
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private string searchString1 = "";
+    private Compra selectedItem1 = null;
+    private HashSet<Compra> selectedItems = new HashSet<Compra>();
 
     private DateTime FechaFiltro = DateTime.Today.AddDays(+1);
     private string EmpleadoFiltro = String.Empty;
 
     protected override async Task OnInitializedAsync()
     {
-        try
-        {
+       
             await CargarCompras();
-        }
-        catch (Exception exception)
-        {
-            throw;
-        }
+       
     }
 
     async Task CargarCompras()
@@ -136,7 +139,6 @@ using System.Text.Json;
         string fecha = Convert.ToString(FechaFiltro);
 
         var httpResponse = await Http.GetAsync($"api/compras/filtro?empleado={EmpleadoFiltro}&fecha={fecha}");
-        //  implementar esta funcioin más tarde cuando se haga el modulo de seguridad
         if (httpResponse.IsSuccessStatusCode)
         {
             var responseString = await httpResponse.Content.ReadAsStringAsync();
@@ -164,6 +166,17 @@ using System.Text.Json;
         EmpleadoFiltro = string.Empty;
         FechaFiltro = DateTime.Today.AddDays(+1);
         await CargarCompras();
+    }
+    // esta es la funcion de filtrado de MudBlazor
+    private bool FilterFunc1(Compra element) => FilterFunc(element, searchString1);
+
+    private bool FilterFunc(Compra element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.Fecha.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        return false;
     }
 
 #line default
