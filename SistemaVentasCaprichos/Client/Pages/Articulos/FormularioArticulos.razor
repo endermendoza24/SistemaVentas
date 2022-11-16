@@ -20,8 +20,10 @@
                 <div class="form-group row">
                     <label class="col-4 col-form-label">Nombre</label>
                     <div class="col">
-                        <div class="input-group">
-                            <InputText @bind-Value="@articulo.Nombre" oninput="this.value=this.value.toUpperCase()" placeholder="Nombre artículo" class="form-control" />
+                        <div class="input-group">                            
+                            <MudTextField @bind-Value="@articulo.Nombre" Label="Artículo" 
+                             HelperText="Ingrese el nombre del artículo"
+                            Variant="Variant.Outlined" />                           
                         </div>
                         <ValidationMessage For="@(() => articulo.Nombre)" />
                     </div>
@@ -33,14 +35,15 @@
                 <div class="form-group row">
                     <label class="col-4 col-form-label">Categorías</label>
                     <div class="col">
-                        <div class="input-group">
-                            <InputSelect @bind-Value="articulo.CategoriaId" class="form-control">
-                                <option selected value="0">Seleccione una categoría</option>
+                        <div class="input-group">                            
+                            <MudSelect Dense="true" HelperText="Seleccione una de las categorías registradas" T="int" 
+                            Label="Categorías" @bind-Value="@articulo.CategoriaId" Variant="Variant.Outlined">
+                                <MudSelectItem Value="0">Seleccione una categoría</MudSelectItem>
                                 @foreach (var categoria in ListaCategorias)
-                                {
-                                    <option value="@categoria.Id">@categoria.Nombre</option>
+                                {                                    
+                                        <MudSelectItem Value="@categoria.Id">@categoria.Nombre</MudSelectItem>
                                 }
-                            </InputSelect>
+                            </MudSelect>
                         </div>
                         <ValidationMessage For="@(() => articulo.CategoriaId)" />
                     </div>
@@ -50,13 +53,14 @@
                     <label class="col-4 col-form-label">Marcas</label>
                     <div class="col">
                         <div class="input-group">
-                            <InputSelect @bind-Value="articulo.MarcaId" class="form-control">
-                                <option selected value="0">Seleccione una marca</option>
-                                @foreach (var marca in ListaMarcas)
+                            <MudSelect Dense="true" HelperText="Seleccione una de las marcas registradas" T="int"
+                                       Label="Marcas" @bind-Value="@articulo.MarcaId" Variant="Variant.Outlined">
+                                <MudSelectItem Value="0">Seleccione una marca</MudSelectItem>
+                                @foreach (var marcas in ListaMarcas)
                                 {
-                                    <option value="@marca.Id">@marca.Nombre</option>
+                                        <MudSelectItem Value="@marcas.Id">@marcas.Nombre</MudSelectItem>
                                 }
-                            </InputSelect>
+                            </MudSelect>
                         </div>
                         <ValidationMessage For="@(() => articulo.MarcaId)" />
                     </div>
@@ -66,13 +70,14 @@
                     <label class="col-4 col-form-label">Tallas</label>
                     <div class="col">
                         <div class="input-group">
-                            <InputSelect @bind-Value="articulo.TallasId" class="form-control">
-                                <option disabled selected value="0">Seleccione una talla</option>
-                                @foreach (var talla in ListaTallas)
+                            <MudSelect Dense="true" HelperText="Seleccione una de las tallas registradas" T="int"
+                                       Label="Tallas" @bind-Value="@articulo.TallasId" Variant="Variant.Outlined">
+                                <MudSelectItem Value="0">Seleccione una talla</MudSelectItem>
+                                @foreach (var tallas in ListaTallas)
                                 {
-                                    <option value="@talla.Id">@talla.Nombre</option>
+                                        <MudSelectItem Value="@tallas.Id">@tallas.Nombre</MudSelectItem>
                                 }
-                            </InputSelect>
+                            </MudSelect>
                         </div>
                         <ValidationMessage For="@(() => articulo.TallasId)" />
                     </div>
@@ -83,9 +88,10 @@
                 <div class="form-group row">
                     <label class="col-4 col-form-label">Descripción</label>
                     <div class="col">
-                        <div class="input-group">
-                            @*<InputText @bind-Value="@articulo.Descripcion" oninput="this.value=this.value.toUpperCase()" placeholder="Descripción" class="form-control" />*@
-                            <InputTextArea @bind-Value="@articulo.Descripcion" oninput="this.value=this.value.toUpperCase()" placeholder="Descripción" class="form-control" />
+                        <div class="input-group">                            
+                            <MudTextField @bind-Value="@articulo.Descripcion" Label="Descripcíon"
+                                          oninput="this.value=this.value.toUpperCase()" HelperText="Describa el artículo"
+                                          Variant="Variant.Outlined" Lines="3"/>
                         </div>
                     </div>
                 </div>
@@ -94,14 +100,11 @@
                     <label class="col-4 col-form-label">Url Imagen</label>
                     <div class="col">
                         <div class="input-group">
-                            <MudTooltip Text="Ingrese el enlace de la imagen que quiere que se muestre" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
-                                <InputText @bind-Value="@articulo.Url_Imagen" placeholder="URL Imagen" class="form-control" />
-                            </MudTooltip>
-                            <div class="input-group-prepend">
-                                <button @onclick="@(() => articulo.Url_Imagen = null)" class="btn btn-secondary" type="button">
-                                    <i class="oi oi-delete"></i>
-                                </button>
-                            </div>
+                            <MudTooltip Text="Ingrese el enlace de la imagen que quiere que se muestre" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">                                
+                                <MudTextField @bind-Value="@articulo.Url_Imagen" Label="URL imagen"
+                                              oninput="this.value=this.value.toUpperCase()" HelperText="Introduce el enlace de la imagen del artículo"
+                                              Variant="Variant.Outlined" />
+                            </MudTooltip>                            
                         </div>
                     </div>
                 </div>
@@ -111,11 +114,10 @@
                 <div class="form-group row">
                     <label class="col-4 col-form-label">Código producto</label>
                     <div class="col">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default">#A-Z</span>
-                            </div>
-                            <InputText @bind-Value="@articulo.Codigo" class="form-control" />
+                        <div class="input-group">                        
+                            <MudTextField @bind-Value="@articulo.Codigo" Label="Código" Adornment="Adornment.Start" AdornmentText="#A-Z"
+                                          oninput="this.value=this.value.toUpperCase()" HelperText="Ingrese el código del artículo"
+                                          Variant="Variant.Outlined" />
                         </div>
                         <ValidationMessage For="@(() => articulo.Codigo)" />
                     </div>
@@ -124,35 +126,33 @@
                     <label class="col-4 col-form-label">Precio de compra</label>
                     <div class="col">
                         <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default">C$</span>
-                            </div>
-                            <InputNumber @bind-Value="@articulo.PrecioMayorista" class="form-control" step="0.01" />
+                            <MudNumericField @bind-Value="@articulo.PrecioMayorista" Label="Precio compra" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.AttachMoney"
+                                          oninput="this.value=this.value.toUpperCase()" HelperText="Precio de compra del artículo"
+                                          Variant="Variant.Outlined" Min="0" Step="1" />
                         </div>
                         <ValidationMessage For="@(() => articulo.PrecioMayorista)" />
                     </div>
                 </div>
 
                 @* <div class="form-group row">
-                <label class="col-4 col-form-label">Porcentaje</label>
-                <div class="col">
-                <div class="input-group">
-                <InputNumber @bind-Value="@porcentaje" @onfocusout="@(() => articulo.CalcularUnitario(porcentaje))" class="form-control" />
-                <div class="input-group-append">
-                <span class="input-group-text">%</span>
-                </div>
-                </div>
-                </div>
+                    <label class="col-4 col-form-label">Porcentaje</label>
+                    <div class="col">
+                        <div class="input-group">
+                            <InputNumber @bind-Value="@porcentaje" @onfocusout="@(() => articulo.CalcularUnitario(porcentaje))" class="form-control" />
+                            <div class="input-group-append">
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+                    </div>
                 </div> *@
 
                 <div class="form-group row">
                     <label class="col-4 col-form-label">Precio de venta</label>
                     <div class="col">
                         <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default">$</span>
-                            </div>
-                            <InputNumber @bind-Value="@articulo.PrecioUnitario" class="form-control" step="0.01" />
+                            <MudNumericField @bind-Value="@articulo.PrecioUnitario" Label="Precio venta" Min="0" Step="1"
+                                          oninput="this.value=this.value.toUpperCase()" HelperText="Precio de venta del artículo"
+                                          Variant="Variant.Outlined" Adornment="Adornment.Start" AdornmentIcon="@Icons.Filled.AttachMoney"/>
                         </div>
                         <ValidationMessage For="@(() => articulo.PrecioUnitario)" />
                     </div>
@@ -162,7 +162,9 @@
                     <label class="col-4 col-form-label">Stock actual</label>
                     <div class="col">
                         <div class="input-group">
-                            <InputNumber @bind-Value="@articulo.StockActual" min="0" class="form-control" type="number" />
+                            <MudNumericField @bind-Value="@articulo.StockActual" Label="Stock actual" Min="0" Step="1"
+                                             oninput="this.value=this.value.toUpperCase()" HelperText="Existencia actual del producto"
+                                             Variant="Variant.Outlined" />
                         </div>
                         <ValidationMessage For="@(() => articulo.StockActual)" />
                     </div>
@@ -172,7 +174,9 @@
                     <label class="col-4 col-form-label">Stock mínimo</label>
                     <div class="col">
                         <div class="input-group">
-                            <InputNumber @bind-Value="@articulo.StockMinimo" min="0" class="form-control" type="number" />
+                            <MudNumericField @bind-Value="@articulo.StockMinimo" Label="Stock mínimo" Min="0" Step="1"
+                                             oninput="this.value=this.value.toUpperCase()" HelperText="Existencia mínima que puede tener el producto"
+                                             Variant="Variant.Outlined" />
                         </div>
                         <ValidationMessage For="@(() => articulo.StockMinimo)" />
                     </div>
@@ -182,7 +186,9 @@
                     <label class="col-4 col-form-label">Stock máximo</label>
                     <div class="col">
                         <div class="input-group">
-                            <InputNumber @bind-Value="@articulo.StockMaximo" min="0" class="form-control" type="number" />
+                            <MudNumericField @bind-Value="@articulo.StockMaximo" Label="Stock máximo" Min="0" Step="1"
+                                             oninput="this.value=this.value.toUpperCase()"  HelperText="Máxima cantidad de existencia"
+                                             Variant="Variant.Outlined" />
                         </div>
                         <ValidationMessage For="@(() => articulo.StockMaximo)" />
                     </div>

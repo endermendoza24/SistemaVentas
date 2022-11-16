@@ -20,9 +20,14 @@
                     <!-- Email input -->
                     <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-outline mb-4">
-                        <label asp-for="Input.NombreyApellido"></label>
+                        <label asp-for="Input.NombreyApellido">Nombre</label>
                         <input asp-for="Input.NombreyApellido" class="form-control" placeholder="Ingresa tu nombre y apellido" />
                         <span asp-validation-for="Input.NombreyApellido" class="text-danger"></span>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label asp-for="Input.NombreyApellido">Apellido</label>
+                        <input asp-for="Input.Apellido" class="form-control" placeholder="Ingresa tu apellido" />
+                        <span asp-validation-for="Input.Apellido" class="text-danger"></span>
                     </div>
                     <div class="form-outline mb-4">
                         <label asp-for="Input.Email"></label>

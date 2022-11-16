@@ -67,8 +67,13 @@ namespace SistemaVentasCaprichos.Server.Areas.Identity.Pages.Account
 
             [Required]
             [StringLength(120)]
-            [Display(Name = "Nombre y Apellido")]
+            [Display(Name = "Nombre")]
             public string NombreyApellido { get; set; }
+
+            [Required]
+            [StringLength(120)]
+            [Display(Name = "Apellido")]
+            public string Apellido { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)

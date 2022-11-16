@@ -9,7 +9,7 @@
 <div class="d-flex position-sticky justify-content-between">
     <div class="btn-group mr-2">
         <button @onclick="CrearArticulo" class="btn btn-success"><i class="oi oi-plus"></i> Add articulo</button>
-    </div>    
+    </div>
     <div class="input-group" style="width:60%">
         <input class="form-control" type="text" placeholder="Nombre artículo" @bind="NombreArtFiltro" />
         <div class="input-group-append">
@@ -102,7 +102,7 @@ else
     </div>
     <div hidden="@lista">
         <MudTable Items="@articulo" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Articulo,bool>(FilterFunc1)"
-                  @bind-SelectedItem="selectedItem1">
+              @bind-SelectedItem="selectedItem1">
             <ToolBarContent>
                 <MudText Typo="Typo.h6">Artículos</MudText>
                 <MudSpacer />
@@ -125,27 +125,27 @@ else
                 <MudTd DataLabel="Fecha">@context.Ultima_Modificación.ToShortDateString()</MudTd>
                 <MudTd>
                     @if (context.StockActual < context.StockMinimo)
-                        {
+                    {
                         <MudChip Color="Color.Error" Variant="Variant.Filled">
                             <MudTd Style="color:#fff" DataLabel="Stock bajo">@context.StockActual</MudTd>
                         </MudChip>
-                        }
-                        else if (context.StockActual > context.StockMaximo)
-                        {
+                    }
+                    else if (context.StockActual > context.StockMaximo)
+                    {
                         <MudChip Color="Color.Warning" Variant="Variant.Filled">
                             <MudTd Style="color:#fff" DataLabel="Stock excedido"> @context.StockActual</MudTd>
                         </MudChip>
-                        }
-                        else
-                        {
+                    }
+                    else
+                    {
                         <MudChip Color="Color.Success" Variant="Variant.Filled">
                             <b><MudTd Style="color:#fff" DataLabel="Stock"> @context.StockActual</MudTd></b>
                         </MudChip>
-                        }
+                    }
                 </MudTd>
                 <MudTd>
                     <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
-                            @onclick="@(() => NavigationManager.NavigateTo($"/editar-articulo/{context.Id}"))" />
+                        @onclick="@(() => NavigationManager.NavigateTo($"/editar-articulo/{context.Id}"))" />
                 </MudTd>
 
             </RowTemplate>
@@ -241,7 +241,7 @@ else
 
         return false;
     }
-    
+
     private void ExportarExcel()
     {
         using (var package = new ExcelPackage())
@@ -250,7 +250,7 @@ else
             worksheet.Cells["A1"].Value = "Caprichos.";
             var tableBody = worksheet.Cells["A3:E3"].LoadFromCollection(
                 from f in articulo
-                select new { f.Id, f.Nombre, f.Descripcion, f.Codigo,f.PrecioMayorista, f.PrecioUnitario, f.Estado }, true);
+                select new { f.Id, f.Nombre, f.Descripcion, f.Codigo, f.PrecioMayorista, f.PrecioUnitario, f.Estado }, true);
             using (ExcelRange r = worksheet.Cells["A1:H1"])
             {
                 r.Merge = true; r.Style.Font.Bold = true;
@@ -268,7 +268,7 @@ else
                 r.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
                 r.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightYellow);
             }
-    
+
 
             var header = worksheet.Cells["A3:H3"];
             worksheet.DefaultColWidth = 32;

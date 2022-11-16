@@ -7,9 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using SistemaVentasCaprichos.Server;
 using SistemaVentasCaprichos.Server.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SistemaVentasCaprichos.Server.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class MarcasController : ControllerBase

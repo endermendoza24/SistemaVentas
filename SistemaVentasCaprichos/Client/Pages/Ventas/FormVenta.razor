@@ -58,7 +58,8 @@
 
                 <h5>Ítem #@(i + 1)</h5>
 
-                <div class="card mb-2" style="background-color:lightgrey;border-radius:0.5rem;">
+                @* <div class="card mb-2" style="background-color:lightgrey;border-radius:0.5rem;"> *@
+                    <MudCard>
                     <div class="row">
                         <div class="col-12 form-group">
                             <div class="d-flex justify-content-between align-items-center m-1">
@@ -77,7 +78,8 @@
                                         <option value="@articulo.Id">@articulo.Nombre | C$ @articulo.PrecioUnitario | STOCK: @articulo.StockActual</option>
                                         }
                                     }
-                            </InputSelect>                           
+                            </InputSelect>
+                           
                             <ValidationMessage For="@(() => detalle.ArticuloId)" />
                         </div>
                     </div>
@@ -94,13 +96,17 @@
                     <div class="row">
                         <div class="col-4 form-group">
                             <label>Cantidad</label>
-                            <InputNumber @bind-Value="detalle.Cantidad" class="form-control" min="1" max="@cantidadmax" />
+                            @* <InputNumber @bind-Value="detalle.Cantidad" class="form-control" min="1" max="@cantidadmax" /> *@
+                            <MudNumericField @bind-Value="detalle.Cantidad" Label="Ingrese la cantidad" Variant="Variant.Outlined"
+                            Min="1" Max="@cantidadmax"  />
                             <ValidationMessage For="@(() => detalle.Cantidad)" />
                         </div>
 
                         <div class="col-4 form-group">
                             <label>Descuento</label>
-                            <InputNumber @bind-Value="detalle.Descuento" class="form-control" min="-100" max="100" />
+                            @* <InputNumber @bind-Value="detalle.Descuento" class="form-control" min="-100" max="100" /> *@
+                            <MudNumericField @bind-Value="detalle.Descuento" Label="Ingrese el descuento por producto" Variant="Variant.Outlined"
+                            Min="0" Max="100"  />
                             <ValidationMessage For="@(() => detalle.Descuento)" />
                         </div>
 
@@ -109,11 +115,11 @@
                                 <text>Subtotal</text>
                             </div>
                             <div class="d-flex justify-content-end mt-3 ml-2 mr-2">
-                                <h5><b>@detalle.SubTotal</b></h5>
+                                <h4><b>@Math.Round(detalle.SubTotal,2)</b></h4>
                             </div>
                         </div>
                     </div>
-                </div>
+                </MudCard>
             }
 
             <div class="btn-group">
@@ -124,11 +130,12 @@
             </div>
 
             <div class="d-flex justify-content-end py-2">
-                <button @onclick="@(() => CalcularTotal())" type="button" class="btn btn-outline-dark" style="border:none">
-                    <h4><b>TOTAL</b></h4>
+                <button @onclick="@(() => CalcularTotal())" type="button" class="" style="border:none">
+                    <h3><b>TOTAL: <br></b></h3>
                     @if (venta.Total != 0)
                     {
-                        <h3><b>C$@venta.Total</b></h3>
+
+                        <h2><b><br>C$@Math.Round(venta.Total,2)</b></h2>
                     }
                 </button>
             </div>

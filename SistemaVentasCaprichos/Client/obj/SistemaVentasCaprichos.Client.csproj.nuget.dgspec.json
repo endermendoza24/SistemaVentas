@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {}
+    "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {
+    "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
         "projectName": "SistemaVentasCaprichos.Client",
-        "projectPath": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
-        "packagesPath": "C:\\Users\\Endersson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\obj\\",
+        "projectPath": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
+        "packagesPath": "C:\\Users\\Anderson\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Endersson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Anderson\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
-                "projectPath": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
+              "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
+                "projectPath": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
               }
             }
           }
@@ -88,7 +88,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -103,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -112,17 +113,17 @@
         }
       }
     },
-    "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
+    "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
         "projectName": "SistemaVentasCaprichos.Shared",
-        "projectPath": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
-        "packagesPath": "C:\\Users\\Endersson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Endersson\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
+        "packagesPath": "C:\\Users\\Anderson\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Endersson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Anderson\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -159,7 +160,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -168,7 +170,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

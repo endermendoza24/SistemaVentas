@@ -17,6 +17,10 @@ namespace SistemaVentasCaprichos.Shared
         [MaxLength(50, ErrorMessage = "Máximo 50 dígitos"), MinLength(1, ErrorMessage = "Minimo 1 dígitos")]
         public string NombreyApellido { get; set; }
         [Required]
+        [StringLength(50)]
+        [MaxLength(50, ErrorMessage = "Máximo 50 dígitos"), MinLength(1, ErrorMessage = "Minimo 1 dígitos")]
+        public string Apellido { get; set; }
+        [Required]
         [StringLength(16)]
         [MaxLength(16, ErrorMessage = "Máximo 16 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         // buscar algún regex de cédula
