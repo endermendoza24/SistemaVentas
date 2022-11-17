@@ -1,18 +1,17 @@
 @import '';
 
 /* /Pages/Articulos/ListaArticulo.razor.rz.scp.css */
-/*.card {
-    background-color: lightgoldenrodyellow;
+.card[b-64rsms2ebu] {
+    background-color: lightblue;
     border-style: groove;
     border-radius: 8px;
-    text-align: right;
+    text-align: left;
 }
 
-    .card:hover {
+    .card:hover[b-64rsms2ebu] {
         box-shadow: 0 0 12px rgba(33,33,33,.2);
         opacity: 0.95;
     }
-*/
 /* /Pages/Clientes/ListaCliente.razor.rz.scp.css */
 .card[b-phqimgj4wb] {
     background-color: lightblue;
@@ -49,6 +48,10 @@
 /* /Pages/Ventas/VerVenta.razor.rz.scp.css */
 .card[b-np7uj7vsnh] {
     box-shadow: 0 0 12px rgba(33,33,33,.2);
+}
+
+@media print {
+    /*aqui deben de circle los estilos param imprimir las factura*/
 }
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-x13t0nzs1e] {
