@@ -14,6 +14,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+   
     public class RolesController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> userManager;
@@ -27,6 +28,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public List<IdentityRole> ListaRoles()
         {
             var claims = User.Claims.ToArray();

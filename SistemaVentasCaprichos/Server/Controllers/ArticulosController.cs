@@ -10,10 +10,10 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace SistemaVentasCaprichos.Server.Controllers
-{
-    [Authorize]
+{    
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "admin, empleado")]
     public class ArticulosController : ControllerBase
     {
         private readonly ApplicationDbContext context;
@@ -25,21 +25,16 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
        //GET: api/articulos
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Articulo>>> Get()
         {
             return await context.Articulos.Where(x => x.Estado == true).OrderBy(x => x.Nombre).ToListAsync(); // hurra
         }
 
-        ///GET: api/ventas
-        //[HttpGet]
-        //public async Task<ActionResult<List<Articulo>>> GetDos()
-        //{
-        //    return await context.Articulos.Include(x => x.Categorias)
-        //        .ToListAsync();
-        //}
 
         //GET: api/articulos/filtro/nombre
         [HttpGet("filtro")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Articulo>>> Get([FromQuery] string nombre)
         {
             var queryable = context.Articulos.Where(x => x.Estado == true).OrderBy(x => x.Id).AsQueryable();
@@ -66,6 +61,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         // GET: api/articulos/5
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Articulo>> Get(int id)
         {
             return await context.Articulos.FirstAsync(x => x.Id == id);
@@ -73,6 +69,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         // POST: api/articulos 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<ActionResult> Post(Articulo articulo)
         {
             context.Articulos.Add(articulo);
@@ -97,6 +94,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         // PUT: api/articulos
         [HttpPut]
+        [AllowAnonymous]
         public async Task<ActionResult> Put(Articulo articulo)
         {
             context.Entry(articulo).State = EntityState.Modified;
@@ -107,6 +105,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         // DELETE: api/articulos/5  
         [HttpDelete("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Articulo>> Delete(int id)
         {
             var articulo = await context.Articulos.FindAsync(id);

@@ -2,14 +2,18 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
-@attribute [Authorize]
+@attribute [Authorize(Roles = "admin, empleado")]
 
 @using System.Text.Json
 
 <div class="d-flex position-sticky justify-content-between">
-    <div class="btn-group mr-2">
-        <button @onclick="CrearArticulo" class="btn btn-success"><i class="oi oi-plus"></i> Agregar articulo</button>
-    </div>
+   <AuthorizeView Roles="admin">
+       <Authorized>
+            <div class="btn-group mr-2">
+                <button @onclick="CrearArticulo" class="btn btn-success"><i class="oi oi-plus"></i> Agregar artículo</button>
+            </div>
+       </Authorized>
+   </AuthorizeView>
     <div class="input-group" style="width:60%">
         <input class="form-control" type="text" placeholder="Nombre artículo" @bind="NombreArtFiltro" />
         <div class="input-group-append">

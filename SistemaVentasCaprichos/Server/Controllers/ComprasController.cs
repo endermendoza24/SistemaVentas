@@ -12,10 +12,10 @@ using SistemaVentasCaprichos.Server.Data;
 using SistemaVentasCaprichos.Shared;
 
 namespace SistemaVentasCaprichos.Server.Controllers
-{
-    [Authorize]
+{    
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "admin")]
     public class ComprasController : ControllerBase
     {
         private readonly ApplicationDbContext context;
@@ -27,6 +27,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         //GET: api/compras
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Compra>>> Get()
         {
             return await context.Compras.Include(x => x.Proveedores)
@@ -38,6 +39,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         //GET: api/compras/filtro/cliente&empleado&fecha
         [HttpGet("filtro")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Compra>>> Get([FromQuery] string empleado, [FromQuery] string fecha)
         {
             DateTime f = Convert.ToDateTime(fecha);
@@ -62,6 +64,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         // GET: api/compras/5
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Compra>> Get(int id)
         {
             return await context.Compras.Include(x => x.Proveedores)
@@ -73,6 +76,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         // POST: api/compras 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<ActionResult<int>> Post(Compra compra)
         {
             context.Compras.Add(compra);
@@ -101,6 +105,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         // DELETE: api/compras/5  
         [HttpDelete("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Compra>> Delete(int id)
         {
             var compra = await context.Compras.Include(x => x.DetalleCompras)

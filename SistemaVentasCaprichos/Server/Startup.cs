@@ -9,8 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SistemaVentasCaprichos.Server.Data;
-
+using SistemaVentasCaprichos.Server.Helpers;
 using SistemaVentasCaprichos.Shared;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 
 namespace SistemaVentasCaprichos.Server
@@ -20,6 +21,7 @@ namespace SistemaVentasCaprichos.Server
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.GetType();
         }
 
         public IConfiguration Configuration { get; }
@@ -50,7 +52,8 @@ namespace SistemaVentasCaprichos.Server
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>()
+                .AddProfileService<IdentityProfileService>();
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();
@@ -83,6 +86,7 @@ namespace SistemaVentasCaprichos.Server
 
             app.UseIdentityServer();
             app.UseAuthentication();
+            app.UseIdentityServer();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

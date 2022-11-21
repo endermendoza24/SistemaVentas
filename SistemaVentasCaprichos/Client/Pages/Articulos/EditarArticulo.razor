@@ -3,8 +3,7 @@
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
 @inject ISnackbar Snackbar
-
-@attribute [Authorize]
+@attribute [Authorize(Roles = "admin")]
 
 <button @onclick="@Volver" class="btn btn-sm btn-secondary">
     <i class="oi oi-arrow-circle-left"></i> Volver al listado
@@ -12,19 +11,15 @@
 
 <hr />
 
-
-
 <div class="d-flex justify-content-between mb-3">
     <h3><b>Editar artículo</b></h3>
     <div>
 
         <MudTooltip>
             <ChildContent>
-
                 <button @onclick="@(() => BorrarArticulo(articulo.Id))" class="btn btn-sm btn-danger">
                     <i class="oi oi-trash"></i> Eliminar artículo
                 </button>
-
             </ChildContent>
             <TooltipContent>
                 <MudText Typo="Typo.h6">ALERTA</MudText>

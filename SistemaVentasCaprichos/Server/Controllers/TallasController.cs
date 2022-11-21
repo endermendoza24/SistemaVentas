@@ -7,11 +7,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using SistemaVentasCaprichos.Server;
 using SistemaVentasCaprichos.Server.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SistemaVentasCaprichos.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Roles = "admin")]
     public class TallasController : ControllerBase
     {
         private readonly ApplicationDbContext context;
@@ -20,6 +22,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             this.context = context;
         }
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Tallas>>> Get()
         {
             return await context.Tallas
@@ -27,6 +30,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
                 .ToListAsync();
         }
         [HttpGet("bajas")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Tallas>>> GetBajas()
         {
             return await context.Tallas
@@ -34,11 +38,13 @@ namespace SistemaVentasCaprichos.Server.Controllers
                 .ToListAsync();
         }
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Tallas>> Get(int id)
         {
             return await context.Tallas.FirstOrDefaultAsync(x => x.Id == id);
         }
         [HttpGet("buscar/{textoBusqueda}")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Tallas>>> Get(string textoBusqueda)
         {
             if (string.IsNullOrWhiteSpace(textoBusqueda)) { return new List<Tallas>(); }
@@ -47,6 +53,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             .Where(x => x.Nombre.ToLower().Contains(textoBusqueda)).ToListAsync();
         }
         [HttpPost]
+        [AllowAnonymous]
         public async Task<ActionResult<int>> Post(Tallas Tallas)
         {
 
@@ -55,6 +62,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             return Tallas.Id;
         }
         [HttpPut]
+        [AllowAnonymous]
         public async Task<ActionResult> Put(Tallas Tallas)
         {
             context.Attach(Tallas).State = EntityState.Modified;
@@ -62,6 +70,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             return NoContent();
         }
         [HttpDelete("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult> Delete(int id)
         {
             var existe = await context.Tallas.AnyAsync(x => x.Id == id);

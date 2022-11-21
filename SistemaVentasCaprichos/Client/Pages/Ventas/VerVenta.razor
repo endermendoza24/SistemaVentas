@@ -2,6 +2,7 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
+@attribute [Authorize(Roles = "admin, empleado")]
 
 @using System.Text.Json
 

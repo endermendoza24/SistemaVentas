@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x1Qr2Ec3AXUneGfl+Fbkxu80otAb4EwZtaK54eUOjPy1s4G3uFKqMbhZsvD++C5NgyDVSp5yWlzqZXXnmxHoFw==",
+  "dgSpecHash": "J9mLVyjfYOP3yvFvb9P9niQfiw/V362gpeq1otESH5jkWAOFQxzuHmUvU9iReyFLZtV5u0zcNrGUBlwWxHnf2Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
+  "projectFilePath": "C:\\Users\\Anderson\\OneDrive\\Documentos\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Anderson\\.nuget\\packages\\csvhelper\\12.2.0\\csvhelper.12.2.0.nupkg.sha512",
     "C:\\Users\\Anderson\\.nuget\\packages\\epplus\\5.4.1\\epplus.5.4.1.nupkg.sha512",

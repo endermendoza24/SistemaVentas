@@ -10,10 +10,10 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace SistemaVentasCaprichos.Server.Controllers
-{
-    [Authorize]
+{    
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "admin, empleado")]
     public class ClientesController : ControllerBase
     {
         private readonly ApplicationDbContext context;
@@ -25,6 +25,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         //GET: api/clientes
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Cliente>>> Get()
         {
             return await context.Clientes.
@@ -34,6 +35,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         //GET: api/clientes/filtro/nombre
         [HttpGet("filtro")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Cliente>>> Get([FromQuery] string nombre)
         {
             var queryable = context.Clientes.Where(x => x.Estado == true).OrderBy(x => x.NombreyApellido).AsQueryable();
@@ -45,6 +47,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
         }
         //GET: api/clientes/filtro/nombre
         [HttpGet("bajas")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Cliente>>> GetBajas([FromQuery] string nombre)
         {
             var queryable = context.Clientes.Where(x => x.Estado != true).OrderBy(x => x.NombreyApellido).AsQueryable();
@@ -57,6 +60,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         // GET: api/clientes/5
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Cliente>> Get(int id)
         {
             return await context.Clientes.FirstAsync(x => x.Id == id);
@@ -64,6 +68,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         // POST: api/clientes 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<ActionResult> Post(Cliente cliente)
         {
             if (!Exists(cliente.Cedula))
@@ -80,6 +85,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         // PUT: api/clientes
         [HttpPut]
+        [AllowAnonymous]
         public async Task<ActionResult> Put(Cliente cliente)
         {
             context.Entry(cliente).State = EntityState.Modified;
@@ -89,6 +95,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
 
         // DELETE: api/clientes/5  
         [HttpDelete("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Cliente>> Delete(int id)
         {
             var cliente = await context.Clientes.FindAsync(id);
@@ -103,9 +110,9 @@ namespace SistemaVentasCaprichos.Server.Controllers
             return cliente;
         }
 
-        private bool Exists(string dni)
+        private bool Exists(string cedula)
         {
-            return (context.Clientes.Any(e => e.Cedula == dni));
+            return (context.Clientes.Any(e => e.Cedula == cedula));
         }
     }
 }

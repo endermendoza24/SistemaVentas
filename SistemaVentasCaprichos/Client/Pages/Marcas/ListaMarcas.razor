@@ -2,6 +2,7 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
+@attribute [Authorize(Roles = "admin")]
 
 @using System.Text.Json
 
@@ -17,11 +18,7 @@
     </div>
 </div>
 
-<MudTooltip Text="Exportar esta tabla a excel" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
-    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FileExcel"
-               @onclick="ExportarExcel"
-               Color="Color.Warning">Excel</MudButton>
-</MudTooltip><br />
+<br />
 
 @if (Marca == null)
 {
@@ -39,10 +36,26 @@ else if (Marca.Count == 0)
 }
 else
 {
+
+
+    <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+        <MudTooltip Text="Exportar esta tabla a excel" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
+            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FileExcel"
+                   @onclick="ExportarExcel"
+                   Color="Color.Warning">Excel</MudButton>
+        </MudTooltip>
+        <MudTooltip Text="Exportar esta tabla a CSV" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
+            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FileDocument"
+                   @onclick="ExportAsCSV"
+                   Color="Color.Warning">CSV</MudButton>
+        </MudTooltip>
+    </MudButtonGroup>
+    <br />
+
     <MudTable Items="@Marca" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Marcas,bool>(FilterFunc1)"
-              @bind-SelectedItem="selectedItem1">
+          @bind-SelectedItem="selectedItem1">
         <ToolBarContent>
-            <MudText Typo="Typo.h6">Marcas</MudText>
+            <MudText Typo="Typo.h6">Marcas activas</MudText>
             <MudSpacer />
             <MudTextField @bind-Value="searchString1" Placeholder="Buscar marca..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
         </ToolBarContent>
@@ -60,7 +73,7 @@ else
             <MudTd DataLabel="Fecha">@context.Fecha</MudTd>
             <MudTd>
                 <MudFab Color="Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
-                        @onclick="@(() => NavigationManager.NavigateTo($"/editar-marcas/{context.Id}"))" />
+                    @onclick="@(() => NavigationManager.NavigateTo($"/editar-marcas/{context.Id}"))" />
             </MudTd>
 
         </RowTemplate>
@@ -149,9 +162,28 @@ else
 
         return false;
     }
-    
+
+    private void ExportAsCSV()
+    {
+        using (var memoryStream = new MemoryStream())
+        {
+            using (var writer = new StreamWriter(memoryStream))
+            {
+                using (var csv = new CsvHelper.CsvWriter(writer))
+                {
+                    csv.WriteRecords(Marca);
+                }
+
+                var arr = memoryStream.ToArray();
+                JS.GuardarComo("Marcas.csv", arr);
+            }
+        }
+    }
+
+
+
     // funcion de exportación de datos de la table a través de Excel
-      private void ExportarExcel()
+    private void ExportarExcel()
     {
         using (var package = new ExcelPackage())
         {
@@ -177,7 +209,7 @@ else
                 r.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
                 r.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightYellow);
             }
-    
+
 
             var header = worksheet.Cells["A3:D3"];
             worksheet.DefaultColWidth = 32;

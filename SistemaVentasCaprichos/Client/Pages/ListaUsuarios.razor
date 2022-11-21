@@ -1,0 +1,66 @@
+﻿@page "/lista-usuarios"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@attribute [Authorize(Roles = "admin")]
+
+@using System.Text.Json
+@using Microsoft.AspNetCore.Identity;
+
+
+@if (Usuarios == null)
+{
+    <div class="d-flex justify-content-center align-items-center" style="height:24rem">
+        <div class="spinner-border text-success" role="status">
+            <span class="sr-only">Cargando...</span>
+        </div>
+    </div>
+}
+else if (Usuarios.Count == 0)
+{
+    <div class="d-flex justify-content-center align-items-center" style="height:24rem">
+        <text>No se encontraron usuarios.</text>
+    </div>
+}
+else
+{
+
+    <br />
+
+    <MudTable Items="@Usuarios" Hover="true" Breakpoint="Breakpoint.Sm" Loading="@_loading" LoadingProgressColor="Color.Info">
+        <HeaderContent>
+            <MudTh>Nombre</MudTh>
+            <MudTh>Apellido</MudTh>
+            <MudTh>Email</MudTh>
+            <MudTh>Usuario</MudTh>
+            <MudTh>Teléfono</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Nombre">@context.NombreyApellido</MudTd>
+            <MudTd DataLabel="Apellido">@context.Apellido</MudTd>
+            <MudTd DataLabel="Emial">@context.Email</MudTd>
+            <MudTd DataLabel="Molar mass">@context.UserName</MudTd>
+            <MudTd DataLabel="Telefono">@context.PhoneNumber</MudTd>
+        </RowTemplate>
+    </MudTable>
+
+}
+@code {
+
+
+    private List<IdentityRole> roles = new List<IdentityRole>();
+    private List<ApplicationUser> Usuarios { get; set; } = new List<ApplicationUser>();
+    private bool _loading = true;
+
+    private string nombreRol { get; set; }
+    private string usuarioId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        roles = await Http.GetFromJsonAsync<List<IdentityRole>>($"api/roles/");
+        Usuarios = await Http.GetFromJsonAsync<List<ApplicationUser>>($"api/roles/usuarios");
+    }
+
+
+
+}
