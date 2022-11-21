@@ -174,10 +174,10 @@ using OfficeOpenXml.Style;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 49 "C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
+#line 29 "C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Shared\MainLayout.razor"
        
     private MudTheme _currentTheme = new MudTheme();
-    private bool _sidebarOpen = false;
+    private bool _sidebarOpen = true;
     private void ToggleTheme(MudTheme changedTheme) => _currentTheme = changedTheme;
     private void ToggleSidebar() => _sidebarOpen = !_sidebarOpen;
 

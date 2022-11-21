@@ -87,12 +87,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
                 venta.Fecha = DateTime.Now;
                 await context.SaveChangesAsync();
 
-                await DecrementaStock(venta);
-
-                if (venta.ClienteId != null)
-                {
-                    await IncrementaSaldo(venta);
-                }
+                await DecrementaStock(venta);                
             }
             catch (DbUpdateException)
             {
@@ -117,11 +112,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
                 .FirstAsync(x => x.Id == id);
 
             if (venta != null)
-            {
-                if (venta.ClienteId != null)
-                {
-                    await DecrementaSaldo(venta);
-                }
+            {               
                 await IncrementaStock(venta);
 
                 context.Ventas.Remove(venta);
@@ -140,48 +131,6 @@ namespace SistemaVentasCaprichos.Server.Controllers
             return context.Ventas.Any(e => e.Id == id);
 
         }
-
-        private async Task IncrementaSaldo(Venta venta)
-        {
-            var cliente = await context.Clientes.FirstAsync(x => x.Id == venta.ClienteId);
-            cliente.Saldo = cliente.Saldo + venta.Total;
-
-            ClientesController c = new ClientesController(context);
-            await c.Put(cliente);
-
-            CuentasCorrientesController cc = new CuentasCorrientesController(context);
-            CuentaCorriente cuenta = new CuentaCorriente()
-            {
-                Fecha = venta.Fecha,
-                ClienteId = Convert.ToInt32(venta.ClienteId),
-                ComprobanteId = venta.Id,
-                Concepto = CuentaCorriente.Conceptos.Debe,
-                Importe = venta.Total,
-                Saldo_Parcial = venta.Cliente.Saldo
-            };
-            await cc.Post(cuenta);
-        }
-
-        private async Task DecrementaSaldo(Venta venta)
-        {
-            var cliente = await context.Clientes.FirstAsync(x => x.Id == venta.ClienteId);
-            cliente.Saldo = cliente.Saldo - venta.Total;
-
-            ClientesController c = new ClientesController(context);
-            await c.Put(cliente);
-
-            CuentasCorrientesController cc = new CuentasCorrientesController(context);
-            CuentaCorriente cuenta = new CuentaCorriente()
-            {
-                Fecha = DateTime.Now,
-                ClienteId = Convert.ToInt32(venta.ClienteId),
-                Concepto = CuentaCorriente.Conceptos.Reajuste,
-                Importe = -venta.Total,
-                Saldo_Parcial = venta.Cliente.Saldo
-            };
-            await cc.Post(cuenta);
-        }
-
         private async Task DecrementaStock(Venta venta)
         {
             var lista_articulo = await context.Articulos.ToListAsync();

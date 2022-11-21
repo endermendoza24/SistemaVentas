@@ -1,30 +1,10 @@
 ﻿@inherits LayoutComponentBase
-@*<div class="page">
-        <AuthorizeView>
-            <Authorized>
-                <div class="sidebar">
-                    <NavMenu />
-                </div>
-            </Authorized>
-        </AuthorizeView>
-        <div id="main" class="main">
-            <div class="top-row px-3 auth">
-                <LoginDisplay />
-            </div>
-            <div class="content px-3">
-                @Body
-            </div>
-        </div>
-    </div>*@
-
-
-
 <MudLayout>
     <MudDrawer @bind-Open="_sidebarOpen" Elevation="1">
-        <MudDrawerHeader>
+       @* <MudDrawerHeader>
             <MudAvatar Color="Color.Transparent" Size="Size.Large" Image="assets/Logo-CodeMaze.png" />
             <MudText Typo="Typo.h5" Color="Color.Primary" Style="margin-top:10px; margin-left:15px;"></MudText>
-        </MudDrawerHeader>
+        </MudDrawerHeader>*@
         <AppBar OnSidebarToggled="ToggleSidebar" OnThemeToggled="ToggleTheme" />
         <AuthorizeView>
             <Authorized>
@@ -48,7 +28,7 @@
 
 @code {
     private MudTheme _currentTheme = new MudTheme();
-    private bool _sidebarOpen = false;
+    private bool _sidebarOpen = true;
     private void ToggleTheme(MudTheme changedTheme) => _currentTheme = changedTheme;
     private void ToggleSidebar() => _sidebarOpen = !_sidebarOpen;
 }

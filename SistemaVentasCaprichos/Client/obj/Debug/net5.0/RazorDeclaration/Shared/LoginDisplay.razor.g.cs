@@ -174,7 +174,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 36 "C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Shared\LoginDisplay.razor"
+#line 37 "C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Shared\LoginDisplay.razor"
        
     private async Task BeginSignOut(MouseEventArgs args)
     {

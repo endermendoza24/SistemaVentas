@@ -3,31 +3,41 @@
         <MudText Typo="Typo.h6" Class="px-4">Sistema Caprichos</MudText>
         <MudDivider Class="my-2" />
         <MudNavLink Href="/" Icon="@Icons.Filled.Dashboard">Inicio</MudNavLink>
-        <MudNavLink Href="/estadisticas" Icon="@Icons.Filled.QueryStats">Estadísticas</MudNavLink>
+        @*<MudNavLink Href="/estadisticas" Icon="@Icons.Filled.QueryStats">Estadísticas</MudNavLink>*@
         <MudNavGroup Title="Artículos" Icon="@Icons.Filled.ProductionQuantityLimits" Expanded="false">
             <MudNavLink Href="/lista-articulos">Crear artículo</MudNavLink>
-            <MudNavLink Href="/lista-marcas">Marcas</MudNavLink>
-            <MudNavLink Href="/indexcategoria">Categorías</MudNavLink>
-            <MudNavLink Href="/lista-tallas">Tallas</MudNavLink>
+            <AuthorizeView Roles="admin">
+                <Authorized>
+                    <MudNavLink Href="/lista-marcas">Marcas</MudNavLink>
+                    <MudNavLink Href="/indexcategoria">Categorías</MudNavLink>
+                    <MudNavLink Href="/lista-tallas">Tallas</MudNavLink>
+                </Authorized>
+            </AuthorizeView>
         </MudNavGroup>
 
         <MudNavGroup Title="Ventas" Icon="@Icons.Filled.ShoppingBag" Expanded="false">
             <MudNavLink Href="/lista-ventas">Ventas</MudNavLink>
-        </MudNavGroup>
-        <MudNavLink Href="/lista-clientes" Icon="@Icons.Filled.People">Clientes</MudNavLink>
-
-        <MudNavGroup Title="Compras" Icon="@Icons.Filled.ShoppingBag" Expanded="false">
-            <MudNavLink Href="/lista-compras">Compras</MudNavLink>
-        </MudNavGroup>
-        <MudNavLink Href="/lista-proveedores" Icon="@Icons.Filled.People">Proveedores</MudNavLink>
-        <MudNavLink Href="/lista-pedidos" Icon="@Icons.Filled.ShoppingBag">Pedidos</MudNavLink>
-        <MudNavLink Href="/lista-pagos" Icon="@Icons.Filled.AttachMoney">Pagos</MudNavLink>
-        <MudNavGroup Title="Usuarios" Icon="@Icons.Filled.SupervisedUserCircle" Expanded="true">
-            <MudNavLink Href="/lista-usuarios">Usuarios</MudNavLink>
-            <MudNavLink Href="/roles">Roles</MudNavLink>
+            <MudNavLink Href="/lista-compras">Devolución por venta</MudNavLink>
         </MudNavGroup>
 
-        <MudNavLink Href="/lista-ajustes" Icon="@Icons.Filled.Settings">Ajustes</MudNavLink>
+        <MudNavLink Color="Color.Primary" Href="/lista-clientes" Icon="@Icons.Filled.People">Clientes</MudNavLink>
+
+        <AuthorizeView Roles="admin">
+            <Authorized>
+                <MudNavGroup Title="Compras" Icon="@Icons.Filled.ShoppingBag" Expanded="false">
+                    <MudNavLink Href="/lista-compras">Compras</MudNavLink>
+                    <MudNavLink Href="/lista-compras">Devolución por compra</MudNavLink>
+                </MudNavGroup>
+                <MudNavLink Href="/lista-proveedores" Icon="@Icons.Filled.People">Proveedores</MudNavLink>                
+                <MudNavGroup Title="Usuarios" Icon="@Icons.Filled.SupervisedUserCircle" Expanded="true">
+                    <MudNavLink Href="/lista-usuarios">Usuarios</MudNavLink>
+                    <MudNavLink Href="/roles">Roles</MudNavLink>
+                </MudNavGroup>
+
+                <MudNavLink Href="/lista-ajustes" Icon="@Icons.Filled.Settings">Ajustes</MudNavLink>
+            </Authorized>
+        </AuthorizeView>
+
     </MudNavMenu>
 </MudPaper>
 

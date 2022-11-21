@@ -182,18 +182,16 @@ using OfficeOpenXml.Style;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 82 "C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\EditarCliente.razor"
+#line 43 "C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\EditarCliente.razor"
        
-    public Cliente cliente = new Cliente();
-    public List<CuentaCorriente> cuenta { get; set; } = new List<CuentaCorriente>();
+    public Cliente cliente = new Cliente();    
 
     [Parameter] public int idcliente { get; set; }
     public bool ocultadni = true;
 
     protected async override Task OnParametersSetAsync()
     {
-        cliente = await Http.GetFromJsonAsync<Cliente>($"api/clientes/{idcliente}");
-        cuenta = await Http.GetFromJsonAsync<List<CuentaCorriente>>($"api/cuentascorrientes/porcliente/{idcliente}");
+        cliente = await Http.GetFromJsonAsync<Cliente>($"api/clientes/{idcliente}");        
     }
 
     async Task BorrarCliente(int idcliente)

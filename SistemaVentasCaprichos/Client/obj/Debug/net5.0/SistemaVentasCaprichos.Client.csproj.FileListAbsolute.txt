@@ -5150,7 +5150,6 @@ C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Clien
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Configuracion\FormAjustes.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Configuracion\ListaAjustes.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Estadisticas.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ListaUsuarios.razor.g.cs
@@ -5159,11 +5158,6 @@ C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Clien
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Marcas\FormularioMarcas.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Marcas\ListaBajasMarcas.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Marcas\ListaMarcas.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Pagos\CrearPago.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Pagos\ListaPago.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Pedidos\CrearPedido.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Pedidos\EditarPedido.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Pedidos\ListaPedido.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Proveedores\CrearProveedores.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Proveedores\EditarProveedores.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Proveedores\FormProveedor.razor.g.cs
@@ -5187,9 +5181,6 @@ C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Clien
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Articulos\ListaArticulo.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Clientes\ListaCliente.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Compras\FormCompra.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Pagos\FormPago.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Pagos\VerPago.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Pedidos\FormPedidos.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Ventas\FormVenta.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Ventas\VerVenta.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -5223,7 +5214,6 @@ C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Clien
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Configuracion\FormAjustes.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Configuracion\ListaAjustes.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Estadisticas.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\ListaUsuarios.razor.g.cs
@@ -5232,11 +5222,6 @@ C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Clien
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Marcas\FormularioMarcas.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Marcas\ListaBajasMarcas.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Marcas\ListaMarcas.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Pagos\CrearPago.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Pagos\ListaPago.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Pedidos\CrearPedido.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Pedidos\EditarPedido.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Pedidos\ListaPedido.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Proveedores\CrearProveedores.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Proveedores\EditarProveedores.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Proveedores\FormProveedor.razor.g.cs
@@ -5260,9 +5245,6 @@ C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Clien
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Articulos\ListaArticulo.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Clientes\ListaCliente.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Compras\FormCompra.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Pagos\FormPago.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Pagos\VerPago.razor.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Pedidos\FormPedidos.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Ventas\FormVenta.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Ventas\VerVenta.razor.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
@@ -5482,9 +5464,6 @@ C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Clien
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Articulos\ListaArticulo.razor.rz.scp.css
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Clientes\ListaCliente.razor.rz.scp.css
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Compras\FormCompra.razor.rz.scp.css
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Pagos\FormPago.razor.rz.scp.css
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Pagos\VerPago.razor.rz.scp.css
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Pedidos\FormPedidos.razor.rz.scp.css
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Ventas\FormVenta.razor.rz.scp.css
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Ventas\VerVenta.razor.rz.scp.css
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css

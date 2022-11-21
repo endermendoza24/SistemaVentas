@@ -1254,7 +1254,6 @@ C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Serve
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
@@ -1273,3 +1272,4 @@ C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Serve
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\SistemaVentasCaprichos.Server.pdb
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\SistemaVentasCaprichos.Server.genruntimeconfig.cache
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Server.dll
+C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Shared\_LoginPartial.cshtml.g.cs

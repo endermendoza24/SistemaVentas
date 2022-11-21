@@ -211,15 +211,15 @@
       "mscorlib.dll": "sha256-zMI\/dXK7DoZZ9Qm9U9\/jRN4iQ9Ss3w8\/rwQQxC6SW9Y=",
       "netstandard.dll": "sha256-W3q3PN+lpRB+tRJEIhtMgYOGFv0pauEeeCS9iIRkKAM=",
       "System.Private.CoreLib.dll": "sha256-9rUJv1mXEQdGt\/kWiJ1ITPPzp3cAi3lSmqHVTisp7w0=",
-      "SistemaVentasCaprichos.Shared.dll": "sha256-LNzeEZUpi5DypVqbWrO+5bQuBI26QxNZdBYCgKmCIzQ=",
-      "SistemaVentasCaprichos.Client.dll": "sha256-JCkS5wS+uSXENq6iGUVJhEZEcSy\/vlDVYS1bnI5o1mI="
+      "SistemaVentasCaprichos.Shared.dll": "sha256-vA091GKH\/oM+FEP1YWuv\/MLeLazjF6uGAN6PCXAYQQM=",
+      "SistemaVentasCaprichos.Client.dll": "sha256-OM3aWZglzVJrNOh75gKB\/nJDv404BJfc2cOaLd5RElo="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "SistemaVentasCaprichos.Shared.pdb": "sha256-ym1G0lQYW\/CiOa92XudU5I1gr5jQ3rP21xKbGQcFBWE=",
-      "SistemaVentasCaprichos.Client.pdb": "sha256-PggoDMwgiGZyo9qXyWJBHhkVRnZJ3V2jb6ri4nlbzYY="
+      "SistemaVentasCaprichos.Shared.pdb": "sha256-qK\/JKRd2r798vcU2wLmxlUKU6GPgIdR6NvyPSS6PXEQ=",
+      "SistemaVentasCaprichos.Client.pdb": "sha256-PjNVHjK9ESKdn5WWQ84a6YsQxkRDN8epHlMRHJJ6n+A="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-8oJip361m8OrfLRJOuIeswWKaoxtT27\/wINCxhn+s4c=",

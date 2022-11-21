@@ -22,14 +22,15 @@
                     color: gold;
                 }
         </style>
+        
         <a href="authentication/profile" id="usuario">
             @context.User.Identity.Name
         </a>
-        <button class="btn btn-sm btn-outline-danger" @onclick="BeginSignOut"><i class="oi oi-account-logout"></i>Salir</button>
+        <button class="btn btn-sm btn-danger" @onclick="BeginSignOut"><i class="oi oi-account-logout"></i>&nbsp; Salir</button>
     </Authorized>
     <NotAuthorized>
-        <a class="btn btn-sm btn-outline-primary" href="authentication/register">Registrarse</a>
-        <a class="btn btn-sm btn-outline-primary" href="authentication/login">Iniciar sesión</a>
+        <a class="btn btn-sm btn-danger" href="authentication/register">Registrarse</a>&nbsp;&nbsp;
+        <a class="btn btn-sm btn-danger" href="authentication/login">Iniciar sesión</a>
     </NotAuthorized>
 </AuthorizeView>
 

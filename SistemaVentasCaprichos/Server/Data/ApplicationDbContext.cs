@@ -37,10 +37,7 @@ namespace SistemaVentasCaprichos.Server.Data
         public DbSet<Articulo> Articulos { get; set; }
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<DetalleVenta> DetalleVentas { get; set; }
-        public DbSet<Pedido> Pedidos { get; set; }
-        public DbSet<DetallePedido> DetallePedidos { get; set; }
-        public DbSet<Pago> Pagos { get; set; }
-        public DbSet<CuentaCorriente> CuentasCorrientes { get; set; }
+          
         public DbSet<Compra> Compras { get; set; }
         public DbSet<DetalleCompra> DetalleCompras { get; set; }
 
