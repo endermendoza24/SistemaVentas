@@ -54,7 +54,7 @@
     async Task BorrarCliente(int idcliente)
     {
         var confirmacion = await JS.InvokeAsync<bool>("confirmar", "Eliminar",
-            $"¿Desea eliminar cliente {cliente.NombreyApellido}?", "warning");
+            $"¿Desea eliminar cliente {cliente.Nombre}?", "warning");
         if (confirmacion)
         {
             var respuesta = await Http.DeleteAsync($"api/clientes/{idcliente}");
@@ -79,7 +79,7 @@
     async Task EditarClient()
     {
         var confirmacion = await JS.InvokeAsync<bool>("confirmar", "Editar",
-            $"¿Desea editar {cliente.NombreyApellido}?", "question");
+            $"¿Desea editar {cliente.Nombre}?", "question");
         if (confirmacion)
         {
             var respuesta = await Http.PutAsJsonAsync("api/clientes", cliente);

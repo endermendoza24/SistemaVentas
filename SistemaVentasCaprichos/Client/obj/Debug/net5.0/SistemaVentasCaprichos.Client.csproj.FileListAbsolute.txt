@@ -5459,8 +5459,6 @@ C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Clien
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\lBnf446Q.gz
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\zi7PPyNQ.gz
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\Vs5C+vb6.gz
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\0vosjjG+.gz
-C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\LdwLEleV.gz
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Articulos\ListaArticulo.razor.rz.scp.css
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Clientes\ListaCliente.razor.rz.scp.css
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Compras\FormCompra.razor.rz.scp.css
@@ -5483,3 +5481,5 @@ C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Clien
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\refint\SistemaVentasCaprichos.Client.dll
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\SistemaVentasCaprichos.Client.pdb
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Client.dll
+C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\sistemaventascaprichos\Client\obj\Debug\net5.0\build-gz\ZUjnINyO.gz
+C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\sistemaventascaprichos\Client\obj\Debug\net5.0\build-gz\Jt6vJKXh.gz

@@ -72,19 +72,19 @@ else
                 <MudTd>
                     @if (context.StockActual < context.StockMinimo)
                         {
-                        <MudChip Color="Color.Error" Variant="Variant.Filled">
+                    <MudChip Color="Color.Error" Variant="Variant.Filled" Size="Size.Small">
                             <MudTd Style="color:#fff" DataLabel="Stock bajo">@context.StockActual</MudTd>
                         </MudChip>
                         }
                         else if (context.StockActual > context.StockMaximo)
                         {
-                        <MudChip Color="Color.Warning" Variant="Variant.Filled">
+                    <MudChip Color="Color.Warning" Variant="Variant.Filled" Size="Size.Small">
                             <MudTd Style="color:#fff" DataLabel="Stock excedido"> @context.StockActual</MudTd>
                         </MudChip>
                         }
                         else
                         {
-                        <MudChip Color="Color.Success" Variant="Variant.Filled">
+                    <MudChip Color="Color.Success" Variant="Variant.Filled" Size="Size.Small">
                             <MudTd Style="color:#fff" DataLabel="Stock"> @context.StockActual</MudTd>
                         </MudChip>
                         }

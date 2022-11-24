@@ -10,12 +10,12 @@
     <AuthorizeView Roles="admin">
         <Authorized>
             <div class="btn-group mr-2">
-                <button @onclick="CrearArticulo" class="btn btn-success"><i class="oi oi-plus"></i> Agregar articulo</button>
+                <button @onclick="CrearArticulo" class="btn btn-success"><i class="oi oi-plus"></i> AGREGAR ARTÍCULO</button>                
             </div>
         </Authorized>
     </AuthorizeView>
     <div class="input-group" style="width:60%">
-        <input class="form-control" type="text" placeholder="Nombre artículo" @bind="NombreArtFiltro" />
+        <input class="form-control" type="text" placeholder="Nombre artículo" @bind="NombreArtFiltro" />        
         <div class="input-group-append">
             <button @onclick="Filtrar" class="btn btn-primary" type="button"><i class="oi oi-magnifying-glass"></i></button>
             <button @onclick="Limpiar" class="btn btn-danger" type="button"><i class="oi oi-delete"></i></button>
@@ -42,11 +42,7 @@
         </button>
     </div>
 </div>
-<MudTooltip Text="Exportar esta tabla a excel" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
-    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FileExcel"
-               @onclick="ExportarExcel"
-               Color="Color.Warning">Excel</MudButton>
-</MudTooltip>
+
 @if (articulo == null)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
@@ -63,6 +59,19 @@ else if (articulo.Count == 0)
 }
 else
 {
+
+    <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+        <MudTooltip Text="Exportar esta tabla a excel" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
+            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FileExcel"
+                   @onclick="ExportarExcel"
+                   Color="Color.Warning">Excel</MudButton>
+        </MudTooltip>
+        <MudTooltip Text="Exportar esta tabla a CSV" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
+            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FileDocument"
+                   @onclick="ExportAsCSV"
+                   Color="Color.Warning">CSV</MudButton>
+        </MudTooltip>
+    </MudButtonGroup>
     <div class="card-columns" hidden="@card">
         @foreach (var articulo in articulo)
         {
@@ -130,19 +139,19 @@ else
                 <MudTd>
                     @if (context.StockActual < context.StockMinimo)
                     {
-                        <MudChip Color="Color.Error" Variant="Variant.Filled">
+                        <MudChip Color="Color.Error" Variant="Variant.Filled" Size="Size.Small">
                             <MudTd Style="color:#fff" DataLabel="Stock bajo">@context.StockActual</MudTd>
                         </MudChip>
                     }
                     else if (context.StockActual > context.StockMaximo)
                     {
-                        <MudChip Color="Color.Warning" Variant="Variant.Filled">
+                        <MudChip Color="Color.Warning" Variant="Variant.Filled" Size="Size.Small">
                             <MudTd Style="color:#fff" DataLabel="Stock excedido"> @context.StockActual</MudTd>
                         </MudChip>
                     }
                     else
                     {
-                        <MudChip Color="Color.Success" Variant="Variant.Filled">
+                        <MudChip Color="Color.Success" Variant="Variant.Filled" Size="Size.Small">
                             <b><MudTd Style="color:#fff" DataLabel="Stock"> @context.StockActual</MudTd></b>
                         </MudChip>
                     }
@@ -244,6 +253,25 @@ else
             return true;
 
         return false;
+    }
+
+    // exportar
+
+    private void ExportAsCSV()
+    {
+        using (var memoryStream = new MemoryStream())
+        {
+            using (var writer = new StreamWriter(memoryStream))
+            {
+                using (var csv = new CsvHelper.CsvWriter(writer))
+                {
+                    csv.WriteRecords(articulo);
+                }
+
+                var arr = memoryStream.ToArray();
+                JS.GuardarComo($"Exportacion_CSV_Articulos_{DateTime.Now.ToShortDateString()}.CSV", arr);
+            }
+        }
     }
 
     private void ExportarExcel()

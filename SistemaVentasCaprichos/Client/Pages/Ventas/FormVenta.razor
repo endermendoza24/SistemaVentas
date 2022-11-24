@@ -41,7 +41,7 @@
                         <option selected value="0">Seleccione cliente</option>
                         @foreach (var cliente in clientes)
                         {
-                            <option value="@cliente.Id">@cliente.NombreyApellido | Cédula:@cliente.Cedula</option>
+                            <option value="@cliente.Id">@cliente.Nombre | Cédula:@cliente.Cedula</option>
                         }
                     </InputSelect>
                 </div>
@@ -106,7 +106,7 @@
                             <label>Descuento</label>
                             @* <InputNumber @bind-Value="detalle.Descuento" class="form-control" min="-100" max="100" /> *@
                             <MudNumericField @bind-Value="detalle.Descuento" Label="Ingrese el descuento por producto" Variant="Variant.Outlined"
-                            Min="0" Max="100"  />
+                            Min="0" Max="100"  Step="5"/>
                             <ValidationMessage For="@(() => detalle.Descuento)" />
                         </div>
 

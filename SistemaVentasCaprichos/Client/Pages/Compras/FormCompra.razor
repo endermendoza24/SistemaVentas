@@ -77,7 +77,7 @@
 
                         <div class="col-3 form-group">
                             <label><small>Precio venta</small></label>
-                            <InputNumber @bind-Value="detalle.PrecioUnitario" class="form-control form-control-sm" step="0.01" />
+                            <InputNumber @bind-Value="detalle.PrecioUnitario" class="form-control form-control-sm" />
                             <ValidationMessage For="@(() => detalle.PrecioUnitario)" />
                         </div>
 
@@ -105,7 +105,7 @@
                     <h4><b>TOTAL</b></h4>
                     @if (compra.Total != 0)
                     {
-                        <h3><b>$@compra.Total</b></h3>
+                        <h3><b>C$@compra.Total</b></h3>
                     }
                 </button>
             </div>

@@ -42,6 +42,7 @@ Elaborado por:
 > 16 de noviembre de 2022, agregado un componente que permite ver un dashboard de reportes elaborados con PowerBi
 
 > 18-20 de noviembre de 2022, ya funciona la lógica de roles en el sistema, actualmente funcinando con dos roles, que son 'administrador' y 'empleado', cada rol tiene ciertos módulos que le corresponde solo a uno de ellos, aunque aún no funciona a la perfección si lo hace de muy buena manera, cumpliendo básicamente con lo que debería de hacer.
+> 24 de noviembre, mejoras en el diseño del login
 
 ## Lógica de dada de bajas
 

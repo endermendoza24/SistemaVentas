@@ -5,9 +5,9 @@
             <label class="col-3 col-form-label">Nombre y Apellido</label>
             <div class="col">
                 <div class="input-group">
-                    <InputText @bind-Value="@cliente.NombreyApellido" oninput="this.value=this.value.toUpperCase()" placeholder="Nombre" class="form-control" />
+                    <InputText @bind-Value="@cliente.Nombre" oninput="this.value=this.value.toUpperCase()" placeholder="Nombre" class="form-control" />
                 </div>
-                <ValidationMessage For="@(() => cliente.NombreyApellido)" />
+                <ValidationMessage For="@(() => cliente.Nombre)" />
             </div>           
         </div>
 

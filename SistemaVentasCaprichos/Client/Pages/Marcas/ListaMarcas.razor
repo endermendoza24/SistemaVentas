@@ -175,7 +175,7 @@ else
                 }
 
                 var arr = memoryStream.ToArray();
-                JS.GuardarComo("Marcas.csv", arr);
+                JS.GuardarComo($"Exportacion_CSV_Marcas_{DateTime.Now.ToShortDateString()}.CSV", arr);                
             }
         }
     }
@@ -188,7 +188,7 @@ else
         using (var package = new ExcelPackage())
         {
             var worksheet = package.Workbook.Worksheets.Add("Marcas");
-            worksheet.Cells["A1"].Value = "Caprichos.";
+            worksheet.Cells["A1"].Value = "Caprichos";
             var tableBody = worksheet.Cells["A3:D3"].LoadFromCollection(
                 from f in Marca
                 select new { f.Id, f.Nombre, f.Descripcion, f.Estado }, true);

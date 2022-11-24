@@ -38,11 +38,7 @@
         </button>
     </div>
 </div>
-<MudTooltip Text="Exportar esta tabla a excel" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
-    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FileExcel"
-               @onclick="ExportarExcel"
-               Color="Color.Warning">Excel</MudButton>
-</MudTooltip>
+
 @if (clientes == null)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
@@ -78,7 +74,7 @@ else
                     }
                     <div class="card-body">
                         <h5 class="card-title">
-                            <b>@cliente.NombreyApellido</b>
+                            <b>@cliente.Nombre</b>
                         </h5>
                         <p class="card-text">
                             Cédula: @cliente.Cedula
@@ -111,7 +107,7 @@ else
         </HeaderContent>
         <RowTemplate>
             <MudTd DataLabel="Id">@context.Id</MudTd>
-            <MudTd DataLabel="Nombre">@context.NombreyApellido</MudTd>
+            <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
             <MudTd DataLabel="Cédula">@context.Cedula</MudTd>
             <MudTd DataLabel="sexo">@context.Sexo</MudTd>
             <MudTd DataLabel="Dirección">@context.Dirección</MudTd>
@@ -184,12 +180,7 @@ else
     {
         NombreFiltro = string.Empty;
         await CargarClientes();
-    }
-
-    void MostrarDeudores()
-    {
-        clientes = clientes.Where(x => x.Saldo > limitedeuda).OrderByDescending(x => x.Saldo).ToList();
-    }
+    }  
 
     async Task MostrarTodos()
     {
@@ -203,7 +194,9 @@ else
     {
         if (string.IsNullOrWhiteSpace(searchString))
             return true;
-        if (element.NombreyApellido.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Apellido.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
         if (element.Dirección.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
@@ -214,55 +207,5 @@ else
 
         return false;
     }
-    
-    private void ExportarExcel()
-    {
-        using (var package = new ExcelPackage())
-        {
-            var worksheet = package.Workbook.Worksheets.Add("Clientes");
-            worksheet.Cells["A1"].Value = "Caprichos.";
-            var tableBody = worksheet.Cells["A3:E3"].LoadFromCollection(
-                from f in clientes
-                select new { f.Id, f.NombreyApellido, f.Teléfono, f.Cedula,f.Dirección, f.Sexo, f.Estado }, true);
-            using (ExcelRange r = worksheet.Cells["A1:G1"])
-            {
-                r.Merge = true; r.Style.Font.Bold = true;
-                r.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
-                worksheet.DefaultColWidth = 60;
-                r.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
-                r.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGreen);
-            }
-            worksheet.Cells["A2"].Value = $"Informe de clientes dados de baja {DateTime.Now.ToLongTimeString()}";
-            using (ExcelRange r = worksheet.Cells["A2:G2"])
-            {
-                r.Merge = true;
-                r.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
-                worksheet.DefaultColWidth = 60;
-                r.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
-                r.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightYellow);
-            }
-    
 
-            var header = worksheet.Cells["A3:G3"];
-            worksheet.DefaultColWidth = 32;
-            tableBody.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-
-            //  esto afecta al cuerpo
-
-            tableBody.Style.Fill.PatternType = ExcelFillStyle.None;
-            // bordes
-            tableBody.Style.Border.BorderAround(ExcelBorderStyle.Hair);
-            worksheet.Cells.Style.Border.BorderAround(ExcelBorderStyle.Hair);
-
-            // fuentes
-            header.Style.Font.Bold = true;
-            header.Style.Font.Color.SetColor(System.Drawing.Color.Black);
-
-            // Este es el encabezado.
-            header.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
-            header.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
-
-            JS.GuardarComo($"Informe_Clientes_Bajas_{DateTime.Now.ToShortDateString()}.xlsx", package.GetAsByteArray());
-        }
-    }
 }

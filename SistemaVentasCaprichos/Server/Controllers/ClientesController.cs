@@ -30,7 +30,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
         {
             return await context.Clientes.
                 Where(x => x.Estado == true)
-              .OrderBy(x => x.NombreyApellido).ToListAsync();
+              .OrderBy(x => x.Nombre).ToListAsync();
         }
 
         //GET: api/clientes/filtro/nombre
@@ -38,10 +38,10 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<List<Cliente>>> Get([FromQuery] string nombre)
         {
-            var queryable = context.Clientes.Where(x => x.Estado == true).OrderBy(x => x.NombreyApellido).AsQueryable();
+            var queryable = context.Clientes.Where(x => x.Estado == true).OrderBy(x => x.Nombre).AsQueryable();
             if (!string.IsNullOrEmpty(nombre))
             {
-                queryable = queryable.Where(x => x.NombreyApellido.Contains(nombre));
+                queryable = queryable.Where(x => x.Nombre.Contains(nombre));
             }
             return await queryable.ToListAsync();
         }
@@ -50,10 +50,10 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<List<Cliente>>> GetBajas([FromQuery] string nombre)
         {
-            var queryable = context.Clientes.Where(x => x.Estado != true).OrderBy(x => x.NombreyApellido).AsQueryable();
+            var queryable = context.Clientes.Where(x => x.Estado != true).OrderBy(x => x.Nombre).AsQueryable();
             if (!string.IsNullOrEmpty(nombre))
             {
-                queryable = queryable.Where(x => x.NombreyApellido.Contains(nombre));
+                queryable = queryable.Where(x => x.Nombre.Contains(nombre));
             }
             return await queryable.ToListAsync();
         }

@@ -17,11 +17,6 @@
         </a>
     </div>
 </div>
-<MudTooltip Text="Exportar esta tabla a excel" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
-    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FileExcel"
-               @onclick="ExportarExcel"
-               Color="Color.Warning">Excel</MudButton>
-</MudTooltip>
 @if (Proveedores == null)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
@@ -37,7 +32,20 @@ else if (Proveedores.Count == 0)
     </div>
 }
 else
-{   
+{
+
+    <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+        <MudTooltip Text="Exportar esta tabla a excel" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
+            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FileExcel"
+                   @onclick="ExportarExcel"
+                   Color="Color.Warning">Excel</MudButton>
+        </MudTooltip>
+        <MudTooltip Text="Exportar esta tabla a CSV" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
+            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FileDocument"
+                   @onclick="ExportAsCSV"
+                   Color="Color.Warning">CSV</MudButton>
+        </MudTooltip>
+    </MudButtonGroup>
     <MudTable Items="@Proveedores" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Proveedores,bool>(FilterFunc1)"
               @bind-SelectedItem="selectedItem1">
         <ToolBarContent>
@@ -154,6 +162,22 @@ else
 
         return false;
     }
+    private void ExportAsCSV()
+    {
+        using (var memoryStream = new MemoryStream())
+        {
+            using (var writer = new StreamWriter(memoryStream))
+            {
+                using (var csv = new CsvHelper.CsvWriter(writer))
+                {
+                    csv.WriteRecords(Proveedores);
+                }
+
+                var arr = memoryStream.ToArray();
+                JS.GuardarComo($"Exportacion_CSV_Proveedores_{DateTime.Now.ToShortDateString()}.txt", arr);
+            }
+        }
+    }
     
     private void ExportarExcel()
     {
@@ -205,4 +229,5 @@ else
             JS.GuardarComo($"Informe_Proveedores_{DateTime.Now.ToShortDateString()}.xlsx", package.GetAsByteArray());
         }
     }
+    
 }
