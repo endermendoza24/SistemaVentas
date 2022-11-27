@@ -22,7 +22,7 @@
 @if (compras == null)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
-        <div class="spinner-grow text-success" role="status">
+        <div class="spinner-border text-success" role="status">
             <span class="sr-only">Cargando...</span>
         </div>
     </div>
@@ -35,12 +35,12 @@ else if (compras.Count == 0)
 }
 else
 {    
-    <MudTable Items="@compras" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Compra,bool>(FilterFunc1)"
+    <MudTable Items="@compras" Loading="@danger" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Compra,bool>(FilterFunc1)"
               @bind-SelectedItem="selectedItem1">
         <ToolBarContent>
             <MudText Typo="Typo.h6">Compras</MudText>
             <MudSpacer />
-            <MudTextField @bind-Value="searchString1" Placeholder="Buscar compra..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            <MudTextField @bind-Value="searchString1" Placeholder="Buscar..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
         </ToolBarContent>
         <HeaderContent>
             <MudTh Style="width:50px;">Nr</MudTh>
@@ -57,7 +57,7 @@ else
             <MudTd DataLabel="Empleado">@context.ApplicationUser.NombreyApellido</MudTd>
             <MudTd DataLabel="Total">@context.Total</MudTd>                       
             <MudTd>
-                <MudFab Color="Color.Primary" StartIcon="@Icons.Filled.Payment" Size="Size.Small"
+                <MudFab Color="Color.Error" StartIcon="@Icons.Filled.Edit" Size="Size.Small"
                         @onclick="@(() => NavigationManager.NavigateTo($"/ver-compra/{context.Id}"))" />
             </MudTd>
 
@@ -70,7 +70,7 @@ else
 @code {
     public List<Compra> compras { get; set; }
 
-    private bool dense = false;
+    private bool danger = true;
     private bool hover = true;
     private bool striped = true;
     private bool bordered = true;

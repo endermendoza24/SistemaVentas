@@ -101,7 +101,7 @@ else
                             }
                             else if (articulo.StockActual > articulo.StockMaximo)
                             {
-                                <b style="color:darkorange">STOCK EXCEDIDO: @articulo.StockActual</b>
+                                <b style="color:#9C27B0">STOCK EXCEDIDO: @articulo.StockActual</b>
                             }
                             else
                             {
@@ -119,45 +119,41 @@ else
             <ToolBarContent>
                 <MudText Typo="Typo.h6">Artículos</MudText>
                 <MudSpacer />
-                <MudTextField @bind-Value="searchString1" Placeholder="Buscar artículo..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+                <MudTextField @bind-Value="searchString1" Placeholder="Buscar..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
             </ToolBarContent>
             <HeaderContent>
                 <MudTh Style="width:50px;">Nr</MudTh>
-                <MudTh>Nombre</MudTh>
+                <MudTh>Nombre del artículo</MudTh>
                 <MudTh>Descripción</MudTh>
                 <MudTh>Precio</MudTh>
                 <MudTh>Fecha alta</MudTh>
-                <MudTh>Stock</MudTh>
-                <MudTh>Acciones</MudTh>
+                <MudTh Style="width:100px;">Stock</MudTh>
+                <MudTh Style="width:50px;" >Acciones</MudTh>
             </HeaderContent>
             <RowTemplate>
                 <MudTd DataLabel="Id">@context.Id</MudTd>
                 <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
                 <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
-                <MudTd DataLabel="Precio">@context.PrecioUnitario</MudTd>
-                <MudTd DataLabel="Fecha">@context.Ultima_Modificación.ToShortDateString()</MudTd>
+                <MudTd DataLabel="Precio">C$ @Math.Round(context.PrecioUnitario,2)</MudTd>
+                <MudTd DataLabel="Fecha">@context.Ultima_Modificación.ToLongDateString()</MudTd>
                 <MudTd>
                     @if (context.StockActual < context.StockMinimo)
-                    {
-                        <MudChip Color="Color.Error" Variant="Variant.Filled" Size="Size.Small">
-                            <MudTd Style="color:#fff" DataLabel="Stock bajo">@context.StockActual</MudTd>
-                        </MudChip>
+                    {                               
+                       <div class="chip chip-low">@context.StockActual</div>
                     }
                     else if (context.StockActual > context.StockMaximo)
                     {
-                        <MudChip Color="Color.Warning" Variant="Variant.Filled" Size="Size.Small">
-                            <MudTd Style="color:#fff" DataLabel="Stock excedido"> @context.StockActual</MudTd>
-                        </MudChip>
+                        @* <MudTd class="chip chip-ex" DataLabel="Stock excedido"> @context.StockActual</MudTd> *@
+                          <div class="chip chip-ex">@context.StockActual</div>
                     }
                     else
                     {
-                        <MudChip Color="Color.Success" Variant="Variant.Filled" Size="Size.Small">
-                            <b><MudTd Style="color:#fff" DataLabel="Stock"> @context.StockActual</MudTd></b>
-                        </MudChip>
+                        @* <b><MudTd class="chip chip-normal" DataLabel="Stock"> @context.StockActual</MudTd></b> *@
+                          <div class="chip chip-normal">@context.StockActual</div>
                     }
                 </MudTd>
                 <MudTd>
-                    <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
+                    <MudFab Color="Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
                         @onclick="@(() => NavigationManager.NavigateTo($"/editar-articulo/{context.Id}"))" />
                 </MudTd>
 

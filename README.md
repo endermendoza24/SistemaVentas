@@ -43,6 +43,7 @@ Elaborado por:
 
 > 18-20 de noviembre de 2022, ya funciona la lógica de roles en el sistema, actualmente funcinando con dos roles, que son 'administrador' y 'empleado', cada rol tiene ciertos módulos que le corresponde solo a uno de ellos, aunque aún no funciona a la perfección si lo hace de muy buena manera, cumpliendo básicamente con lo que debería de hacer.
 > 24 de noviembre, mejoras en el diseño del login
+> 27 de noviembre, mejoras en diseño
 
 ## Lógica de dada de bajas
 

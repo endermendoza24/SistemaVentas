@@ -8,9 +8,10 @@
     <Authorized>
         <style>
             #usuario {
-                color: lightseagreen;
+                color: #fff;
                 margin-right: 1rem;
                 border-radius: 0.2rem;
+                font-weight: 500;
             }
 
                 #usuario:hover {
@@ -23,7 +24,7 @@
                 }
         </style>
         
-        <a href="authentication/profile" id="usuario">
+        <a class="user" href="authentication/profile" id="usuario">
             @context.User.Identity.Name
         </a>
         <button class="btn btn-sm btn-danger" @onclick="BeginSignOut"><i class="oi oi-account-logout"></i>&nbsp; Salir</button>

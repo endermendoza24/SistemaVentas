@@ -1,7 +1,12 @@
 .card[b-np7uj7vsnh] {
     box-shadow: 0 0 12px rgba(33,33,33,.2);
+    border-radius: 10px;
 }
 
 @media print {
     /*aqui deben de circle los estilos param imprimir las factura*/
+    .card[b-np7uj7vsnh]{
+        font-family: Consolas;
+        color: red;
+    }
 }

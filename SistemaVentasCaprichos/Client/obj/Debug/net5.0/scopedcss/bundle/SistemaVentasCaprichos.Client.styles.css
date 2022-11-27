@@ -1,15 +1,50 @@
 /* /Pages/Articulos/ListaArticulo.razor.rz.scp.css */
-.card[b-64rsms2ebu] {
-    background-color: lightblue;
-    border-style: groove;
-    border-radius: 8px;
-    text-align: left;
+:root[b-64rsms2ebu] {
+  --errorColor: #f44336;
+  --successColor: #009688;
+  --warningColor: #ff9800;
+  --primaryColor: #2196f3;
+  --excedido: #9c27b0;
 }
 
-    .card:hover[b-64rsms2ebu] {
-        box-shadow: 0 0 12px rgba(33,33,33,.2);
-        opacity: 0.95;
-    }
+.card[b-64rsms2ebu] {
+  background-color: lightblue;
+  border-style: groove;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.card:hover[b-64rsms2ebu] {
+  box-shadow: 0 0 12px rgba(33, 33, 33, 0.2);
+  opacity: 0.95;
+}
+
+.chip[b-64rsms2ebu] {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  border-radius: 9999px;
+  font-size: 15px;
+  width: 70%;
+  padding: 0.25rem 0.5rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chip:hover[b-64rsms2ebu] {
+  transition: all 0.3s;
+  opacity: 0.8;
+}
+.chip-low[b-64rsms2ebu] {
+  background-color: #f44336;
+}
+.chip-normal[b-64rsms2ebu] {
+  background-color: #009688;
+}
+.chip-ex[b-64rsms2ebu] {
+  background-color: #9c27b0;
+}
 /* /Pages/Clientes/ListaCliente.razor.rz.scp.css */
 .card[b-phqimgj4wb] {
     background-color: lightblue;
@@ -34,10 +69,15 @@
 /* /Pages/Ventas/VerVenta.razor.rz.scp.css */
 .card[b-np7uj7vsnh] {
     box-shadow: 0 0 12px rgba(33,33,33,.2);
+    border-radius: 10px;
 }
 
 @media print {
     /*aqui deben de circle los estilos param imprimir las factura*/
+    .card[b-np7uj7vsnh]{
+        font-family: Consolas;
+        color: red;
+    }
 }
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-x13t0nzs1e] {
