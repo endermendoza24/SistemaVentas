@@ -29,7 +29,7 @@
 else if (ventas.Count == 0)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
-        <text>No se encontraron ventas.</text>
+        <text>No se encontraron ventas registradas.</text>
     </div>
 }
 else
@@ -60,7 +60,7 @@ else
             }
             else
             {
-            <MudTd></MudTd>
+            <MudTd>Cliente genérico</MudTd>
             }
         <MudTd DataLabel="Empleado">@context.ApplicationUser.NombreyApellido</MudTd>
         <MudTd DataLabel="Empleado">C$ @context.Total</MudTd>

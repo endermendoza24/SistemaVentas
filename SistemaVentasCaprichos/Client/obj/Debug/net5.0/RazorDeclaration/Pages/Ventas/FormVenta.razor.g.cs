@@ -174,7 +174,7 @@ using OfficeOpenXml.Style;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 152 "C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
+#line 137 "C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
        
     [Parameter] public Venta venta { get; set; } = new Venta();
     [Parameter] public List<Cliente> clientes { get; set; } = new List<Cliente>();
@@ -185,7 +185,7 @@ using OfficeOpenXml.Style;
 
     public decimal Iva = 15M / 100M;
 
-    public bool ocultaclientes = true;
+    public bool ocultaclientes = false;
 
     public List<DetalleVenta> listadetalle { get; set; } = new List<DetalleVenta>();
 
@@ -202,7 +202,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
 #nullable restore
-#line 173 "C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
+#line 158 "C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
              for (int i = 0; i < listadetalle.Count; i++)
             {
                 venta.Total += listadetalle[i].SubTotal;
@@ -212,7 +212,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
 #nullable restore
-#line 176 "C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
+#line 161 "C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
              
         }
         return venta.Total;

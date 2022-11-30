@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 <MudLayout>
-    <MudDrawer @bind-Open="_sidebarOpen" Elevation="1">
+    <MudDrawer @bind-Open="_sidebarOpen" Elevation="1" Style="background-color: #0f0f0f">
        @* <MudDrawerHeader>
             <MudAvatar Color="Color.Transparent" Size="Size.Large" Image="assets/Logo-CodeMaze.png" />
             <MudText Typo="Typo.h5" Color="Color.Primary" Style="margin-top:10px; margin-left:15px;"></MudText>
@@ -8,7 +8,7 @@
         <AppBar OnSidebarToggled="ToggleSidebar" OnThemeToggled="ToggleTheme" />
         <AuthorizeView>
             <Authorized>
-                <NavBar SideBarOpen="_sidebarOpen" />             
+                <NavBar SideBarOpen="_sidebarOpen" />
             </Authorized>
         </AuthorizeView>
     </MudDrawer>

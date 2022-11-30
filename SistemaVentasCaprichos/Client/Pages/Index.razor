@@ -3,9 +3,13 @@
 <div id="index">
     <h2><b>Le damos la bienvenida</b></h2>
 
-    <DashboardPowerBi/>
+ 
 
     <AuthorizeView>
+        <Authorized>
+            <DashboardPowerBi/>
+        </Authorized>
+        
         <NotAuthorized>
             <h3>Inicie sesión con sus credenciales</h3>
         </NotAuthorized>

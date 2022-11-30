@@ -15,10 +15,11 @@ namespace SistemaVentasCaprichos.Shared
         [Key]
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
-        [Required, EnumDataType(typeof(FormasPago))]
-        public FormasPago FormaPago { get; set; }
+
+        // [Required, EnumDataType(typeof(FormasPago))]
+        public FormasPago FormaPago { get; set; } = FormasPago.Cordoba;
         public List<DetalleVenta> DetalleVentas { get; set; } = new List<DetalleVenta>();
-        [Range(1, 99999999, ErrorMessage = "Seleccione cliente")]
+        [Range(1, int.MaxValue, ErrorMessage = "Seleccione cliente")]
         public int? ClienteId { get; set; }
         [ForeignKey("ClienteId")]
         public Cliente Cliente { get; set; }
@@ -33,10 +34,9 @@ namespace SistemaVentasCaprichos.Shared
         #endregion
     }
 
-    public enum FormasPago
+    public enum FormasPago // segun los requerimientos del cliente solo se aceptara córdoba como moneda de pago
     {
-        Cordoba = 1,
-        Dolar = 2
+        Cordoba = 1
     }
 
 

@@ -41,7 +41,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
         [HttpGet("filtro")]
         [AllowAnonymous]
         // public async Task<ActionResult<List<Compra>>> Get([FromQuery] string empleado, [FromQuery] string fecha)
-        public async Task<ActionResult<List<Compra>>> Get([FromQuery] string empleado, [FromQuery] DateTime fecha)
+        public async Task<ActionResult<List<Compra>>> Get([FromQuery] string empleado, [FromQuery] string fecha)
         {
             DateTime f = Convert.ToDateTime(fecha);
 

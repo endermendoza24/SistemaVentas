@@ -197,7 +197,7 @@ using OfficeOpenXml.Style;
     async Task CrearVent()
     {
         var confirmacion = await JS.InvokeAsync<bool>("confirmar", "¿Finalizar venta?",
-            $"Total: ${venta.Total}. Forma de pago: {venta.FormaPago}", "question");
+            $"Total: C${Math.Round(venta.Total,2)}.", "question");
         if (confirmacion)
         {
             var respuesta = await Http.PostAsJsonAsync("api/ventas", venta);

@@ -7883,11 +7883,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anderson\\OneDrive\\Documentos\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
+      "projectUniqueName": "C:\\Users\\Anderson\\OneDrive\\Documentos\\SistemaVentas\\sistemaventascaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
       "projectName": "SistemaVentasCaprichos.Client",
-      "projectPath": "C:\\Users\\Anderson\\OneDrive\\Documentos\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
+      "projectPath": "C:\\Users\\Anderson\\OneDrive\\Documentos\\SistemaVentas\\sistemaventascaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
       "packagesPath": "C:\\Users\\Anderson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anderson\\OneDrive\\Documentos\\SistemaVentas\\SistemaVentasCaprichos\\Client\\obj\\",
+      "outputPath": "C:\\Users\\Anderson\\OneDrive\\Documentos\\SistemaVentas\\sistemaventascaprichos\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Anderson\\AppData\\Roaming\\NuGet\\NuGet.Config",
