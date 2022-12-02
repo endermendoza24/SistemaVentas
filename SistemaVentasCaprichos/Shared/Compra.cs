@@ -15,8 +15,8 @@ namespace SistemaVentasCaprichos.Shared
         [Key]
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
-        public List<DetalleCompra> DetalleCompras { get; set; } = new List<DetalleCompra>();        
-        
+        public List<DetalleCompra> DetalleCompras { get; set; } = new List<DetalleCompra>();
+
         public string EmpleadoId { get; set; }
         [ForeignKey("EmpleadoId")]
         public virtual ApplicationUser ApplicationUser { get; set; }
@@ -31,5 +31,5 @@ namespace SistemaVentasCaprichos.Shared
         #endregion
     }
 
-   
+
 }

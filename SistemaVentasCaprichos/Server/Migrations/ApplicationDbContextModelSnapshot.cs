@@ -152,14 +152,14 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         new
                         {
                             Id = "89086180-b978-4f90-9dbd-a7040bc93f41",
-                            ConcurrencyStamp = "bf635e59-a1b6-410d-a24b-08bd7a6ed6b5",
+                            ConcurrencyStamp = "d84e831c-0d7c-4fea-b186-c964db22b15a",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
                             Id = "65ade53a-ce03-411e-9d35-08fca7f47014",
-                            ConcurrencyStamp = "3a079a14-bc4a-4caa-acb8-d615890802d0",
+                            ConcurrencyStamp = "9d780e4d-10de-49a5-985e-d438ac49dc60",
                             Name = "empleado",
                             NormalizedName = "empleado"
                         });
@@ -581,6 +581,29 @@ namespace SistemaVentasCaprichos.Server.Migrations
                     b.ToTable("DetalleCompras");
                 });
 
+            modelBuilder.Entity("SistemaVentasCaprichos.Shared.DetalleEgresos", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("Cantidad")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<int>("EgresosId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Monto")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EgresosId");
+
+                    b.ToTable("DetalleEgresos");
+                });
+
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.DetalleVenta", b =>
                 {
                     b.Property<int>("Id")
@@ -610,6 +633,33 @@ namespace SistemaVentasCaprichos.Server.Migrations
                     b.HasIndex("VentaId");
 
                     b.ToTable("DetalleVentas");
+                });
+
+            modelBuilder.Entity("SistemaVentasCaprichos.Shared.Egresos", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Detalles")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("EmpleadoId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpleadoId");
+
+                    b.ToTable("Egresos");
                 });
 
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Marcas", b =>
@@ -837,6 +887,17 @@ namespace SistemaVentasCaprichos.Server.Migrations
                     b.Navigation("Compra");
                 });
 
+            modelBuilder.Entity("SistemaVentasCaprichos.Shared.DetalleEgresos", b =>
+                {
+                    b.HasOne("SistemaVentasCaprichos.Shared.Egresos", "Egresos")
+                        .WithMany("DetalleEgresos")
+                        .HasForeignKey("EgresosId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Egresos");
+                });
+
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.DetalleVenta", b =>
                 {
                     b.HasOne("SistemaVentasCaprichos.Shared.Articulo", "Articulo")
@@ -854,6 +915,15 @@ namespace SistemaVentasCaprichos.Server.Migrations
                     b.Navigation("Articulo");
 
                     b.Navigation("Venta");
+                });
+
+            modelBuilder.Entity("SistemaVentasCaprichos.Shared.Egresos", b =>
+                {
+                    b.HasOne("SistemaVentasCaprichos.Shared.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("EmpleadoId");
+
+                    b.Navigation("ApplicationUser");
                 });
 
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Venta", b =>
@@ -881,6 +951,11 @@ namespace SistemaVentasCaprichos.Server.Migrations
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Compra", b =>
                 {
                     b.Navigation("DetalleCompras");
+                });
+
+            modelBuilder.Entity("SistemaVentasCaprichos.Shared.Egresos", b =>
+                {
+                    b.Navigation("DetalleEgresos");
                 });
 
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Venta", b =>

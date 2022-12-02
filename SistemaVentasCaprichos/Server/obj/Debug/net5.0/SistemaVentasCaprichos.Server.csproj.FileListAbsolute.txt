@@ -1278,3 +1278,8 @@ C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Serve
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\bin\Debug\net5.0\bundleconfig.json
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Server\obj\Debug\net5.0\Razor\Pages\_Layout.cshtml.g.cs
