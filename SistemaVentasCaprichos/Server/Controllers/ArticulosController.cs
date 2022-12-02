@@ -44,10 +44,9 @@ namespace SistemaVentasCaprichos.Server.Controllers
             }
             return await queryable.ToListAsync();
         }
-
-        #region
-        //  dados de baja
+        //GET: api/articulos/filtro/nombre
         [HttpGet("bajas")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Articulo>>> GetBajas([FromQuery] string nombre)
         {
             var queryable = context.Articulos.Where(x => x.Estado != true).OrderBy(x => x.Id).AsQueryable();
@@ -57,7 +56,8 @@ namespace SistemaVentasCaprichos.Server.Controllers
             }
             return await queryable.ToListAsync();
         }
-        #endregion
+
+    
 
         // GET: api/articulos/5
         [HttpGet("{id}")]

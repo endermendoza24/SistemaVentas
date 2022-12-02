@@ -45,6 +45,8 @@ Elaborado por:
 > 24 de noviembre, mejoras en el diseño del login
 > 27 de noviembre, mejoras en diseño
 
+> 01 de diciembre No hay muchos avances, se agregó una forma primitiva de egresos, aún falta el número de factura
+
 ## Lógica de dada de bajas
 
 La lógica de dada de baja está en loc controladores de cada catálogo, se le debe añadir una sentencia WHERE en el método GET, en esa sentencia se debe de especificar que solo muestre los registros cuyo estado sea igual a true, esto se hizo de la siguiente manera:
@@ -88,3 +90,11 @@ La manera en que se hicieron los reportes resulta ser muy fácil, simplemente co
 - [x] Corregir ortografía.
 - [ ] Reportes básicos
 - [ ] Logo e imágenes.
+- [ ] Reportes básicos
+- [ ] Logo e imágenes.
+- [ ] Mejorar login
+- [ ] Lógica de apertura de caja
+- [ ] Lógica de cierre de caja
+- [ ] Mejoras generales en diseño
+- [ ] Desactivar eliminación permanente
+- [ ] Idea de Egresos hasta el momento

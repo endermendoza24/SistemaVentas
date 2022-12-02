@@ -189,11 +189,10 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 70 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\ListaCompra.razor"
+#line 69 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Compras\ListaCompra.razor"
        
     public List<Compra> compras { get; set; }
-
-    private bool danger = true;
+    
     private bool hover = true;
     private bool striped = true;
     private bool bordered = true;

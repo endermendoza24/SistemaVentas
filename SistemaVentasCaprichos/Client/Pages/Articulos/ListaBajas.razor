@@ -69,26 +69,20 @@ else
                 <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
                 <MudTd DataLabel="Precio">C$ @context.PrecioUnitario</MudTd>
                 <MudTd DataLabel="Fecha">@context.Ultima_Modificación.ToLongDateString()</MudTd>
-                <MudTd>
-                    @if (context.StockActual < context.StockMinimo)
-                        {
-                    <MudChip Color="Color.Error" Variant="Variant.Filled" Size="Size.Small">
-                            <MudTd Style="color:#fff" DataLabel="Stock bajo">@context.StockActual</MudTd>
-                        </MudChip>
-                        }
-                        else if (context.StockActual > context.StockMaximo)
-                        {
-                    <MudChip Color="Color.Warning" Variant="Variant.Filled" Size="Size.Small">
-                            <MudTd Style="color:#fff" DataLabel="Stock excedido"> @context.StockActual</MudTd>
-                        </MudChip>
-                        }
-                        else
-                        {
-                    <MudChip Color="Color.Success" Variant="Variant.Filled" Size="Size.Small">
-                            <MudTd Style="color:#fff" DataLabel="Stock"> @context.StockActual</MudTd>
-                        </MudChip>
-                        }
-                </MudTd>
+            <MudTd>
+                @if (context.StockActual < context.StockMinimo)
+                {
+                    <div class="chip chip-low">@context.StockActual</div>
+                }
+                else if (context.StockActual > context.StockMaximo)
+                {                    
+                    <div class="chip chip-ex">@context.StockActual</div>
+                }
+                else
+                {                    
+                    <div class="chip chip-normal">@context.StockActual</div>
+                }
+            </MudTd>
                 <MudTd>
                     <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
                             @onclick="@(() => NavigationManager.NavigateTo($"/editar-articulo/{context.Id}"))" />

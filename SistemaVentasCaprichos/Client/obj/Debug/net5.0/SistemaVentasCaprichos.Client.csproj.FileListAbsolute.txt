@@ -5464,3 +5464,12 @@ C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Clien
 C:\Users\Anderson\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\0vosjjG+.gz
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ListaUsuarios.razor.g.cs
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\ListaUsuarios.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Egresos\FormEgresos.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Egresos\FormEgresos.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Egresos\CrearEgreso.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Egresos\CrearEgreso.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Egresos\ListaEgresos.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Egresos\ListaEgresos.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Egresos\VerEgresos.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Egresos\VerEgresos.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Articulos\ListaBajas.razor.rz.scp.css

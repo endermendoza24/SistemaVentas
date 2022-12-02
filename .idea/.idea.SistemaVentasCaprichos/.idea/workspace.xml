@@ -13,16 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a07585d5-4263-4ca6-b609-a5ad5a127939" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SistemaVentasCaprichos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SistemaVentasCaprichos/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/SistemaVentasCaprichos/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SistemaVentasCaprichos/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/SistemaVentasCaprichos/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SistemaVentasCaprichos/v17/.futdcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/SistemaVentasCaprichos/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/SistemaVentasCaprichos/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Pages/Articulos/ListaArticulo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Pages/Articulos/ListaArticulo.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Pages/Articulos/ListaArticulo.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Pages/Articulos/ListaArticulo.razor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Pages/Index.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Pages/Ventas/CrearVenta.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Pages/Ventas/CrearVenta.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Pages/Ventas/FormVenta.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Pages/Ventas/FormVenta.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Pages/Ventas/ListaVenta.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Pages/Ventas/ListaVenta.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Shared/MainLayout.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/SistemaVentasCaprichos.Client.StaticWebAssets.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/SistemaVentasCaprichos.Client.StaticWebAssets.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Shared/NavBar.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/Shared/NavBar.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/SistemaVentasCaprichos.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/SistemaVentasCaprichos.Client.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/SistemaVentasCaprichos.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/SistemaVentasCaprichos.Client.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/wwwroot/_framework/SistemaVentasCaprichos.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/wwwroot/_framework/SistemaVentasCaprichos.Client.dll" afterDir="false" />
@@ -31,17 +26,11 @@
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/wwwroot/_framework/SistemaVentasCaprichos.Shared.dll.gz" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/wwwroot/_framework/SistemaVentasCaprichos.Shared.dll.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/wwwroot/_framework/SistemaVentasCaprichos.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/wwwroot/_framework/SistemaVentasCaprichos.Shared.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/wwwroot/_framework/blazor.boot.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/wwwroot/_framework/blazor.boot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/wwwroot/_framework/dotnet.5.0.17.js.gz" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/bin/Debug/net5.0/wwwroot/_framework/dotnet.5.0.17.js.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/Razor/Pages/Articulos/ListaArticulo.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/Razor/Pages/Articulos/ListaArticulo.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/Razor/Pages/Index.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/Razor/Pages/Index.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/Razor/Pages/Ventas/CrearVenta.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/Razor/Pages/Ventas/CrearVenta.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/Razor/Pages/Ventas/FormVenta.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/Razor/Pages/Ventas/FormVenta.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/Razor/Pages/Ventas/ListaVenta.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/Razor/Pages/Ventas/ListaVenta.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/Razor/Shared/MainLayout.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/Razor/Shared/MainLayout.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Ventas/CrearVenta.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Ventas/CrearVenta.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Ventas/FormVenta.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Ventas/FormVenta.razor.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/RazorDeclaration/SistemaVentasCaprichos.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/RazorDeclaration/SistemaVentasCaprichos.Client.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/RazorDeclaration/SistemaVentasCaprichos.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/RazorDeclaration/SistemaVentasCaprichos.Client.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/SistemaVentasCaprichos.Client.RazorComponent.input.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/SistemaVentasCaprichos.Client.RazorComponent.input.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/SistemaVentasCaprichos.Client.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/SistemaVentasCaprichos.Client.RazorCoreGenerate.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/SistemaVentasCaprichos.Client.TagHelpers.output.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/SistemaVentasCaprichos.Client.TagHelpers.output.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/SistemaVentasCaprichos.Client.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/SistemaVentasCaprichos.Client.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/SistemaVentasCaprichos.Client.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/SistemaVentasCaprichos.Client.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/SistemaVentasCaprichos.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/SistemaVentasCaprichos.Client.dll" afterDir="false" />
@@ -49,15 +38,10 @@
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/blazor.boot.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/blazor.boot.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/project.razor.vs.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/project.razor.vs.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/ref/SistemaVentasCaprichos.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/ref/SistemaVentasCaprichos.Client.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/scopedcss/Pages/Articulos/ListaArticulo.razor.rz.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/scopedcss/Pages/Articulos/ListaArticulo.razor.rz.scp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/scopedcss/bundle/SistemaVentasCaprichos.Client.styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/scopedcss/bundle/SistemaVentasCaprichos.Client.styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/scopedcss/projectbundle/SistemaVentasCaprichos.Client.bundle.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/scopedcss/projectbundle/SistemaVentasCaprichos.Client.bundle.scp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/staticwebassets/SistemaVentasCaprichos.Client.StaticWebAssets.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/Debug/net5.0/staticwebassets/SistemaVentasCaprichos.Client.StaticWebAssets.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Client/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/Controllers/ComprasController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/Controllers/ComprasController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Client.StaticWebAssets.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Client.StaticWebAssets.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Client.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Client.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Server.StaticWebAssets.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Server.StaticWebAssets.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Server.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Server.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Server.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Server.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Server.dll" afterDir="false" />
@@ -65,14 +49,18 @@
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/bin/Debug/net5.0/SistemaVentasCaprichos.Shared.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.TagHelpers.output.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.TagHelpers.output.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/SistemaVentasCaprichos.Server.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/project.razor.vs.json" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/project.razor.vs.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/ref/SistemaVentasCaprichos.Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/ref/SistemaVentasCaprichos.Server.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Shared/Venta.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Shared/Venta.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/staticwebassets/SistemaVentasCaprichos.Server.StaticWebAssets.Manifest.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/staticwebassets/SistemaVentasCaprichos.Server.StaticWebAssets.Manifest.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/staticwebassets/SistemaVentasCaprichos.Server.StaticWebAssets.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Server/obj/Debug/net5.0/staticwebassets/SistemaVentasCaprichos.Server.StaticWebAssets.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Shared/DetalleEgresos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Shared/DetalleEgresos.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Shared/Egresos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Shared/Egresos.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Shared/bin/Debug/net5.0/SistemaVentasCaprichos.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Shared/bin/Debug/net5.0/SistemaVentasCaprichos.Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Shared/bin/Debug/net5.0/SistemaVentasCaprichos.Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Shared/bin/Debug/net5.0/SistemaVentasCaprichos.Shared.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaVentasCaprichos/Shared/obj/Debug/net5.0/SistemaVentasCaprichos.Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaVentasCaprichos/Shared/obj/Debug/net5.0/SistemaVentasCaprichos.Shared.dll" afterDir="false" />
@@ -219,6 +207,8 @@
       <workItem from="1669685099755" duration="835000" />
       <workItem from="1669686181898" duration="2156000" />
       <workItem from="1669765928570" duration="1205000" />
+      <workItem from="1669943518977" duration="7270000" />
+      <workItem from="1669953368347" duration="385000" />
     </task>
     <servers />
   </component>
@@ -240,5 +230,25 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SistemaVentasCaprichos/Client/Pages/Egresos/ListaEgresos.razor</url>
+          <line>63</line>
+          <properties documentPath="C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Egresos\ListaEgresos.razor" initialLine="63" isMultiMethodBreakpoint="true">
+            <option name="multiMethodBreakpoint" value="true" />
+            <startOffsets>
+              <option value="-1" />
+            </startOffsets>
+            <endOffsets>
+              <option value="-1" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

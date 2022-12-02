@@ -4,7 +4,7 @@
         <MudDivider Class="my-2" />
         <MudNavLink Href="/" Icon="@Icons.Filled.Dashboard">Inicio</MudNavLink>
         @*<MudNavLink Href="/estadisticas" Icon="@Icons.Filled.QueryStats">Estadísticas</MudNavLink>*@
-        <MudNavGroup Title="Artículos" Icon="@Icons.Filled.ProductionQuantityLimits" Expanded="false">
+        <MudNavGroup Title="Artículos" Icon="@Icons.Filled.AddShoppingCart" Expanded="true">
             <MudNavLink Href="/lista-articulos">Crear artículo</MudNavLink>
             <AuthorizeView Roles="admin">
                 <Authorized>
@@ -15,7 +15,7 @@
             </AuthorizeView>
         </MudNavGroup>
 
-        <MudNavGroup Title="Ventas" Icon="@Icons.Filled.ShoppingBag" Expanded="false">
+        <MudNavGroup Title="Ventas" Icon="@Icons.Filled.ShoppingBag" Expanded="true">
             <MudNavLink Href="/lista-ventas">Ventas</MudNavLink>
         </MudNavGroup>
 
@@ -23,8 +23,10 @@
 
         <AuthorizeView Roles="admin">
             <Authorized>
-                <MudNavGroup Title="Compras" Icon="@Icons.Filled.ShoppingBag" Expanded="false">
+                <MudNavGroup Title="Compras" Icon="@Icons.Filled.ShoppingBag" Expanded="true">
                     <MudNavLink Href="/lista-compras">Compras</MudNavLink>
+                    <MudNavLink Href="/lista-egresos">Egresos</MudNavLink>
+                    <MudNavLink Href="/ver-egresos">Ver egresos</MudNavLink>
                 </MudNavGroup>
                 <MudNavLink Href="/lista-proveedores" Icon="@Icons.Filled.People">Proveedores</MudNavLink>                
                 <MudNavGroup Title="Usuarios" Icon="@Icons.Filled.SupervisedUserCircle" Expanded="true">

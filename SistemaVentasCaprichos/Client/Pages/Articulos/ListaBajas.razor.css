@@ -1,0 +1,56 @@
+﻿:root {
+    --errorColor: #f44336;
+    --successColor: #009688;
+    --warningColor: #ff9800;
+    --primaryColor: #2196f3;
+    --excedido: #9c27b0;
+}
+
+.card {
+    /*background-color: lightblue;*/
+    background-color: #1e1f21;
+    border-style: none;
+    border-radius: 10px;
+    text-align: left;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(33, 33, 33, 0.2);
+    transition: all .3s;
+    margin: 5px 0;
+}
+
+    .card:hover {
+        box-shadow: 0 0 12px rgba(33, 33, 33, 0.2);
+        opacity: 0.95;
+        transform: scale(1.01);
+    }
+
+.chip {
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    border-radius: 9999px;
+    font-size: 15px;
+    width: 70%;
+    padding: 0.25rem 0.5rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .chip:hover {
+        transition: all 0.3s;
+        opacity: 0.8;
+    }
+
+.chip-low {
+    background-color: #f44336;
+}
+
+.chip-normal {
+    background-color: #009688;
+}
+
+.chip-ex {
+    background-color: #9c27b0;
+}

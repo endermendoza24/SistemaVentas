@@ -14,7 +14,7 @@ namespace SistemaVentasCaprichos.Shared
         #region ATRIBUTOS/PROPIEDADES
         [Key]
         public int Id { get; set; }
-        public DateTime Fecha { get; set; }
+        public DateTime Fecha { get; set; } = DateTime.Now;
 
         [StringLength(300, ErrorMessage = "Sobrepasado")]
         public string Detalles { get; set; }
@@ -28,6 +28,9 @@ namespace SistemaVentasCaprichos.Shared
         [Column(TypeName = "decimal(10,2)")]
         [Range(1, double.MaxValue, ErrorMessage = "Valor inválido")]
         public decimal Total { get; set; }
+
+        public bool Estado { get; set; } = true;
+
         #endregion
     }
 }

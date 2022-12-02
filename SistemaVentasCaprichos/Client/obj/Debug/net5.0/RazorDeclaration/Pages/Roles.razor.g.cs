@@ -182,7 +182,7 @@ using Microsoft.AspNetCore.Identity;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 32 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Roles.razor"
+#line 34 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Roles.razor"
        
     private List<IdentityRole> roles = new List<IdentityRole>();
     private List<ApplicationUser> usuarios = new List<ApplicationUser>();

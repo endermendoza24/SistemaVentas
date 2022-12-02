@@ -23,6 +23,7 @@ namespace SistemaVentasCaprichos.Shared
         public int EgresosId { get; set; } 
         [ForeignKey("EgresosId")]
         public Egresos Egresos { get; set; }
+        public decimal SubTotal => Monto * Cantidad;
         #endregion
     }
 }

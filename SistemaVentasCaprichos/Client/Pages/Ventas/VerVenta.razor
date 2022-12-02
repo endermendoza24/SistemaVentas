@@ -34,11 +34,11 @@
             </div>
 
             <div class="d-flex justify-content-between">
-                <small>@ListaAjustes.NombreSistema</small>
+                <small><b>@ListaAjustes.NombreSistema</b></small>
                 <small><b>Fecha:</b> @venta.Fecha</small>
             </div>
             <div class="d-flex justify-content-between">
-                <small>@ListaAjustes.NombrePropietario</small>
+                <small><b>Propietario: @ListaAjustes.NombrePropietario</b></small>
                 <small><b>F.de Pago:</b> @venta.FormaPago</small>
             </div>
             <div class="d-flex justify-content-between">                
@@ -46,14 +46,25 @@
             </div>
 
             <div class="d-flex justify-content-between">
-                <small>@ListaAjustes.Telefono</small>
+                <small><b>Teléfono @ListaAjustes.Telefono</b></small>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <small><b>RUC @ListaAjustes.RUC</b></small>
             </div>
 
             @if (venta.ClienteId != null)
             {
                 <hr />
                 <div class="text-left">
-                    <small><b>Cliente:</b> @venta.Cliente.Nombre &nbsp; @venta.Cliente.Apellido </small> <br />
+                    @if(venta.ClienteId != null)
+                    {
+                        <small><b>Cliente:</b> @venta.Cliente.Nombre &nbsp; @venta.Cliente.Apellido </small> <br />
+                    }
+                    else
+                    {
+                        <small><b>Cliente:</b> cliente genérico</small> <br />
+                    }
                     <small><b>Dirección:</b> @venta.Cliente.Dirección</small> <br />
                     <small><b>Teléfono:</b> @venta.Cliente.Teléfono</small>
                 </div>
@@ -79,7 +90,7 @@
                             <td><small>@item.Precio</small></td>
                             <td><small>@item.Cantidad</small></td>
                             <td><small>@item.Descuento%</small></td>
-                            <td><small>@item.Iva</small></td>
+                            <td><small>@item.Iva </small></td>
                             <td><small>@item.SubTotal</small></td>
                         </tr>
                     }
