@@ -21,11 +21,13 @@
             <option value="@rol.Name">@rol.Name</option>
         }
     </select>
-    <div class="btn-group btn-block my-2">
-        <button @onclick="@(() => AccionRol(nombreRol, usuarioId, true))" class="btn btn-primary"> Asignar rol</button>
+    <div class="btn-group btn-block my-2">        
+        <MudButton @onclick="@(() => AccionRol(nombreRol, usuarioId, true))" Variant="Variant.Filled" 
+            Color="Color.Success" FullWidth="true">Asignar rol</MudButton>
     </div>
-    <div class="btn-group btn-block">
-        <button @onclick="@(() => AccionRol(nombreRol, usuarioId, false))" class="btn btn-danger"> Eliminar rol</button>
+    <div class="btn-group btn-block">        
+        <MudButton @onclick="@(() => AccionRol(nombreRol, usuarioId, false))" Variant="Variant.Filled"
+                   Color="Color.Error" FullWidth="true">Eliminar rol</MudButton>
     </div>
 </div>
 

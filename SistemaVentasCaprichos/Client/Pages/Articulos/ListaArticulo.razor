@@ -97,7 +97,7 @@ else
                             <br />
                             @if (articulo.StockActual < articulo.StockMinimo)
                             {
-                                <b style="color:darkred">STOCK BAJO: @articulo.StockActual</b>
+                                <b style="color:red; font-weight:700">STOCK BAJO: @articulo.StockActual</b>
                             }
                             else if (articulo.StockActual > articulo.StockMaximo)
                             {

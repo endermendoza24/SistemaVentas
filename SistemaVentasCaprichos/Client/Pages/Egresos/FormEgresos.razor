@@ -1,0 +1,113 @@
+﻿@inject NavigationManager NavigationManager
+@inject HttpClient Http
+
+<EditForm Model="@egresos" OnValidSubmit="OnValidSubmit">
+    <div class="form-field mt-2 mb-2">
+
+        <div class="form-group">
+            <div class="row">
+                <label>@egresos.Fecha.ToShortDateString()</label>
+            </div>
+            @for (int i = 0; i < egresos.DetalleEgresos.Count; i++)
+            {
+                var indice = i;
+                var detalle = egresos.DetalleEgresos[i];
+                listadetalle = egresos.DetalleEgresos;
+
+                <div class="d-flex justify-content-between m-1">
+                    <h5>Ítem #@(i + 1)</h5>
+                    <div>
+                        <button type="button" @onclick="@(() => egresos.DetalleEgresos.RemoveAt(indice))"
+                                class="btn btn-danger btn-sm" style="border-radius:10px" hidden="@ocultabtn">
+                            <i class="oi oi-trash"></i><text style="color:white">Quitar ítem @(indice + 1)</text>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card mb-2" style="background-color:lightgrey;border-radius:0.5rem">
+
+                    <div class="row">
+                        <div class="col-3 form-group">
+                            <label>Descripción</label>
+                            <MudTextField Lines="3" Label="Ingrese la descripción del egreso" @bind-Value="@egresos.Detalles"></MudTextField>
+                        </div>
+                        <div class="col-3 form-group">
+                            <label><small>Monto</small></label>
+                            <InputNumber @bind-Value="detalle.Monto" class="form-control form-control-sm"/>
+                            <ValidationMessage For="@(() => detalle.Monto)"/>
+                        </div>
+
+                        <div class="col-3 form-group">
+                            <label><small>Cantidad</small></label>
+                            <InputNumber @bind-Value="detalle.Cantidad" class="form-control form-control-sm"/>
+                            <ValidationMessage For="@(() => detalle.Cantidad)"/>
+                        </div>
+
+                        <div class="col-3">
+                            <div class="d-flex justify-content-end mb-1 ml-2 mr-2">
+                                <label><small>Subtotal</small></label>
+                            </div>
+                            <div class="d-flex justify-content-end mt-2 ml-2 mr-2">
+                                <h5><b>@detalle.SubTotal</b></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-success" hidden="@ocultabtn"
+                        @onclick="@(() => egresos.DetalleEgresos.Add(new DetalleEgresos()))">
+                    Agregar ítem
+                </button>
+            </div>
+
+            <div class="d-flex justify-content-end py-2">
+                <button @onclick="@(() => CalcularTotal())" type="button" class="btn btn-outline-dark" style="border:none">
+                    <h4><b>TOTAL</b></h4>
+                    @if (egresos.Total != 0)
+                    {
+                        <h3><b>C$@egresos.Total</b></h3>
+                    }
+                </button>
+            </div>
+
+            <div class="btn-group btn-block" hidden="@ocultabtn">
+                <button @onclick="@(() => CalcularTotal())" type="submit" class="btn btn-success"><i class="oi oi-check"></i><text style="color:white"> @textSubmit</text></button>
+                <button @onclick="@Volver" class="btn btn-danger"><i class="oi oi-x"></i><text style="color:white"> Cancelar y volver atrás</text></button>
+            </div>
+        </div>
+    </div>
+    <DataAnnotationsValidator />
+</EditForm>
+
+@code {
+    [Parameter] public Egresos egresos { get; set; } = new Egresos();
+
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public string textSubmit { get; set; }
+    [Parameter] public bool ocultabtn { get; set; }
+
+    public int porcentaje { get; set; }
+    public List<DetalleEgresos> listadetalle { get; set; } = new List<DetalleEgresos>();
+    public List<Egresos> listaEgresos { get; set; } = new List<Egresos>();
+
+    decimal CalcularTotal()
+    {
+        egresos.Total = 0;
+        if (listadetalle.Count > 0)
+        {
+            @for (int i = 0; i < listadetalle.Count; i++)
+            {
+                egresos.Total += listadetalle[i].SubTotal;
+            }
+        }
+        return egresos.Total;
+    }
+
+
+    void Volver()
+    {
+        NavigationManager.NavigateTo("/lista-egresos");
+    }    
+}

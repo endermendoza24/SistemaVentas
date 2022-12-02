@@ -25,6 +25,7 @@
   box-shadow: 0 0 12px rgba(33, 33, 33, 0.2);
   opacity: 0.95;
   transform: scale(1.01);
+  border:none;
 }
 
 .chip[b-64rsms2ebu] {
@@ -52,6 +53,63 @@
 }
 .chip-ex[b-64rsms2ebu] {
   background-color: #9c27b0;
+}
+/* /Pages/Articulos/ListaBajas.razor.rz.scp.css */
+:root[b-1623ldqbmc] {
+    --errorColor: #f44336;
+    --successColor: #009688;
+    --warningColor: #ff9800;
+    --primaryColor: #2196f3;
+    --excedido: #9c27b0;
+}
+
+.card[b-1623ldqbmc] {
+    /*background-color: lightblue;*/
+    background-color: #1e1f21;
+    border-style: none;
+    border-radius: 10px;
+    text-align: left;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(33, 33, 33, 0.2);
+    transition: all .3s;
+    margin: 5px 0;
+}
+
+    .card:hover[b-1623ldqbmc] {
+        box-shadow: 0 0 12px rgba(33, 33, 33, 0.2);
+        opacity: 0.95;
+        transform: scale(1.01);
+    }
+
+.chip[b-1623ldqbmc] {
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    border-radius: 9999px;
+    font-size: 15px;
+    width: 70%;
+    padding: 0.25rem 0.5rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .chip:hover[b-1623ldqbmc] {
+        transition: all 0.3s;
+        opacity: 0.8;
+    }
+
+.chip-low[b-1623ldqbmc] {
+    background-color: #f44336;
+}
+
+.chip-normal[b-1623ldqbmc] {
+    background-color: #009688;
+}
+
+.chip-ex[b-1623ldqbmc] {
+    background-color: #9c27b0;
 }
 /* /Pages/Clientes/ListaCliente.razor.rz.scp.css */
 .card[b-phqimgj4wb] {
