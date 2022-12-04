@@ -15,8 +15,9 @@ namespace SistemaVentasCaprichos.Shared
         [Key]
         public int Id { get; set; }
         public DateTime Fecha { get; set; } = DateTime.Now;
+        public CategoriaEgreso CategoriaEgreso { get; set; } 
 
-        [StringLength(300, ErrorMessage = "Sobrepasado")]
+        [StringLength(300, ErrorMessage = "Máximo 300 caracteres")]
         public string Detalles { get; set; }
         public List<DetalleEgresos> DetalleEgresos { get; set; } = new List<DetalleEgresos>();
 
@@ -29,8 +30,17 @@ namespace SistemaVentasCaprichos.Shared
         [Range(1, double.MaxValue, ErrorMessage = "Valor inválido")]
         public decimal Total { get; set; }
 
-        public bool Estado { get; set; } = true;
-
+        public bool Estado { get; set; } = true;    
         #endregion
     }
+
+    public enum CategoriaEgreso
+    {
+        Comida = 1,
+        Limpieza = 2,
+        Administrativos = 3,
+        Servicios = 4,
+        Otros = 5
+    }
+
 }

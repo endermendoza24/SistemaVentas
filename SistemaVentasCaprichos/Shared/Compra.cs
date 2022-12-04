@@ -28,6 +28,7 @@ namespace SistemaVentasCaprichos.Shared
         public int? ProveedoresId { get; set; }
         [ForeignKey("ProveedoresId")]
         public Proveedores Proveedores { get; set; }
+        public bool Estado { get; set; } = true;
         #endregion
     }
 

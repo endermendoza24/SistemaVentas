@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SistemaVentasCaprichos.Server.Data;
 
 namespace SistemaVentasCaprichos.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221202231119_agregandoNumero")]
+    partial class agregandoNumero
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -152,14 +154,14 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         new
                         {
                             Id = "89086180-b978-4f90-9dbd-a7040bc93f41",
-                            ConcurrencyStamp = "20244edd-514f-427b-8875-c320c8635a8d",
+                            ConcurrencyStamp = "2d66d4be-e6ba-4981-a1de-9020b8e4388a",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
                             Id = "65ade53a-ce03-411e-9d35-08fca7f47014",
-                            ConcurrencyStamp = "f0d4588c-1da7-4c50-92fe-224c29e3edba",
+                            ConcurrencyStamp = "5d0f6dfd-4c7c-4d3d-91df-dcb615dc226d",
                             Name = "empleado",
                             NormalizedName = "empleado"
                         });
@@ -492,9 +494,6 @@ namespace SistemaVentasCaprichos.Server.Migrations
                     b.Property<string>("EmpleadoId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<bool>("Estado")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
 
@@ -644,9 +643,6 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CategoriaEgreso")
-                        .HasColumnType("int");
 
                     b.Property<string>("Detalles")
                         .HasMaxLength(300)

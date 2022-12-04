@@ -3,11 +3,32 @@
 
 <EditForm Model="@egresos" OnValidSubmit="OnValidSubmit">
     <div class="form-field mt-2 mb-2">
-
-        <div class="form-group">
-            <div class="row">
-                <label>@egresos.Fecha.ToShortDateString()</label>
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Categoría de salida</label>
+            <div class="col">
+                <div class="input-group">
+                    <InputSelect @bind-Value="(egresos.CategoriaEgreso)" class="form-control">
+                        @foreach (string fpago in Enum.GetNames(typeof(CategoriaEgreso)))
+                        {
+                            <option selected value="@fpago"> @fpago</option>
+                        }
+                    </InputSelect>
+                </div>
+                <ValidationMessage For="@(() => egresos.CategoriaEgreso)" />
             </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Descripción</label>
+           <div class="col">
+                <div class="input-group">
+                    <InputTextArea lines="3" placeholder="Ingrese la descripción del egreso" @bind-Value="@egresos.Detalles"
+                               oninput="this.value=this.value.toUpperCase()" class="form-control" />
+                </div>
+           </div>
+            <ValidationMessage For="@(() => egresos.Detalles)" />
+        </div>
+        <div class="form-group">
+          
             @for (int i = 0; i < egresos.DetalleEgresos.Count; i++)
             {
                 var indice = i;
@@ -15,50 +36,48 @@
                 listadetalle = egresos.DetalleEgresos;
 
                 <div class="d-flex justify-content-between m-1">
-                    <h5>Ítem #@(i + 1)</h5>
+                    <h5>Detalle</h5>
                     <div>
                         <button type="button" @onclick="@(() => egresos.DetalleEgresos.RemoveAt(indice))"
                                 class="btn btn-danger btn-sm" style="border-radius:10px" hidden="@ocultabtn">
-                            <i class="oi oi-trash"></i><text style="color:white">Quitar ítem @(indice + 1)</text>
+                            <i class="oi oi-trash"></i><text style="color:white">Quitar detalle @(indice + 1)</text>
                         </button>
                     </div>
                 </div>
 
-                <div class="card mb-2" style="background-color:lightgrey;border-radius:0.5rem">
-
-                    <div class="row">
+                @*<div class="card mb-2" style="box-shadow: 22px 3px 39px 1px rgba(0, 0, 0, 0.51);">*@
+                    <MudCard>
+                    <div class="row">                                               
                         <div class="col-3 form-group">
-                            <label>Descripción</label>
-                            <MudTextField Lines="3" Label="Ingrese la descripción del egreso" @bind-Value="@egresos.Detalles"></MudTextField>
-                        </div>
-                        <div class="col-3 form-group">
-                            <label><small>Monto</small></label>
-                            <InputNumber @bind-Value="detalle.Monto" class="form-control form-control-sm"/>
+                            <label>Monto</label>                            
+                            <MudNumericField @bind-Value="detalle.Monto" Label="Ingrese el monto de la salida" Variant="Variant.Outlined"
+                                         Min="0" />
                             <ValidationMessage For="@(() => detalle.Monto)"/>
                         </div>
 
                         <div class="col-3 form-group">
-                            <label><small>Cantidad</small></label>
-                            <InputNumber @bind-Value="detalle.Cantidad" class="form-control form-control-sm"/>
+                            <label>Cantidad</label>                            
+                            <MudNumericField @bind-Value="detalle.Cantidad" Label="Ingrese la cantidad" Variant="Variant.Outlined"
+                                         Min="0"/>
                             <ValidationMessage For="@(() => detalle.Cantidad)"/>
                         </div>
 
                         <div class="col-3">
                             <div class="d-flex justify-content-end mb-1 ml-2 mr-2">
-                                <label><small>Subtotal</small></label>
+                                <label>Total</label>
                             </div>
                             <div class="d-flex justify-content-end mt-2 ml-2 mr-2">
-                                <h5><b>@detalle.SubTotal</b></h5>
+                                <h5><b>C$ @detalle.SubTotal</b></h5>
                             </div>
                         </div>
                     </div>
-                </div>
+                </MudCard>
             }
 
             <div class="btn-group">
                 <button type="button" class="btn btn-success" hidden="@ocultabtn"
                         @onclick="@(() => egresos.DetalleEgresos.Add(new DetalleEgresos()))">
-                    Agregar ítem
+                    Agregar detalle
                 </button>
             </div>
 
@@ -67,7 +86,7 @@
                     <h4><b>TOTAL</b></h4>
                     @if (egresos.Total != 0)
                     {
-                        <h3><b>C$@egresos.Total</b></h3>
+                        <h3><b>C$ @egresos.Total</b></h3>
                     }
                 </button>
             </div>

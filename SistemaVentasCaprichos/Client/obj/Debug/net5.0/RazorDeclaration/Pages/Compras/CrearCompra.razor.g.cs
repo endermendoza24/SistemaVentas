@@ -199,7 +199,7 @@ using OfficeOpenXml.Style;
     async Task CrearCompr()
     {
         var confirmacion = await JS.InvokeAsync<bool>("confirmar", "¿Finalizar compra?",
-            $"Total: ${compra.Total}. Proveedor: {compra.ProveedoresId}", "question");
+            $"Total: C${compra.Total}. Proveedor: {compra.ProveedoresId}", "question");
         if (confirmacion)
         {
             var respuesta = await Http.PostAsJsonAsync("api/compras", compra);
@@ -209,7 +209,7 @@ using OfficeOpenXml.Style;
             {
                 NavigationManager.NavigateTo("lista-compras/");
                 //await JS.InvokeVoidAsync("simple", "¡Éxito!", "Compra cargada", "success");
-                Snackbar.Add("¡¡¡Compra finalizada con éxito!!!", Severity.Success, a =>
+                Snackbar.Add("¡Compra finalizada con éxito!", Severity.Success, a =>
             a.VisibleStateDuration = 200);
             }
             else

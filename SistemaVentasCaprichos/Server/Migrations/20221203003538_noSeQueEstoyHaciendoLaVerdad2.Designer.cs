@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SistemaVentasCaprichos.Server.Data;
 
 namespace SistemaVentasCaprichos.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221203003538_noSeQueEstoyHaciendoLaVerdad2")]
+    partial class noSeQueEstoyHaciendoLaVerdad2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -152,14 +154,14 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         new
                         {
                             Id = "89086180-b978-4f90-9dbd-a7040bc93f41",
-                            ConcurrencyStamp = "20244edd-514f-427b-8875-c320c8635a8d",
+                            ConcurrencyStamp = "c7caf2db-1ee8-4b48-b452-70f6c5b0d577",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
                             Id = "65ade53a-ce03-411e-9d35-08fca7f47014",
-                            ConcurrencyStamp = "f0d4588c-1da7-4c50-92fe-224c29e3edba",
+                            ConcurrencyStamp = "b2209701-f2da-4c41-b418-105b117daf8a",
                             Name = "empleado",
                             NormalizedName = "empleado"
                         });
@@ -409,6 +411,42 @@ namespace SistemaVentasCaprichos.Server.Migrations
                     b.ToTable("Articulos");
                 });
 
+            modelBuilder.Entity("SistemaVentasCaprichos.Shared.Caja", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CompraId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("EmpleadoId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<decimal>("Entradas")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Salidas")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("VentaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompraId");
+
+                    b.HasIndex("EmpleadoId");
+
+                    b.HasIndex("VentaId");
+
+                    b.ToTable("Caja");
+                });
+
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Categoria", b =>
                 {
                     b.Property<int>("Id")
@@ -491,9 +529,6 @@ namespace SistemaVentasCaprichos.Server.Migrations
 
                     b.Property<string>("EmpleadoId")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<bool>("Estado")
-                        .HasColumnType("bit");
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
@@ -644,9 +679,6 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CategoriaEgreso")
-                        .HasColumnType("int");
 
                     b.Property<string>("Detalles")
                         .HasMaxLength(300)
@@ -863,6 +895,31 @@ namespace SistemaVentasCaprichos.Server.Migrations
                     b.Navigation("Marca");
 
                     b.Navigation("Tallas");
+                });
+
+            modelBuilder.Entity("SistemaVentasCaprichos.Shared.Caja", b =>
+                {
+                    b.HasOne("SistemaVentasCaprichos.Shared.Compra", "Compra")
+                        .WithMany()
+                        .HasForeignKey("CompraId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SistemaVentasCaprichos.Shared.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("EmpleadoId");
+
+                    b.HasOne("SistemaVentasCaprichos.Shared.Venta", "Venta")
+                        .WithMany()
+                        .HasForeignKey("VentaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+
+                    b.Navigation("Compra");
+
+                    b.Navigation("Venta");
                 });
 
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Compra", b =>

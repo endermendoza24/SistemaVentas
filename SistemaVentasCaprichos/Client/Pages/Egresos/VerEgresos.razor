@@ -52,6 +52,7 @@ else
 		<MudTh></MudTh>
 		<MudTh>Nr</MudTh>
 		<MudTh>Fecha</MudTh>
+        <MudTh>Categoría</MudTh>
 		<MudTh>Descripción</MudTh>
 		<MudTh>Empleado</MudTh>
 		<MudTh>Total</MudTh>
@@ -61,8 +62,9 @@ else
 		 <MudTd DataLabel="Id">@context.Id</MudTd>
 		
 		<MudTd DataLabel="Fecha">@context.Fecha.ToLongDateString()</MudTd>
+            <MudTd DataLabel="Categoría">@context.CategoriaEgreso</MudTd>
 		<MudTd DataLabel="Detalle">@context.Detalles</MudTd>
-		<MudTd DataLabel="Empleado">@context.ApplicationUser.NombreyApellido</MudTd>
+		<MudTd DataLabel="Empleado">@context.ApplicationUser.NombreyApellido @context.ApplicationUser.Apellido</MudTd>
 		<MudTd DataLabel="Total">@context.Total</MudTd>
 	</RowTemplate>
 	<ChildRowContent>

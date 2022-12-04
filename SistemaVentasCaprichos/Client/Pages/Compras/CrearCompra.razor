@@ -5,7 +5,7 @@
 @inject ISnackbar Snackbar
 @attribute [Authorize(Roles = "admin")]
 
-<h3><b>Nueva compra</b></h3>
+<h3><b>Hacer compra</b></h3>
 
 <FormCompra textSubmit=" Cargar compra" OnValidSubmit="CrearCompr" compra="compra"
            ocultabtn=false articulos="articulos" categoria="categoria" ListaProveedores="ListaProveedores"></FormCompra>
@@ -26,7 +26,7 @@
     async Task CrearCompr()
     {
         var confirmacion = await JS.InvokeAsync<bool>("confirmar", "¿Finalizar compra?",
-            $"Total: ${compra.Total}. Proveedor: {compra.ProveedoresId}", "question");
+            $"Total: C${compra.Total}. Proveedor: {compra.ProveedoresId}", "question");
         if (confirmacion)
         {
             var respuesta = await Http.PostAsJsonAsync("api/compras", compra);
@@ -36,7 +36,7 @@
             {
                 NavigationManager.NavigateTo("lista-compras/");
                 //await JS.InvokeVoidAsync("simple", "¡Éxito!", "Compra cargada", "success");
-                Snackbar.Add("¡¡¡Compra finalizada con éxito!!!", Severity.Success, a =>
+                Snackbar.Add("¡Compra finalizada con éxito!", Severity.Success, a =>
             a.VisibleStateDuration = 200);
             }
             else

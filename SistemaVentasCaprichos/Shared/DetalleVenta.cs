@@ -29,8 +29,15 @@ namespace SistemaVentasCaprichos.Shared
 
         public int Descuento { get; set; } = 0;
 
-        public decimal Iva => (Precio * Cantidad) + (Precio * Cantidad * (15M / 100M)); // 460
-        public decimal SubTotal => Iva - ((Precio * Cantidad) * (Descuento / 100M)); // 420
+        public decimal SubTotal => Precio * Cantidad;
+        public decimal IvaAlternativo => SubTotal * (15M / 100M);
+        public decimal Iva => SubTotal + (SubTotal * (15M / 100M));
+        
+        public decimal SubTotalConDescuento => Iva - ((SubTotal) * (Descuento / 100M));
+        
+
+        //public decimal Iva => (Precio * Cantidad) + (Precio * Cantidad * (15M / 100M)); // 460
+        //public decimal SubTotal => Iva - ((Precio * Cantidad) * (Descuento / 100M)); // 420
         [Required]
         public int VentaId { get; set; }
         [ForeignKey("VentaId")]

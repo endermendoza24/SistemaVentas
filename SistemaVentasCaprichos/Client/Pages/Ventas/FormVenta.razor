@@ -3,20 +3,20 @@
 
 <EditForm Model="@venta" OnValidSubmit="OnValidSubmit">
     <div class="form-field mt-2 mb-2">
-        @* <div class="form-group row"> *@
-        @*     <label class="col-3 col-form-label">Forma de Pago</label> *@
-        @*     <div class="col"> *@
-        @*         <div class="input-group"> *@
-        @*             <InputSelect @bind-Value="(venta.FormaPago)" class="form-control"> *@
-        @*                 @foreach (string fpago in Enum.GetNames(typeof(FormasPago))) *@
-        @*                 { *@
-        @*                     <option selected value="@fpago"> @fpago</option> *@
-        @*                 } *@
-        @*             </InputSelect> *@
-        @*         </div> *@
-        @*         $1$ <ValidationMessage For="@(() => venta.FormaPago)" /> #1# *@
-        @*     </div> *@
-        @* </div> *@
+         @*<div class="form-group row"> 
+             <label class="col-3 col-form-label">Forma de Pago</label> 
+             <div class="col"> 
+                 <div class="input-group"> 
+                     <InputSelect @bind-Value="(venta.FormaPago)" class="form-control"> 
+                         @foreach (string fpago in Enum.GetNames(typeof(FormasPago))) 
+                         { 
+                             <option selected value="@fpago"> @fpago</option> 
+                         } 
+                     </InputSelect> 
+                 </div> 
+                 $1$ <ValidationMessage For="@(() => venta.FormaPago)" /> #1# 
+             </div> 
+         </div> *@
 
     <div class="form-group row" hidden="@ocultaclientes">
             <label class="col-3 col-form-label">Cliente</label>
@@ -157,7 +157,7 @@
         {
             @for (int i = 0; i < listadetalle.Count; i++)
             {
-                venta.Total += listadetalle[i].SubTotal;
+                venta.Total += listadetalle[i].SubTotalConDescuento;
             }
         }
         return venta.Total;

@@ -260,6 +260,12 @@ using System.Text.Json;
         return false;
     }
 
+    public void ShowBtnPress(int nr)
+    {
+        Compra compra = compras.First(f => f.Id == nr);
+        compra.Estado = !compra.Estado;
+    }
+
 #line default
 #line hidden
 #nullable disable

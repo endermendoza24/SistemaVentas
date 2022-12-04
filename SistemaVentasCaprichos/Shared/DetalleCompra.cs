@@ -18,7 +18,7 @@ namespace SistemaVentasCaprichos.Shared
         [ForeignKey("ArticuloId")]
         public Articulo Articulo { get; set; }
         [Required]
-        [Range(1, 99999999, ErrorMessage = "Valor inválido")]
+        [Range(1, int.MaxValue, ErrorMessage = "Valor inválido")]
         public int Cantidad { get; set; }
 
 

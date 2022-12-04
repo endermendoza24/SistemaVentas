@@ -205,7 +205,7 @@ using OfficeOpenXml.Style;
 #line 158 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
              for (int i = 0; i < listadetalle.Count; i++)
             {
-                venta.Total += listadetalle[i].SubTotal;
+                venta.Total += listadetalle[i].SubTotalConDescuento;
             }
 
 #line default

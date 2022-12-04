@@ -34,9 +34,9 @@ else if (compras.Count == 0)
     </div>
 }
 else
-{    
+{
     <MudTable Items="@compras" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Compra,bool>(FilterFunc1)"
-              @bind-SelectedItem="selectedItem1">
+          @bind-SelectedItem="selectedItem1">
         <ToolBarContent>
             <MudText Typo="Typo.h6">Compras</MudText>
             <MudSpacer />
@@ -45,7 +45,7 @@ else
         <HeaderContent>
             <MudTh Style="width:50px;">Nr</MudTh>
             <MudTh>Fecha</MudTh>
-            <MudTh>Proveedor</MudTh>            
+            <MudTh>Proveedor</MudTh>
             <MudTh>Empleado</MudTh>
             <MudTh>Total</MudTh>
             <MudTh>Acciones</MudTh>
@@ -55,10 +55,10 @@ else
             <MudTd DataLabel="Fecha">@context.Fecha.ToLongDateString()</MudTd>
             <MudTd DataLabel="Proveedor" Style="text-transform:uppercase">@context.Proveedores.Nombre</MudTd>
             <MudTd DataLabel="Empleado" Style="text-transform:uppercase">@context.ApplicationUser.NombreyApellido</MudTd>
-            <MudTd DataLabel="Total">C$ @context.Total</MudTd>                       
+            <MudTd DataLabel="Total">C$ @context.Total</MudTd>
             <MudTd>
                 <MudFab Color="Color.Error" StartIcon="@Icons.Filled.Edit" Size="Size.Small"
-                        @onclick="@(() => NavigationManager.NavigateTo($"/ver-compra/{context.Id}"))" />
+                    @onclick="@(() => NavigationManager.NavigateTo($"/ver-compra/{context.Id}"))" />
             </MudTd>
         </RowTemplate>
         <PagerContent>
@@ -134,5 +134,11 @@ else
         if (element.Fecha.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
         return false;
+    }
+
+    public void ShowBtnPress(int nr)
+    {
+        Compra compra = compras.First(f => f.Id == nr);
+        compra.Estado = !compra.Estado;
     }
 }
