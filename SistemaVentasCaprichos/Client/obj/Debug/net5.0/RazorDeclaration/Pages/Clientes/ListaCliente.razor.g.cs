@@ -189,7 +189,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 135 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
+#line 93 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
        
     public List<Cliente> clientes { get; set; } //muestra todos los clientes
     
@@ -205,8 +205,6 @@ using System.Text.Json;
 
     protected bool lista = true;
     protected bool card = false;
-
-    public int limitedeuda = 1000;
 
     protected override async Task OnInitializedAsync()
     {
@@ -231,12 +229,6 @@ using System.Text.Json;
     void CrearCliente()
     {
         NavigationManager.NavigateTo("crear-cliente");
-    }
-
-    void CambiarVista()
-    {
-        lista = !lista;
-        card = !card;
     }
 
     private async Task Filtrar()

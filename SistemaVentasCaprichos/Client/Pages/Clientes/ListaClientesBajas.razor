@@ -31,18 +31,12 @@
             </a>
         </div>
     </div>
-
-    <div class="btn-group">
-        <button @onclick="CambiarVista" style="background:none; border: none">
-            <b>Cambiar vista</b>
-        </button>
-    </div>
 </div>
 
 @if (clientes == null)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
-        <div class="spinner-grow text-success" role="status">
+        <div class="spinner-border text-success" role="status">
             <span class="sr-only">Cargando...</span>
         </div>
     </div>
@@ -55,46 +49,12 @@ else if (clientes.Count == 0)
 }
 else
 {
-    <div class="card-columns" hidden="@card">
-        @foreach (var cliente in clientes)
-        {
-            <a href="/editar-cliente/@cliente.Id" style="color: inherit">
-                <div class="card">
-                    @if (cliente.Sexo == Cliente.Sexos.Masculino)
-                    {
-                        <img class="card-img-top" src="img/masculino.png" alt="Cliente" />
-                    }
-                    else if (cliente.Sexo == Cliente.Sexos.Femenino)
-                    {
-                        <img class="card-img-top" src="img/femenino.png" alt="Cliente" />
-                    }
-                    else
-                    {
-                        <img class="card-img-top" src="img/noimage.png" alt="Cliente" />
-                    }
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <b>@cliente.Nombre</b>
-                        </h5>
-                        <p class="card-text">
-                            Cédula: @cliente.Cedula
-                            <br /> @cliente.Dirección - (@cliente.Teléfono)
-                        </p>
-                        @* <h5 class="card-text text-right">
-                            <b>DEUDA: $@cliente.Saldo</b>
-                        </h5> *@
-                    </div>
-                </div>
-            </a>
-        }
-    </div>
-
     <MudTable Items="@clientes" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Cliente,bool>(FilterFunc1)"
               @bind-SelectedItem="selectedItem1">
         <ToolBarContent>
-            <MudText Typo="Typo.h6">Categorías</MudText>
+            <MudText Typo="Typo.h6">Clientes dados baja</MudText>
             <MudSpacer />
-            <MudTextField @bind-Value="searchString1" Placeholder="Buscar cliente..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="MudBlazor.Size.Medium" Class="mt-0"></MudTextField>
+            <MudTextField @bind-Value="searchString1" Placeholder="Buscar..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="MudBlazor.Size.Medium" Class="mt-0"></MudTextField>
         </ToolBarContent>
         <HeaderContent>
             <MudTh Style="width:50px;">Nr</MudTh>
@@ -163,12 +123,6 @@ else
     void CrearCliente()
     {
         NavigationManager.NavigateTo("crear-cliente");
-    }
-
-    void CambiarVista()
-    {
-        lista = !lista;
-        card = !card;
     }
 
     private async Task Filtrar()

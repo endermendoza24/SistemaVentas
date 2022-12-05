@@ -2,98 +2,24 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Iniciar sesión";
+    ViewData["Title"] = "";
 }
 
 <div class="d-flex justify-content-center">
     <h1>@ViewData["Title"]</h1>
 </div>
-@*<div class="row justify-content-center">
-    <div class="col-md-6">
-        <section>
-            <div class="card m-1">
-                <div class="card-body m-1">
-                    <form id="account" method="post">
-                        <h4>Utilice su cuenta para iniciar sesión.</h4>
-                        <hr />
-                        <div asp-validation-summary="All" class="text-danger"></div>
-                        <div class="form-group">
-                            <label asp-for="Input.Email"></label>
-                            <input asp-for="Input.Email" class="form-control" />
-                            <span asp-validation-for="Input.Email" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Input.Password"></label>
-                            <input asp-for="Input.Password" class="form-control" />
-                            <span asp-validation-for="Input.Password" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <div class="checkbox">
-                                <label asp-for="Input.RememberMe">
-                                    <input asp-for="Input.RememberMe" />
-                                    @Html.DisplayNameFor(m => m.Input.RememberMe)
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div class="col-md-6 col-md-offset-2" hidden>
-        <section>
-            <h4>Use another service to log in.</h4>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>
-</div>*@
-
-
-
-
-
-
-
-
-
 
 <section class="vh-100 w-100">
     <div class="container-fluid h-custom">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-md-9 col-lg-6 col-xl-5">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                     class="img-fluid" alt="Sample image">
+                @* <img src="https://logos.mybrandnewlogo.com/cached/logos/YwVZODW27vTzyBVVE09m/images/logo-rhjZ3Lu0.png"
+                     class="img-fluid" alt="Sample image"> *@
+                     <img src="https://i.ibb.co/L811yDT/logo.jpg" alt="logo" border="0" class="img-fluid">
             </div>
             <div class="col-md-6">
                 <form id="account" method="post">
-                    <h4>Utilice su cuenta para iniciar sesión.</h4>
+                    <h4>Inicio de sesión.</h4>
                     <hr />
                     <!-- Email input -->
                     <div asp-validation-summary="All" class="text-danger"></div>

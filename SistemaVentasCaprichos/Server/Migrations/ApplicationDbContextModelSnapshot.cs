@@ -152,14 +152,14 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         new
                         {
                             Id = "89086180-b978-4f90-9dbd-a7040bc93f41",
-                            ConcurrencyStamp = "20244edd-514f-427b-8875-c320c8635a8d",
+                            ConcurrencyStamp = "0f8ce1a2-13fc-487e-9bf6-d5568e8978fa",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
                             Id = "65ade53a-ce03-411e-9d35-08fca7f47014",
-                            ConcurrencyStamp = "f0d4588c-1da7-4c50-92fe-224c29e3edba",
+                            ConcurrencyStamp = "e9453603-ad6f-420f-ba44-16697e350dd3",
                             Name = "empleado",
                             NormalizedName = "empleado"
                         });
@@ -591,14 +591,14 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("Cantidad")
-                        .HasColumnType("decimal(10,2)");
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
 
                     b.Property<int>("EgresosId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Monto")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(10,2)");
 
                     b.HasKey("Id");
 

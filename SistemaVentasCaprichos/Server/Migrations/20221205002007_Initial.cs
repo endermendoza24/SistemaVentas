@@ -296,11 +296,36 @@ namespace SistemaVentasCaprichos.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Egresos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CategoriaEgreso = table.Column<int>(type: "int", nullable: false),
+                    Detalles = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
+                    EmpleadoId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Total = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
+                    Estado = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Egresos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Egresos_AspNetUsers_EmpleadoId",
+                        column: x => x.EmpleadoId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Ventas",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Numero = table.Column<int>(type: "int", nullable: false),
                     Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
                     FormaPago = table.Column<int>(type: "int", nullable: false),
                     ClienteId = table.Column<int>(type: "int", nullable: true),
@@ -333,7 +358,8 @@ namespace SistemaVentasCaprichos.Server.Migrations
                     Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EmpleadoId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Total = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
-                    ProveedoresId = table.Column<int>(type: "int", nullable: true)
+                    ProveedoresId = table.Column<int>(type: "int", nullable: true),
+                    Estado = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -392,6 +418,27 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         name: "FK_Articulos_Tallas_TallasId",
                         column: x => x.TallasId,
                         principalTable: "Tallas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DetalleEgresos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Cantidad = table.Column<int>(type: "int", nullable: false),
+                    Monto = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
+                    EgresosId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DetalleEgresos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DetalleEgresos_Egresos_EgresosId",
+                        column: x => x.EgresosId,
+                        principalTable: "Egresos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -457,12 +504,12 @@ namespace SistemaVentasCaprichos.Server.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "89086180-b978-4f90-9dbd-a7040bc93f41", "bf635e59-a1b6-410d-a24b-08bd7a6ed6b5", "admin", "admin" });
+                values: new object[] { "89086180-b978-4f90-9dbd-a7040bc93f41", "0f8ce1a2-13fc-487e-9bf6-d5568e8978fa", "admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "65ade53a-ce03-411e-9d35-08fca7f47014", "3a079a14-bc4a-4caa-acb8-d615890802d0", "empleado", "empleado" });
+                values: new object[] { "65ade53a-ce03-411e-9d35-08fca7f47014", "e9453603-ad6f-420f-ba44-16697e350dd3", "empleado", "empleado" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Articulos_CategoriaId",
@@ -539,6 +586,11 @@ namespace SistemaVentasCaprichos.Server.Migrations
                 column: "CompraId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DetalleEgresos_EgresosId",
+                table: "DetalleEgresos",
+                column: "EgresosId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_DetalleVentas_ArticuloId",
                 table: "DetalleVentas",
                 column: "ArticuloId");
@@ -558,6 +610,11 @@ namespace SistemaVentasCaprichos.Server.Migrations
                 name: "IX_DeviceCodes_Expiration",
                 table: "DeviceCodes",
                 column: "Expiration");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Egresos_EmpleadoId",
+                table: "Egresos",
+                column: "EmpleadoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PersistedGrants_Expiration",
@@ -609,6 +666,9 @@ namespace SistemaVentasCaprichos.Server.Migrations
                 name: "DetalleCompras");
 
             migrationBuilder.DropTable(
+                name: "DetalleEgresos");
+
+            migrationBuilder.DropTable(
                 name: "DetalleVentas");
 
             migrationBuilder.DropTable(
@@ -622,6 +682,9 @@ namespace SistemaVentasCaprichos.Server.Migrations
 
             migrationBuilder.DropTable(
                 name: "Compras");
+
+            migrationBuilder.DropTable(
+                name: "Egresos");
 
             migrationBuilder.DropTable(
                 name: "Articulos");

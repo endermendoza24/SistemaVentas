@@ -10,8 +10,8 @@ using SistemaVentasCaprichos.Server.Data;
 namespace SistemaVentasCaprichos.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221202010540_AgregandoEgresos")]
-    partial class AgregandoEgresos
+    [Migration("20221205002007_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -154,14 +154,14 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         new
                         {
                             Id = "89086180-b978-4f90-9dbd-a7040bc93f41",
-                            ConcurrencyStamp = "485a287f-0692-4f5b-9c5a-5c37c282f1ad",
+                            ConcurrencyStamp = "0f8ce1a2-13fc-487e-9bf6-d5568e8978fa",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
                             Id = "65ade53a-ce03-411e-9d35-08fca7f47014",
-                            ConcurrencyStamp = "8a71d06f-4eaa-4e40-b2e9-a3ef345cd174",
+                            ConcurrencyStamp = "e9453603-ad6f-420f-ba44-16697e350dd3",
                             Name = "empleado",
                             NormalizedName = "empleado"
                         });
@@ -494,6 +494,9 @@ namespace SistemaVentasCaprichos.Server.Migrations
                     b.Property<string>("EmpleadoId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<bool>("Estado")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
 
@@ -590,14 +593,14 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("Cantidad")
-                        .HasColumnType("decimal(10,2)");
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
 
                     b.Property<int>("EgresosId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Monto")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(10,2)");
 
                     b.HasKey("Id");
 
@@ -644,12 +647,18 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CategoriaEgreso")
+                        .HasColumnType("int");
+
                     b.Property<string>("Detalles")
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
                     b.Property<string>("EmpleadoId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("Estado")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
@@ -763,6 +772,9 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("FormaPago")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Numero")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Total")

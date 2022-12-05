@@ -57,7 +57,7 @@ else
         <ToolBarContent>
             <MudText Typo="Typo.h6">Marcas activas</MudText>
             <MudSpacer />
-            <MudTextField @bind-Value="searchString1" Placeholder="Buscar marca..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            @*<MudTextField @bind-Value="searchString1" Placeholder="Buscar marca..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>*@
         </ToolBarContent>
         <HeaderContent>
             <MudTh Style="width:50px;">Nr</MudTh>
@@ -65,6 +65,7 @@ else
             <MudTh>Descripción</MudTh>
             <MudTh>Fecha registro</MudTh>
             <MudTh>Acciones</MudTh>
+
         </HeaderContent>
         <RowTemplate>
             <MudTd DataLabel="Id">@context.Id</MudTd>

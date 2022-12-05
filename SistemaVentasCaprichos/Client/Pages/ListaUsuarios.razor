@@ -27,7 +27,7 @@ else
 
     <br />
 
-    <MudTable Items="@Usuarios" Hover="true" Breakpoint="Breakpoint.Sm" Loading="@_loading" LoadingProgressColor="Color.Info">
+    <MudTable Items="@Usuarios" Hover="true" Breakpoint="Breakpoint.Sm">
         <HeaderContent>
             <MudTh>Nombre</MudTh>
             <MudTh>Apellido</MudTh>
@@ -50,7 +50,6 @@ else
 
     private List<IdentityRole> roles = new List<IdentityRole>();
     private List<ApplicationUser> Usuarios { get; set; } = new List<ApplicationUser>();
-    private bool _loading = true;
 
     private string nombreRol { get; set; }
     private string usuarioId { get; set; }

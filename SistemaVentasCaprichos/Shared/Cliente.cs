@@ -24,6 +24,8 @@ namespace SistemaVentasCaprichos.Shared
         [StringLength(16)]
         [MaxLength(16, ErrorMessage = "Máximo 16 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         // buscar algún regex de cédula
+        [RegularExpression("[0-9]{13}[A-Z]{1}",
+            ErrorMessage = "El término introducido no corresponde la formato de cédula nicaragüense")]
         public string Cedula { get; set; }
         [Required, EnumDataType(typeof(Sexos))]        
         public Sexos Sexo { get; set; }
