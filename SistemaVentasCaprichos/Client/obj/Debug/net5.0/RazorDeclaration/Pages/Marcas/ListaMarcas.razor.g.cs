@@ -265,8 +265,7 @@ using System.Text.Json;
             return true;
         if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
-        if (element.Descripcion.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;
+ 
 
         return false;
     }

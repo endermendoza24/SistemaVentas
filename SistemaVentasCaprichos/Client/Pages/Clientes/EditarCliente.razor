@@ -15,7 +15,7 @@
 
 <div class="d-flex justify-content-between mb-3">
     <h3><b>Editar cliente</b></h3>
-    <div>
+   @* <div>
         <MudTooltip>
             <ChildContent>
                 <button @onclick="@(() => BorrarCliente(cliente.Id))" class="btn btn-sm btn-danger">
@@ -34,7 +34,7 @@
         </MudTooltip>
 
 
-    </div>
+    </div>*@
 </div>
 
 <FormCliente cliente="cliente" OnValidSubmit="@EditarClient"

@@ -102,8 +102,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
                 }
             }
             return venta.Id;
-        }
-       
+        }       
 
         // DELETE: api/ventas/5  
         [HttpDelete("{id}")]

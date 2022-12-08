@@ -72,7 +72,7 @@ else
                    Color="Color.Warning">CSV</MudButton>
         </MudTooltip>
     </MudButtonGroup>
-    <div class="card-columns" hidden="@card">
+    <div class="card-columns" hidden="@lista">
         @foreach (var articulo in articulo)
         {
             <a href="/editar-articulo/@articulo.Id" style="color: inherit">
@@ -113,13 +113,13 @@ else
             </a>
         }
     </div>
-    <div hidden="@lista">
+    <div hidden="@card">
         <MudTable Items="@articulo" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Articulo,bool>(FilterFunc1)"
               @bind-SelectedItem="selectedItem1">
             <ToolBarContent>
                 <MudText Typo="Typo.h6">Artículos</MudText>
                 <MudSpacer />
-                @*<MudTextField @bind-Value="searchString1" Placeholder="Buscar..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>*@
+                <MudTextField @bind-Value="searchString1" Placeholder="Buscar..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
             </ToolBarContent>
             <HeaderContent>
                 <MudTh Style="width:70px;">Imagen</MudTh>
@@ -244,10 +244,6 @@ else
         if (string.IsNullOrWhiteSpace(searchString))
             return true;
         if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;
-        if (element.Descripcion.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;
-        if (element.Codigo.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
 
         return false;

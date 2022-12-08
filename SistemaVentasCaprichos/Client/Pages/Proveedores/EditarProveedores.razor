@@ -13,11 +13,11 @@
 
 <div class="d-flex justify-content-between mb-3">
     <h3><b>Editar marca</b></h3>
-    <div>
+   @* <div>
         <button @onclick="@(() => BorrarArticulo(Proveedores.Id))" class="btn btn-sm btn-danger">
             <i class="oi oi-trash"></i> Eliminar marca
         </button>
-    </div>
+    </div>*@
 </div>
 <FormProveedor TextBotonSubmit="Guardar cambios"
               OnValidSubmit="@EditarArtic" Proveedores="@Proveedores" />

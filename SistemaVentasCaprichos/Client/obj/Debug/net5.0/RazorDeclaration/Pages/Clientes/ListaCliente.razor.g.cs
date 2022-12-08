@@ -255,12 +255,6 @@ using System.Text.Json;
             return true;
         if (element.Apellido.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
-        if (element.Dirección.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;
-        if (element.Cedula.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;
-        if (element.Teléfono.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;
 
         return false;
     }

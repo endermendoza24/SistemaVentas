@@ -39,7 +39,7 @@ else
         <ToolBarContent>
             <MudText Typo="Typo.h6">Proveedores</MudText>
             <MudSpacer />
-            @*<MudTextField @bind-Value="searchString1" Placeholder="Buscar proveedor..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>*@
+            <MudTextField @bind-Value="searchString1" Placeholder="Buscar proveedor..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
         </ToolBarContent>
         <HeaderContent>
             <MudTh Style="width:50px;">Nr</MudTh>
@@ -142,10 +142,6 @@ else
         if (string.IsNullOrWhiteSpace(searchString))
             return true;
         if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;
-        if (element.Telefono.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;
-        if (element.Direccion.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
 
         return false;

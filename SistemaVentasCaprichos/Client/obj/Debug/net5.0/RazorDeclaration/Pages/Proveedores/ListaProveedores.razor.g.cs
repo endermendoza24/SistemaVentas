@@ -265,10 +265,6 @@ using System.Text.Json;
             return true;
         if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
-        if (element.Telefono.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;
-        if (element.Direccion.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;
 
         return false;
     }

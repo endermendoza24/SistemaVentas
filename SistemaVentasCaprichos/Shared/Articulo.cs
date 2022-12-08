@@ -35,19 +35,22 @@ namespace SistemaVentasCaprichos.Shared
         public decimal PrecioUnitario { get; set; }
 
         public DateTime Ultima_Modificación { get; set; }
-        [Required]
         [StringLength(30)]
         [MaxLength(30, ErrorMessage = "Máximo {0} caracteres")]
         public string? Codigo { get; set; }
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "Valor inválido")]
-        public int StockMinimo { get; set; }
-        [Required]
-        [Range(1, int.MaxValue, ErrorMessage = "Valor inválido")]
-        public int StockMaximo { get; set; }
+        public int StockMinimo { get; set; } = 1;
         [Required]
         [Range(0, int.MaxValue, ErrorMessage = "Valor inválido")]
         public int StockActual { get; set; }
+
+        [Required]
+        [Range(1, int.MaxValue, ErrorMessage = "Valor inválido")]
+        public int StockMaximo
+        { get { return  StockMaximo = StockActual + 1; } // le agrega una unidad más al stock actual en la casilla de stock máximo
+            set { }
+        }
 
         public bool Estado { get; set; } = true;
 

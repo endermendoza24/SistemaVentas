@@ -13,8 +13,8 @@
 <hr />
 
 <div class="d-flex justify-content-between mb-3">
-    <h3><b>Editar tall</b></h3>
-    <div>       
+    <h3><b>Editar talla</b></h3>
+   @* <div>       
         <MudTooltip>
             <ChildContent>
                 <button @onclick="@(() => BorrarArticulo(Tallas.Id))" class="btn btn-sm btn-danger">
@@ -27,7 +27,7 @@
                 <MudIcon Icon="@Icons.Material.Filled.DeleteForever" />               
             </TooltipContent>
         </MudTooltip>
-    </div>
+    </div>*@
 </div>
 <FormTallas TextBotonSubmit="Guardar cambios"
             OnValidSubmit="@EditarArtic" Tallas="@Tallas" />

@@ -86,9 +86,19 @@
                         <div class="input-group">
                             @*<InputText @bind-Value="@articulo.Descripcion" oninput="this.value=this.value.toUpperCase()" placeholder="Descripción" class="form-control" />*@
                             <InputTextArea @bind-Value="@articulo.Descripcion" oninput="this.value=this.value.toUpperCase()" placeholder="Descripción" class="form-control" />
+                            <ValidationMessage For="@(() => articulo.Descripcion)" />
                         </div>
                     </div>
                 </div>
+                
+                 <div class="form-group row">
+                                    <label class="col-4 col-form-label">Color</label>
+                                    <div class="col">
+                                        <div class="input-group">
+                                            <input type="color"/>
+                                        </div>
+                                    </div>
+                                </div>
 
                 <div class="form-group row">
                     <label class="col-4 col-form-label">Url Imagen</label>
@@ -167,7 +177,6 @@
                         <ValidationMessage For="@(() => articulo.StockActual)" />
                     </div>
                 </div>
-
                 <div class="form-group row">
                     <label class="col-4 col-form-label">Stock mínimo</label>
                     <div class="col">

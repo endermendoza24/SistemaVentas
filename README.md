@@ -45,7 +45,9 @@ Elaborado por:
 > 24 de noviembre, mejoras en el diseño del login
 > 27 de noviembre, mejoras en diseño
 
-> 01 de diciembre No hay muchos avances, se agregó una forma primitiva de egresos, aún falta el número de factura
+> 01 de diciembre No hay muchos avances, se agregó una forma primitiva de egresos, aún falta el número de factura.
+
+> 7 de diciembre 2022, funcionando sistema de búsqueda de MudBlazor, además de se mejoró el orden de presentación de la vista de artículos, los cuales ahora se muestran como una tabla de manera predeterminada con la opción de verla como tarjetas si así se desea.
 
 ## Lógica de dada de bajas
 
@@ -88,13 +90,10 @@ La manera en que se hicieron los reportes resulta ser muy fácil, simplemente co
 - [x] Optimizar código de exportación a excel.
 - [x] Mejorar modo oscuro, también reparar parte dañada del área de diseño del login.
 - [x] Corregir ortografía.
+- [x] Logo e imágenes.
 - [ ] Reportes básicos
-- [ ] Logo e imágenes.
-- [ ] Reportes básicos
-- [ ] Logo e imágenes.
-- [ ] Mejorar login
+- [x] Mejorar login
 - [ ] Lógica de apertura de caja
 - [ ] Lógica de cierre de caja
-- [ ] Mejoras generales en diseño
-- [ ] Desactivar eliminación permanente
-- [ ] Idea de Egresos hasta el momento
+- [x] Mejoras generales en diseño
+- [x] Desactivar eliminación permanente
