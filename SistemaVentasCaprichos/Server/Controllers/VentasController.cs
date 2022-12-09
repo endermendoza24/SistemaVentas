@@ -88,6 +88,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
                 venta.Fecha = DateTime.Now;
                 await context.SaveChangesAsync();
 
+                await IncrementaSaldo(venta);
                 await DecrementaStock(venta);                
             }
             catch (DbUpdateException)
@@ -157,6 +158,16 @@ namespace SistemaVentasCaprichos.Server.Controllers
                 await articulos.Put(articulo);
             }
         }
-      
+
+        private async Task IncrementaSaldo(Venta venta)
+        {           
+            CajaController cc = new CajaController(context);
+            Caja cajas = new Caja()
+            {
+                Fecha = venta.Fecha,
+                Ingresos = Convert.ToDecimal(venta.Total),                
+            };
+            await cc.Post(cajas);
+        }
     }
 }

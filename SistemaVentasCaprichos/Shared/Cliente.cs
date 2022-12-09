@@ -20,7 +20,7 @@ namespace SistemaVentasCaprichos.Shared
         [StringLength(50)]
         [MaxLength(50, ErrorMessage = "Máximo 50 dígitos"), MinLength(1, ErrorMessage = "Mínimo 1 dígitos")]
         public string Apellido { get; set; }
-        [Required(ErrorMessage = "Debe ingesar una {0}")]
+        [Required(ErrorMessage = "Debe ingesar este dato")]
         [StringLength(16)]
         [MaxLength(16, ErrorMessage = "Máximo 16 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         // buscar algún regex de cédula
@@ -29,7 +29,7 @@ namespace SistemaVentasCaprichos.Shared
         public string Cedula { get; set; }
         [Required, EnumDataType(typeof(Sexos))]        
         public Sexos Sexo { get; set; }
-        [Required(ErrorMessage = "Debe ingesar una {0}")]
+        [Required(ErrorMessage = "Elija una de las opciones")]
         [StringLength(300)]
         [MaxLength(300, ErrorMessage = "Máximo 300 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         public string Dirección { get; set; }

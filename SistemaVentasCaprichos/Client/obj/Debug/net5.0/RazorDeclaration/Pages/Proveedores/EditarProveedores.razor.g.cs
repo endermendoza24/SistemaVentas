@@ -167,7 +167,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\EditarProveedores.razor"
+#line 6 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\EditarProveedores.razor"
            [Authorize(Roles = "admin")]
 
 #line default
@@ -182,7 +182,7 @@ using OfficeOpenXml.Style;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\EditarProveedores.razor"
+#line 25 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\EditarProveedores.razor"
        
     Proveedores Proveedores = new Proveedores();
     [Parameter] public int idProveedor { get; set; }
@@ -208,12 +208,14 @@ using OfficeOpenXml.Style;
             if (respuesta.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/lista-proveedores");
-                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Proveedores editada", "success");
+                //await JS.InvokeVoidAsync("simple", "¡Éxito!", "Proveedores editada", "success");
+                Snackbar.Add("Editada con éxito", Severity.Success, a => a.VisibleStateDuration = 200);
             }
             else
             {
-                await JS.InvokeVoidAsync("simple", "Error",
-                    "No se pudo editar la marca", "error");
+                //await JS.InvokeVoidAsync("simple", "Error",
+                //    "No se pudo editar la marca", "error");
+                Snackbar.Add("Ocurrió un error", Severity.Error, a => a.VisibleStateDuration = 200);
             }
         }
     }
@@ -242,6 +244,7 @@ using OfficeOpenXml.Style;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISnackbar Snackbar { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }

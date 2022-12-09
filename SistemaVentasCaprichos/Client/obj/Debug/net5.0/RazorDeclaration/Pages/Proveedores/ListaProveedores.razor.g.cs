@@ -189,7 +189,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 83 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\ListaProveedores.razor"
+#line 85 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\ListaProveedores.razor"
        
     private bool dense = false;
     private bool hover = true;
@@ -294,7 +294,7 @@ using System.Text.Json;
             var tableBody = worksheet.Cells["A3:E3"].LoadFromCollection(
                 from f in Proveedores
                 select new { f.Id, f.Nombre, f.Telefono, f.Fecha, f.Estado }, true);
-            using (ExcelRange r = worksheet.Cells["A1:E1"])
+            using (ExcelRange r = worksheet.Cells["A1:F1"])
             {
                 r.Merge = true; r.Style.Font.Bold = true;
                 r.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
@@ -303,7 +303,7 @@ using System.Text.Json;
                 r.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGreen);
             }
             worksheet.Cells["A2"].Value = $"Informe de proveedores en existencia {DateTime.Now.ToLongTimeString()}";
-            using (ExcelRange r = worksheet.Cells["A2:E2"])
+            using (ExcelRange r = worksheet.Cells["A2:F2"])
             {
                 r.Merge = true;
                 r.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.CenterContinuous;
@@ -313,7 +313,7 @@ using System.Text.Json;
             }
     
 
-            var header = worksheet.Cells["A3:E3"];
+            var header = worksheet.Cells["A3:F3"];
             worksheet.DefaultColWidth = 32;
             tableBody.Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
 

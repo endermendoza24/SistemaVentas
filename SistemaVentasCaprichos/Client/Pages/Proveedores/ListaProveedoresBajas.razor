@@ -37,7 +37,7 @@ else
     <MudTable Items="@Proveedores" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Proveedores,bool>(FilterFunc1)"
               @bind-SelectedItem="selectedItem1">
         <ToolBarContent>
-            <MudText Typo="Typo.h6">Proveedores</MudText>
+            <MudText Align="Align.Center" Typo="Typo.h6">Proveedores dados de baja</MudText>
             <MudSpacer />
             <MudTextField @bind-Value="searchString1" Placeholder="Buscar proveedor..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
         </ToolBarContent>
@@ -45,6 +45,7 @@ else
             <MudTh Style="width:50px;">Nr</MudTh>
             <MudTh>Nombre</MudTh>
             <MudTh>Teléfono</MudTh>
+            <MudTh>Email</MudTh>
             <MudTh>Dirección</MudTh>
             <MudTh>Fecha registro</MudTh>
             <MudTh Style="width:70px;">Acciones</MudTh>
@@ -53,6 +54,7 @@ else
             <MudTd DataLabel="Id">@context.Id</MudTd>
             <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
             <MudTd DataLabel="Teléfono">@context.Telefono</MudTd>
+            <MudTd DataLabel="Email">@context.Email</MudTd>
             <MudTd DataLabel="Dirección">@context.Direccion</MudTd>
             <MudTd DataLabel="Fecha">@context.Fecha.ToLongDateString()</MudTd>
             <MudTd>

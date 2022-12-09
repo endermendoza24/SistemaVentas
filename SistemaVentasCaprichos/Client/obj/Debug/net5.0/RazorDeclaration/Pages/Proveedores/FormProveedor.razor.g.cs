@@ -181,7 +181,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 61 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\FormProveedor.razor"
+#line 71 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Proveedores\FormProveedor.razor"
        
 
     [Parameter] public Proveedores Proveedores { get; set; } = new Proveedores();

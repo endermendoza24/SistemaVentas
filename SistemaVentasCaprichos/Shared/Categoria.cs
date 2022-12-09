@@ -11,13 +11,13 @@ namespace SistemaVentasCaprichos.Shared
         #region ATRIBUTOS/PROPIEDADES
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Debe ingresar un nombre")]
         [StringLength(50)]
         [MaxLength(50, ErrorMessage = "Máximo 30 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         public string Nombre { get; set; }
         
-        [StringLength(50)]
-        [MaxLength(50, ErrorMessage = "Máximo 50 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
+        [StringLength(300)]
+        [MaxLength(300, ErrorMessage = "Máximo 300 caracteres"), MinLength(2, ErrorMessage = "Minimo 2 caracteres")]
         public string? Descripcion { get; set; }
 
 

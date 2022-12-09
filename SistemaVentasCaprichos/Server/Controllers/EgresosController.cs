@@ -10,6 +10,7 @@ using SistemaVentasCaprichos.Server.Common;
 using SistemaVentasCaprichos.Server.Controllers;
 using SistemaVentasCaprichos.Server.Data;
 using SistemaVentasCaprichos.Shared;
+using OfficeOpenXml.ConditionalFormatting;
 
 namespace SistemaVentasCaprichos.Server.Controllers
 {    
@@ -85,7 +86,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
                 egresos.EmpleadoId = userid;
                 egresos.Fecha = DateTime.Now;
                 await context.SaveChangesAsync();
-                
+                await GuardarEnCaja(egresos);
             }
             catch (DbUpdateException)
             {
@@ -126,6 +127,17 @@ namespace SistemaVentasCaprichos.Server.Controllers
         {
             return context.Egresos.Any(e => e.Id == id);
 
+        }
+        // esto manda a registrar los que se guarda en egresos a la tabla de caja
+        private async Task GuardarEnCaja(Egresos Egresos)
+        {
+            CajaController cc = new CajaController(context);
+            Caja cajas = new Caja()
+            {
+                Fecha = Egresos.Fecha,
+                Egresos = Convert.ToDecimal(Egresos.Total)
+            };
+            await cc.Post(cajas);
         }
     }
 }
