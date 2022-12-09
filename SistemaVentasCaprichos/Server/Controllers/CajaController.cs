@@ -27,6 +27,38 @@ namespace SistemaVentasCaprichos.Server.Controllers
         {
             this.context = context;
         }
+        //GET: api/compras
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<ActionResult<List<Caja>>> Get()
+        {
+            return await context.Caja.ToListAsync();
+        }
+        //GET: api/caja/filtro/cliente&empleado&fecha
+        [HttpGet("filtro")]
+        [AllowAnonymous]        
+        public async Task<ActionResult<List<Caja>>> Get([FromQuery] string fecha) // para que funcione en rider
+        {
+            DateTime f = Convert.ToDateTime(fecha);
+
+            var queryable = context.Caja.AsQueryable();
+
+            if (f != DateTime.Today)
+            {
+                queryable = queryable.Where(x => x.Fecha.Day == f.Day &&
+                                            x.Fecha.Month == f.Month &&
+                                            x.Fecha.Year == f.Year);
+            }
+            return await queryable.OrderByDescending(x => x.Fecha).ToListAsync();
+        }
+
+        // GET: api/ventas/5
+        [HttpGet("{id}")]
+        [AllowAnonymous]
+        public async Task<ActionResult<Caja>> Get(int id)
+        {
+            return await context.Caja.Include(x => x.Id).FirstAsync(x => x.Id == id);
+        }
         // POST: api/ventas 
         [HttpPost]
         [AllowAnonymous]
@@ -59,13 +91,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             }
             return caja.Id;
         }
-        //GET: api/caja
-        [HttpGet]
-        [AllowAnonymous]
-        public async Task<ActionResult<List<Caja>>> Get()
-        {
-            return await context.Caja.OrderBy(x => x.Id).ToListAsync();
-        }
+      
         private bool Exists(int id)
         {
             return context.Caja.Any(e => e.Id == id);

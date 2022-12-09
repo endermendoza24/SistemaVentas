@@ -1,0 +1,141 @@
+﻿@page "/lista-caja"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using System.Text.Json
+
+<div class="d-flex position-sticky justify-content-between mb-1">
+    <div class="btn-group mr-2">
+        <button @onclick="CrearVenta" class="btn btn-success"><i class="oi oi-plus"></i> Nueva venta</button>
+    </div>
+    <div class="input-group" style="width:60%">
+        <input class="form-control" type="date" placeholder="Fecha venta" @bind="FechaFiltro" />
+       @* <input class="form-control" type="text" placeholder="Nombre empleado" @bind="EmpleadoFiltro" />*@
+        <div class="input-group-append">
+            <button @onclick="Filtrar" class="btn btn-primary" type="button"><i class="oi oi-magnifying-glass"></i></button>
+            <button @onclick="Limpiar" class="btn btn-danger" type="button"><i class="oi oi-delete"></i></button>
+        </div>
+    </div>
+</div>
+
+@if (caja == null)
+{
+    <div class="d-flex justify-content-center align-items-center" style="height:24rem">
+        <div class="spinner-border-sm text-success" role="status">
+            <span class="sr-only">Cargando...</span>
+        </div>
+    </div>
+}
+else if (caja.Count == 0)
+{
+    <div class="d-flex justify-content-center align-items-center" style="height:24rem">
+        <text>No se encontró ninguna caja.</text>
+    </div>
+}
+else
+{
+    <MudTable Items="@caja" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Caja,bool>(FilterFunc1)"
+          @bind-SelectedItem="selectedItem1">
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Entradas/salidas</MudText>
+            <MudSpacer />
+            <MudTextField @bind-Value="searchString1" Placeholder="Buscar..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh Style="width:50px;">Nr</MudTh>
+            <MudTh>Fecha</MudTh>
+            <MudTh>Entrada</MudTh>
+            <MudTh>Salida</MudTh>
+            <MudTh>Saldo</MudTh>            
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Id">@context.Id</MudTd>
+            <MudTd DataLabel="Fecha">@context.Fecha</MudTd>
+            <MudTd DataLabel="Ingresos">C$ @context.Ingresos</MudTd>           
+            <MudTd DataLabel="Egresos">C$ @context.Egresos</MudTd>
+            @if(context.Saldo < 0 )
+            {
+                <MudTd Style="color:red" DataLabel="Saldo">C$ @context.Saldo</MudTd>
+            }
+            else
+            {
+                <MudTd DataLabel="Saldo">C$ @context.Saldo</MudTd>
+            }
+
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager />
+        </PagerContent>
+    </MudTable>
+}
+@code {
+    public List<Caja> caja { get; set; }
+
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private string searchString1 = "";
+    private Caja selectedItem1 = null;
+    private HashSet<Caja> selectedItems = new HashSet<Caja>();
+
+    private DateTime FechaFiltro = DateTime.Today;
+    
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            await CargarCaja();
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+    }
+
+    async Task CargarCaja()
+    {
+        string fecha = Convert.ToString(FechaFiltro);
+
+        var httpResponse = await Http.GetAsync($"api/caja/filtro?fecha={fecha}");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            caja = JsonSerializer.Deserialize<List<Caja>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("Error en caja");
+        }
+    }
+ 
+
+    void CrearVenta()
+    {
+        NavigationManager.NavigateTo("crear-caja");
+    }
+
+    private async Task Filtrar()
+    {
+        await CargarCaja();
+    }
+
+    private async Task Limpiar()
+    {
+        FechaFiltro = DateTime.Today;
+        await CargarCaja();
+    }
+
+    // esta es la funcion de filtrado de MudBlazor
+    private bool FilterFunc1(Caja element) => FilterFunc(element, searchString1);
+
+    private bool FilterFunc(Caja element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.Fecha.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        return false;
+    }
+}

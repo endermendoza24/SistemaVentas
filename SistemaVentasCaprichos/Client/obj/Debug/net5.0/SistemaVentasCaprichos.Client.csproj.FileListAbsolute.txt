@@ -5473,3 +5473,5 @@ C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\o
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\refint\SistemaVentasCaprichos.Client.dll
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\SistemaVentasCaprichos.Client.pdb
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Client.dll
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Caja\ListaCaja.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Caja\ListaCaja.razor.g.cs

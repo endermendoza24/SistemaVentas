@@ -49,6 +49,8 @@ Elaborado por:
 
 > 7 de diciembre 2022, funcionando sistema de búsqueda de MudBlazor, además de se mejoró el orden de presentación de la vista de artículos, los cuales ahora se muestran como una tabla de manera predeterminada con la opción de verla como tarjetas si así se desea.
 
+> 8 de diciembre de 2022, avances en la lógica de registro de ingresos y egreso, el saldo lo calcula automáticamente, además de que el total de ventas, de compras y de egresos que se vayan registrando se van a mandar a la tabla caja y ahí se harán las operaciones correspondientes, las cuales se mostrarán en un componente de tabla con formato condicional.
+
 ## Lógica de dada de bajas
 
 La lógica de dada de baja está en loc controladores de cada catálogo, se le debe añadir una sentencia WHERE en el método GET, en esa sentencia se debe de especificar que solo muestre los registros cuyo estado sea igual a true, esto se hizo de la siguiente manera:
@@ -94,6 +96,6 @@ La manera en que se hicieron los reportes resulta ser muy fácil, simplemente co
 - [ ] Reportes básicos
 - [x] Mejorar login
 - [ ] Lógica de apertura de caja
-- [ ] Lógica de cierre de caja
+- [x] Lógica de caja.
 - [x] Mejoras generales en diseño
 - [x] Desactivar eliminación permanente

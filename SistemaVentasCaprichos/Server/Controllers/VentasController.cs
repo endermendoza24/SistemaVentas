@@ -40,7 +40,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
         //GET: api/ventas/filtro/cliente&empleado&fecha
         [HttpGet("filtro")]
         [AllowAnonymous]
-        // public async Task<ActionResult<List<Venta>>> Get([FromQuery] string empleado, [FromQuery] string fecha)
+        // public async Task<ActionResult<List<Venta>>> Get([FromQuery] string empleado, [FromQuery] datetime fecha)
         public async Task<ActionResult<List<Venta>>> Get([FromQuery] string empleado, [FromQuery] string fecha) // para que funcione en rider
         {
             DateTime f = Convert.ToDateTime(fecha);
