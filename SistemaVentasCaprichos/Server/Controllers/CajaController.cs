@@ -37,7 +37,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
         //GET: api/caja/filtro/cliente&empleado&fecha
         [HttpGet("filtro")]
         [AllowAnonymous]        
-        public async Task<ActionResult<List<Caja>>> Get([FromQuery] string fecha) // para que funcione en rider
+        public async Task<ActionResult<List<Caja>>> Get([FromQuery] string fecha) // Entra en conflicto con VsCode y Rider
         {
             DateTime f = Convert.ToDateTime(fecha);
 
@@ -68,8 +68,10 @@ namespace SistemaVentasCaprichos.Server.Controllers
             
             try
             {
+                //caja.Egresos = context.Egresos.Sum(x => x.Total) + context.Compras.Sum(x => x.Total);
                 caja.Egresos = context.Compras.Sum(x => x.Total); //  obtiene la suma del total de compras
                 caja.Ingresos = context.Ventas.Sum(x => x.Total); // obtiene la suma del total de ventas
+                
 
                 caja.Saldo = context.Ventas.Sum(x => x.Total) - context.Compras
                     .Sum(x => x.Total); // resta de ambos totales

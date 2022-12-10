@@ -189,7 +189,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 78 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\ListaVenta.razor"
+#line 79 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\ListaVenta.razor"
        
     public List<Venta> ventas { get; set; }
 
@@ -215,6 +215,12 @@ using System.Text.Json;
             exception.Redirect();
         }
     }
+    private TableGroupDefinition<Caja> _groupDefinition = new()
+        {
+            GroupName = "Grupo caja",
+            Indentation = false,
+            Expandable = false 
+        };
 
     async Task CargarVentas()
     {

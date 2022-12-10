@@ -63,13 +63,14 @@ else
             <MudTd>Cliente genérico</MudTd>
             }
         <MudTd DataLabel="Empleado">@context.ApplicationUser.NombreyApellido</MudTd>
-        <MudTd DataLabel="Empleado">C$ @context.Total</MudTd>
+        <MudTd DataLabel="Empleado">C$ @context.Total</MudTd>        
         <MudTd>
             <MudFab Color="Color.Primary" StartIcon="@Icons.Filled.Payment" Size="Size.Small"
                     @onclick="@(() => NavigationManager.NavigateTo($"/ver-venta/{context.Id}"))" />
         </MudTd>
 
-    </RowTemplate>
+    </RowTemplate>           
+  
     <PagerContent>
         <MudTablePager />
     </PagerContent>
@@ -100,6 +101,12 @@ else
             exception.Redirect();
         }
     }
+    private TableGroupDefinition<Caja> _groupDefinition = new()
+        {
+            GroupName = "Grupo caja",
+            Indentation = false,
+            Expandable = false 
+        };
 
     async Task CargarVentas()
     {

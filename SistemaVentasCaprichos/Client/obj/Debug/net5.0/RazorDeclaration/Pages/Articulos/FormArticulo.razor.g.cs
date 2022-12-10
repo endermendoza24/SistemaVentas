@@ -181,7 +181,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 222 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
+#line 213 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\FormArticulo.razor"
        
     [Parameter] public Articulo articulo { get; set; } = new Articulo();
     [Parameter] public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();

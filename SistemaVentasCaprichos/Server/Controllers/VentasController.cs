@@ -45,7 +45,8 @@ namespace SistemaVentasCaprichos.Server.Controllers
         {
             DateTime f = Convert.ToDateTime(fecha);
 
-            var queryable = context.Ventas.Include(x => x.Cliente)
+            var queryable = context.Ventas
+                .Include(x => x.Cliente)
                 .Include(x => x.ApplicationUser)
                 .Include(x => x.DetalleVentas)
                 .ThenInclude(x => x.Articulo).AsQueryable();
@@ -88,7 +89,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
                 venta.Fecha = DateTime.Now;
                 await context.SaveChangesAsync();
 
-                await IncrementaSaldo(venta);
+                await GuardarEnCaja(venta);
                 await DecrementaStock(venta);                
             }
             catch (DbUpdateException)
@@ -159,15 +160,15 @@ namespace SistemaVentasCaprichos.Server.Controllers
             }
         }
 
-        private async Task IncrementaSaldo(Venta venta)
+        private async Task GuardarEnCaja(Venta venta)
         {           
-            CajaController cc = new CajaController(context);
+            CajaController cajaController = new CajaController(context);
             Caja cajas = new Caja()
             {
                 Fecha = venta.Fecha,
                 Ingresos = Convert.ToDecimal(venta.Total),                
             };
-            await cc.Post(cajas);
+            await cajaController.Post(cajas);
         }
     }
 }

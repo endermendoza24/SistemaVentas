@@ -1,14 +1,24 @@
-﻿@page "/listado-caja"
+﻿@page "/lista-caja"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @using System.Text.Json
 @inject IJSRuntime JS
 @using System.Globalization;
+<style>
+    .mud-table-cell-custom-group {
+        font-weight: 500;
+    }
 
-<div class="d-flex position-sticky justify-content-between mb-1">   
+    .mud-table-cell-custom-group-footer {
+        padding-bottom: 50px;
+        text-align: right;
+    }
+</style>
+
+<div class="d-flex position-sticky justify-content-between mb-1">
     <div class="input-group" style="width:60%">
         <input class="form-control" type="date" placeholder="Fecha venta" @bind="FechaFiltro" />
-       @* <input class="form-control" type="text" placeholder="Nombre empleado" @bind="EmpleadoFiltro" />*@
+        @* <input class="form-control" type="text" placeholder="Nombre empleado" @bind="EmpleadoFiltro" />*@
         <div class="input-group-append">
             <button @onclick="Filtrar" class="btn btn-primary" type="button"><i class="oi oi-magnifying-glass"></i></button>
             <button @onclick="Limpiar" class="btn btn-danger" type="button"><i class="oi oi-delete"></i></button>
@@ -39,33 +49,34 @@ else
                    Color="Color.Warning">Excel</MudButton>
         </MudTooltip>
     </MudButtonGroup>
-
-    <MudTable Items="@caja" GroupFooterClass="mb-4" GroupBy="@_groupDefinition" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Caja,bool>(FilterFunc1)"
-          @bind-SelectedItem="selectedItem1">
-        <ToolBarContent>
-            <MudText Typo="Typo.h6">Entradas/salidas</MudText>
-            <MudSpacer />
-            <MudTextField @bind-Value="searchString1" Placeholder="Buscar..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
-        </ToolBarContent>
-
-        <HeaderContent>
-            <MudTh Style="width:50px;">Nr</MudTh>
+    <MudTable Hover="true" Breakpoint="Breakpoint.Sm" Height="500px" FixedHeader="true"
+          Items="@caja"
+          GroupBy="@_groupDefinition"
+          GroupHeaderStyle="background-color:var(--mud-palette-background-grey)"
+          GroupFooterClass="mb-4"
+          Dense="true">
+        <ColGroup>
+            <col style="width: 60px;" />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+        </ColGroup>
+        <HeaderContent>            
             <MudTh>Fecha</MudTh>
             <MudTh>Entrada</MudTh>
             <MudTh>Salida</MudTh>
-            <MudTh>Saldo</MudTh>            
+            <MudTh>Saldo</MudTh>
         </HeaderContent>
         <GroupHeaderTemplate>
-            <MudTh Style="display:none" Class="mud-table-cell-custom-group" colspan="5">@($"{context.GroupName}: {context.Key}")</MudTh>
+            <MudTh Class="mud-table-cell-custom-group" colspan="5">@($"{context.GroupName}: {context.Key}")</MudTh>
             </GroupHeaderTemplate>
-        <RowTemplate>
-            <MudTd DataLabel="Id">@context.Id</MudTd>
-            <MudTd DataLabel="Fecha">@context.Fecha.ToLongDateString()</MudTd>
-            <MudTd DataLabel="Ingresos">@context.Ingresos.ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))</MudTd>
-            <MudTd DataLabel="Egresos">
-                @context.Egresos.ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))
-            </MudTd>
-            @if(context.Saldo < 0 )
+            <RowTemplate>                
+                <MudTd DataLabel="Fecha">@context.Fecha</MudTd>
+                <MudTd DataLabel="Entrada">@context.Ingresos.ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))</MudTd>
+                <MudTd DataLabel="Salida">@context.Egresos.ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))</MudTd>
+                @if (context.Saldo < 0)
             {
                 <MudTd Style="color:red" DataLabel="Saldo">@context.Saldo.ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))</MudTd>
             }
@@ -73,11 +84,10 @@ else
             {
                 <MudTd Style="color:green" DataLabel="Saldo">@context.Saldo.ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))</MudTd>
             }
-            
         </RowTemplate>
         <GroupFooterTemplate>
             <MudTh Class="mud-table-cell-custom-group mud-table-cell-custom-group-footer" colspan="5">
-                <div style="color:red;font-size:20px;font-weight:700;">Saldo total: @context.Items.Sum((e) => e.Saldo)</div>
+                <div style="color:red;font-size:20px;font-weight:700;">SALDO TOTAL: @context.Items.Sum((e) => e.Saldo)</div>
             </MudTh>
         </GroupFooterTemplate>
         <PagerContent>
@@ -85,7 +95,9 @@ else
         </PagerContent>
     </MudTable>
 }
-@code {
+
+    @code {
+    private DateTime FechaFiltro = DateTime.Today;
     public List<Caja> caja { get; set; }
 
     private bool dense = false;
@@ -96,17 +108,16 @@ else
     private Caja selectedItem1 = null;
     private HashSet<Caja> selectedItems = new HashSet<Caja>();
 
-    private DateTime FechaFiltro = DateTime.Today;
-
     private TableGroupDefinition<Caja> _groupDefinition = new()
         {
-            GroupName = "Fecha",
+            GroupName = "Fecha: ",
             Indentation = false,
-            Expandable = false,
+            Expandable = true,
+            IsInitiallyExpanded = false,
             Selector = (e) => e.Fecha.ToLongDateString()
         };
 
-    
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -136,7 +147,7 @@ else
             Console.WriteLine("Error en caja");
         }
     }
- 
+
 
     void CrearVenta()
     {
@@ -152,18 +163,6 @@ else
     {
         FechaFiltro = DateTime.Today;
         await CargarCaja();
-    }
-
-    // esta es la funcion de filtrado de MudBlazor
-    private bool FilterFunc1(Caja element) => FilterFunc(element, searchString1);
-
-    private bool FilterFunc(Caja element, string searchString)
-    {
-        if (string.IsNullOrWhiteSpace(searchString))
-            return true;
-        if (element.Fecha.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;
-        return false;
     }
 
 

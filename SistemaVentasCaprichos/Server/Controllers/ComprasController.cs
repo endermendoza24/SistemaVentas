@@ -88,7 +88,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
                 compra.Fecha = DateTime.Now;
                 await context.SaveChangesAsync();
 
-                await IncrementaSaldo(compra);
+                await GuardarEnCaja(compra);
                 await IncrementaStock(compra);
             }
             catch (DbUpdateException)
@@ -162,15 +162,15 @@ namespace SistemaVentasCaprichos.Server.Controllers
             }
         }
 
-        private async Task IncrementaSaldo(Compra  Compra)
+        private async Task GuardarEnCaja(Compra  Compra)
         {
-            CajaController cc = new CajaController(context);
+            CajaController cajaController = new CajaController(context);
             Caja cajas = new Caja()
             {
                 Fecha = Compra.Fecha,
                 Egresos = Convert.ToDecimal(Compra.Total)
             };
-            await cc.Post(cajas);
+            await cajaController.Post(cajas);
         }
     }
 }

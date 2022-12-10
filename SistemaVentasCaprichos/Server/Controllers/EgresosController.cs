@@ -131,13 +131,13 @@ namespace SistemaVentasCaprichos.Server.Controllers
         // esto manda a registrar los que se guarda en egresos a la tabla de caja
         private async Task GuardarEnCaja(Egresos Egresos)
         {
-            CajaController cc = new CajaController(context);
+            CajaController cajaController = new CajaController(context);
             Caja cajas = new Caja()
             {
                 Fecha = Egresos.Fecha,
                 Egresos = Convert.ToDecimal(Egresos.Total)
             };
-            await cc.Post(cajas);
+            await cajaController.Post(cajas);
         }
     }
 }
