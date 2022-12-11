@@ -9,15 +9,17 @@ Elaborado por:
 1. Oswald Armando Balladares Ruiz.
 2. Greyvin Josué Mora Zúniga.
 3. Endersson Alonso Mendoza Muñoz.
-   **¿Cómo abrir el proyecto?**
 
-4. Descargar y abrir el proyecto desde github, `git clone https://github.com/endermendoza24/SistemaVentas.git`
-5. Abrir la solución y restaurar paquetes nugets desde la solución.
-6. Abrir la consola del manejador de paquetes y agregar el comando: `Add-Migration *NombreMigracion*`, posterior a eso ejecutar el comando `Update-Database`.
-7. Ejecutar el proyecto
+## ¿Cómo ejecutar el proyecto?
+
+1. Descargar y abrir el proyecto desde github, `git clone https://github.com/endermendoza24/SistemaVentas.git`
+2. Abrir la solución y restaurar paquetes nugets desde la solución.
+3. Abrir la consola del manejador de paquetes y agregar el comando: `Add-Migration *NombreMigracion*`, posterior a eso ejecutar el comando `Update-Database`.
+4. Ejecutar el proyecto
+5. Registrarse como usuario.
+6. Iniciar sesión
+7. Ir a la ubicación /roles
 8. Registrar los datos del módulo de configuración
-9. Registrarse como usuario.
-10. Iniciar sesión
 
 > 26 de octubre de 2022, se agregó tabla de configuración, además de
 
@@ -52,6 +54,7 @@ Elaborado por:
 > 8 de diciembre de 2022, avances en la lógica de registro de ingresos y egreso, el saldo lo calcula automáticamente, además de que el total de ventas, de compras y de egresos que se vayan registrando se van a mandar a la tabla caja y ahí se harán las operaciones correspondientes, las cuales se mostrarán en un componente de tabla con formato condicional.
 
 > 10 de diciembre 2022, mejoras importantes en el área de caja, ahora resta bien, guarda de manera correcta el saldo, además de mostrar el total de saldo filtrado por fechas.
+> 10 de diciembre, también agregada la lógica que permite establecer un número de factura que sea consecutivo, íntegro y no repetitivo.
 
 ## Lógica de dada de bajas
 
@@ -75,16 +78,22 @@ La manera en que se hicieron los reportes resulta ser muy fácil, simplemente co
 - Subir el reporte.
 - Obtener el id del reporte que se encuentra al momento de ver el reporte en el navegador.
 - A través de una etiqueta Iframe de html mostrar ese reporte en la página principal del sistema.
-  Una observación importante es que el reporte únicamente funciona en la computadora en la que fue hecho, esto debido a la naturaleza de OnDataPremises
+  Una observación importante es que el reporte únicamente funciona en la computadora en la que fue hecho, esto debido a la naturaleza de OnDataPremises.
 
-<iframe src="https://app.powerbi.com/reportEmbed?reportId=8eebb4ca-050b-43c0-88c0-30c7bc248a91&autoAuth=true" frameborder="0" allowtransparency="true"> </iframe
+    <iframe src="https://app.powerbi.com/reportEmbed?reportId=8eebb4ca-050b-43c0-88c0-30c7bc248a91&autoAuth=true" frameborder="0" allowtransparency="true"> </iframe>
+
+## Lógica de número de factura
+
+El número de factura se hace usando una consulta de SQL a través de LINQ, la cual consiste en obtener el número máximo del campo "Número" y sumarle 1 a ese número, de esta manera siempre será un número consecutivo, esto se hace en el controlador en este caso de ventas. De esta manera al empezar hay un registro de 0, entoces ese es el máximo, entonces se le suma 1, luego de eso el máximo ahora es 1, y se le suma otro entonces es 2, se le suma uno más y es tres, y así sucesivamente...
+
+    venta.Numero = context.Ventas.Max(x => x.Numero + 1);
 
 ## Cosas por hacer en el proyecto...
 
 - [ ] Lógica de cambios/devolución - !urgente
 - [x] Lógica de dada de baja de producto
 - [x] Páginas donde solo se muestren los elementos que hayan sido dados de baja
-- [x] Lógica de número de factura en ventas (Se usará el ID de la factura)
+- [x] Lógica de número de factura en ventas (Sin usar el ID de la tabla)
 - [x] Reportes a través de Power BI
 - [x] Mejoras en el área de logueo/deslogueo/registro.
 - [x] Sistema de roles - !Urgente
@@ -95,9 +104,8 @@ La manera en que se hicieron los reportes resulta ser muy fácil, simplemente co
 - [x] Mejorar modo oscuro, también reparar parte dañada del área de diseño del login.
 - [x] Corregir ortografía.
 - [x] Logo e imágenes.
-- [ ] Reportes básicos
+- [x] Reportes básicos
 - [x] Mejorar login
-- [ ] Lógica de apertura de caja
 - [x] Lógica de caja.
 - [x] Mejoras generales en diseño
 - [x] Desactivar eliminación permanente

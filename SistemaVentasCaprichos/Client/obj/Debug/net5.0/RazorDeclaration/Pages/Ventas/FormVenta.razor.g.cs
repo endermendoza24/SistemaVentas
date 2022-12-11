@@ -13,154 +13,154 @@ namespace SistemaVentasCaprichos.Client.Pages.Ventas
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 1 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 2 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 3 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 4 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 5 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 6 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 7 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 8 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 9 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 10 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 11 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 12 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 13 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 14 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 14 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 15 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 15 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using System.IO;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 16 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 16 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client.Helpers;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 19 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 19 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using MudBlazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 20 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 20 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using MudBlazor.ThemeManager;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 21 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 21 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using MudBlazor.Services;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 22 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 22 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using CsvHelper;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 23 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 23 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using OfficeOpenXml;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 24 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 24 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\_Imports.razor"
 using OfficeOpenXml.Style;
 
 #line default
@@ -174,12 +174,11 @@ using OfficeOpenXml.Style;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 137 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
+#line 146 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\Pages\Ventas\FormVenta.razor"
        
     [Parameter] public Venta venta { get; set; } = new Venta();
     [Parameter] public List<Cliente> clientes { get; set; } = new List<Cliente>();
     [Parameter] public List<Articulo> articulos { get; set; } = new List<Articulo>();
-
     [Parameter] public EventCallback OnValidSubmit { get; set; }
     [Parameter] public string textSubmit { get; set; }
 
@@ -202,7 +201,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
 #nullable restore
-#line 158 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
+#line 166 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\Pages\Ventas\FormVenta.razor"
              for (int i = 0; i < listadetalle.Count; i++)
             {
                 venta.Total += listadetalle[i].SubTotalConDescuento;
@@ -212,7 +211,7 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
 #nullable restore
-#line 161 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Ventas\FormVenta.razor"
+#line 169 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\Pages\Ventas\FormVenta.razor"
              
         }
         return venta.Total;

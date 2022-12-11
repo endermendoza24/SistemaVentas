@@ -34,7 +34,7 @@ else if (ventas.Count == 0)
 }
 else
 {
-<MudTable Items="@ventas" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Venta,bool>(FilterFunc1)"
+<MudTable Items="@ventas" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Venta,bool>(FilterFunc1)"
           @bind-SelectedItem="selectedItem1">
     <ToolBarContent>
         <MudText Typo="Typo.h6">Ventas</MudText>
@@ -44,23 +44,24 @@ else
     <HeaderContent>
         <MudTh Style="width:50px;">Nr</MudTh>
         <MudTh>Fecha</MudTh>
-        <MudTh>Forma de pago</MudTh>
+        @* <MudTh>Forma de pago</MudTh> *@
         <MudTh>Cliente</MudTh>
         <MudTh>Empleado</MudTh>
         <MudTh>Total</MudTh>
         <MudTh>Acciones</MudTh>
     </HeaderContent>
     <RowTemplate>
-        <MudTd DataLabel="Id">@context.Id</MudTd>
+@*        <MudTd DataLabel="Id">@context.Id</MudTd>*@
+        <MudTd DataLabel="Num">@context.Numero</MudTd>
         <MudTd DataLabel="Fecha">@context.Fecha</MudTd>
-        <MudTd DataLabel="FPago">@context.FormaPago</MudTd>
+        @* <MudTd DataLabel="FPago">@context.FormaPago</MudTd> *@
         @if (context.ClienteId != null)
             {
             <MudTd DataLabel="Cliente">@context.Cliente.Nombre</MudTd>
             }
             else
             {
-            <MudTd>Cliente genérico</MudTd>
+            <MudTd>CLIENTE GENÉRICO</MudTd>
             }
         <MudTd DataLabel="Empleado">@context.ApplicationUser.NombreyApellido</MudTd>
         <MudTd DataLabel="Empleado">C$ @context.Total</MudTd>        
@@ -78,8 +79,6 @@ else
 }
 @code {
     public List<Venta> ventas { get; set; }
-
-    private bool dense = false;
     private bool hover = true;
     private bool striped = true;
     private bool bordered = true;
@@ -101,12 +100,6 @@ else
             exception.Redirect();
         }
     }
-    private TableGroupDefinition<Caja> _groupDefinition = new()
-        {
-            GroupName = "Grupo caja",
-            Indentation = false,
-            Expandable = false 
-        };
 
     async Task CargarVentas()
     {

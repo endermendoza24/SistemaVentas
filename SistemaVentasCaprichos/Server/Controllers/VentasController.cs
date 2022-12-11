@@ -10,6 +10,7 @@ using SistemaVentasCaprichos.Server.Common;
 using SistemaVentasCaprichos.Server.Controllers;
 using SistemaVentasCaprichos.Server.Data;
 using SistemaVentasCaprichos.Shared;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SistemaVentasCaprichos.Server.Controllers
 {  
@@ -87,8 +88,10 @@ namespace SistemaVentasCaprichos.Server.Controllers
                 var userid = User.GetUserId();
                 venta.EmpleadoId = userid;
                 venta.Fecha = DateTime.Now;
+                venta.Numero = context.Ventas.Max(x => x.Numero + 1); //  funcion para obtener el numero de factura, que debe de ser un numero consecutivo y que no se repita jamas
                 await context.SaveChangesAsync();
 
+         
                 await GuardarEnCaja(venta);
                 await DecrementaStock(venta);                
             }
@@ -170,5 +173,17 @@ namespace SistemaVentasCaprichos.Server.Controllers
             };
             await cajaController.Post(cajas);
         }
+
+        //  probando numero de factura
+        private async Task NumeroFactura(Venta venta)
+        {
+            VentasController ventaController = new VentasController(context);
+            List<Venta> listaVentas = new List<Venta>();
+            Venta ventas = new Venta()
+            {
+                Numero = listaVentas.Max(x => x.Numero + 1)
+        };
+        await ventaController.Post(ventas);
+    }
     }
 }

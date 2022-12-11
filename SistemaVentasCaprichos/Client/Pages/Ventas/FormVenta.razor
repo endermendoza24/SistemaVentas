@@ -79,15 +79,15 @@
                     }
 
                     <div class="row">
-                        <div class="col-4 form-group">
+                        <div class="col-5 form-group">
                             <label>Cantidad</label>
                             @* <InputNumber @bind-Value="detalle.Cantidad" class="form-control" min="1" max="@cantidadmax" /> *@
                             <MudNumericField @bind-Value="detalle.Cantidad" Label="Ingrese la cantidad" Variant="Variant.Outlined"
-                            Min="1" Max="@cantidadmax"  />
+                            Min="1" Max="@cantidadmax" Step="1" />
                             <ValidationMessage For="@(() => detalle.Cantidad)" />
                         </div>
 
-                        <div class="col-4 form-group">
+                        <div class="col-5 form-group">
                             <label>Descuento</label>
                             @* <InputNumber @bind-Value="detalle.Descuento" class="form-control" min="-100" max="100" /> *@
                             <MudNumericField @bind-Value="detalle.Descuento" Label="Ingrese el descuento por producto" Variant="Variant.Outlined"
@@ -95,12 +95,21 @@
                             <ValidationMessage For="@(() => detalle.Descuento)" />
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-5">
+                            <div class="d-flex justify-content-start mb-2 ml-2 mr-2">
+                                <h3>Subtotal</h3>                              
+                            </div>                           
+                            <div class="d-flex justify-content-end mt-3 ml-2 mr-2">
+                                <h4><b>C$ @Math.Round(detalle.SubTotal,2)</b></h4>
+                            </div>
+                           
+                        </div>
+                        <div class="col-5">
                             <div class="d-flex justify-content-end mb-2 ml-2 mr-2">
-                                <text>Subtotal</text>
+                                <h3>IVA</h3>
                             </div>
                             <div class="d-flex justify-content-end mt-3 ml-2 mr-2">
-                                <h4><b>@Math.Round(detalle.SubTotal,2)</b></h4>
+                                <h4><b>C$ @Math.Round(detalle.IvaAlternativo,2)</b></h4>
                             </div>
                         </div>
                     </div>
@@ -120,7 +129,7 @@
                     @if (venta.Total != 0)
                     {
 
-                        <h2><b><br>C$@Math.Round(venta.Total,2)</b></h2>
+                        <h2><b><br>C$ @Math.Round(venta.Total,2)</b></h2>
                     }
                 </button>
             </div>
@@ -138,7 +147,6 @@
     [Parameter] public Venta venta { get; set; } = new Venta();
     [Parameter] public List<Cliente> clientes { get; set; } = new List<Cliente>();
     [Parameter] public List<Articulo> articulos { get; set; } = new List<Articulo>();
-
     [Parameter] public EventCallback OnValidSubmit { get; set; }
     [Parameter] public string textSubmit { get; set; }
 

@@ -5448,8 +5448,6 @@ C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\o
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\lBnf446Q.gz
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\zi7PPyNQ.gz
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\Vs5C+vb6.gz
-C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\eS9NOm5H.gz
-C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\io6KWpg7.gz
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Articulos\ListaArticulo.razor.rz.scp.css
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Articulos\ListaBajas.razor.rz.scp.css
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Clientes\ListaCliente.razor.rz.scp.css
@@ -5477,3 +5475,5 @@ C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\o
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Caja\ListaCaja.razor.g.cs
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Caja\ListadoCaja.razor.g.cs
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Caja\ListadoCaja.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\obj\Debug\net5.0\build-gz\VG+2S8pP.gz
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\sistemaventascaprichos\Client\obj\Debug\net5.0\build-gz\0TwtliYP.gz
