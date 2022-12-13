@@ -11,6 +11,7 @@ using SistemaVentasCaprichos.Server.Controllers;
 using SistemaVentasCaprichos.Server.Data;
 using SistemaVentasCaprichos.Shared;
 using System.Security.Cryptography.X509Certificates;
+using IdentityServer4.Extensions;
 
 namespace SistemaVentasCaprichos.Server.Controllers
 {  
@@ -88,7 +89,20 @@ namespace SistemaVentasCaprichos.Server.Controllers
                 var userid = User.GetUserId();
                 venta.EmpleadoId = userid;
                 venta.Fecha = DateTime.Now;
-                venta.Numero = context.Ventas.Max(x => x.Numero + 1); //  funcion para obtener el numero de factura, que debe de ser un numero consecutivo y que no se repita jamas
+                if (context.Ventas.IsNullOrEmpty())
+                {
+
+                    venta.Numero = 1;
+                    
+                }
+                else
+                {
+                   
+                    venta.Numero = context.Ventas.Max(x => x.Numero + 1); //  funcion para obtener el numero de factura, que debe de ser un numero consecutivo y que no se repita jamas                    
+                }
+
+
+
                 await context.SaveChangesAsync();
 
          

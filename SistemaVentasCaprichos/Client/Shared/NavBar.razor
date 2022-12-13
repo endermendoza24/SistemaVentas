@@ -7,7 +7,7 @@
         <MudNavLink Href="/" Icon="@Icons.Filled.Dashboard">Inicio</MudNavLink>
         @*<MudNavLink Href="/estadisticas" Icon="@Icons.Filled.QueryStats">Estadísticas</MudNavLink>*@
         <MudNavGroup Title="Artículos" Icon="@Icons.Filled.AddShoppingCart" Expanded="true">
-            <MudNavLink Href="/lista-articulos">Crear artículo</MudNavLink>
+            <MudNavLink Href="/lista-articulos">Agregar artículo</MudNavLink>
             <AuthorizeView Roles="admin">
                 <Authorized>
                     <MudNavLink Href="/lista-marcas">Marcas</MudNavLink>
@@ -27,8 +27,8 @@
             <Authorized>
                 <MudNavGroup Title="Compras" Icon="@Icons.Filled.ShoppingBag" Expanded="true">
                     <MudNavLink Href="/lista-compras">Compras</MudNavLink>
-                    <MudNavLink Href="/lista-egresos">Egresos</MudNavLink>
-                    <MudNavLink Href="/ver-egresos">Ver egresos</MudNavLink>
+                 @*   <MudNavLink Href="/lista-egresos">Egresos</MudNavLink>
+                    <MudNavLink Href="/ver-egresos">Ver egresos</MudNavLink>*@
                 </MudNavGroup>
 
                 <MudNavLink Href="/lista-caja" Icon="@Icons.Filled.AccountBalance">Caja</MudNavLink>

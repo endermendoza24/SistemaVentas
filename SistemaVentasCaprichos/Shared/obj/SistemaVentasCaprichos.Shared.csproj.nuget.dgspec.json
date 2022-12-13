@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\sistemaventascaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {}
+    "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\sistemaventascaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
+    "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\sistemaventascaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
         "projectName": "SistemaVentasCaprichos.Shared",
-        "projectPath": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\sistemaventascaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
+        "projectPath": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
         "packagesPath": "C:\\Users\\Anderson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\sistemaventascaprichos\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\Anderson\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Anderson\\AppData\\Roaming\\NuGet\\NuGet.Config",

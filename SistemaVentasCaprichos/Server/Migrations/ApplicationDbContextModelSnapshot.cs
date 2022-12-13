@@ -152,14 +152,14 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         new
                         {
                             Id = "89086180-b978-4f90-9dbd-a7040bc93f41",
-                            ConcurrencyStamp = "ebcc9ae4-7c0e-4b35-be38-3b7ae9d3bdb3",
+                            ConcurrencyStamp = "6b84ec66-5200-46e3-aad6-d7c53a9ecade",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
                             Id = "65ade53a-ce03-411e-9d35-08fca7f47014",
-                            ConcurrencyStamp = "dd298b12-5e0c-41ed-9c12-f02a955dd968",
+                            ConcurrencyStamp = "f753ecd3-f278-4cdd-ad37-8a5c2dd07d14",
                             Name = "empleado",
                             NormalizedName = "empleado"
                         });
@@ -355,12 +355,13 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Codigo")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Descripcion")
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<bool>("Estado")
                         .HasColumnType("bit");
@@ -370,8 +371,8 @@ namespace SistemaVentasCaprichos.Server.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("PrecioMayorista")
                         .HasColumnType("decimal(10,2)");
@@ -478,8 +479,8 @@ namespace SistemaVentasCaprichos.Server.Migrations
 
                     b.Property<string>("Dirección")
                         .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<bool>("Estado")
                         .HasColumnType("bit");

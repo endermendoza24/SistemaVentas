@@ -141,6 +141,13 @@
     .card[b-np7uj7vsnh]{
         font-family: Consolas;
     }
+    button[b-np7uj7vsnh] {
+        display:none
+    }
+    #miboton[b-np7uj7vsnh]{
+        background-color:red;
+    }
+
 }
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-x13t0nzs1e] {

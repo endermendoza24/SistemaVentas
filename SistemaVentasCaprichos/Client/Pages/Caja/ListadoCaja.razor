@@ -82,12 +82,12 @@ else
             }
             else
             {
-                <MudTd Style="color:green" DataLabel="Saldo">@context.Saldo.ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))</MudTd>
+                <MudTd Style="color:blue" DataLabel="Saldo">@context.Saldo.ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))</MudTd>
             }
         </RowTemplate>
         <GroupFooterTemplate>
             <MudTh Class="mud-table-cell-custom-group mud-table-cell-custom-group-footer" colspan="5">
-                <div style="color:red;font-size:20px;font-weight:700;">SALDO TOTAL: @context.Items.Sum((e) => e.Saldo).ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))</div>
+                <div style="color:black;font-size:30px;font-weight:700;">SALDO TOTAL: @context.Items.Sum((e) => e.Saldo).ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))</div>
             </MudTh>
         </GroupFooterTemplate>
         <PagerContent>

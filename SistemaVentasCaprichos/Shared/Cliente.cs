@@ -30,8 +30,8 @@ namespace SistemaVentasCaprichos.Shared
         [Required, EnumDataType(typeof(Sexos))]        
         public Sexos Sexo { get; set; }
         [Required(ErrorMessage = "Elija una de las opciones")]
-        [StringLength(300)]
-        [MaxLength(300, ErrorMessage = "Máximo 300 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
+        [StringLength(500)]
+        [MaxLength(500, ErrorMessage = "Máximo 500 dígitos"), MinLength(2, ErrorMessage = "Minimo 2 dígitos")]
         public string Dirección { get; set; }
         [Required(ErrorMessage = "Debe ingesar un número de {0}")]
         [StringLength(20)]

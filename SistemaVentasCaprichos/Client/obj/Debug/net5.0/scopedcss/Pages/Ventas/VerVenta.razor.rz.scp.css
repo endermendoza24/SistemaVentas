@@ -8,4 +8,11 @@
     .card[b-np7uj7vsnh]{
         font-family: Consolas;
     }
+    button[b-np7uj7vsnh] {
+        display:none
+    }
+    #miboton[b-np7uj7vsnh]{
+        background-color:red;
+    }
+
 }

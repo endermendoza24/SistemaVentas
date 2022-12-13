@@ -12,7 +12,7 @@
                 <ValidationMessage For="@(() => compra.Proveedor)" />
             </div>*@
             <div class="col">
-                <label><small>Proveedores.</small></label>
+                <label>Proveedores</label>
                 <InputSelect @bind-Value="compra.ProveedoresId" required class="form-control form-control-sm">
                     <option selected value="">Seleccione el proveedor</option>
                     @foreach (var proveedor in ListaProveedores)
@@ -64,7 +64,7 @@
                     <div class="row">
                         <div class="col-3 form-group">
                             <label><small>Precio compra</small></label>
-                            <InputNumber @bind-Value="detalle.PrecioMayorista" class="form-control form-control-sm" step="0.01" />
+                            <InputNumber @bind-Value="detalle.PrecioMayorista" class="form-control form-control-sm" step="1" min="0" />
                             <ValidationMessage For="@(() => detalle.PrecioMayorista)" />
                         </div>
 
@@ -77,7 +77,7 @@
 
                         <div class="col-3 form-group">
                             <label><small>Precio venta</small></label>
-                            <InputNumber @bind-Value="detalle.PrecioUnitario" class="form-control form-control-sm" />
+                            <InputNumber @bind-Value="detalle.PrecioUnitario" class="form-control form-control-sm" step="1" min="0"/>
                             <ValidationMessage For="@(() => detalle.PrecioUnitario)" />
                         </div>
 

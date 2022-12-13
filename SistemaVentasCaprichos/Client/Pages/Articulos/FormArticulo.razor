@@ -11,8 +11,7 @@
                     <label class="col-4 col-form-label">Imagen</label>
                     <div class="col">
                         <div class="figure-img">
-                            <img src="@articulo.Url_Imagen" alt="No img"
-                                 style="border-radius:0.5rem; width:110px; height:105px">
+                            <a href="@articulo.Url_Imagen" target="_blank"><img width="110" height="105" style="border-radius: 0.5rem;" src="@articulo.Url_Imagen" alt="No img" /></a>
                         </div>
                     </div>
                 </div>
@@ -89,7 +88,7 @@
                             <ValidationMessage For="@(() => articulo.Descripcion)" />
                         </div>
                     </div>
-                </div>                              
+                </div>                                            
 
                 <div class="form-group row">
                     <label class="col-4 col-form-label">Url Imagen</label>
@@ -128,7 +127,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-default">C$</span>
                             </div>
-                            <InputNumber @bind-Value="@articulo.PrecioMayorista" class="form-control" step="0.01" />
+                            <InputNumber @bind-Value="@articulo.PrecioMayorista" class="form-control" step="1" min="0" />
                         </div>
                         <ValidationMessage For="@(() => articulo.PrecioMayorista)" />
                     </div>
@@ -153,7 +152,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-default">$</span>
                             </div>
-                            <InputNumber @bind-Value="@articulo.PrecioUnitario" class="form-control" step="0.01" />
+                            <InputNumber @bind-Value="@articulo.PrecioUnitario" class="form-control" step="1" min="0" />
                         </div>
                         <ValidationMessage For="@(() => articulo.PrecioUnitario)" />
                     </div>
@@ -163,7 +162,7 @@
                     <label class="col-4 col-form-label">Stock actual</label>
                     <div class="col">
                         <div class="input-group">
-                            <InputNumber @bind-Value="@articulo.StockActual" min="0" class="form-control" type="number" />
+                            <InputNumber @bind-Value="@articulo.StockActual" min="0" class="form-control" type="number"  />
                         </div>
                         <ValidationMessage For="@(() => articulo.StockActual)" />
                     </div>
@@ -178,7 +177,7 @@
                     </div>
                 </div>
 
-                <div class="form-group row">
+              @*  <div class="form-group row">
                     <label class="col-4 col-form-label">Stock máximo</label>
                     <div class="col">
                         <div class="input-group">
@@ -186,7 +185,7 @@
                         </div>
                         <ValidationMessage For="@(() => articulo.StockMaximo)" />
                     </div>
-                </div>
+                </div>*@
 
                 <div class="form-group row">
                     <label class="col-3 col-form-label">Estado</label>
@@ -204,7 +203,7 @@
 
         <button type="submit" class="btn btn-block btn-success">
             <i class="oi oi-check "></i>
-            <text style="color:white"> @TextBotonSubmit</text>
+            <text style="color:white" > @TextBotonSubmit</text>
         </button>
     </div>
     <DataAnnotationsValidator />
