@@ -125,6 +125,7 @@ else
                 <MudTh Style="width:70px;">Imagen</MudTh>
                 <MudTh>Nombre del artículo</MudTh>
                 <MudTh>Descripción</MudTh>
+                <MudTh>Código</MudTh>
                 <MudTh Style="width:100px;">Precio</MudTh>
                 <MudTh>Fecha alta</MudTh>
                 <MudTh Style="width:100px;">Stock</MudTh>
@@ -134,6 +135,7 @@ else
                 <MudTd DataLabel="Imagen"><img src="@context.Url_Imagen" width="70"/></MudTd>
                 <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
                 <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
+                <MudTd Style="text-transform:uppercase;" DataLabel="Código">@context.Codigo</MudTd>
                 <MudTd DataLabel="Precio">C$ @Math.Round(context.PrecioUnitario,2)</MudTd>
                 <MudTd DataLabel="Fecha">@context.Ultima_Modificación.ToLongDateString()</MudTd>
                 <MudTd>
@@ -245,6 +247,9 @@ else
             return true;
         if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
+        if (element.Codigo.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
 
         return false;
     }

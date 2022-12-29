@@ -189,7 +189,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 93 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
+#line 91 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
        
     public List<Cliente> clientes { get; set; } //muestra todos los clientes
     

@@ -56,13 +56,13 @@ else
             <MudTextField @bind-Value="searchString1" Placeholder="Buscar categoría..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="MudBlazor.Size.Medium" Class="mt-0"></MudTextField>
         </ToolBarContent>
         <HeaderContent>
-            <MudTh Style="width:50px;">Nr</MudTh>
+            @*<MudTh Style="width:50px;">Nr</MudTh>*@
             <MudTh Class="thead-dark">Nombre</MudTh>
             <MudTh>Descripción</MudTh>
             <MudTh>Acciones</MudTh>
         </HeaderContent>
         <RowTemplate>
-            <MudTd DataLabel="Id">@context.Id</MudTd>
+            @*<MudTd DataLabel="Id">@context.Id</MudTd>*@
             <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
             <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
             <MudTd>

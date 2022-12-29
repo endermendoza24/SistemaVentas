@@ -5477,3 +5477,7 @@ C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\o
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Caja\ListadoCaja.razor.g.cs
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\eS9NOm5H.gz
 C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\io6KWpg7.gz
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Caja\DetalleCaja.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Caja\DetalleCaja.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Caja\DetalleCajaCompras.razor.g.cs
+C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Caja\DetalleCajaCompras.razor.g.cs

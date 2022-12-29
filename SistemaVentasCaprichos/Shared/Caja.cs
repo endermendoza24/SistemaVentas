@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,5 +16,7 @@ namespace SistemaVentasCaprichos.Shared
         public decimal Egresos { get; set; } = 0;
         public decimal Saldo { get; set; } = 0;
         public DateTime Fecha { get; set; } = DateTime.Now;
+        public int IdVenta { get; set; }
+        public int IdCompra { get; set; }
     }
 }

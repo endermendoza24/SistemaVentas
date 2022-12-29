@@ -182,22 +182,12 @@ namespace SistemaVentasCaprichos.Server.Controllers
             CajaController cajaController = new CajaController(context);
             Caja cajas = new Caja()
             {
+                // campo de caja |||| campo de venta correspondiente
+                IdVenta = venta.Id,
                 Fecha = venta.Fecha,
                 Ingresos = Convert.ToDecimal(venta.Total),                
             };
             await cajaController.Post(cajas);
         }
-
-        //  probando numero de factura
-        private async Task NumeroFactura(Venta venta)
-        {
-            VentasController ventaController = new VentasController(context);
-            List<Venta> listaVentas = new List<Venta>();
-            Venta ventas = new Venta()
-            {
-                Numero = listaVentas.Max(x => x.Numero + 1)
-        };
-        await ventaController.Post(ventas);
-    }
     }
 }

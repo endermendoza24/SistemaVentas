@@ -167,6 +167,8 @@ namespace SistemaVentasCaprichos.Server.Controllers
             CajaController cajaController = new CajaController(context);
             Caja cajas = new Caja()
             {
+                // campo en caja ||| campo en compras correspondiente
+                IdCompra = Compra.Id,
                 Fecha = Compra.Fecha,
                 Egresos = Convert.ToDecimal(Compra.Total)
             };

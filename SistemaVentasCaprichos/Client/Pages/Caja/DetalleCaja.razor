@@ -1,85 +1,35 @@
-﻿@page "/ver-venta/{idventa:int}"
+﻿@page "/ver-ventadetalle/{idventa:int}"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
 @attribute [Authorize(Roles = "admin, empleado")]
-
 @using System.Text.Json
+
+<h1> Detalle de venta </h1>
 
 <div class="d-flex justify-content-between mb-2">
     <div class="btn-group">
         <button id="miboton" class="btn btn-sm btn-secondary" @onclick="@Volver">
             <i class="oi oi-arrow-circle-left"></i> Volver atrás
-        </button>
-        <button id="miboton" class="btn btn-sm btn-primary" onclick="window.print()">
-            Imprimir
-        </button>
+        </button>      
     </div>
     <div class="btn-group">
-        
     </div>
 </div>
-
 @if (venta != null)
 {
     <div class="card m-1" style="border-color: #fff; border-style: dotted; box-shadow: 22px 3px 39px 1px rgba(0,0,0,0.51);">
         <div class="card-body">
-            <h4 class="card-title d-flex justify-content-center">
-                <b>FACTURA</b>
-            </h4>
 
-            <div class="d-flex justify-content-between">
-                <b> </b> @*aqui irán los datos de la tabla configuración*@
-                <small><b>N° factura:</b> @venta.Numero</small>
-            </div>
-
-            <div class="d-flex justify-content-between">
-                <small><b>@ListaAjustes.NombreSistema</b></small>
-                <small><b>Fecha de venta:</b> @venta.Fecha</small>
-            </div>
-            <div class="d-flex justify-content-between">
-                <small><b>Propietario:</b> @ListaAjustes.NombrePropietario</small>
-                <small><b>F.de Pago:</b> @venta.FormaPago</small>
-            </div>
-            <div class="d-flex justify-content-between">                
-                <small><b>Dirección:</b> @ListaAjustes.Direccion</small>
-            </div>
-
-            <div class="d-flex justify-content-between">
-                <small><b>Teléfono:</b> @ListaAjustes.Telefono</small>
-            </div>
-
-            <div class="d-flex justify-content-between">
-                <small><b>RUC:</b> @ListaAjustes.RUC</small>
-            </div>
-
-            @if (venta.ClienteId != null)
-            {
-                <hr />
-                <div class="text-left">
-                    @if(venta.ClienteId != null)
-                    {
-                        <small><b>Cliente:</b> @venta.Cliente.Nombre @venta.Cliente.Apellido </small> <br />
-                    }
-                    else
-                    {
-                        <small><b>Cliente:</b> CLIENTE GENÉRICO</small> <br />
-                    }
-                    <small><b>Dirección:</b> @venta.Cliente.Dirección</small> <br />
-                    <small><b>Teléfono:</b> @venta.Cliente.Teléfono</small>
-                </div>
-            }
-            <hr />
-
-            <table class="table table-sm">
-                <thead>
-                    <tr>
-                        <th><small>Descripción</small></th>
-                        <th><small>Precio x un.</small></th>
-                        <th><small>Cantidad</small></th>
-                        <th><small>Descuento</small></th>
-                        <th><small>Iva(15 %)</small></th>
-                        <th><small>Subtotal</small></th>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr style="font-weight:bold">
+                        <th>Descripción</th>
+                        <th>Precio x un.</th>
+                        <th>Cantidad</th>
+                        <th>Descuento</th>
+                        <th>Iva(15 %)</th>
+                        <th>Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -107,10 +57,16 @@
 
 @code {
     public Venta venta { get; set; }
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private Venta selectedItem1 = null;
 
     [Parameter] public int idventa { get; set; }
 
     public Configuracion ListaAjustes { get; set; }
+    public DetalleVenta ListaDetalle { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -130,11 +86,11 @@
 
     }
 
-   
+
 
     void Volver()
     {
-        NavigationManager.NavigateTo("lista-ventas");
+        NavigationManager.NavigateTo("lista-caja");
     }
 
     async Task CargarAjustes()

@@ -189,7 +189,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 81 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Tallas\ListaTallas.razor"
+#line 79 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Tallas\ListaTallas.razor"
        
     private bool dense = false;
     private bool hover = true;

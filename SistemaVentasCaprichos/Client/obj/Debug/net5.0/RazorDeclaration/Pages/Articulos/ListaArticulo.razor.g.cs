@@ -189,7 +189,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 169 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
+#line 171 "C:\Users\Anderson\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
        
     public List<Articulo> articulo { get; set; } //muestra todos los articulos
     public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
@@ -269,6 +269,9 @@ using System.Text.Json;
             return true;
         if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
+        if (element.Codigo.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
 
         return false;
     }

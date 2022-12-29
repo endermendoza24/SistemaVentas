@@ -42,16 +42,14 @@ else
             <MudSpacer />
             @*<MudTextField @bind-Value="searchString1" Placeholder="Buscar..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>*@
         </ToolBarContent>
-        <HeaderContent>
-            <MudTh Style="width:50px;">Nr</MudTh>
+        <HeaderContent>            
             <MudTh>Fecha</MudTh>
             <MudTh>Proveedor</MudTh>
             <MudTh>Empleado</MudTh>
             <MudTh>Total</MudTh>
             <MudTh>Acciones</MudTh>
         </HeaderContent>
-        <RowTemplate>
-            <MudTd DataLabel="Id">@context.Id</MudTd>
+        <RowTemplate>            
             <MudTd DataLabel="Fecha">@context.Fecha.ToLongDateString()</MudTd>
             <MudTd DataLabel="Proveedor" Style="text-transform:uppercase">@context.Proveedores.Nombre</MudTd>
             <MudTd DataLabel="Empleado" Style="text-transform:uppercase">@context.ApplicationUser.NombreyApellido</MudTd>

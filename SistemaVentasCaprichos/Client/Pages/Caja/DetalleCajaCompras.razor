@@ -1,0 +1,92 @@
+﻿@page "/ver-compradetalle/{idcompra:int}"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@attribute [Authorize(Roles = "admin, empleado")]
+@using System.Text.Json
+
+<h1> Detalle de compras </h1>
+
+<div class="d-flex justify-content-between mb-2">
+    <div class="btn-group">
+        <button id="miboton" class="btn btn-sm btn-secondary" @onclick="@Volver">
+            <i class="oi oi-arrow-circle-left"></i> Volver atrás
+        </button>
+    </div>
+    <div class="btn-group">
+    </div>
+</div>
+@if (compra != null)
+{
+    <div class="card m-1" style="border-color: #fff; border-style: dotted; box-shadow: 22px 3px 39px 1px rgba(0,0,0,0.51);">
+        <div class="card-body">
+
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr style="font-weight:bold">
+                        <th>Artículo</th>
+                        <th>Precio de compra.</th>
+                        <th>Precio de venta.</th>
+                        <th>Cantidad</th>                        
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in compra.DetalleCompras)
+                    {
+                        <tr>
+                            <td style="text-transform:uppercase"><small>@item.Articulo.Nombre</small></td>
+                            <td><small>C$ @item.PrecioMayorista</small></td>
+                            <td><small>@item.PrecioUnitario</small></td>
+                            <td><small>@item.Cantidad %</small></td>
+                            <td><small>C$ @item.SubTotal.ToString("#.##") </small></td>                            
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <p class="card-text text-right m-4">
+                <h6><b>TOTAL</b></h6>
+                <h5><b>C$ @compra.Total</b></h5>
+            </p>
+        </div>
+    </div>
+}
+
+@code {
+    public Compra compra { get; set; }
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private Venta selectedItem1 = null;
+
+    [Parameter] public int idcompra { get; set; }
+
+    public Configuracion ListaAjustes { get; set; }    
+
+    protected override async Task OnInitializedAsync()
+    {
+        var httpResponse = await Http.GetAsync($"api/compras/{idcompra}");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            compra = JsonSerializer.Deserialize<Compra>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("simple", "Error", "Compra no encontrada.", "error");
+            NavigationManager.NavigateTo("lista-caja");
+        }
+
+    }
+
+
+
+    void Volver()
+    {
+        NavigationManager.NavigateTo("lista-caja");
+    }       
+
+}

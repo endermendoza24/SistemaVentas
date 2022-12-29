@@ -60,7 +60,7 @@ else
             <MudTextField @bind-Value="searchString1" Placeholder="Buscar marca..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
         </ToolBarContent>
         <HeaderContent>
-            <MudTh Style="width:50px;">Nr</MudTh>
+            @*<MudTh Style="width:50px;">Nr</MudTh>*@
             <MudTh>Nombre</MudTh>
             <MudTh>Descripción</MudTh>
             <MudTh>Fecha registro</MudTh>
@@ -68,7 +68,7 @@ else
 
         </HeaderContent>
         <RowTemplate>
-            <MudTd DataLabel="Id">@context.Id</MudTd>
+            @*<MudTd DataLabel="Id">@context.Id</MudTd>*@
             <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
             <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
             <MudTd DataLabel="Fecha">@context.Fecha</MudTd>

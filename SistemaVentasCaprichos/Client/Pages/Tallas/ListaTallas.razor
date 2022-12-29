@@ -56,14 +56,12 @@ else
             <MudSpacer />
             @*<MudTextField @bind-Value="searchString1" Placeholder="Buscar marca..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>*@
         </ToolBarContent>
-        <HeaderContent>
-            <MudTh Style="width:50px;">Nr</MudTh>
+        <HeaderContent>            
             <MudTh>Nombre</MudTh>
             <MudTh>Fecha registro</MudTh>
             <MudTh Style="width:50px;">Acciones</MudTh>
         </HeaderContent>
-        <RowTemplate>
-            <MudTd DataLabel="Id">@context.Id</MudTd>
+        <RowTemplate>            
             <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
             <MudTd DataLabel="Fecha">@context.Fecha.ToLongDateString()</MudTd>
             <MudTd>
