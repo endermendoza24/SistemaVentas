@@ -3,15 +3,8 @@
 
 <EditForm Model="@compra" OnValidSubmit="OnValidSubmit">
     <div class="form-field mt-2 mb-2">
-        <div class="form-group row">
-            <label class="col-3 col-form-label">Proveedor</label>
-            @*<div class="col">
-                <div class="input-group">
-                    <InputText @bind-Value="compra.Proveedor" class="form-control" oninput="this.value=this.value.toUpperCase()" />
-                </div>
-                <ValidationMessage For="@(() => compra.Proveedor)" />
-            </div>*@
-            <div class="col">
+        <div class="form-group row">          
+             <div class="col">
                 <label>Proveedores</label>
                 <InputSelect @bind-Value="compra.ProveedoresId" required class="form-control form-control-sm">
                     <option selected value="">Seleccione el proveedor</option>
@@ -49,7 +42,7 @@
                                 <option selected value="">Seleccione un artículo</option>
                                 @foreach (var articulo in articulos)
                                     {
-                                    <option value="@articulo.Id">@articulo.Nombre | $@articulo.PrecioUnitario | STOCK: @articulo.StockActual</option>
+                                    <option value="@articulo.Id">@articulo.Nombre | C$@articulo.PrecioUnitario | STOCK: @articulo.StockActual</option>
                                     }
                             </InputSelect>
                             <ValidationMessage For="@(() => detalle.ArticuloId)" />

@@ -33,7 +33,7 @@
                     <div class="col">
                         <MudTooltip Text="Si selecciona esta opción dará de baja a la categoría correspondiente."
                                     Color="Color.Secondary" Placement="Placement.Top">
-                            <MudSwitch @bind-Checked="@Categoria.Estado" Label="Está activo?"
+                            <MudSwitch @bind-Checked="@Categoria.Estado" Label="Activo"
                                        Color="Color.Success" />
                         </MudTooltip>
                         <ValidationMessage For="@(() => Categoria.Estado)" />

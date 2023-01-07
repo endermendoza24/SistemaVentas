@@ -74,7 +74,7 @@
                 <div class="col">
                     <MudTooltip Text="Si selecciona esta opción dará de baja al cliente correspondiente."
                                 Color="Color.Secondary" Placement="Placement.Top">
-                        <MudSwitch @bind-Checked="@cliente.Estado" Label="Está activo?"
+                        <MudSwitch @bind-Checked="@cliente.Estado" Label="Activo"
                                    Color="Color.Success" />
                     </MudTooltip>
                     <ValidationMessage For="@(() => cliente.Estado)" />

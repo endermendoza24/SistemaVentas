@@ -56,6 +56,8 @@ Elaborado por:
 > 10 de diciembre 2022, mejoras importantes en el área de caja, ahora resta bien, guarda de manera correcta el saldo, además de mostrar el total de saldo filtrado por fechas.
 > 10 de diciembre, también agregada la lógica que permite establecer un número de factura que sea consecutivo, íntegro y no repetitivo.
 
+> 07 de enero de 2023, reparación de algunos errores de visualización y commit para respaldar cambios.
+
 ## Lógica de dada de bajas
 
 La lógica de dada de baja está en loc controladores de cada catálogo, se le debe añadir una sentencia WHERE en el método GET, en esa sentencia se debe de especificar que solo muestre los registros cuyo estado sea igual a true, esto se hizo de la siguiente manera:
