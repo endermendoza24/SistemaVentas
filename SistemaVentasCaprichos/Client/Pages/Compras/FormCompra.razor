@@ -25,7 +25,7 @@
                 listadetalle = compra.DetalleCompras;
 
                 <div class="d-flex justify-content-between m-1">
-                    <h5>Ítem #@(i + 1)</h5>
+                    <h5>Compra #@(i + 1)</h5>
                     <div>
                         <button type="button" @onclick="@(() => compra.DetalleCompras.RemoveAt(indice))"
                                 class="btn btn-danger btn-sm" style="border-radius:10px" hidden="@ocultabtn">
@@ -89,7 +89,7 @@
             <div class="btn-group">
                 <button type="button" class="btn btn-success" hidden="@ocultabtn"
                         @onclick="@(() => compra.DetalleCompras.Add(new DetalleCompra()))">
-                    Agregar ítem
+                    Agregar compra
                 </button>
             </div>
 

@@ -49,11 +49,7 @@ else
                    @onclick="ExportarExcel"
                    Color="Color.Warning">Excel</MudButton>
         </MudTooltip>
-        <MudTooltip Text="Exportar esta tabla a CSV" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
-            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FileDocument"
-                   @onclick="ExportAsCSV"
-                   Color="Color.Warning">CSV</MudButton>
-        </MudTooltip>
+       
     </MudButtonGroup>    
     <MudTable Items="@clientes" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Cliente,bool>(FilterFunc1)"
               @bind-SelectedItem="selectedItem1">
@@ -157,22 +153,8 @@ else
         return false;
     }
 
-    private void ExportAsCSV()
-    {
-        using (var memoryStream = new MemoryStream())
-        {
-            using (var writer = new StreamWriter(memoryStream))
-            {
-                using (var csv = new CsvHelper.CsvWriter(writer))
-                {
-                    csv.WriteRecords(clientes);
-                }
-
-                var arr = memoryStream.ToArray();
-                JS.GuardarComo($"Exportacion_CSV_Clientes_{DateTime.Now.ToShortDateString()}.CSV", arr);
-            }
-        }
-    }
+    
+    
 
     private void ExportarExcel()
     {

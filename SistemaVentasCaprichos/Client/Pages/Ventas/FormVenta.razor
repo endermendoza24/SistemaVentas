@@ -41,7 +41,7 @@
                 var detalle = venta.DetalleVentas[i];
                 listadetalle = venta.DetalleVentas;
 
-                <h5>Ítem #@(i + 1)</h5>
+                <h5>Detalle #@(i + 1)</h5>
 
                 @* <div class="card mb-2" style="background-color:lightgrey;border-radius:0.5rem;"> *@
                     <MudCard>
@@ -119,7 +119,7 @@
             <div class="btn-group">
                 <button type="button" class="btn btn-success"
                         @onclick="@(() => venta.DetalleVentas.Add(new DetalleVenta()))">
-                    Agregar ítem
+                    Agregar detalle
                 </button>
             </div>
 
