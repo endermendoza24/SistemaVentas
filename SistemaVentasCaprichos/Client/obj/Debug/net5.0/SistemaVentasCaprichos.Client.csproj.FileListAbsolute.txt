@@ -6269,8 +6269,6 @@ C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\8TJkZXw7.gz
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\QUPPC2Yc.gz
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\SZlOBgHN.gz
-C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\sDGghlIT.gz
-C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\CRbedBMr.gz
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Articulos\ListaArticulo.razor.rz.scp.css
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Articulos\ListaBajas.razor.rz.scp.css
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\scopedcss\Pages\Clientes\ListaCliente.razor.rz.scp.css
@@ -6294,3 +6292,5 @@ C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\refint\SistemaVentasCaprichos.Client.dll
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\SistemaVentasCaprichos.Client.pdb
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Client.dll
+C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\sDGghlIT.gz
+C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\CRbedBMr.gz

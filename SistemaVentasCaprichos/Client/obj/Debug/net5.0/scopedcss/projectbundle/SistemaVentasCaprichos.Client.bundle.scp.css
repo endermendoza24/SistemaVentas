@@ -136,19 +136,47 @@
 .card[b-np7uj7vsnh] {
     box-shadow: 0 0 12px rgba(33,33,33,.2);
     border-radius: 10px;
+    font-family: consolas;
+    font-size: 16px;
+    width: 50%;
+}
+.cabecera[b-np7uj7vsnh]{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.img-fluid[b-np7uj7vsnh]{
+    width: 60%;
+}
+.informacion-fija[b-np7uj7vsnh], .info-cliente[b-np7uj7vsnh]{
+    text-align: center;
+}
+.lema[b-np7uj7vsnh]{
+    font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.table[b-np7uj7vsnh]{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    
+}
+
+hr[b-np7uj7vsnh] {
+    border: 1.5px #000 dotted;
 }
 
 @media print {
     /*aqui deben de circle los estilos param imprimir las factura*/
-    .card[b-np7uj7vsnh]{
-        font-family: Consolas;
-    }
+   
     button[b-np7uj7vsnh] {
         display:none
     }
-    #miboton[b-np7uj7vsnh]{
+    /* #miboton{
         background-color:red;
-    }
+    } */
 
 }
 /* /Shared/MainLayout.razor.rz.scp.css */

@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj": {}
+    "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {
+    "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
+        "projectUniqueName": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
         "projectName": "SistemaVentasCaprichos.Client",
-        "projectPath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
-        "packagesPath": "C:\\Users\\osday\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\obj\\",
+        "projectPath": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj",
+        "packagesPath": "C:\\Users\\ender\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\osday\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\ender\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -32,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
-                "projectPath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
+              "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
+                "projectPath": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
               }
             }
           }
@@ -92,7 +88,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -107,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -116,22 +113,18 @@
         }
       }
     },
-    "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj": {
+    "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
+        "projectUniqueName": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
         "projectName": "SistemaVentasCaprichos.Server",
-        "projectPath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
-        "packagesPath": "C:\\Users\\osday\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\obj\\",
+        "projectPath": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
+        "packagesPath": "C:\\Users\\ender\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\osday\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\ender\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -144,11 +137,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {
-                "projectPath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj"
+              "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj": {
+                "projectPath": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Client\\SistemaVentasCaprichos.Client.csproj"
               },
-              "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
-                "projectPath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
+              "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
+                "projectPath": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj"
               }
             }
           }
@@ -206,7 +199,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -218,26 +212,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
+    "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
         "projectName": "SistemaVentasCaprichos.Shared",
-        "projectPath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
-        "packagesPath": "C:\\Users\\osday\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\osday\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
+        "packagesPath": "C:\\Users\\ender\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\osday\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\ender\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -273,7 +263,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -282,7 +273,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

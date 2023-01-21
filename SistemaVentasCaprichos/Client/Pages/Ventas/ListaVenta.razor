@@ -34,48 +34,45 @@ else if (ventas.Count == 0)
 }
 else
 {
-<MudTable Items="@ventas" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Venta,bool>(FilterFunc1)"
+    <MudTable Items="@ventas" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Venta,bool>(FilterFunc1)"
           @bind-SelectedItem="selectedItem1">
-    <ToolBarContent>
-        <MudText Typo="Typo.h6">Ventas</MudText>
-        <MudSpacer />
-        @*<MudTextField @bind-Value="searchString1" Placeholder="Buscar venta..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>*@
-    </ToolBarContent>
-    <HeaderContent>
-        <MudTh Style="width:50px;">Nr</MudTh>
-        <MudTh>Fecha</MudTh>
-        @* <MudTh>Forma de pago</MudTh> *@
-        <MudTh>Cliente</MudTh>
-        <MudTh>Empleado</MudTh>
-        <MudTh>Total</MudTh>
-        <MudTh>Acciones</MudTh>
-    </HeaderContent>
-    <RowTemplate>
-@*        <MudTd DataLabel="Id">@context.Id</MudTd>*@
-        <MudTd DataLabel="Num">@context.Numero</MudTd>
-        <MudTd DataLabel="Fecha">@context.Fecha</MudTd>
-        @* <MudTd DataLabel="FPago">@context.FormaPago</MudTd> *@
-        @if (context.ClienteId != null)
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Ventas</MudText>
+            <MudSpacer />
+            @*<MudTextField @bind-Value="searchString1" Placeholder="Buscar venta..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>*@
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh Style="width:50px;">Nr</MudTh>
+            <MudTh>Fecha</MudTh>            
+            <MudTh>Cliente</MudTh>
+            <MudTh>Vendedor</MudTh>
+            <MudTh>Total</MudTh>
+            <MudTh>Acciones</MudTh>
+        </HeaderContent>
+        <RowTemplate>            
+            <MudTd DataLabel="Num">@context.Numero.ToString("D5")</MudTd>
+            <MudTd DataLabel="Fecha">@context.Fecha</MudTd>            
+            @if (context.ClienteId != null)
             {
-            <MudTd DataLabel="Cliente">@context.Cliente.Nombre</MudTd>
+                <MudTd DataLabel="Cliente">@context.Cliente.Nombre</MudTd>
             }
             else
             {
-            <MudTd>CLIENTE GENÉRICO</MudTd>
+                <MudTd>CLIENTE GENÉRICO</MudTd>
             }
-        <MudTd DataLabel="Empleado">@context.ApplicationUser.NombreyApellido</MudTd>
-        <MudTd DataLabel="Empleado">C$ @context.Total</MudTd>        
-        <MudTd>
-            <MudFab Color="Color.Primary" StartIcon="@Icons.Filled.Payment" Size="Size.Small"
+            <MudTd Style="text-transform:uppercase" DataLabel="Empleado">@context.ApplicationUser.NombreyApellido</MudTd>
+            <MudTd DataLabel="Empleado">C$ @context.Total</MudTd>
+            <MudTd>
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Filled.Payment" Size="Size.Small"
                     @onclick="@(() => NavigationManager.NavigateTo($"/ver-venta/{context.Id}"))" />
-        </MudTd>
+            </MudTd>
 
-    </RowTemplate>           
-  
-    <PagerContent>
-        <MudTablePager />
-    </PagerContent>
-</MudTable>
+        </RowTemplate>
+
+        <PagerContent>
+            <MudTablePager />
+        </PagerContent>
+    </MudTable>
 }
 @code {
     public List<Venta> ventas { get; set; }

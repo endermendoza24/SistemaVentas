@@ -12,11 +12,13 @@
             <i class="oi oi-arrow-circle-left"></i> Volver atrás
         </button>
         <button id="miboton" class="btn btn-sm btn-primary" onclick="window.print()">
-            Imprimir
+         Imprimir
+        </button>
+        <button id="miboton" class="btn btn-sm btn-primary" @onclick="@NuevaVenta">
+           Nueva venta
         </button>
     </div>
     <div class="btn-group">
-        
     </div>
 </div>
 
@@ -24,61 +26,51 @@
 {
     <div class="card m-1" style="border-color: #fff; border-style: dotted; box-shadow: 22px 3px 39px 1px rgba(0,0,0,0.51);">
         <div class="card-body">
-            <h4 class="card-title d-flex justify-content-center">
-                <b>FACTURA</b>
-            </h4>
-
-            <div class="d-flex justify-content-between">
-                <b> </b> @*aqui irán los datos de la tabla configuración*@
-                <small><b>N° factura:</b> @venta.Numero</small>
+            <div class="cabecera">
+                <img src="https://i.ibb.co/QpH2tbJ/Logo-Caprichos-Alternativo.png"  alt="logo" class="img-fluid">
             </div>
 
-            <div class="d-flex justify-content-between">
-                <small><b>@ListaAjustes.NombreSistema</b></small>
-                <small><b>Fecha de venta:</b> @venta.Fecha</small>
-            </div>
-            <div class="d-flex justify-content-between">
-                <small><b>Propietario:</b> @ListaAjustes.NombrePropietario</small>
-                <small><b>F.de Pago:</b> @venta.FormaPago</small>
-            </div>
-            <div class="d-flex justify-content-between">                
-                <small><b>Dirección:</b> @ListaAjustes.Direccion</small>
-            </div>
-
-            <div class="d-flex justify-content-between">
-                <small><b>Teléfono:</b> @ListaAjustes.Telefono</small>
+            <div class="informacion-fija">
+                <small class="lema">Caprichos, un estilo para cada ocasion</small> <br />
+                <small><b>Dirección:</b>@ListaAjustes.Direccion</small><br />
+                <small><b>N° factura:</b> @venta.Numero.ToString("D5")</small><br />
+                <small><b>RUC:</b> @ListaAjustes.RUC</small> <br />
+                <small><b>Teléfono:</b> @ListaAjustes.Telefono</small><br />
+                <small><b>Email:</b> @ListaAjustes.Email</small> <br />
+                <small><b>Propietario:</b> @ListaAjustes.NombrePropietario</small><br />
+                <small><b>Fecha:</b> @venta.Fecha</small><br />
             </div>
 
-            <div class="d-flex justify-content-between">
-                <small><b>RUC:</b> @ListaAjustes.RUC</small>
+            <div class="info-cliente">
+                @if (venta.ClienteId != null)
+                {
+                    <hr />
+                    <div>
+                        @if (venta.ClienteId != null)
+                        {
+                            <small><b>Cliente:</b> @venta.Cliente.Nombre @venta.Cliente.Apellido </small> <br />
+                        }
+                        else
+                        {
+                            <small><b>Cliente:</b> CLIENTE GENÉRICO</small> <br />
+                        }
+                        <small><b>Dirección:</b> @venta.Cliente.Dirección</small> <br />
+                        <small><b>Teléfono:</b> @venta.Cliente.Teléfono</small>
+                    </div>
+                }
             </div>
 
-            @if (venta.ClienteId != null)
-            {
-                <hr />
-                <div class="text-left">
-                    @if(venta.ClienteId != null)
-                    {
-                        <small><b>Cliente:</b> @venta.Cliente.Nombre @venta.Cliente.Apellido </small> <br />
-                    }
-                    else
-                    {
-                        <small><b>Cliente:</b> CLIENTE GENÉRICO</small> <br />
-                    }
-                    <small><b>Dirección:</b> @venta.Cliente.Dirección</small> <br />
-                    <small><b>Teléfono:</b> @venta.Cliente.Teléfono</small>
-                </div>
-            }
+
             <hr />
 
             <table class="table table-sm">
                 <thead>
                     <tr>
                         <th><small>Descripción</small></th>
-                        <th><small>Precio x un.</small></th>
+                        <th><small>Precio</small></th>
                         <th><small>Cantidad</small></th>
                         <th><small>Descuento</small></th>
-                        <th><small>Iva(15 %)</small></th>
+                        <th><small>Iva</small></th>
                         <th><small>Subtotal</small></th>
                     </tr>
                 </thead>
@@ -99,7 +91,7 @@
 
             <p class="card-text text-right m-4">
                 <h6><b>TOTAL</b></h6>
-                <h5><b>C$ @venta.Total</b></h5>
+                <h5><b>C$ @venta.Total</b></h5>               
             </p>
         </div>
     </div>
@@ -130,11 +122,15 @@
 
     }
 
-   
+
 
     void Volver()
     {
         NavigationManager.NavigateTo("lista-ventas");
+    }
+    void NuevaVenta()
+    {
+        NavigationManager.NavigateTo("crear-venta");
     }
 
     async Task CargarAjustes()
