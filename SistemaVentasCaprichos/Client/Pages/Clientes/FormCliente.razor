@@ -25,7 +25,7 @@
             <label class="col-3 col-form-label">Cédula</label>
             <div class="col">
                 <div class="input-group">
-                    <InputText @bind-Value="@cliente.Cedula" placeholder="Cédula" oninput="this.value=this.value.toUpperCase()" class="form-control" readonly="@ocultarcedula" />
+                    <InputText @bind-Value="@cliente.Cedula" placeholder="Cédula" oninput="this.value=this.value.toUpperCase()" class="form-control"/>
                 </div>
                 <ValidationMessage For="@(() => cliente.Cedula)" />
             </div>            

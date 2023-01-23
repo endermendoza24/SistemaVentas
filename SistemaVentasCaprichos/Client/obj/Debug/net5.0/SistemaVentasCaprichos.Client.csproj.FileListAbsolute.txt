@@ -6294,3 +6294,5 @@ C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Client.dll
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\sDGghlIT.gz
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\build-gz\CRbedBMr.gz
+C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Shared\InfoArticulosModal.razor.g.cs
+C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Shared\InfoArticulosModal.razor.g.cs

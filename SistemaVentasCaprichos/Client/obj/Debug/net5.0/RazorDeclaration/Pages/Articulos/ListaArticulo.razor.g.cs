@@ -167,14 +167,14 @@ using OfficeOpenXml.Style;
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
+#line 8 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
 using System.Text.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
+#line 6 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
            [Authorize(Roles = "admin, empleado")]
 
 #line default
@@ -189,7 +189,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 169 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
+#line 176 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
        
     public List<Articulo> articulo { get; set; } //muestra todos los articulos
     public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
@@ -211,6 +211,14 @@ using System.Text.Json;
     {
         await CargarArticulos();
     }
+
+
+    private void OpenDialog()
+    {
+        var options = new DialogOptions { CloseOnEscapeKey = true };
+        DialogService.Show<InfoArticulosModal>("Información artículo", options);
+    }
+
 
     async Task CargarArticulos()
     {
@@ -332,6 +340,7 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IDialogService DialogService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }

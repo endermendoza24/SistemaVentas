@@ -189,7 +189,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 87 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
+#line 99 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Clientes\ListaCliente.razor"
        
     public List<Cliente> clientes { get; set; } //muestra todos los clientes
     
@@ -254,6 +254,8 @@ using System.Text.Json;
         if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
         if (element.Apellido.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Cedula.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
 
         return false;

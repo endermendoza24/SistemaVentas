@@ -2,6 +2,7 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JS
+@inject IDialogService DialogService
 @attribute [Authorize(Roles = "admin, empleado")]
 
 @using System.Text.Json
@@ -120,19 +121,21 @@ else
             <HeaderContent>
                 <MudTh Style="width:70px;">Imagen</MudTh>
                 <MudTh>Nombre del artículo</MudTh>
-                <MudTh>Descripción</MudTh>
-                 <MudTh>Talla</MudTh>
+                <MudTh>Descripción</MudTh>                
                 <MudTh>Código</MudTh>
                 <MudTh Style="width:100px;">Precio</MudTh>
                 <MudTh>Fecha alta</MudTh>
                 <MudTh Style="width:100px;">Stock</MudTh>
-                <MudTh Style="width:50px;" >Acciones</MudTh>
+                <AuthorizeView Roles="admin">
+                    <Authorized>
+                        <MudTh Style="width:50px;">Acciones</MudTh>
+                    </Authorized>
+                </AuthorizeView>
             </HeaderContent>
             <RowTemplate>
                 <MudTd DataLabel="Imagen"><img src="@context.Url_Imagen" width="70"/></MudTd>
                 <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
-                <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
-                <MudTd DataLabel="Talla">@context.Tallas</MudTd>
+                <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>                
                 <MudTd Style="text-transform:uppercase;" DataLabel="Código">@context.Codigo</MudTd>
                 <MudTd DataLabel="Precio">C$ @Math.Round(context.PrecioUnitario,2)</MudTd>
                 <MudTd DataLabel="Fecha">@context.Ultima_Modificación.ToLongDateString()</MudTd>
@@ -152,10 +155,14 @@ else
                           <div class="chip chip-normal">@context.StockActual</div>
                     }
                 </MudTd>
-                <MudTd>
+                <AuthorizeView Roles="admin">
+                    <Authorized Context="contexto">
+                          <MudTd>
                     <MudFab Color="Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
                         @onclick="@(() => NavigationManager.NavigateTo($"/editar-articulo/{context.Id}"))" />
                 </MudTd>
+                    </Authorized>
+                </AuthorizeView>
 
             </RowTemplate>
             <PagerContent>
@@ -187,6 +194,14 @@ else
     {
         await CargarArticulos();
     }
+
+
+    private void OpenDialog()
+    {
+        var options = new DialogOptions { CloseOnEscapeKey = true };
+        DialogService.Show<InfoArticulosModal>("Información artículo", options);
+    }
+
 
     async Task CargarArticulos()
     {

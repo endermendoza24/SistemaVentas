@@ -6,9 +6,13 @@
 @using System.Text.Json
 
 <div class="d-flex position-sticky justify-content-between">
-    <div class="btn-group mr-2">
-        <button @onclick="CrearCliente" class="btn btn-success"><i class="oi oi-plus"></i> Agregar cliente</button>
-    </div>
+   <AuthorizeView Roles="admin">
+       <Authorized>
+            <div class="btn-group mr-2">
+                <button @onclick="CrearCliente" class="btn btn-success"><i class="oi oi-plus"></i> Agregar cliente</button>
+            </div>
+       </Authorized>
+   </AuthorizeView>
     <div class="input-group" style="width:60%">
         <input class="form-control" type="text" placeholder="Nombre del cliente" @bind="NombreFiltro" />
         <div class="input-group-append">
@@ -65,7 +69,11 @@ else
             <MudTh Style="width:50px">Sexo</MudTh>
             <MudTh>Dirección</MudTh>
             <MudTh>Teléfono</MudTh>
-            <MudTh>Acciones</MudTh>
+            <AuthorizeView Roles="admin">
+                <Authorized>
+                    <MudTh>Acciones</MudTh>
+                </Authorized>
+            </AuthorizeView>
         </HeaderContent>
         <RowTemplate>
             <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
@@ -74,10 +82,14 @@ else
             <MudTd DataLabel="Sexo">@context.Sexo</MudTd>
             <MudTd DataLabel="Dirección">@context.Dirección</MudTd>
             <MudTd DataLabel="Teléfono">@context.Teléfono</MudTd>
-            <MudTd>
-                <MudFab Color="MudBlazor.Color.Error" StartIcon="@Icons.Filled.Edit" Size="MudBlazor.Size.Small"
-                        @onclick="@(() => NavigationManager.NavigateTo($"/editar-cliente/{context.Id}"))" />
-            </MudTd>
+           <AuthorizeView Roles="admin">
+               <Authorized Context="contexto">
+                    <MudTd>
+                        <MudFab Color="MudBlazor.Color.Error" StartIcon="@Icons.Filled.Edit" Size="MudBlazor.Size.Small"
+                            @onclick="@(() => NavigationManager.NavigateTo($"/editar-cliente/{context.Id}"))" />
+                    </MudTd>
+               </Authorized>
+           </AuthorizeView>
         </RowTemplate>
         <PagerContent>
             <MudTablePager />
@@ -148,6 +160,8 @@ else
         if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
         if (element.Apellido.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Cedula.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
 
         return false;
