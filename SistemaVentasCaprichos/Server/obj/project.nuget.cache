@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yFYtAoFgzkklG2999teV4iX7VzpQ3XNNzWfX8Y8mFEqB/xoXNMPgjZF9e3yVP59IL2IcpCSx17kf61F6tyiRhw==",
+  "dgSpecHash": "P6EAGXglducqYHstOzAQRyG/Qmbo2gF8lqAgbWOW1GAuDILEtcnt0VaDKi6/CjutOuPlTiSamC46kfWXxGeSAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
+  "projectFilePath": "C:\\Users\\ender\\OneDrive\\Documentos\\SistemaVentas\\SistemaVentasCaprichos\\Server\\SistemaVentasCaprichos.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ender\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\ender\\.nuget\\packages\\csvhelper\\12.2.0\\csvhelper.12.2.0.nupkg.sha512",

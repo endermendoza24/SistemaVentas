@@ -121,10 +121,11 @@ else
             <HeaderContent>
                 <MudTh Style="width:70px;">Imagen</MudTh>
                 <MudTh>Nombre del artículo</MudTh>
-                <MudTh>Descripción</MudTh>                 
+                <MudTh>Descripción</MudTh>   
+                <MudTh>Talla</MudTh>                
                 <MudTh>Código</MudTh>
                 <MudTh Style="width:100px;">Precio</MudTh>
-                <MudTh>Fecha alta</MudTh>
+                @*<MudTh>Fecha alta</MudTh>*@
                 <MudTh Style="width:100px;">Stock</MudTh>
                 <AuthorizeView Roles="admin">
                     <Authorized>
@@ -135,10 +136,11 @@ else
             <RowTemplate>
                 <MudTd DataLabel="Imagen"><img src="@context.Url_Imagen" width="70"/></MudTd>
                 <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
-                <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>                
+                <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
+                <MudTd DataLabel="Talla">@GetTallaName(context.TallasId)</MudTd>                
                 <MudTd Style="text-transform:uppercase;" DataLabel="Código">@context.Codigo</MudTd>
                 <MudTd DataLabel="Precio">C$ @Math.Round(context.PrecioUnitario,2)</MudTd>
-                <MudTd DataLabel="Fecha">@context.Ultima_Modificación.ToLongDateString()</MudTd>
+                @*<MudTd DataLabel="Fecha">@context.Ultima_Modificación.ToLongDateString()</MudTd>*@
                 <MudTd>
                     @if (context.StockActual < context.StockMinimo)
                     {                               
@@ -176,8 +178,8 @@ else
 @code {
     public List<Articulo> articulo { get; set; } //muestra todos los articulos
     public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
-    //public List<Tallas> ListaTalla { get; set; } = new List<Tallas>();
-    public Tallas Talla = new Tallas();
+    public List<Tallas> ListaTalla { get; set; } = new List<Tallas>();
+
 
     private bool dense = false;
     private bool hover = true;
@@ -195,14 +197,9 @@ else
     protected override async Task OnInitializedAsync()
     {
         await CargarArticulos();
+        await CargarTallas();
     }
 
-
-    private void OpenDialog()
-    {
-        var options = new DialogOptions { CloseOnEscapeKey = true };
-        DialogService.Show<InfoArticulosModal>("Información artículo", options);
-    }
 
 
     async Task CargarArticulos()
@@ -219,6 +216,29 @@ else
             Console.WriteLine("error");
         }
     }
+    public string GetTallaName(int tallaId)
+    {
+        // Obtener el nombre de la talla correspondiente utilizando el ID de talla de la lista.
+        var talla = ListaTalla.FirstOrDefault(x => x.Id == tallaId);
+        return talla != null ? talla.Nombre : "N/A";
+    }
+  
+
+    async Task CargarTallas()
+    {
+        var httpResponse = await Http.GetAsync($"api/tallas");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ListaTalla = JsonSerializer.Deserialize<List<Tallas>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+    }
+    
 
 
     void CambiarVista()
@@ -269,7 +289,7 @@ else
         return false;
     }
 
-    
+
 
     private void ExportarExcel()
     {

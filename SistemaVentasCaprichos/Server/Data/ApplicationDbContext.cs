@@ -48,8 +48,7 @@ namespace SistemaVentasCaprichos.Server.Data
 
         public DbSet<Proveedores> Proveedores { get; set; }
         public DbSet<Configuracion> Configuracion { get; set; }
-        public DbSet<Egresos> Egresos { get; set; }
-        public DbSet<DetalleEgresos> DetalleEgresos { get; set; } 
+
         public DbSet<Caja> Caja { get; set; }
     }
 }

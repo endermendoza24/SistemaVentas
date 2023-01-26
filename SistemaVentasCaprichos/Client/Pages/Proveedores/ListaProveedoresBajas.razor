@@ -41,8 +41,7 @@ else
             <MudSpacer />
             <MudTextField @bind-Value="searchString1" Placeholder="Buscar proveedor..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
         </ToolBarContent>
-        <HeaderContent>
-            <MudTh Style="width:50px;">Nr</MudTh>
+        <HeaderContent>            
             <MudTh>Nombre</MudTh>
             <MudTh>Teléfono</MudTh>
             <MudTh>Email</MudTh>
@@ -50,8 +49,7 @@ else
             <MudTh>Fecha registro</MudTh>
             <MudTh Style="width:70px;">Acciones</MudTh>
         </HeaderContent>
-        <RowTemplate>
-            <MudTd DataLabel="Id">@context.Id</MudTd>
+        <RowTemplate>            
             <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
             <MudTd DataLabel="Teléfono">@context.Telefono</MudTd>
             <MudTd DataLabel="Email">@context.Email</MudTd>

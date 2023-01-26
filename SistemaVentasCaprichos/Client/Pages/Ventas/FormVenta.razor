@@ -1,28 +1,16 @@
 ﻿@inject NavigationManager NavigationManager
 @inject HttpClient Http
+@using Microsoft.JSInterop;
+@inject IJSRuntime JSRuntime
 
 <EditForm Model="@venta" OnValidSubmit="OnValidSubmit">
-    <div class="form-field mt-2 mb-2">
-        @*<div class="form-group row">
-        <label class="col-3 col-form-label">Forma de Pago</label>
-        <div class="col">
-        <div class="input-group">
-        <InputSelect @bind-Value="(venta.FormaPago)" class="form-control">
-        @foreach (string fpago in Enum.GetNames(typeof(FormasPago)))
-        {
-        <option selected value="@fpago"> @fpago</option>
-        }
-        </InputSelect>
-        </div>
-        $1$ <ValidationMessage For="@(() => venta.FormaPago)" /> #1#
-        </div>
-        </div> *@
-
+    <div class="form-field mt-2 mb-2">    
         <div class="form-group row" hidden="@ocultaclientes">
             <label class="col-3 col-form-label">Cliente</label>
             <div class="col">
                 <div class="input-group">
-                    <InputSelect @bind-Value="venta.ClienteId" class="form-control">
+
+                    <InputSelect @bind-Value="venta.ClienteId" class="form-control select2">
                         <option selected value="0">Seleccione cliente</option>
                         @foreach (var cliente in clientes)
                         {
@@ -170,6 +158,8 @@
         }
         return venta.Total;
     }
+
+
 
 
     void Volver()

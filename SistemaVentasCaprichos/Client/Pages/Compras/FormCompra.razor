@@ -42,7 +42,7 @@
                                 <option selected value="">Seleccione un artículo</option>
                                 @foreach (var articulo in articulos)
                                     {
-                                    <option value="@articulo.Id">@articulo.Nombre | C$@articulo.PrecioUnitario | STOCK: @articulo.StockActual</option>
+                                    <option value="@articulo.Id">@articulo.Nombre | C$@articulo.PrecioMayorista | STOCK: @articulo.StockActual</option>
                                     }
                             </InputSelect>
                             <ValidationMessage For="@(() => detalle.ArticuloId)" />
@@ -61,12 +61,6 @@
                             <ValidationMessage For="@(() => detalle.PrecioMayorista)" />
                         </div>
 
-                      @*  <div class="col-3 form-group">
-                            <label><small>Porcentaje</small></label>
-                            <div class="input-group">
-                                <InputNumber @bind-Value="@porcentaje" @onfocusout="@(() => detalle.CalcularUnitario(porcentaje))" class="form-control form-control-sm" />
-                            </div>
-                        </div>*@
 
                         <div class="col-3 form-group">
                             <label><small>Precio venta</small></label>
