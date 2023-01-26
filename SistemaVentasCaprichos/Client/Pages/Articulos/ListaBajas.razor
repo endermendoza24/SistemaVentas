@@ -1,9 +1,7 @@
 ﻿@page "/lista-articulos-bajas"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
-
 @attribute [Authorize(Roles = "admin, empleado")]
-
 @using System.Text.Json
 
 <div class="d-flex position-sticky justify-content-between">
@@ -80,11 +78,16 @@ else
                 {                    
                     <div class="chip chip-normal">@context.StockActual</div>
                 }
-            </MudTd>
-                <MudTd>
-                    <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
+            </MudTd>     
+            
+            <AuthorizeView Roles="admin">
+                <Authorized Context="contexto">
+                    <MudTd>
+                        <MudFab Color="Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
                             @onclick="@(() => NavigationManager.NavigateTo($"/editar-articulo/{context.Id}"))" />
-                </MudTd>
+                    </MudTd>
+                </Authorized>
+            </AuthorizeView>
 
             </RowTemplate>
             <PagerContent>
@@ -92,7 +95,6 @@ else
             </PagerContent>
         </MudTable>    
 }
-
 @code {
     public List<Articulo> articulo { get; set; } //muestra todos los articulos
     public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
@@ -112,7 +114,6 @@ else
     {
         await CargarArticulos();
     }
-
     async Task CargarArticulos()
     {
         var httpResponse = await Http.GetAsync($"api/articulos/bajas?nombre={NombreArtFiltro}");
@@ -127,9 +128,6 @@ else
             Console.WriteLine("error");
         }
     }
-
-
-
     void CrearArticulo()
     {
         NavigationManager.NavigateTo("crear-articulo");
@@ -145,7 +143,6 @@ else
         NombreArtFiltro = string.Empty;
         await CargarArticulos();
     }
-
     // esta es la funcion de filtrado de MudBlazor
     private bool FilterFunc1(Articulo element) => FilterFunc(element, searchString1);
 
@@ -155,7 +152,6 @@ else
             return true;
         if (element.Nombre.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
-
         return false;
     }
 }

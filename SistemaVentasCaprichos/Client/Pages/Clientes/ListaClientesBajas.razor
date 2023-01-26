@@ -72,10 +72,14 @@ else
             <MudTd DataLabel="sexo">@context.Sexo</MudTd>
             <MudTd DataLabel="Dirección">@context.Dirección</MudTd>
             <MudTd DataLabel="Teléfono">@context.Teléfono</MudTd>
-            <MudTd>
-                <MudFab Color="MudBlazor.Color.Error" StartIcon="@Icons.Filled.Edit" Size="MudBlazor.Size.Small"
-                        @onclick="@(() => NavigationManager.NavigateTo($"/editar-cliente/{context.Id}"))" />
-            </MudTd>
+            <AuthorizeView Roles="admin">
+                <Authorized Context="contexto">
+                    <MudTd>
+                        <MudFab Color="MudBlazor.Color.Error" StartIcon="@Icons.Filled.Edit" Size="MudBlazor.Size.Small"
+                            @onclick="@(() => NavigationManager.NavigateTo($"/editar-cliente/{context.Id}"))" />
+                    </MudTd>
+                </Authorized>
+            </AuthorizeView>
         </RowTemplate>
         <PagerContent>
             <MudTablePager />

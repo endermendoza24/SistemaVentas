@@ -19,7 +19,8 @@ Elaborado por:
 5. Registrarse como usuario.
 6. Iniciar sesión
 7. Ir a la ubicación /roles
-8. Registrar los datos del módulo de configuración
+8. Asignar rol de empleado o administrador según sea el caso.
+9. Registrar los datos del módulo de configuración
 
 > 26 de octubre de 2022, se agregó tabla de configuración, además de
 
@@ -57,6 +58,9 @@ Elaborado por:
 > 10 de diciembre, también agregada la lógica que permite establecer un número de factura que sea consecutivo, íntegro y no repetitivo.
 
 > 07 de enero de 2023, reparación de algunos errores de visualización y commit para respaldar cambios.
+
+> 25 de enero de 2023, muchos detalles estéticos mejorados a sugerencia del profesor Darío.
+> El módulo de caja ahora registra únicamente las entradas y salidas de dinero correspondientes, es decir esta actualización elimina el error que hacía que en el cálculo de saldo se tomara en cuenta el saldo de los días anteriores. La logica es similar a la de dadas de baja.
 
 ## Lógica de dada de bajas
 

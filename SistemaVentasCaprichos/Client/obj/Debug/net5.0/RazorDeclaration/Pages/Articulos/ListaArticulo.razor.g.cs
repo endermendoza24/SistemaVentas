@@ -193,6 +193,8 @@ using System.Text.Json;
        
     public List<Articulo> articulo { get; set; } //muestra todos los articulos
     public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
+    //public List<Tallas> ListaTalla { get; set; } = new List<Tallas>();
+    public Tallas Talla = new Tallas();
 
     private bool dense = false;
     private bool hover = true;

@@ -29,9 +29,8 @@
             </Authorized>
        </AuthorizeView>
 
-        <MudNavGroup Title="Artículos" Icon="@Icons.Filled.AddShoppingCart" Expanded="true">
-            <MudNavLink Href="/lista-articulos">Agregar artículo</MudNavLink>
-        </MudNavGroup>
+        <MudNavLink Href="/lista-articulos" Icon="@Icons.Filled.AddShoppingCart">Artículos</MudNavLink>
+       
 
         <MudNavGroup Title="Ventas" Icon="@Icons.Filled.ShoppingBag" Expanded="true">
             <MudNavLink Href="/lista-ventas">Ventas</MudNavLink>
@@ -41,15 +40,16 @@
         <AuthorizeView Roles="admin">
             <Authorized>
                 <MudNavLink Href="/lista-caja" Icon="@Icons.Filled.AccountBalance">Caja</MudNavLink>
-                <MudNavLink Href="/lista-ajustes" Icon="@Icons.Filled.Settings">Ajustes</MudNavLink>
+                @*<MudNavLink Href="/lista-ajustes" Icon="@Icons.Filled.Settings">Ajustes</MudNavLink>*@
             </Authorized>
         </AuthorizeView>
 
         <AuthorizeView Roles="admin">
             <Authorized>
-                <MudNavGroup Title="Usuarios" Icon="@Icons.Filled.SupervisedUserCircle" Expanded="true">
+                <MudNavGroup Title="Ajustes" Icon="@Icons.Filled.Settings" Expanded="true">
                     <MudNavLink Href="/lista-usuarios">Usuarios</MudNavLink>
                     <MudNavLink Href="/roles">Roles</MudNavLink>
+                    <MudNavLink Href="/lista-ajustes">Ajustes </MudNavLink>
                 </MudNavGroup>
             </Authorized>
         </AuthorizeView>

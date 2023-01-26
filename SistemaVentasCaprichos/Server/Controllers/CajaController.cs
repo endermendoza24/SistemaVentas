@@ -69,11 +69,17 @@ namespace SistemaVentasCaprichos.Server.Controllers
             try
             {
                 //caja.Egresos = context.Egresos.Sum(x => x.Total) + context.Compras.Sum(x => x.Total);
-                caja.Egresos = context.Compras.Sum(x => x.Total); //  obtiene la suma del total de compras
-                caja.Ingresos = context.Ventas.Sum(x => x.Total); // obtiene la suma del total de ventas
-                
+                caja.Egresos = context.Compras.Where(x => x.Fecha.Date == DateTime.Now.Date).Sum(x => x.Total);
 
-                caja.Saldo = context.Ventas.Sum(x => x.Total) - context.Compras
+                //  obtiene la suma del total de compras
+                //caja.Ingresos = context.Ventas.Sum(x => x.Total); // obtiene la suma del total de ventas
+                caja.Ingresos = context.Ventas.Where(x => x.Fecha.Date == DateTime.Now.Date).Sum(x => x.Total);
+
+
+
+
+                caja.Saldo = context.Ventas.Where(x => x.Fecha.Date == DateTime.Now.Date)
+                    .Sum(x => x.Total) - context.Compras.Where(x => x.Fecha.Date == DateTime.Now.Date)
                     .Sum(x => x.Total); // resta de ambos totales
                 // TODO: Validar cuando sea negativo
 

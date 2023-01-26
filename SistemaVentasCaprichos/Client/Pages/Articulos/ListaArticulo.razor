@@ -26,14 +26,14 @@
 
 <div class="d-flex justify-content-between mt-2 mb-2">
     <div class="btn-group">
-        <button @onclick="MostrarTodos" style="background:none; border: none">
-            &nbsp;&nbsp;<b>Ver todos</b>&nbsp;&nbsp;
+        <button @onclick="MostrarTodos" style="background:none;border:none">
+            &nbsp;&nbsp;<b>Ver todos </b>&nbsp;&nbsp;
         </button>
-        <button @onclick="MostrarStockBajo" style="background:none; border: none">
-            &nbsp;&nbsp;<b>Sólo con bajo stock</b>
+        <button @onclick="MostrarStockBajo" style="background:none;border:none">
+            &nbsp;&nbsp;<b>Stock bajo  </b>
         </button>
-        <a href="/lista-articulos-bajas" style="background:none; border:none">
-            &nbsp;&nbsp;<b>Dados de baja</b> &nbsp;&nbsp;
+        <a href="/lista-articulos-bajas" style="background:none;border:none">
+            &nbsp;&nbsp;<b> Dados de baja</b> &nbsp;&nbsp;
         </a>
     </div>
 
@@ -55,7 +55,7 @@
 else if (articulo.Count == 0)
 {
     <div class="d-flex justify-content-center align-items-center" style="height:24rem">
-        <text>No se encontraron artículos.</text>
+        <text>No se encontraron artículos registrados.</text>
     </div>
 }
 else
@@ -76,11 +76,11 @@ else
                 <div class="card">
                     @if (articulo.Url_Imagen == null || articulo.Url_Imagen == "")
                     {
-                        <img class="card-img-top" src="img/noimage.png" alt="Card image cap">
+                        <img class="card-img-top" src="img/noimage.png" alt="Imagen de producto">
                     }
                     else
                     {
-                        <img class="card-img-top" src="@articulo.Url_Imagen" alt="Card image cap">
+                        <img class="card-img-top" src="@articulo.Url_Imagen" alt="Imagen de producto">
                     }
                     <div class="card-body">
                         <h5 class="card-title">
@@ -121,7 +121,7 @@ else
             <HeaderContent>
                 <MudTh Style="width:70px;">Imagen</MudTh>
                 <MudTh>Nombre del artículo</MudTh>
-                <MudTh>Descripción</MudTh>                
+                <MudTh>Descripción</MudTh>                 
                 <MudTh>Código</MudTh>
                 <MudTh Style="width:100px;">Precio</MudTh>
                 <MudTh>Fecha alta</MudTh>
@@ -176,6 +176,8 @@ else
 @code {
     public List<Articulo> articulo { get; set; } //muestra todos los articulos
     public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
+    //public List<Tallas> ListaTalla { get; set; } = new List<Tallas>();
+    public Tallas Talla = new Tallas();
 
     private bool dense = false;
     private bool hover = true;

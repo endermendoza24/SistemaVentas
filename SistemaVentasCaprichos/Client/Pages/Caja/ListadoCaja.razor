@@ -74,15 +74,15 @@ else
             </GroupHeaderTemplate>
             <RowTemplate>                     
                 <MudTd DataLabel="Fecha">@context.Fecha</MudTd>                
-                <MudTd DataLabel="Entrada">@context.Ingresos.ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))</MudTd>
-                <MudTd DataLabel="Salida">@context.Egresos.ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))</MudTd>
+                <MudTd DataLabel="Entrada">@context.Ingresos.ToString()</MudTd>
+                <MudTd DataLabel="Salida">@context.Egresos.ToString()</MudTd>
                 @if (context.Saldo < 0)
             {
-                <MudTd Style="color:red" DataLabel="Saldo">@context.Saldo.ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))</MudTd>
+                <MudTd Style="color:red" DataLabel="Saldo">@context.Saldo.ToString()</MudTd>
             }
             else
             {
-                <MudTd Style="color:blue" DataLabel="Saldo">@context.Saldo.ToString("C",CultureInfo.CreateSpecificCulture("ni-NI"))</MudTd>
+                <MudTd Style="color:blue" DataLabel="Saldo">@context.Saldo.ToString()</MudTd>
             }
      
                 <MudTd>
@@ -102,7 +102,7 @@ else
             <MudTh Class="mud-table-cell-custom-group mud-table-cell-custom-group-footer" colspan="5">
                 <div style="color:black;font-size:20px;font-weight:700;">
                     SALDO ACTUAL:
-                    @context.Items.OrderByDescending(x => x.Fecha).FirstOrDefault().Saldo.ToString("0.00")
+                    @context.Items.OrderByDescending(x => x.Fecha).FirstOrDefault().Saldo.ToString("0,0.00")
                 </div>
             </MudTh>
         </GroupFooterTemplate>
