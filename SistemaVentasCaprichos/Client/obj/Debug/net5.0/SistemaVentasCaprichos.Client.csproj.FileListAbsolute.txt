@@ -5947,10 +5947,6 @@ C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Configuracion\FormAjustes.razor.g.cs
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Configuracion\ListaAjustes.razor.g.cs
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
-C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Egresos\CrearEgreso.razor.g.cs
-C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Egresos\FormEgresos.razor.g.cs
-C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Egresos\ListaEgresos.razor.g.cs
-C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Egresos\VerEgresos.razor.g.cs
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ListaUsuarios.razor.g.cs
@@ -6019,10 +6015,6 @@ C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Configuracion\FormAjustes.razor.g.cs
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Configuracion\ListaAjustes.razor.g.cs
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
-C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Egresos\CrearEgreso.razor.g.cs
-C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Egresos\FormEgresos.razor.g.cs
-C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Egresos\ListaEgresos.razor.g.cs
-C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Egresos\VerEgresos.razor.g.cs
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\ListaUsuarios.razor.g.cs

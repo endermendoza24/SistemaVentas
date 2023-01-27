@@ -415,11 +415,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ender\\OneDrive\\Documentos\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
       "projectName": "SistemaVentasCaprichos.Shared",
-      "projectPath": "C:\\Users\\ender\\OneDrive\\Documentos\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
+      "projectPath": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\SistemaVentasCaprichos.Shared.csproj",
       "packagesPath": "C:\\Users\\ender\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ender\\OneDrive\\Documentos\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\obj\\",
+      "outputPath": "C:\\Users\\ender\\OneDrive\\Desktop\\SistemaVentas\\SistemaVentasCaprichos\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ender\\AppData\\Roaming\\NuGet\\NuGet.Config",

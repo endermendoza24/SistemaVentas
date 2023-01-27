@@ -44,6 +44,39 @@ namespace SistemaVentasCaprichos.Server.Controllers
             }
             return await queryable.ToListAsync();
         }
+
+        //  borar si llegara a dar errores
+        [HttpGet("filtrodos")]
+        [AllowAnonymous]
+        public async Task<ActionResult<List<Articulo>>> Get([FromQuery] string nombre,
+            [FromQuery] int? marcaId,
+            [FromQuery] int? categoriaId,
+            [FromQuery] int? tallaId)
+        {
+            var queryable = context.Articulos.Where(x => x.Estado == true).OrderBy(x => x.Id).AsQueryable();
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                queryable = queryable.Where(x => x.Nombre.Contains(nombre));
+            }
+            if (marcaId.HasValue)
+            {
+                queryable = queryable.Where(x => x.MarcaId == marcaId);
+            }
+            if (categoriaId.HasValue)
+            {
+                queryable = queryable.Where(x => x.CategoriaId == categoriaId);
+            }
+            if (tallaId.HasValue)
+            {
+                queryable = queryable.Where(x => x.TallasId == tallaId);
+            }
+            return await queryable.ToListAsync();
+        }
+
+
+
+
+
         //GET: api/articulos/filtro/nombre
         [HttpGet("bajas")]
         [AllowAnonymous]

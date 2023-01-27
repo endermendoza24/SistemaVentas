@@ -55,7 +55,7 @@ else
             <MudTd DataLabel="Empleado" Style="text-transform:uppercase">@context.ApplicationUser.NombreyApellido</MudTd>
             <MudTd DataLabel="Total">C$ @context.Total</MudTd>
             <MudTd>
-                <MudFab Color="Color.Error" StartIcon="@Icons.Filled.Edit" Size="Size.Small"
+                <MudFab Color="Color.Error" StartIcon="@Icons.Filled.Payment" Size="Size.Small"
                     @onclick="@(() => NavigationManager.NavigateTo($"/ver-compra/{context.Id}"))" />
             </MudTd>
         </RowTemplate>

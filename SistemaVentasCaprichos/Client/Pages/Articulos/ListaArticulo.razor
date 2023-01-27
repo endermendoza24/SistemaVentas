@@ -15,14 +15,48 @@
             </div>
         </Authorized>
     </AuthorizeView>
-    <div class="input-group" style="width:60%">
-        <input class="form-control" type="text" placeholder="Nombre artículo" @bind="NombreArtFiltro" />        
-        <div class="input-group-append">
-            <button @onclick="Filtrar" class="btn btn-primary" type="button"><i class="oi oi-magnifying-glass"></i></button>
-            <button @onclick="Limpiar" class="btn btn-danger" type="button"><i class="oi oi-delete"></i></button>
+    
+
+    <div class="row">
+        <div class="col-3">
+            <select class="form-control" @bind="MarcaIdFiltro" @onblur="Filtrar">
+                <option value="0">--Seleccione una marca--</option>
+                @foreach (var item in ListaMarcas)
+                {
+                    <option value="@item.Id">@item.Nombre</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-3">
+            <select class="form-control" @bind="CategoriaIdFiltro" @onblur="Filtrar">
+                <option value="0">--Seleccione una categoría--</option>
+                @foreach (var item in ListaCategorias)
+                {
+                    <option value="@item.Id">@item.Nombre</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-3">
+            <select class="form-control" @bind="TallaIdFiltro" @onblur="Filtrar">
+                <option value="0">--Seleccione una talla--</option>
+                @foreach (var item in ListaTalla)
+                {
+                    <option value="@item.Id">@item.Nombre</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-3">
+            <button @onclick="LimpiarTodo" class="btn btn-danger" type="button"><i class="oi oi-delete"></i></button>
         </div>
     </div>
-</div>
+
+    </div>
+
+
+ 
 
 <div class="d-flex justify-content-between mt-2 mb-2">
     <div class="btn-group">
@@ -32,6 +66,7 @@
         <button @onclick="MostrarStockBajo" style="background:none;border:none">
             &nbsp;&nbsp;<b>Stock bajo  </b>
         </button>
+       
         <a href="/lista-articulos-bajas" style="background:none;border:none">
             &nbsp;&nbsp;<b> Dados de baja</b> &nbsp;&nbsp;
         </a>
@@ -178,6 +213,7 @@ else
 @code {
     public List<Articulo> articulo { get; set; } //muestra todos los articulos
     public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
+    public List<Marcas> ListaMarcas { get; set; } = new List<Marcas>();
     public List<Tallas> ListaTalla { get; set; } = new List<Tallas>();
 
 
@@ -190,6 +226,9 @@ else
     private HashSet<Articulo> selectedItems = new HashSet<Articulo>();
 
     private string NombreArtFiltro = String.Empty; //filtros
+    private string MarcaIdFiltro = String.Empty; //filtros
+    private string TallaIdFiltro = String.Empty; //filtros
+    private string CategoriaIdFiltro = String.Empty; //filtros
 
     protected bool lista = true;
     protected bool card = false;
@@ -198,17 +237,50 @@ else
     {
         await CargarArticulos();
         await CargarTallas();
+        await CargarMarcas();
+        await CargarCategorias();
     }
 
 
 
     async Task CargarArticulos()
     {
-        var httpResponse = await Http.GetAsync($"api/articulos/filtro?nombre={NombreArtFiltro}");
+        var httpResponse = await Http.GetAsync($"api/articulos/filtrodos?nombre={NombreArtFiltro}&marcaId={MarcaIdFiltro}&tallaId={TallaIdFiltro}&categoriaId={CategoriaIdFiltro}");
         if (httpResponse.IsSuccessStatusCode)
         {
             var responseString = await httpResponse.Content.ReadAsStringAsync();
             articulo = JsonSerializer.Deserialize<List<Articulo>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("Error obteniendo los articulos filtrados");
+        }
+    }
+
+
+    async Task CargarCategorias()
+    {
+        var httpResponse = await Http.GetAsync($"api/cate");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ListaCategorias = JsonSerializer.Deserialize<List<Categoria>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("Error obteniendo la categoria");
+        }
+    }
+
+    async Task CargarMarcas()
+    {
+        var httpResponse = await Http.GetAsync($"api/marcas");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ListaMarcas = JsonSerializer.Deserialize<List<Marcas>>(responseString,
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
         else
@@ -222,7 +294,7 @@ else
         var talla = ListaTalla.FirstOrDefault(x => x.Id == tallaId);
         return talla != null ? talla.Nombre : "N/A";
     }
-  
+
 
     async Task CargarTallas()
     {
@@ -238,7 +310,7 @@ else
             Console.WriteLine("error");
         }
     }
-    
+
 
 
     void CambiarVista()
@@ -250,6 +322,14 @@ else
     void MostrarStockBajo()
     {
         articulo = articulo.Where(x => x.StockActual < x.StockMinimo).ToList();
+    }
+
+
+    private string busqueda = "";
+
+    void PorMarca()
+    {
+        articulo = articulo.Where(x => x.Marca.Nombre == busqueda).ToList();
     }
 
     async Task MostrarTodos()
@@ -266,10 +346,42 @@ else
     {
         await CargarArticulos();
     }
+    private async Task Filtrar2()
+    {
+        await CargarMarcas();
+    }
+
+
+    private async Task LimpiarTodo()
+    {
+        NombreArtFiltro = string.Empty;
+        CategoriaIdFiltro = string.Empty;
+        MarcaIdFiltro = string.Empty;
+        TallaIdFiltro = string.Empty;
+        await CargarArticulos();
+    }
+
+
+
 
     private async Task Limpiar()
     {
         NombreArtFiltro = string.Empty;
+        await CargarArticulos();
+    }
+    private async Task LimpiarMarcas()
+    {
+        MarcaIdFiltro = string.Empty;
+        await CargarArticulos();
+    }
+    private async Task LimpiarTalla()
+    {
+        TallaIdFiltro = string.Empty;
+        await CargarArticulos();
+    }
+    private async Task LimpiarCategoria()
+    {
+        CategoriaIdFiltro = string.Empty;
         await CargarArticulos();
     }
 
@@ -337,6 +449,7 @@ else
             // Este es el encabezado.
             header.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
             header.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
+
 
             JS.GuardarComo($"Informe_Artículos_{DateTime.Now.ToShortDateString()}.xlsx", package.GetAsByteArray());
         }

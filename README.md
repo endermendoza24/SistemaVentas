@@ -62,6 +62,8 @@ Elaborado por:
 > 25 de enero de 2023, muchos detalles estéticos mejorados a sugerencia del profesor Darío.
 > El módulo de caja ahora registra únicamente las entradas y salidas de dinero correspondientes, es decir esta actualización elimina el error que hacía que en el cálculo de saldo se tomara en cuenta el saldo de los días anteriores. La logica es similar a la de dadas de baja.
 
+> 26 de enero, agregada función que hace que se pueda filtrar al buscar un artículo, el filtro funciona con marcas, tallas etc.
+
 ## Lógica de dada de bajas
 
 La lógica de dada de baja está en loc controladores de cada catálogo, se le debe añadir una sentencia WHERE en el método GET, en esa sentencia se debe de especificar que solo muestre los registros cuyo estado sea igual a true, esto se hizo de la siguiente manera:

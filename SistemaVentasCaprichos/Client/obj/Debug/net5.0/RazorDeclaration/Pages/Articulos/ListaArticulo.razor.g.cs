@@ -13,168 +13,168 @@ namespace SistemaVentasCaprichos.Client.Pages.Articulos
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 1 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 2 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 3 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 4 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 5 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 6 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 7 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 8 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 9 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 10 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 11 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 12 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 13 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 14 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 14 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 15 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 15 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using System.IO;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 16 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 16 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using SistemaVentasCaprichos.Client.Helpers;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 19 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 19 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using MudBlazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 20 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 20 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using MudBlazor.ThemeManager;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 21 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 21 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using MudBlazor.Services;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 22 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 22 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using CsvHelper;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 23 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 23 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using OfficeOpenXml;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 24 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
+#line 24 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\_Imports.razor"
 using OfficeOpenXml.Style;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
+#line 8 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
 using System.Text.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
+#line 6 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
            [Authorize(Roles = "admin, empleado")]
 
 #line default
@@ -189,10 +189,11 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 178 "C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
+#line 213 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Articulos\ListaArticulo.razor"
        
     public List<Articulo> articulo { get; set; } //muestra todos los articulos
     public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
+    public List<Marcas> ListaMarcas { get; set; } = new List<Marcas>();
     public List<Tallas> ListaTalla { get; set; } = new List<Tallas>();
 
 
@@ -205,6 +206,9 @@ using System.Text.Json;
     private HashSet<Articulo> selectedItems = new HashSet<Articulo>();
 
     private string NombreArtFiltro = String.Empty; //filtros
+    private string MarcaIdFiltro = String.Empty; //filtros
+    private string TallaIdFiltro = String.Empty; //filtros
+    private string CategoriaIdFiltro = String.Empty; //filtros
 
     protected bool lista = true;
     protected bool card = false;
@@ -213,17 +217,50 @@ using System.Text.Json;
     {
         await CargarArticulos();
         await CargarTallas();
+        await CargarMarcas();
+        await CargarCategorias();
     }
 
 
 
     async Task CargarArticulos()
     {
-        var httpResponse = await Http.GetAsync($"api/articulos/filtro?nombre={NombreArtFiltro}");
+        var httpResponse = await Http.GetAsync($"api/articulos/filtrodos?nombre={NombreArtFiltro}&marcaId={MarcaIdFiltro}&tallaId={TallaIdFiltro}&categoriaId={CategoriaIdFiltro}");
         if (httpResponse.IsSuccessStatusCode)
         {
             var responseString = await httpResponse.Content.ReadAsStringAsync();
             articulo = JsonSerializer.Deserialize<List<Articulo>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("Error obteniendo los articulos filtrados");
+        }
+    }
+
+
+    async Task CargarCategorias()
+    {
+        var httpResponse = await Http.GetAsync($"api/cate");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ListaCategorias = JsonSerializer.Deserialize<List<Categoria>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("Error obteniendo la categoria");
+        }
+    }
+
+    async Task CargarMarcas()
+    {
+        var httpResponse = await Http.GetAsync($"api/marcas");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ListaMarcas = JsonSerializer.Deserialize<List<Marcas>>(responseString,
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
         else
@@ -237,7 +274,7 @@ using System.Text.Json;
         var talla = ListaTalla.FirstOrDefault(x => x.Id == tallaId);
         return talla != null ? talla.Nombre : "N/A";
     }
-  
+
 
     async Task CargarTallas()
     {
@@ -253,7 +290,7 @@ using System.Text.Json;
             Console.WriteLine("error");
         }
     }
-    
+
 
 
     void CambiarVista()
@@ -265,6 +302,14 @@ using System.Text.Json;
     void MostrarStockBajo()
     {
         articulo = articulo.Where(x => x.StockActual < x.StockMinimo).ToList();
+    }
+
+
+    private string busqueda = "";
+
+    void PorMarca()
+    {
+        articulo = articulo.Where(x => x.Marca.Nombre == busqueda).ToList();
     }
 
     async Task MostrarTodos()
@@ -281,10 +326,42 @@ using System.Text.Json;
     {
         await CargarArticulos();
     }
+    private async Task Filtrar2()
+    {
+        await CargarMarcas();
+    }
+
+
+    private async Task LimpiarTodo()
+    {
+        NombreArtFiltro = string.Empty;
+        CategoriaIdFiltro = string.Empty;
+        MarcaIdFiltro = string.Empty;
+        TallaIdFiltro = string.Empty;
+        await CargarArticulos();
+    }
+
+
+
 
     private async Task Limpiar()
     {
         NombreArtFiltro = string.Empty;
+        await CargarArticulos();
+    }
+    private async Task LimpiarMarcas()
+    {
+        MarcaIdFiltro = string.Empty;
+        await CargarArticulos();
+    }
+    private async Task LimpiarTalla()
+    {
+        TallaIdFiltro = string.Empty;
+        await CargarArticulos();
+    }
+    private async Task LimpiarCategoria()
+    {
+        CategoriaIdFiltro = string.Empty;
         await CargarArticulos();
     }
 
@@ -352,6 +429,7 @@ using System.Text.Json;
             // Este es el encabezado.
             header.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
             header.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightBlue);
+
 
             JS.GuardarComo($"Informe_Artículos_{DateTime.Now.ToShortDateString()}.xlsx", package.GetAsByteArray());
         }
