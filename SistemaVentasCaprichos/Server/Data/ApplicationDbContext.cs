@@ -50,5 +50,6 @@ namespace SistemaVentasCaprichos.Server.Data
         public DbSet<Configuracion> Configuracion { get; set; }
 
         public DbSet<Caja> Caja { get; set; }
+        public DbSet<Retornos> Retornos { get;set; }
     }
 }

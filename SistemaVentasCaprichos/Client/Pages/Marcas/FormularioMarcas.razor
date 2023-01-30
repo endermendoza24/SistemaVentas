@@ -10,8 +10,9 @@
                     <label class="col-4 col-form-label">Nombre</label>
                     <div class="col">
                         <div class="input-group">
-                            <MudTextField @bind-Value="@Marca.Nombre" Label="Nombre" Variant="Variant.Outlined"  oninput="this.value=this.value.toUpperCase()"
-                                          Margin="Margin.Dense"></MudTextField>                                          
+                            <MudTextField @bind-Value="@Marca.Nombre" Label="Nombre" Variant="Variant.Outlined" oninput="this.value=this.value.toUpperCase()"
+                                          slash Margin="Margin.Dense"></MudTextField>
+
                         </div>
                         <ValidationMessage For="@(() => Marca.Nombre)" />
                     </div>

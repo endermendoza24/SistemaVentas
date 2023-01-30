@@ -195,7 +195,7 @@ using System.Text.Json;
     public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
     public List<Marcas> ListaMarcas { get; set; } = new List<Marcas>();
     public List<Tallas> ListaTalla { get; set; } = new List<Tallas>();
-
+    private decimal PrecioMaximo;
 
     private bool dense = false;
     private bool hover = true;
@@ -273,6 +273,12 @@ using System.Text.Json;
         // Obtener el nombre de la talla correspondiente utilizando el ID de talla de la lista.
         var talla = ListaTalla.FirstOrDefault(x => x.Id == tallaId);
         return talla != null ? talla.Nombre : "N/A";
+    }
+    public string GetMarcaName(int marcaName)
+    {
+        // Obtener el nombre de la talla correspondiente utilizando el ID de talla de la lista.
+        var marca = ListaMarcas.FirstOrDefault(x => x.Id == marcaName);
+        return marca != null ? marca.Nombre : "N/A";
     }
 
 

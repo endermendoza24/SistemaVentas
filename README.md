@@ -64,6 +64,8 @@ Elaborado por:
 
 > 26 de enero, agregada función que hace que se pueda filtrar al buscar un artículo, el filtro funciona con marcas, tallas etc.
 
+> 30 de enero, una versión muy rudimentaria de devoluciones sobre venta está funcionando bien.
+
 ## Lógica de dada de bajas
 
 La lógica de dada de baja está en loc controladores de cada catálogo, se le debe añadir una sentencia WHERE en el método GET, en esa sentencia se debe de especificar que solo muestre los registros cuyo estado sea igual a true, esto se hizo de la siguiente manera:

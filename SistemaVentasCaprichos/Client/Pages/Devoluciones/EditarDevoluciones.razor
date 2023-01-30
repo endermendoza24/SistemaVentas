@@ -1,0 +1,78 @@
+﻿@page "/editar-devoluciones/{idTallas:int}"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@inject ISnackbar Snackbar
+@attribute [Authorize(Roles = "admin")]
+
+
+<button @onclick="@Volver" class="btn btn-sm btn-secondary">
+    <i class="oi oi-arrow-circle-left"></i> Volver al listado
+</button>
+
+<hr />
+
+<div class="d-flex justify-content-between mb-3">
+    <h3><b>Editar talla</b></h3>
+
+</div>
+<FormDevoluciones TextBotonSubmit="Guardar cambios"
+            OnValidSubmit="@EditarArtic" Retornos="@Retornos" />
+@code {
+    Retornos Retornos = new Retornos();
+    [Parameter] public int idTallas { get; set; }
+
+    protected async override Task OnParametersSetAsync()
+    {
+        Retornos = await Http.GetFromJsonAsync<Retornos>($"/api/devoluciones/{idTallas}");
+    }
+
+    void Volver()
+    {
+        NavigationManager.NavigateTo("/lista-devoluciones");
+    }
+
+    async Task EditarArtic()
+    {
+        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "Editar",
+            $"¿Desea editar {Retornos.Fecha.ToShortTimeString()}?", "question");
+        if (confirmacion)
+        {
+            var respuesta = await Http.PutAsJsonAsync("/api/devoluciones", Retornos);
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/lista-devoluciones");
+                //await JS.InvokeVoidAsync("simple", "¡Éxito!", "Marca editada", "success");
+                Snackbar.Add("Editada con éxito", Severity.Info, a => a.VisibleStateDuration = 200);
+            }
+            else
+            {
+                //await JS.InvokeVoidAsync("simple", "Error",
+                //    "No se pudo editar la talla", "error");
+                Snackbar.Add("Hubo un error editando este elemento", Severity.Error, a => a.VisibleStateDuration = 300);
+            }
+        }
+    }
+
+    async Task BorrarArticulo(int idCategoria)
+    {
+        var confirmacion = await JS.InvokeAsync<bool>("confirmar", "Eliminar",
+            $"¿Desea eliminar {Retornos.Id}?", "warning");
+        if (confirmacion)
+        {
+            var respuesta = await Http.DeleteAsync($"/api/devoluciones/{Retornos.Id}");
+
+            if (respuesta.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/lista-devoluciones");
+                await JS.InvokeVoidAsync("simple", "¡Éxito!", "Talla eliminada", "success");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("simple", "Error",
+                    "No se pudo eliminar la talla", "error");
+            }
+        }
+    }
+}

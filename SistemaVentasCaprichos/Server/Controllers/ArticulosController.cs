@@ -10,7 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace SistemaVentasCaprichos.Server.Controllers
-{    
+{
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(Roles = "admin, empleado")]
@@ -23,7 +23,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             this.context = context;
         }
 
-       //GET: api/articulos
+        //GET: api/articulos
         [HttpGet]
         [AllowAnonymous]
         public async Task<ActionResult<List<Articulo>>> Get()
@@ -90,7 +90,7 @@ namespace SistemaVentasCaprichos.Server.Controllers
             return await queryable.ToListAsync();
         }
 
-    
+
 
         // GET: api/articulos/5
         [HttpGet("{id}")]

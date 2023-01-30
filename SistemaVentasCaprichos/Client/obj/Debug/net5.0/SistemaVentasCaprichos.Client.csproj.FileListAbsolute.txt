@@ -7095,3 +7095,11 @@ C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\o
 C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\refint\SistemaVentasCaprichos.Client.dll
 C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\SistemaVentasCaprichos.Client.pdb
 C:\Users\ender\OneDrive\Documentos\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\ref\SistemaVentasCaprichos.Client.dll
+C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Devoluciones\ListaDevoluciones.razor.g.cs
+C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Devoluciones\ListaDevoluciones.razor.g.cs
+C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Devoluciones\CrearDevoluciones.razor.g.cs
+C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Devoluciones\FormDevoluciones.razor.g.cs
+C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Devoluciones\CrearDevoluciones.razor.g.cs
+C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Devoluciones\FormDevoluciones.razor.g.cs
+C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Devoluciones\EditarDevoluciones.razor.g.cs
+C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\obj\Debug\net5.0\Razor\Pages\Devoluciones\EditarDevoluciones.razor.g.cs

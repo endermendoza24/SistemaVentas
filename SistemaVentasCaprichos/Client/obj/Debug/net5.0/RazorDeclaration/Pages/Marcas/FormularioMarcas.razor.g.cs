@@ -181,7 +181,7 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 50 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\FormularioMarcas.razor"
+#line 51 "C:\Users\ender\OneDrive\Desktop\SistemaVentas\SistemaVentasCaprichos\Client\Pages\Marcas\FormularioMarcas.razor"
        
 
     [Parameter] public Marcas Marca { get; set; } = new Marcas();

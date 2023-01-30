@@ -152,14 +152,14 @@ namespace SistemaVentasCaprichos.Server.Migrations
                         new
                         {
                             Id = "89086180-b978-4f90-9dbd-a7040bc93f41",
-                            ConcurrencyStamp = "3528ecf6-0c5d-499f-8c69-c3f266232122",
+                            ConcurrencyStamp = "a50424f0-3ba9-42c0-9d16-8ca1bb287e20",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
                             Id = "65ade53a-ce03-411e-9d35-08fca7f47014",
-                            ConcurrencyStamp = "d3aae2e0-b72f-4f84-a7bd-8ff3f4f26381",
+                            ConcurrencyStamp = "7b69d840-9bed-49af-a7ad-4654f96b8548",
                             Name = "empleado",
                             NormalizedName = "empleado"
                         });
@@ -709,6 +709,38 @@ namespace SistemaVentasCaprichos.Server.Migrations
                     b.ToTable("Proveedores");
                 });
 
+            modelBuilder.Entity("SistemaVentasCaprichos.Shared.Retornos", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Descuento")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DetalleVentaId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Motivo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Precio")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DetalleVentaId");
+
+                    b.ToTable("Retornos");
+                });
+
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Tallas", b =>
                 {
                     b.Property<int>("Id")
@@ -897,6 +929,17 @@ namespace SistemaVentasCaprichos.Server.Migrations
                     b.Navigation("Venta");
                 });
 
+            modelBuilder.Entity("SistemaVentasCaprichos.Shared.Retornos", b =>
+                {
+                    b.HasOne("SistemaVentasCaprichos.Shared.DetalleVenta", "DetalleVenta")
+                        .WithMany("Retorno")
+                        .HasForeignKey("DetalleVentaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DetalleVenta");
+                });
+
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Venta", b =>
                 {
                     b.HasOne("SistemaVentasCaprichos.Shared.Cliente", "Cliente")
@@ -922,6 +965,11 @@ namespace SistemaVentasCaprichos.Server.Migrations
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Compra", b =>
                 {
                     b.Navigation("DetalleCompras");
+                });
+
+            modelBuilder.Entity("SistemaVentasCaprichos.Shared.DetalleVenta", b =>
+                {
+                    b.Navigation("Retorno");
                 });
 
             modelBuilder.Entity("SistemaVentasCaprichos.Shared.Venta", b =>

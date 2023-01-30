@@ -1,0 +1,74 @@
+﻿@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using System.Text.Json
+
+<EditForm Model="@Retornos" OnValidSubmit="@OnValidSubmit">
+    <div class="form-field mt-2 mb-2">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Motivo</label>
+                    <div class="col">
+                        <div class="input-group">
+                            <MudTextField @bind-Value="@Retornos.Motivo" Label="Motivo de la devolución" Variant="Variant.Outlined" oninput="this.value=this.value.toUpperCase()"
+                                          Margin="Margin.Dense"></MudTextField>
+                        </div>
+                        <ValidationMessage For="@(() => Retornos.Motivo)" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Cantidad</label>
+                    <div class="col">
+                        <div class="input-group">
+                            <MudTextField @bind-Value="@Retornos.Cantidad" Label="Cantidad" Variant="Variant.Outlined" oninput="this.value=this.value.toUpperCase()"
+                                          Margin="Margin.Dense"></MudTextField>
+                        </div>
+                        <ValidationMessage For="@(() => Retornos.Cantidad)" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-6">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Id detalle</label>
+                    <div class="col">
+                        <div class="input-group">
+                            <InputSelect @bind-Value="Retornos.DetalleVentaId" class="form-control">
+                                <option selected value="0">Seleccione un detalle</option>
+                                @foreach (var marca in Detalle)
+                                {
+                                    <option value="@marca.Id">@marca.Id</option>
+                                }
+                            </InputSelect>                           
+                        </div>
+                        <ValidationMessage For="@(() => Retornos.DetalleVentaId)" />
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <button type="submit" class="btn btn-block btn-success">
+            <i class="oi oi-check "></i>
+            <text style="color:white"></text>
+        </button>
+    </div>
+    <DataAnnotationsValidator />
+</EditForm>
+
+@code {
+
+    [Parameter] public Retornos Retornos { get; set; } = new Retornos();
+    [Parameter] public List<DetalleVenta> Detalle { get; set; } = new List<DetalleVenta>();
+
+    [Parameter] public string TextBotonSubmit { get; set; }
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Detalle = await Http.GetFromJsonAsync<List<DetalleVenta>>("api/detalleventas"); //muestro todos los clientes        
+    }
+}

@@ -11,11 +11,10 @@
     <AuthorizeView Roles="admin">
         <Authorized>
             <div class="btn-group mr-2">
-                <button @onclick="CrearArticulo" class="btn btn-success"><i class="oi oi-plus"></i> AGREGAR ARTÍCULO</button>                
+                <button @onclick="CrearArticulo" class="btn btn-success"><i class="oi oi-plus"></i> AGREGAR ARTÍCULO</button>
             </div>
         </Authorized>
     </AuthorizeView>
-    
 
     <div class="row">
         <div class="col-3">
@@ -53,10 +52,10 @@
         </div>
     </div>
 
-    </div>
+</div>
 
 
- 
+
 
 <div class="d-flex justify-content-between mt-2 mb-2">
     <div class="btn-group">
@@ -66,7 +65,7 @@
         <button @onclick="MostrarStockBajo" style="background:none;border:none">
             &nbsp;&nbsp;<b>Stock bajo  </b>
         </button>
-       
+
         <a href="/lista-articulos-bajas" style="background:none;border:none">
             &nbsp;&nbsp;<b> Dados de baja</b> &nbsp;&nbsp;
         </a>
@@ -94,15 +93,14 @@ else if (articulo.Count == 0)
     </div>
 }
 else
-{
-
+{    
     <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
         <MudTooltip Text="Exportar esta tabla a excel" Color="Color.Tertiary" Placement="Placement.Bottom" Arrow="true">
             <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FileExcel"
                    @onclick="ExportarExcel"
                    Color="Color.Warning">Excel</MudButton>
         </MudTooltip>
-        
+
     </MudButtonGroup>
     <div class="card-columns" hidden="@lista">
         @foreach (var articulo in articulo)
@@ -156,10 +154,11 @@ else
             <HeaderContent>
                 <MudTh Style="width:70px;">Imagen</MudTh>
                 <MudTh>Nombre del artículo</MudTh>
-                <MudTh>Descripción</MudTh>   
-                <MudTh>Talla</MudTh>                
+                <MudTh>Descripción</MudTh>
+                <MudTh>Talla</MudTh>
+                <MudTh>Marcas</MudTh>
                 <MudTh>Código</MudTh>
-                <MudTh Style="width:100px;">Precio</MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<Articulo, object>(x=>x.PrecioUnitario)">Precio</MudTableSortLabel></MudTh>
                 @*<MudTh>Fecha alta</MudTh>*@
                 <MudTh Style="width:100px;">Stock</MudTh>
                 <AuthorizeView Roles="admin">
@@ -169,35 +168,36 @@ else
                 </AuthorizeView>
             </HeaderContent>
             <RowTemplate>
-                <MudTd DataLabel="Imagen"><img src="@context.Url_Imagen" width="70"/></MudTd>
+                <MudTd DataLabel="Imagen"><img src="@context.Url_Imagen" width="70" /></MudTd>
                 <MudTd DataLabel="Nombre">@context.Nombre</MudTd>
                 <MudTd DataLabel="Descripción">@context.Descripcion</MudTd>
-                <MudTd DataLabel="Talla">@GetTallaName(context.TallasId)</MudTd>                
+                <MudTd DataLabel="Talla">@GetTallaName(context.TallasId)</MudTd>
+                <MudTd DataLabel="Marcas">@GetMarcaName(context.MarcaId)</MudTd>
                 <MudTd Style="text-transform:uppercase;" DataLabel="Código">@context.Codigo</MudTd>
                 <MudTd DataLabel="Precio">C$ @Math.Round(context.PrecioUnitario,2)</MudTd>
                 @*<MudTd DataLabel="Fecha">@context.Ultima_Modificación.ToLongDateString()</MudTd>*@
                 <MudTd>
                     @if (context.StockActual < context.StockMinimo)
-                    {                               
-                       <div class="chip chip-low">@context.StockActual</div>
+                    {
+                        <div class="chip chip-low">@context.StockActual</div>
                     }
                     else if (context.StockActual > context.StockMaximo)
                     {
                         @* <MudTd class="chip chip-ex" DataLabel="Stock excedido"> @context.StockActual</MudTd> *@
-                          <div class="chip chip-ex">@context.StockActual</div>
+                        <div class="chip chip-ex">@context.StockActual</div>
                     }
                     else
                     {
                         @* <b><MudTd class="chip chip-normal" DataLabel="Stock"> @context.StockActual</MudTd></b> *@
-                          <div class="chip chip-normal">@context.StockActual</div>
+                        <div class="chip chip-normal">@context.StockActual</div>
                     }
                 </MudTd>
                 <AuthorizeView Roles="admin">
                     <Authorized Context="contexto">
-                          <MudTd>
-                    <MudFab Color="Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
-                        @onclick="@(() => NavigationManager.NavigateTo($"/editar-articulo/{context.Id}"))" />
-                </MudTd>
+                        <MudTd>
+                            <MudFab Color="Color.Error" StartIcon="@Icons.Material.Filled.Edit" Size="Size.Small"
+                                @onclick="@(() => NavigationManager.NavigateTo($"/editar-articulo/{context.Id}"))" />
+                        </MudTd>
                     </Authorized>
                 </AuthorizeView>
 
@@ -215,7 +215,7 @@ else
     public List<Categoria> ListaCategorias { get; set; } = new List<Categoria>();
     public List<Marcas> ListaMarcas { get; set; } = new List<Marcas>();
     public List<Tallas> ListaTalla { get; set; } = new List<Tallas>();
-
+    private decimal PrecioMaximo;
 
     private bool dense = false;
     private bool hover = true;
@@ -293,6 +293,12 @@ else
         // Obtener el nombre de la talla correspondiente utilizando el ID de talla de la lista.
         var talla = ListaTalla.FirstOrDefault(x => x.Id == tallaId);
         return talla != null ? talla.Nombre : "N/A";
+    }
+    public string GetMarcaName(int marcaName)
+    {
+        // Obtener el nombre de la talla correspondiente utilizando el ID de talla de la lista.
+        var marca = ListaMarcas.FirstOrDefault(x => x.Id == marcaName);
+        return marca != null ? marca.Nombre : "N/A";
     }
 
 

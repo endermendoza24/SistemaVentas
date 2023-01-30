@@ -8,11 +8,8 @@
         <MudNavLink Href="/" Icon="@Icons.Filled.Dashboard">Inicio</MudNavLink>
 
         <AuthorizeView Roles="admin">
-            <Authorized>
-                <MudNavGroup Title="Compras" Icon="@Icons.Filled.ShoppingBag" Expanded="true">
-                    <MudNavLink Href="/lista-compras">Compras</MudNavLink>
-                    <MudNavLink Href="/lista-proveedores">Proveedores</MudNavLink>
-                </MudNavGroup>                
+            <Authorized>         
+                <MudNavLink Href="/lista-compras" Icon="@Icons.Filled.ShoppingBag">Compras</MudNavLink>
             </Authorized>
         </AuthorizeView>
 
@@ -23,20 +20,19 @@
             <Authorized>
                 <MudNavGroup Title="Catálogos" Icon="@Icons.Filled.AccountTree" Expanded="true">
                     <MudNavLink Href="/lista-marcas">Marcas</MudNavLink>
-                    <MudNavLink Href="/indexcategoria">Categorías</MudNavLink>
                     <MudNavLink Href="/lista-tallas">Tallas</MudNavLink>
+                    <MudNavLink Href="/indexcategoria">Categorías</MudNavLink>
+                    <MudNavLink Color="Color.Primary" Href="/lista-clientes">Clientes</MudNavLink>
+                    <MudNavLink Href="/lista-proveedores">Proveedores</MudNavLink>
                 </MudNavGroup>
             </Authorized>
        </AuthorizeView>
 
-        <MudNavLink Href="/lista-articulos" Icon="@Icons.Filled.AddShoppingCart">Artículos</MudNavLink>
-       
-
-        <MudNavGroup Title="Ventas" Icon="@Icons.Filled.ShoppingBag" Expanded="true">
-            <MudNavLink Href="/lista-ventas">Ventas</MudNavLink>
-            <MudNavLink Color="Color.Primary" Href="/lista-clientes">Clientes</MudNavLink>
-        </MudNavGroup>
-
+        <MudNavLink Href="/lista-articulos" Icon="@Icons.Filled.AddShoppingCart">Administración de mercancías</MudNavLink>
+                   
+            <MudNavLink Href="/lista-ventas" Icon="@Icons.Filled.ShoppingBag">Ventas</MudNavLink>
+        <MudNavLink Href="/lista-devoluciones">Devoluciones</MudNavLink>
+        
         <AuthorizeView Roles="admin">
             <Authorized>
                 <MudNavLink Href="/lista-caja" Icon="@Icons.Filled.AccountBalance">Caja</MudNavLink>

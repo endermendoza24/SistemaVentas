@@ -42,6 +42,10 @@ namespace SistemaVentasCaprichos.Shared
         public int VentaId { get; set; }
         [ForeignKey("VentaId")]
         public Venta Venta { get; set; }
+
+        //  conectando para hacer la devolucion
+        public List<Retornos> Retorno { get; set; } = new List<Retornos>();
+
         #endregion
     }
 }

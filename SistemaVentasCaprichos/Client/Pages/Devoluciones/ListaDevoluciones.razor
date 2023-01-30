@@ -1,0 +1,202 @@
+﻿@page "/lista-devoluciones"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@attribute [Authorize(Roles = "admin")]
+
+@using System.Text.Json
+
+<MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Create" Color="Color.Success" Size="Size.Medium">
+    <a style="text-decoration:none; color:#fff;" @onclick="CrearArticulo">Agregar devolucion</a>
+</MudButton>
+
+
+@if (Retornos == null)
+{
+    <div class="d-flex justify-content-center align-items-center" style="height:24rem">
+        <div class="spinner-border text-success" role="status">
+            <span class="sr-only">Cargando...</span>
+        </div>
+    </div>
+}
+else if (Retornos.Count == 0)
+{
+    <div class="d-flex justify-content-center align-items-center" style="height:24rem">
+        <text>No hay devoluciones registradas.</text>
+    </div>
+}
+else
+{
+  
+    <br />
+
+    <MudTable Items="@Retornos" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<Retornos,bool>(FilterFunc1)"
+          @bind-SelectedItem="selectedItem1">
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Devoluciones</MudText>
+            <MudSpacer />
+            <MudTextField @bind-Value="searchString1" Placeholder="Buscar..." Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+        </ToolBarContent>
+        <HeaderContent>
+            @*<MudTh Style="width:50px;">Nr</MudTh>*@            
+            <MudTh>Fecha</MudTh>
+            <MudTh>Motivo</MudTh>
+             <MudTh>Cantidad</MudTh>
+            <MudTh>Artículo</MudTh>
+            <MudTh>Num de venta</MudTh>
+            `
+            @*<MudTh>Acciones</MudTh>*@
+        </HeaderContent>
+        <RowTemplate>
+            @*<MudTd DataLabel="Id">@context.Id</MudTd>*@            
+            <MudTd DataLabel="Fecha">@context.Fecha</MudTd>
+            <MudTd DataLabel="Motivo">@context.Motivo</MudTd>
+            <MudTd DataLabel="Motivo">@context.Cantidad</MudTd>
+            <MudTd DataLabel="Talla">@ObtenerArticuloNombre(context.DetalleVenta.ArticuloId)</MudTd>
+            <MudTd DataLabel="Talla">@ObtenerVenta(context.DetalleVenta.VentaId)</MudTd>
+            @*<MudTd DataLabel="Talla">@ObtenerCliente(context.DetalleVenta.Venta.Cliente.Id)</MudTd>*@
+            @*  <MudTd>              
+                    <MudButton @onclick="@(() => NavigationManager.NavigateTo($"/lista-detalles/{context.DetalleVentaId}"))"
+                       Variant="Variant.Outlined" Color="Color.Success" EndIcon="@Icons.Filled.Payments">Ver compra</MudButton>                
+            </MudTd>*@
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager />
+        </PagerContent>
+    </MudTable>
+}
+@code {
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+    private string searchString1 = "";
+    private Retornos selectedItem1 = null;
+    private HashSet<Retornos> selectedItems = new HashSet<Retornos>();
+
+    public Venta venta { get; set; }
+    public List<Retornos> Retornos { get; set; } = new List<Retornos>(); //muestra todos las devoluciones
+    public List<Articulo> ListaArticulos { get; set; } = new List<Articulo>(); //muestra todos las devoluciones
+    public List<Cliente> ListaClientes { get; set; } = new List<Cliente>(); //muestra todos las devoluciones
+    public List<Venta> ListaVentas { get; set; } = new List<Venta>(); //muestra todos las devoluciones
+    public List<DetalleVenta> ListaDetalles { get; set; } = new List<DetalleVenta>(); //muestra todos las devoluciones
+    Retornos objMarca = new Retornos();
+
+    private string NombreArtFiltro = String.Empty; //filtros
+
+    protected bool lista = false;
+    protected bool card = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarDevoluciones();
+        await CargarArticulos();
+        await CargarVentas();
+    }
+
+    async Task CargarDevoluciones()
+    {
+        var httpResponse = await Http.GetAsync($"api/devoluciones");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            Retornos = JsonSerializer.Deserialize<List<Retornos>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("Error en devoluciones");
+        }
+    }
+    async Task CargarArticulos()
+    {
+        var httpResponse = await Http.GetAsync($"api/articulos");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ListaArticulos = JsonSerializer.Deserialize<List<Articulo>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("Error en articulos");
+        }
+    }
+    async Task CargarVentas()
+    {
+        var httpResponse = await Http.GetAsync($"api/ventas");
+        if (httpResponse.IsSuccessStatusCode)
+        {
+            var responseString = await httpResponse.Content.ReadAsStringAsync();
+            ListaVentas = JsonSerializer.Deserialize<List<Venta>>(responseString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+        else
+        {
+            Console.WriteLine("Error en articulos");
+        }
+    }
+
+    void CambiarVista() //  esta parte cambia entre vista de tarjetas o vista de grilla
+    {
+        lista = !lista;
+        card = !card;
+    }
+
+
+    async Task MostrarTodos()
+    {
+        await CargarDevoluciones();
+    }
+
+    void CrearArticulo()
+    {
+        NavigationManager.NavigateTo("creardevoluciones");
+    }
+
+    private async Task Filtrar()
+    {
+        await CargarDevoluciones();
+    }
+
+    private async Task Limpiar()
+    {
+        NombreArtFiltro = string.Empty;
+        await CargarDevoluciones();
+    }
+
+    // esta es la funcion de filtrado de MudBlazor
+    private bool FilterFunc1(Retornos element) => FilterFunc(element, searchString1);
+
+    private bool FilterFunc(Retornos element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.Motivo.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+
+        return false;
+    }
+
+    public string ObtenerArticuloNombre(int articuloId)
+    {
+        // Obtener el nombre del articulo correspondiente utilizando el ID de talla de la lista.
+        var articulos = ListaArticulos.FirstOrDefault(x => x.Id == articuloId);
+        return articulos != null ? articulos.Nombre : "N/A";
+    }
+
+    public string ObtenerVenta(int ventaId)
+    {
+        // Obtener el nombre del articulo correspondiente utilizando el ID de talla de la lista.
+        var venta = ListaVentas.FirstOrDefault(x => x.Id == ventaId);
+        return venta != null ? venta.Numero.ToString() : "N/A";
+    }
+
+    public string ObtenerCliente(int clienteId)
+    {
+        // Obtener el nombre del articulo correspondiente utilizando el ID de talla de la lista.
+        var clientes = ListaClientes.FirstOrDefault(x => x.Id == clienteId);
+        return clientes != null ? clientes.Nombre : "CLIENTE GENÉRICO";
+    }
+}

@@ -40,6 +40,8 @@ namespace SistemaVentasCaprichos.Shared
         public int CompraId { get; set; }
         [ForeignKey("CompraId")]
         public Compra Compra { get; set; }
+
+
         #endregion
 
         #region MÉTODOS
