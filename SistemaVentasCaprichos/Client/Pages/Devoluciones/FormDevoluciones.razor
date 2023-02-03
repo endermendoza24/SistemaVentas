@@ -11,7 +11,7 @@
                     <div class="col">
                         <div class="input-group">
                             <MudTextField @bind-Value="@Retornos.Motivo" Label="Motivo de la devolución" Variant="Variant.Outlined" oninput="this.value=this.value.toUpperCase()"
-                                          Margin="Margin.Dense"></MudTextField>
+                                          Margin="Margin.Dense" Lines="4"></MudTextField>
                         </div>
                         <ValidationMessage For="@(() => Retornos.Motivo)" />
                     </div>
@@ -39,9 +39,9 @@
                         <div class="input-group">
                             <InputSelect @bind-Value="Retornos.DetalleVentaId" class="form-control">
                                 <option selected value="0">Seleccione un detalle</option>
-                                @foreach (var marca in Detalle)
+                                @foreach (var detalle in Detalle)
                                 {
-                                    <option value="@marca.Id">@marca.Id</option>
+                                    <option value="@detalle.Id">@detalle.Id</option>
                                 }
                             </InputSelect>                           
                         </div>
@@ -63,6 +63,7 @@
 
     [Parameter] public Retornos Retornos { get; set; } = new Retornos();
     [Parameter] public List<DetalleVenta> Detalle { get; set; } = new List<DetalleVenta>();
+    [Parameter] public List<Venta> ListaVentas { get; set; } = new List<Venta>();
 
     [Parameter] public string TextBotonSubmit { get; set; }
     [Parameter] public EventCallback OnValidSubmit { get; set; }
@@ -70,5 +71,6 @@
     protected override async Task OnInitializedAsync()
     {
         Detalle = await Http.GetFromJsonAsync<List<DetalleVenta>>("api/detalleventas"); //muestro todos los clientes        
+        ListaVentas = await Http.GetFromJsonAsync<List<Venta>>("api/ventas"); //muestro todos los clientes
     }
 }

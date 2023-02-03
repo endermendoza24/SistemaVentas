@@ -42,6 +42,7 @@ else
             <MudTh>Fecha</MudTh>
             <MudTh>Motivo</MudTh>
              <MudTh>Cantidad</MudTh>
+            <MudTh>Descuento</MudTh>
             <MudTh>Artículo</MudTh>
             <MudTh>Num de venta</MudTh>
             `
@@ -51,9 +52,10 @@ else
             @*<MudTd DataLabel="Id">@context.Id</MudTd>*@            
             <MudTd DataLabel="Fecha">@context.Fecha</MudTd>
             <MudTd DataLabel="Motivo">@context.Motivo</MudTd>
-            <MudTd DataLabel="Motivo">@context.Cantidad</MudTd>
-            <MudTd DataLabel="Talla">@ObtenerArticuloNombre(context.DetalleVenta.ArticuloId)</MudTd>
-            <MudTd DataLabel="Talla">@ObtenerVenta(context.DetalleVenta.VentaId)</MudTd>
+            <MudTd DataLabel="Cantidad">@context.Cantidad</MudTd>
+            <MudTd DataLabel="Descuento aplicado">@context.Descuento</MudTd>
+            <MudTd DataLabel="Articulo">@ObtenerArticuloNombre(context.DetalleVenta.ArticuloId)</MudTd>
+            <MudTd DataLabel="Id detalle venta">@ObtenerVenta(context.DetalleVenta.VentaId)</MudTd>
             @*<MudTd DataLabel="Talla">@ObtenerCliente(context.DetalleVenta.Venta.Cliente.Id)</MudTd>*@
             @*  <MudTd>              
                     <MudButton @onclick="@(() => NavigationManager.NavigateTo($"/lista-detalles/{context.DetalleVentaId}"))"

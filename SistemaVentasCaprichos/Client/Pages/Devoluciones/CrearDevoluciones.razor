@@ -21,10 +21,12 @@
 @code {
     Retornos Retornos = new Retornos();
     public List<DetalleVenta> ListaDetalle { get; set; } = new List<DetalleVenta>();
+    public List<Venta> ListaVentas { get; set; } = new List<Venta>();
 
     protected override async Task OnInitializedAsync()
     {        
         ListaDetalle = await Http.GetFromJsonAsync<List<DetalleVenta>>("api/detalleventas"); //muestro todos los articulos
+        ListaVentas = await Http.GetFromJsonAsync<List<Venta>>("api/ventas"); //muestro todos los articulos
     }
 
     async Task Crear()
