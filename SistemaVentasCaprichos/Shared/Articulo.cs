@@ -41,10 +41,10 @@ namespace SistemaVentasCaprichos.Shared
         public string? Codigo { get; set; }
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "Valor inválido")]
-        public int StockMinimo { get; set; } = 7;
+        public int StockMinimo { get; set; } = 1;
         [Required]
         [Range(0, int.MaxValue, ErrorMessage = "Valor inválido")]
-        public int StockActual { get; set; }
+        public int StockActual { get; set; } = 0;
 
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "Valor inválido")]

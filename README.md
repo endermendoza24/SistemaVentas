@@ -66,6 +66,8 @@ Elaborado por:
 
 > 30 de enero, una versión muy rudimentaria de devoluciones sobre venta está funcionando bien.
 
+> 02 de febrero de 2023, correciones menores, el sistema funciona bien, listo para entregar y defender.
+
 ## Lógica de dada de bajas
 
 La lógica de dada de baja está en loc controladores de cada catálogo, se le debe añadir una sentencia WHERE en el método GET, en esa sentencia se debe de especificar que solo muestre los registros cuyo estado sea igual a true, esto se hizo de la siguiente manera:
